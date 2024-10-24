@@ -2767,19 +2767,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\laszl\\.nuget\\packages\\": {}
+    "C:\\Users\\LUCIANA\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\ServiciosConstruccion\\CapaPresentacion.csproj",
+      "projectUniqueName": "C:\\Users\\LUCIANA\\Desktop\\CICLO 6\\MOANSO\\PROYECTO\\Panel-Murgisa\\ServiciosConstruccion\\CapaPresentacion.csproj",
       "projectName": "CapaPresentacion",
-      "projectPath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\ServiciosConstruccion\\CapaPresentacion.csproj",
-      "packagesPath": "C:\\Users\\laszl\\.nuget\\packages\\",
-      "outputPath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\ServiciosConstruccion\\obj\\",
+      "projectPath": "C:\\Users\\LUCIANA\\Desktop\\CICLO 6\\MOANSO\\PROYECTO\\Panel-Murgisa\\ServiciosConstruccion\\CapaPresentacion.csproj",
+      "packagesPath": "C:\\Users\\LUCIANA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LUCIANA\\Desktop\\CICLO 6\\MOANSO\\PROYECTO\\Panel-Murgisa\\ServiciosConstruccion\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\laszl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LUCIANA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2794,8 +2799,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\Usuario\\Desktop\\MOANSO\\Panel-Murgisa\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Desktop\\MOANSO\\Panel-Murgisa\\CapaAccesoDatos\\CapaAccesoDatos.csproj"
+            "C:\\Users\\LUCIANA\\Desktop\\CICLO 6\\MOANSO\\PROYECTO\\Panel-Murgisa\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {
+              "projectPath": "C:\\Users\\LUCIANA\\Desktop\\CICLO 6\\MOANSO\\PROYECTO\\Panel-Murgisa\\CapaAccesoDatos\\CapaAccesoDatos.csproj"
             }
           }
         }
@@ -2842,13 +2847,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\Usuario\\Desktop\\MOANSO\\Panel-Murgisa\\ServiciosConstruccion\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaAccesoDatos;
+using CapaPresentacion;
 
 namespace Capa_Presentacion
 {
@@ -21,23 +22,47 @@ namespace Capa_Presentacion
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            // Verificamos si en el comboBox está seleccionada la opción vendedor
-            if (cbSistemas.SelectedItem != null && cbSistemas.SelectedItem.ToString() == "Vendedor")
+            // Verificamos si en el comboBox está seleccionada la opción vendedor o jefe de servicio
+            if (cbSistemas.SelectedItem != null)
             {
-                // Verificamos si los campos txtUsuario y txtContraseña no están vacíos
-                if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
+                string seleccion = cbSistemas.SelectedItem.ToString();
+
+                // Si se selecciona "Vendedor"
+                if (seleccion == "Vendedor")
                 {
-                    // Crear una instancia del formulario realizarVenta
-                    PanelVendedor formVenta = new PanelVendedor();
-                    // Mostrar el formulario de realizarVenta
-                    formVenta.Show();
+                    // Verificamos si los campos txtUsuario y txtContraseña no están vacíos
+                    if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
+                    {
+                        // Crear una instancia del formulario realizarVenta
+                        PanelVendedor formVenta = new PanelVendedor();
+                        // Mostrar el formulario de realizarVenta
+                        formVenta.Show();
+                    }
+                    else
+                    {
+                        // Si algún campo está vacío
+                        MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else
+                // Si se selecciona "Jefe de Servicio"
+                else if (seleccion == "Jefe de Servicio")
                 {
-                    // Si algún campo está vacío
-                    MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Verificamos si los campos txtUsuario y txtContraseña no están vacíos
+                    if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
+                    {
+                        // Crear una instancia del formulario panelJefeServicio
+                        PanelJefeServicio formJefe = new PanelJefeServicio();
+                        // Mostrar el formulario de panelJefeServicio
+                        formJefe.Show();
+                    }
+                    else
+                    {
+                        // Si algún campo está vacío
+                        MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
+
         }
     }
 }

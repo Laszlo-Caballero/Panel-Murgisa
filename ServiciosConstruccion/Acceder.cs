@@ -39,5 +39,10 @@ namespace Capa_Presentacion
                 }
             }
         }
+
+        private void cbSistemas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

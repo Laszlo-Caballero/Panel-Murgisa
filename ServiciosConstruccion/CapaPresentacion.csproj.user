@@ -4,6 +4,9 @@
     <Compile Update="Acceder.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Almacen_Forms\PanelAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Cliente_Forms\FormadePago.cs">
       <SubType>Form</SubType>
     </Compile>

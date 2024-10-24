@@ -1,4 +1,5 @@
 using Capa_Presentacion;
+using CapaPresentacion.Almacen_Forms;
 
 namespace ServiciosConstruccion
 {
@@ -13,7 +14,7 @@ namespace ServiciosConstruccion
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Acceder());
+            Application.Run(new PanelAlmacen());
         }
     }
 }

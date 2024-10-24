@@ -92,5 +92,10 @@ namespace Capa_Presentacion
         {
             AbrirFormHija(new FormadePago());
         }
+
+        private void BarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

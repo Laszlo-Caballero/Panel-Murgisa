@@ -83,5 +83,10 @@ namespace CapaPresentacion
         {
             AbrirFormHija(new MantenedorPersonal());
         }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Servicios());
+        }
     }
 }

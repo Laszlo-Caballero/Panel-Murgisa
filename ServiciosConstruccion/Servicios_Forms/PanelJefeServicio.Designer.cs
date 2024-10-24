@@ -49,6 +49,8 @@
             btnROrdendeServicio = new Button();
             pictureBox1 = new PictureBox();
             PanelContenedor = new Panel();
+            btnServicios = new Button();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
@@ -202,6 +204,8 @@
             // MenuVertical
             // 
             MenuVertical.BackColor = Color.FromArgb(26, 32, 40);
+            MenuVertical.Controls.Add(panel2);
+            MenuVertical.Controls.Add(btnServicios);
             MenuVertical.Controls.Add(panel5);
             MenuVertical.Controls.Add(btnPersonal);
             MenuVertical.Controls.Add(panel4);
@@ -348,6 +352,33 @@
             PanelContenedor.Size = new Size(1876, 1184);
             PanelContenedor.TabIndex = 3;
             // 
+            // btnServicios
+            // 
+            btnServicios.BackColor = Color.FromArgb(26, 32, 40);
+            btnServicios.FlatAppearance.BorderSize = 0;
+            btnServicios.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnServicios.FlatStyle = FlatStyle.Flat;
+            btnServicios.ForeColor = SystemColors.ButtonFace;
+            btnServicios.ImageAlign = ContentAlignment.MiddleLeft;
+            btnServicios.Location = new Point(-1, 525);
+            btnServicios.Margin = new Padding(6);
+            btnServicios.Name = "btnServicios";
+            btnServicios.RightToLeft = RightToLeft.No;
+            btnServicios.Size = new Size(366, 68);
+            btnServicios.TabIndex = 8;
+            btnServicios.Text = "Servicios";
+            btnServicios.UseVisualStyleBackColor = false;
+            btnServicios.Click += btnServicios_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(0, 80, 200);
+            panel2.Location = new Point(2, 525);
+            panel2.Margin = new Padding(6);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(9, 68);
+            panel2.TabIndex = 7;
+            // 
             // PanelJefeServicio
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -395,5 +426,7 @@
         private Button btnROrdendeServicio;
         private PictureBox pictureBox1;
         private Panel PanelContenedor;
+        private Panel panel2;
+        private Button btnServicios;
     }
 }

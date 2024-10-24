@@ -28,29 +28,18 @@ namespace Capa_Presentacion
         {
             this.WindowState = FormWindowState.Maximized;
             btnMaximizar.Visible = false;
-            btnResturar.Visible = true;
+            btnRestaurar.Visible = true;
         }
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        private void btnResturar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            btnMaximizar.Visible = true;
-            btnResturar.Visible = false;
-        }
+
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int IParam);
-
-        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
         private void AbrirFormHija(object formhija)
         {
             if (this.PanelContenedor.Controls.Count > 0)
@@ -91,6 +80,18 @@ namespace Capa_Presentacion
         private void btnFormaDePago_Click(object sender, EventArgs e)
         {
             AbrirFormHija(new FormadePago());
+        }
+
+        private void btnRestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btnMaximizar.Visible = true;
+            btnRestaurar.Visible = false;
+        }
+        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

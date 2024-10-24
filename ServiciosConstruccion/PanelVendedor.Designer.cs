@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelVendedor));
             BarraTitulo = new Panel();
-            btnResturar = new PictureBox();
+            btnRestaurar = new PictureBox();
             btnMinimizar = new PictureBox();
             btnMaximizar = new PictureBox();
             btnCerrar = new PictureBox();
@@ -50,7 +50,7 @@
             pictureBox1 = new PictureBox();
             PanelContenedor = new Panel();
             BarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btnResturar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
@@ -61,7 +61,7 @@
             // BarraTitulo
             // 
             BarraTitulo.BackColor = Color.FromArgb(0, 80, 200);
-            BarraTitulo.Controls.Add(btnResturar);
+            BarraTitulo.Controls.Add(btnRestaurar);
             BarraTitulo.Controls.Add(btnMinimizar);
             BarraTitulo.Controls.Add(btnMaximizar);
             BarraTitulo.Controls.Add(btnCerrar);
@@ -73,21 +73,21 @@
             BarraTitulo.TabIndex = 0;
             BarraTitulo.MouseDown += BarraTitulo_MouseDown;
             // 
-            // btnResturar
+            // btnRestaurar
             // 
-            btnResturar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnResturar.BackgroundImageLayout = ImageLayout.Zoom;
-            btnResturar.Cursor = Cursors.Hand;
-            btnResturar.Image = (Image)resources.GetObject("btnResturar.Image");
-            btnResturar.Location = new Point(2288, 6);
-            btnResturar.Margin = new Padding(6);
-            btnResturar.Name = "btnResturar";
-            btnResturar.Size = new Size(46, 53);
-            btnResturar.SizeMode = PictureBoxSizeMode.StretchImage;
-            btnResturar.TabIndex = 3;
-            btnResturar.TabStop = false;
-            btnResturar.Visible = false;
-            btnResturar.Click += btnResturar_Click;
+            btnRestaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnRestaurar.BackgroundImageLayout = ImageLayout.Zoom;
+            btnRestaurar.Cursor = Cursors.Hand;
+            btnRestaurar.Image = (Image)resources.GetObject("btnRestaurar.Image");
+            btnRestaurar.Location = new Point(2288, 6);
+            btnRestaurar.Margin = new Padding(6);
+            btnRestaurar.Name = "btnRestaurar";
+            btnRestaurar.Size = new Size(46, 53);
+            btnRestaurar.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnRestaurar.TabIndex = 3;
+            btnRestaurar.TabStop = false;
+            btnRestaurar.Visible = false;
+            btnRestaurar.Click += btnRestaurar_Click;
             // 
             // btnMinimizar
             // 
@@ -341,7 +341,7 @@
             PanelContenedor.Size = new Size(2043, 1306);
             PanelContenedor.TabIndex = 2;
             // 
-            // RealizarVenta
+            // PanelVendedor
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -351,10 +351,10 @@
             Controls.Add(BarraTitulo);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(6);
-            Name = "RealizarVenta";
+            Name = "PanelVendedor";
             Text = "RealizarVenta";
             BarraTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)btnResturar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
@@ -369,7 +369,7 @@
         private PictureBox btnCerrar;
         private Panel MenuVertical;
         private Panel PanelContenedor;
-        private PictureBox btnResturar;
+        private PictureBox btnRestaurar;
         private PictureBox btnMinimizar;
         private PictureBox btnMaximizar;
         private Button btnVenta;

@@ -19,6 +19,9 @@
     <Compile Update="PanelVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Servicios_Forms\RealizarOrdenDeServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Servicios_Forms\Servicios.cs">
       <SubType>Form</SubType>
     </Compile>

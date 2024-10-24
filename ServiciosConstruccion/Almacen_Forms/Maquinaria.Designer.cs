@@ -271,18 +271,20 @@
             // 
             // btnDesabilitar
             // 
+            btnDesabilitar.BackColor = SystemColors.ControlDark;
             btnDesabilitar.Location = new Point(641, 377);
             btnDesabilitar.Margin = new Padding(3, 2, 3, 2);
             btnDesabilitar.Name = "btnDesabilitar";
             btnDesabilitar.Size = new Size(202, 56);
             btnDesabilitar.TabIndex = 11;
             btnDesabilitar.Text = "Desabilitar";
-            btnDesabilitar.UseVisualStyleBackColor = true;
+            btnDesabilitar.UseVisualStyleBackColor = false;
             // 
             // Maquinaria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(49, 66, 82);
             ClientSize = new Size(909, 488);
             Controls.Add(btnDesabilitar);
             Controls.Add(groupBox2);

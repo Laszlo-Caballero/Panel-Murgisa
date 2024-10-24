@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion;
 
 namespace Capa_Presentacion
 {
@@ -20,15 +21,15 @@ namespace Capa_Presentacion
         private void btnAcceder_Click(object sender, EventArgs e)
         {
             // Verificamos si en el comboBox está seleccionada la opción vendedor
-            if (cbSistemas.SelectedItem != null && cbSistemas.SelectedItem.ToString() == "Vendedor")
+            if (cbSistemas.SelectedItem != null && cbSistemas.SelectedItem.ToString() == "Jefe de Mantenimiento")
             {
                 // Verificamos si los campos txtUsuario y txtContraseña no están vacíos
                 if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
                 {
-                    // Crear una instancia del formulario realizarVenta
-                    PanelVendedor formVenta = new PanelVendedor();
-                    // Mostrar el formulario de realizarVenta
-                    formVenta.Show();
+                    // Crear una instancia del formulario
+                    PanelMantenimiento formMantenimiento = new PanelMantenimiento();
+                    // Mostrar el formulario
+                    formMantenimiento.Show();
                 }
                 else
                 {

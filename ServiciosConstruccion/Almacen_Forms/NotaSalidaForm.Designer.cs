@@ -31,14 +31,14 @@
             label3 = new Label();
             btnBuscar = new Button();
             groupBox3 = new GroupBox();
-            txtNotaIngreso = new TextBox();
+            txtNotaSalida = new TextBox();
             btnNuevoCliente = new Button();
             btnDeshabilitar = new Button();
             btnCancelar = new Button();
-            dtvNotaIngreso = new DataGridView();
+            dtvNotaSalida = new DataGridView();
             label7 = new Label();
             btnAgregar = new Button();
-            txtCantidadRecibido = new TextBox();
+            txtCantidadSalida = new TextBox();
             label5 = new Label();
             cbNombreProveedor = new ComboBox();
             label4 = new Label();
@@ -50,7 +50,7 @@
             groupBox4 = new GroupBox();
             label8 = new Label();
             groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dtvNotaIngreso).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtvNotaSalida).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -79,7 +79,7 @@
             // 
             groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(btnBuscar);
-            groupBox3.Controls.Add(txtNotaIngreso);
+            groupBox3.Controls.Add(txtNotaSalida);
             groupBox3.Location = new Point(708, 74);
             groupBox3.Margin = new Padding(2, 1, 2, 1);
             groupBox3.Name = "groupBox3";
@@ -89,13 +89,13 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Buscar Nota Ingreso";
             // 
-            // txtNotaIngreso
+            // txtNotaSalida
             // 
-            txtNotaIngreso.Location = new Point(45, 90);
-            txtNotaIngreso.Margin = new Padding(2, 1, 2, 1);
-            txtNotaIngreso.Name = "txtNotaIngreso";
-            txtNotaIngreso.Size = new Size(84, 23);
-            txtNotaIngreso.TabIndex = 20;
+            txtNotaSalida.Location = new Point(45, 90);
+            txtNotaSalida.Margin = new Padding(2, 1, 2, 1);
+            txtNotaSalida.Name = "txtNotaSalida";
+            txtNotaSalida.Size = new Size(84, 23);
+            txtNotaSalida.TabIndex = 20;
             // 
             // btnNuevoCliente
             // 
@@ -127,15 +127,15 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // dtvNotaIngreso
+            // dtvNotaSalida
             // 
-            dtvNotaIngreso.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtvNotaIngreso.Location = new Point(388, 74);
-            dtvNotaIngreso.Margin = new Padding(2, 1, 2, 1);
-            dtvNotaIngreso.Name = "dtvNotaIngreso";
-            dtvNotaIngreso.RowHeadersWidth = 82;
-            dtvNotaIngreso.Size = new Size(313, 321);
-            dtvNotaIngreso.TabIndex = 34;
+            dtvNotaSalida.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtvNotaSalida.Location = new Point(388, 74);
+            dtvNotaSalida.Margin = new Padding(2, 1, 2, 1);
+            dtvNotaSalida.Name = "dtvNotaSalida";
+            dtvNotaSalida.RowHeadersWidth = 82;
+            dtvNotaSalida.Size = new Size(313, 321);
+            dtvNotaSalida.TabIndex = 34;
             // 
             // label7
             // 
@@ -156,12 +156,12 @@
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // txtCantidadRecibido
+            // txtCantidadSalida
             // 
-            txtCantidadRecibido.Location = new Point(202, 284);
-            txtCantidadRecibido.Name = "txtCantidadRecibido";
-            txtCantidadRecibido.Size = new Size(54, 23);
-            txtCantidadRecibido.TabIndex = 30;
+            txtCantidadSalida.Location = new Point(202, 284);
+            txtCantidadSalida.Name = "txtCantidadSalida";
+            txtCantidadSalida.Size = new Size(54, 23);
+            txtCantidadSalida.TabIndex = 30;
             // 
             // label5
             // 
@@ -263,9 +263,9 @@
             Controls.Add(btnNuevoCliente);
             Controls.Add(btnDeshabilitar);
             Controls.Add(btnCancelar);
-            Controls.Add(dtvNotaIngreso);
+            Controls.Add(dtvNotaSalida);
             Controls.Add(label7);
-            Controls.Add(txtCantidadRecibido);
+            Controls.Add(txtCantidadSalida);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(groupBox1);
@@ -277,7 +277,7 @@
             Text = "NotaSalidaForm";
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dtvNotaIngreso).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtvNotaSalida).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
@@ -291,14 +291,14 @@
         private Label label3;
         private Button btnBuscar;
         private GroupBox groupBox3;
-        private TextBox txtNotaIngreso;
+        private TextBox txtNotaSalida;
         private Button btnNuevoCliente;
         private Button btnDeshabilitar;
         private Button btnCancelar;
-        private DataGridView dtvNotaIngreso;
+        private DataGridView dtvNotaSalida;
         private Label label7;
         private Button btnAgregar;
-        private TextBox txtCantidadRecibido;
+        private TextBox txtCantidadSalida;
         private Label label5;
         private ComboBox cbNombreProveedor;
         private Label label4;

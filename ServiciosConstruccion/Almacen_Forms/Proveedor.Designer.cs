@@ -147,9 +147,9 @@
             cbkEstado.AutoSize = true;
             cbkEstado.Location = new Point(398, 113);
             cbkEstado.Name = "cbkEstado";
-            cbkEstado.Size = new Size(107, 19);
+            cbkEstado.Size = new Size(118, 19);
             cbkEstado.TabIndex = 11;
-            cbkEstado.Text = "Estado Material";
+            cbkEstado.Text = "Estado Proveedor";
             cbkEstado.UseVisualStyleBackColor = true;
             // 
             // txtCodigo

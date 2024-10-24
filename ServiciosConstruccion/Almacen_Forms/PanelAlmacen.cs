@@ -90,5 +90,10 @@ namespace CapaPresentacion.Almacen_Forms
         {
             AbrirFormHija(new Material());
         }
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Proveedor());
+        }
     }
 }

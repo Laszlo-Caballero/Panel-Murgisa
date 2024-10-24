@@ -243,6 +243,7 @@
             btnProveedor.TabIndex = 11;
             btnProveedor.Text = "Proveedor";
             btnProveedor.UseVisualStyleBackColor = false;
+            btnProveedor.Click += btnProveedor_Click;
             // 
             // panel6
             // 
@@ -315,7 +316,7 @@
             btnEquipoMantenimiento.RightToLeft = RightToLeft.No;
             btnEquipoMantenimiento.Size = new Size(197, 32);
             btnEquipoMantenimiento.TabIndex = 5;
-            btnEquipoMantenimiento.Text = "Equipo de Mantenimiento";
+            btnEquipoMantenimiento.Text = "Herramientas";
             btnEquipoMantenimiento.UseVisualStyleBackColor = false;
             // 
             // panel3

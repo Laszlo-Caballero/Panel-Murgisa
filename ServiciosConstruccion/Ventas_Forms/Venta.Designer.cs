@@ -63,23 +63,6 @@
             dateTimePicker3 = new DateTimePicker();
             label6 = new Label();
             gbMurosContencion = new GroupBox();
-            textBox10 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            label21 = new Label();
-            label22 = new Label();
-            listBox2 = new ListBox();
-            button8 = new Button();
-            button9 = new Button();
-            button10 = new Button();
-            comboBox5 = new ComboBox();
-            label23 = new Label();
-            label24 = new Label();
-            label25 = new Label();
-            dateTimePicker6 = new DateTimePicker();
-            label26 = new Label();
-            dateTimePicker7 = new DateTimePicker();
-            label27 = new Label();
             gbEdificaciones = new GroupBox();
             textBox8 = new TextBox();
             textBox5 = new TextBox();
@@ -98,6 +81,23 @@
             label18 = new Label();
             dateTimePicker5 = new DateTimePicker();
             label20 = new Label();
+            textBox10 = new TextBox();
+            textBox6 = new TextBox();
+            label21 = new Label();
+            label22 = new Label();
+            listBox2 = new ListBox();
+            button8 = new Button();
+            button9 = new Button();
+            button10 = new Button();
+            label23 = new Label();
+            label24 = new Label();
+            label25 = new Label();
+            dateTimePicker6 = new DateTimePicker();
+            label26 = new Label();
+            dateTimePicker7 = new DateTimePicker();
+            label27 = new Label();
+            comboBox5 = new ComboBox();
+            textBox12 = new TextBox();
             gbDemolicion = new GroupBox();
             textBox9 = new TextBox();
             textBox11 = new TextBox();
@@ -437,14 +437,12 @@
             // 
             gbMurosContencion.Controls.Add(textBox10);
             gbMurosContencion.Controls.Add(textBox6);
-            gbMurosContencion.Controls.Add(textBox7);
             gbMurosContencion.Controls.Add(label21);
             gbMurosContencion.Controls.Add(label22);
             gbMurosContencion.Controls.Add(listBox2);
             gbMurosContencion.Controls.Add(button8);
             gbMurosContencion.Controls.Add(button9);
             gbMurosContencion.Controls.Add(button10);
-            gbMurosContencion.Controls.Add(comboBox5);
             gbMurosContencion.Controls.Add(label23);
             gbMurosContencion.Controls.Add(label24);
             gbMurosContencion.Controls.Add(label25);
@@ -452,152 +450,14 @@
             gbMurosContencion.Controls.Add(label26);
             gbMurosContencion.Controls.Add(dateTimePicker7);
             gbMurosContencion.Controls.Add(label27);
+            gbMurosContencion.Controls.Add(comboBox5);
+            gbMurosContencion.Controls.Add(textBox12);
             gbMurosContencion.Location = new Point(112, 542);
             gbMurosContencion.Name = "gbMurosContencion";
             gbMurosContencion.Size = new Size(1615, 634);
             gbMurosContencion.TabIndex = 37;
             gbMurosContencion.TabStop = false;
             gbMurosContencion.Text = "Atención requerimiento";
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(281, 171);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(200, 39);
-            textBox10.TabIndex = 40;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(281, 315);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(200, 39);
-            textBox6.TabIndex = 36;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(281, 254);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(200, 39);
-            textBox7.TabIndex = 35;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(20, 322);
-            label21.Name = "label21";
-            label21.Size = new Size(114, 32);
-            label21.TabIndex = 34;
-            label21.Text = "Cantidad:";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(20, 258);
-            label22.Name = "label22";
-            label22.Size = new Size(250, 32);
-            label22.TabIndex = 33;
-            label22.Text = "Materiales requeridos:";
-            // 
-            // listBox2
-            // 
-            listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(527, 247);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(311, 292);
-            listBox2.TabIndex = 32;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(880, 387);
-            button8.Name = "button8";
-            button8.Size = new Size(150, 46);
-            button8.TabIndex = 31;
-            button8.Text = "Eliminar";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            button9.Location = new Point(880, 315);
-            button9.Name = "button9";
-            button9.Size = new Size(150, 46);
-            button9.TabIndex = 30;
-            button9.Text = "Modificar";
-            button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            button10.Location = new Point(331, 387);
-            button10.Name = "button10";
-            button10.Size = new Size(150, 46);
-            button10.TabIndex = 29;
-            button10.Text = "Agregar";
-            button10.UseVisualStyleBackColor = true;
-            // 
-            // comboBox5
-            // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(722, 163);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(190, 40);
-            comboBox5.TabIndex = 26;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(507, 166);
-            label23.Name = "label23";
-            label23.Size = new Size(171, 32);
-            label23.TabIndex = 25;
-            label23.Text = "Área del muro:";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Location = new Point(397, 222);
-            label24.Name = "label24";
-            label24.Size = new Size(0, 32);
-            label24.TabIndex = 20;
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Location = new Point(11, 171);
-            label25.Name = "label25";
-            label25.Size = new Size(218, 32);
-            label25.TabIndex = 19;
-            label25.Text = "Longitud del muro:";
-            // 
-            // dateTimePicker6
-            // 
-            dateTimePicker6.Location = new Point(507, 94);
-            dateTimePicker6.Name = "dateTimePicker6";
-            dateTimePicker6.Size = new Size(400, 39);
-            dateTimePicker6.TabIndex = 18;
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new Point(507, 59);
-            label26.Name = "label26";
-            label26.Size = new Size(150, 32);
-            label26.TabIndex = 17;
-            label26.Text = "Fecha de fin:";
-            // 
-            // dateTimePicker7
-            // 
-            dateTimePicker7.Location = new Point(20, 94);
-            dateTimePicker7.Name = "dateTimePicker7";
-            dateTimePicker7.Size = new Size(400, 39);
-            dateTimePicker7.TabIndex = 12;
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Location = new Point(11, 59);
-            label27.Name = "label27";
-            label27.Size = new Size(179, 32);
-            label27.TabIndex = 12;
-            label27.Text = "Fecha de inicio:";
             // 
             // gbEdificaciones
             // 
@@ -618,7 +478,7 @@
             gbEdificaciones.Controls.Add(label18);
             gbEdificaciones.Controls.Add(dateTimePicker5);
             gbEdificaciones.Controls.Add(label20);
-            gbEdificaciones.Location = new Point(134, 532);
+            gbEdificaciones.Location = new Point(94, 580);
             gbEdificaciones.Name = "gbEdificaciones";
             gbEdificaciones.Size = new Size(1626, 609);
             gbEdificaciones.TabIndex = 32;
@@ -641,7 +501,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(281, 254);
+            textBox4.Location = new Point(722, 159);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(200, 39);
             textBox4.TabIndex = 35;
@@ -702,9 +562,9 @@
             // comboBox4
             // 
             comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(722, 155);
+            comboBox4.Location = new Point(281, 251);
             comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(190, 40);
+            comboBox4.Size = new Size(200, 40);
             comboBox4.TabIndex = 26;
             // 
             // label14
@@ -764,6 +624,146 @@
             label20.Size = new Size(179, 32);
             label20.TabIndex = 12;
             label20.Text = "Fecha de inicio:";
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(281, 171);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(200, 39);
+            textBox10.TabIndex = 40;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(281, 315);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(200, 39);
+            textBox6.TabIndex = 36;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(20, 322);
+            label21.Name = "label21";
+            label21.Size = new Size(114, 32);
+            label21.TabIndex = 34;
+            label21.Text = "Cantidad:";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(20, 258);
+            label22.Name = "label22";
+            label22.Size = new Size(250, 32);
+            label22.TabIndex = 33;
+            label22.Text = "Materiales requeridos:";
+            // 
+            // listBox2
+            // 
+            listBox2.FormattingEnabled = true;
+            listBox2.Location = new Point(527, 247);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(311, 292);
+            listBox2.TabIndex = 32;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(880, 387);
+            button8.Name = "button8";
+            button8.Size = new Size(150, 46);
+            button8.TabIndex = 31;
+            button8.Text = "Eliminar";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(880, 315);
+            button9.Name = "button9";
+            button9.Size = new Size(150, 46);
+            button9.TabIndex = 30;
+            button9.Text = "Modificar";
+            button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(331, 387);
+            button10.Name = "button10";
+            button10.Size = new Size(150, 46);
+            button10.TabIndex = 29;
+            button10.Text = "Agregar";
+            button10.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(507, 166);
+            label23.Name = "label23";
+            label23.Size = new Size(171, 32);
+            label23.TabIndex = 25;
+            label23.Text = "Área del muro:";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(397, 222);
+            label24.Name = "label24";
+            label24.Size = new Size(0, 32);
+            label24.TabIndex = 20;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(11, 171);
+            label25.Name = "label25";
+            label25.Size = new Size(218, 32);
+            label25.TabIndex = 19;
+            label25.Text = "Longitud del muro:";
+            // 
+            // dateTimePicker6
+            // 
+            dateTimePicker6.Location = new Point(507, 94);
+            dateTimePicker6.Name = "dateTimePicker6";
+            dateTimePicker6.Size = new Size(400, 39);
+            dateTimePicker6.TabIndex = 18;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(507, 59);
+            label26.Name = "label26";
+            label26.Size = new Size(150, 32);
+            label26.TabIndex = 17;
+            label26.Text = "Fecha de fin:";
+            // 
+            // dateTimePicker7
+            // 
+            dateTimePicker7.Location = new Point(20, 94);
+            dateTimePicker7.Name = "dateTimePicker7";
+            dateTimePicker7.Size = new Size(400, 39);
+            dateTimePicker7.TabIndex = 12;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(11, 59);
+            label27.Name = "label27";
+            label27.Size = new Size(179, 32);
+            label27.TabIndex = 12;
+            label27.Text = "Fecha de inicio:";
+            // 
+            // comboBox5
+            // 
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Location = new Point(276, 248);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(200, 40);
+            comboBox5.TabIndex = 39;
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(689, 159);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(200, 39);
+            textBox12.TabIndex = 39;
             // 
             // gbDemolicion
             // 
@@ -1057,14 +1057,12 @@
         private DataGridViewTextBoxColumn Column10;
         private GroupBox gbMurosContencion;
         private TextBox textBox6;
-        private TextBox textBox7;
         private Label label21;
         private Label label22;
         private ListBox listBox2;
         private Button button8;
         private Button button9;
         private Button button10;
-        private ComboBox comboBox5;
         private Label label23;
         private Label label24;
         private Label label25;
@@ -1086,5 +1084,7 @@
         private DateTimePicker dateTimePicker9;
         private Label label34;
         private TextBox textBox10;
+        private TextBox textBox12;
+        private ComboBox comboBox5;
     }
 }

@@ -42,7 +42,9 @@ namespace CapaPresentacion
 
         private void btnMaximizar2_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Maximized;
+            btnMaximizar2.Visible = false;
+            btnRestaurar2.Visible = true;
         }
 
         private void btnMinimizar2_Click(object sender, EventArgs e)
@@ -75,6 +77,11 @@ namespace CapaPresentacion
         private void btnMaquinaria_Click(object sender, EventArgs e)
         {
             AbrirFormHija(new MaquinariaFormServicio());
+        }
+
+        private void btnPersonal_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new MantenedorPersonal());
         }
     }
 }

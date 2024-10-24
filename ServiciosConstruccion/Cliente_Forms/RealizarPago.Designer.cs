@@ -55,6 +55,7 @@
             textBox5 = new TextBox();
             button2 = new Button();
             dateTimePicker2 = new DateTimePicker();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -163,9 +164,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(1271, 297);
+            button1.Location = new Point(1249, 287);
             button1.Name = "button1";
-            button1.Size = new Size(150, 46);
+            button1.Size = new Size(170, 68);
             button1.TabIndex = 9;
             button1.Text = "Agregar";
             button1.UseVisualStyleBackColor = true;
@@ -306,11 +307,21 @@
             dateTimePicker2.Size = new Size(400, 39);
             dateTimePicker2.TabIndex = 27;
             // 
+            // button3
+            // 
+            button3.Location = new Point(1400, 708);
+            button3.Name = "button3";
+            button3.Size = new Size(170, 68);
+            button3.TabIndex = 27;
+            button3.Text = "Anular";
+            button3.UseVisualStyleBackColor = true;
+            // 
             // RealizarPago
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1750, 1189);
+            Controls.Add(button3);
             Controls.Add(dateTimePicker2);
             Controls.Add(button2);
             Controls.Add(textBox5);
@@ -361,5 +372,6 @@
         private TextBox textBox5;
         private Button button2;
         private DateTimePicker dateTimePicker2;
+        private Button button3;
     }
 }

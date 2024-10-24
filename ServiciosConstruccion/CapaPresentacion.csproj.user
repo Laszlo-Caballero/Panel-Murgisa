@@ -34,6 +34,9 @@
     <Compile Update="Cliente_Forms\Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Servicios_Forms\MantenedorPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Servicios_Forms\MaquinariaFormServicio.cs">
       <SubType>Form</SubType>
     </Compile>

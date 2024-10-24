@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             gbMaterial = new GroupBox();
-            label1 = new Label();
-            txtMaterial = new TextBox();
-            label2 = new Label();
-            cbMaterial = new ComboBox();
-            label3 = new Label();
-            label4 = new Label();
-            txtPrecio = new TextBox();
-            bttnAgregar = new Button();
-            bttnModificar = new Button();
-            bttnCancelar = new Button();
+            dtpMaterial = new DateTimePicker();
+            label6 = new Label();
+            cbkEstado = new CheckBox();
+            txtCodigo = new TextBox();
             label5 = new Label();
-            textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
+            bttnCancelar = new Button();
+            bttnModificar = new Button();
+            bttnAgregar = new Button();
+            txtPrecio = new TextBox();
+            label4 = new Label();
+            cbMaterial = new ComboBox();
+            label2 = new Label();
+            txtNombre = new TextBox();
+            label1 = new Label();
+            label3 = new Label();
+            dgvMaterial = new DataGridView();
             btnNuevo = new Button();
             btnEditar = new Button();
             bttnSalir = new Button();
             bttnDeshabilitar = new Button();
-            cbkEstado = new CheckBox();
-            label6 = new Label();
-            dateTimePicker1 = new DateTimePicker();
             gbMaterial.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMaterial).BeginInit();
             SuspendLayout();
             // 
             // gbMaterial
             // 
-            gbMaterial.Controls.Add(dateTimePicker1);
+            gbMaterial.Controls.Add(dtpMaterial);
             gbMaterial.Controls.Add(label6);
             gbMaterial.Controls.Add(cbkEstado);
-            gbMaterial.Controls.Add(textBox1);
+            gbMaterial.Controls.Add(txtCodigo);
             gbMaterial.Controls.Add(label5);
             gbMaterial.Controls.Add(bttnCancelar);
             gbMaterial.Controls.Add(bttnModificar);
@@ -67,7 +67,7 @@
             gbMaterial.Controls.Add(label4);
             gbMaterial.Controls.Add(cbMaterial);
             gbMaterial.Controls.Add(label2);
-            gbMaterial.Controls.Add(txtMaterial);
+            gbMaterial.Controls.Add(txtNombre);
             gbMaterial.Controls.Add(label1);
             gbMaterial.Location = new Point(12, 49);
             gbMaterial.Name = "gbMaterial";
@@ -76,21 +76,99 @@
             gbMaterial.TabStop = false;
             gbMaterial.Text = "Datos Material";
             // 
-            // label1
+            // dtpMaterial
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 35);
-            label1.Name = "label1";
-            label1.Size = new Size(54, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre:";
+            dtpMaterial.Location = new Point(272, 108);
+            dtpMaterial.Name = "dtpMaterial";
+            dtpMaterial.Size = new Size(200, 23);
+            dtpMaterial.TabIndex = 13;
             // 
-            // txtMaterial
+            // label6
             // 
-            txtMaterial.Location = new Point(105, 35);
-            txtMaterial.Name = "txtMaterial";
-            txtMaterial.Size = new Size(143, 23);
-            txtMaterial.TabIndex = 1;
+            label6.AutoSize = true;
+            label6.Location = new Point(272, 77);
+            label6.Name = "label6";
+            label6.Size = new Size(84, 15);
+            label6.TabIndex = 12;
+            label6.Text = "Fecha Registro";
+            // 
+            // cbkEstado
+            // 
+            cbkEstado.AutoSize = true;
+            cbkEstado.Location = new Point(414, 75);
+            cbkEstado.Name = "cbkEstado";
+            cbkEstado.Size = new Size(107, 19);
+            cbkEstado.TabIndex = 11;
+            cbkEstado.Text = "Estado Material";
+            cbkEstado.UseVisualStyleBackColor = true;
+            // 
+            // txtCodigo
+            // 
+            txtCodigo.Enabled = false;
+            txtCodigo.Location = new Point(336, 33);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(143, 23);
+            txtCodigo.TabIndex = 10;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(272, 36);
+            label5.Name = "label5";
+            label5.Size = new Size(49, 15);
+            label5.TabIndex = 9;
+            label5.Text = "Codigo:";
+            // 
+            // bttnCancelar
+            // 
+            bttnCancelar.Location = new Point(543, 114);
+            bttnCancelar.Name = "bttnCancelar";
+            bttnCancelar.Size = new Size(96, 32);
+            bttnCancelar.TabIndex = 8;
+            bttnCancelar.Text = "Cancelar";
+            bttnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // bttnModificar
+            // 
+            bttnModificar.Location = new Point(543, 71);
+            bttnModificar.Name = "bttnModificar";
+            bttnModificar.Size = new Size(96, 32);
+            bttnModificar.TabIndex = 7;
+            bttnModificar.Text = "Modificar";
+            bttnModificar.UseVisualStyleBackColor = true;
+            // 
+            // bttnAgregar
+            // 
+            bttnAgregar.Location = new Point(543, 26);
+            bttnAgregar.Name = "bttnAgregar";
+            bttnAgregar.Size = new Size(96, 32);
+            bttnAgregar.TabIndex = 6;
+            bttnAgregar.Text = "Agregar";
+            bttnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // txtPrecio
+            // 
+            txtPrecio.Location = new Point(105, 111);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(143, 23);
+            txtPrecio.TabIndex = 5;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 114);
+            label4.Name = "label4";
+            label4.Size = new Size(78, 15);
+            label4.TabIndex = 4;
+            label4.Text = "Precio Venta: ";
+            // 
+            // cbMaterial
+            // 
+            cbMaterial.FormattingEnabled = true;
+            cbMaterial.Location = new Point(105, 71);
+            cbMaterial.Name = "cbMaterial";
+            cbMaterial.Size = new Size(143, 23);
+            cbMaterial.TabIndex = 3;
             // 
             // label2
             // 
@@ -101,13 +179,21 @@
             label2.TabIndex = 2;
             label2.Text = "Proveedor:";
             // 
-            // cbMaterial
+            // txtNombre
             // 
-            cbMaterial.FormattingEnabled = true;
-            cbMaterial.Location = new Point(105, 71);
-            cbMaterial.Name = "cbMaterial";
-            cbMaterial.Size = new Size(143, 23);
-            cbMaterial.TabIndex = 3;
+            txtNombre.Location = new Point(105, 35);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(143, 23);
+            txtNombre.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 35);
+            label1.Name = "label1";
+            label1.Size = new Size(54, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Nombre:";
             // 
             // label3
             // 
@@ -119,73 +205,13 @@
             label3.TabIndex = 1;
             label3.Text = "Materiales";
             // 
-            // label4
+            // dgvMaterial
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 114);
-            label4.Name = "label4";
-            label4.Size = new Size(78, 15);
-            label4.TabIndex = 4;
-            label4.Text = "Precio Venta: ";
-            // 
-            // txtPrecio
-            // 
-            txtPrecio.Location = new Point(105, 111);
-            txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(143, 23);
-            txtPrecio.TabIndex = 5;
-            // 
-            // bttnAgregar
-            // 
-            bttnAgregar.Location = new Point(543, 26);
-            bttnAgregar.Name = "bttnAgregar";
-            bttnAgregar.Size = new Size(96, 32);
-            bttnAgregar.TabIndex = 6;
-            bttnAgregar.Text = "Agregar";
-            bttnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // bttnModificar
-            // 
-            bttnModificar.Location = new Point(543, 71);
-            bttnModificar.Name = "bttnModificar";
-            bttnModificar.Size = new Size(96, 32);
-            bttnModificar.TabIndex = 7;
-            bttnModificar.Text = "Modificar";
-            bttnModificar.UseVisualStyleBackColor = true;
-            // 
-            // bttnCancelar
-            // 
-            bttnCancelar.Location = new Point(543, 114);
-            bttnCancelar.Name = "bttnCancelar";
-            bttnCancelar.Size = new Size(96, 32);
-            bttnCancelar.TabIndex = 8;
-            bttnCancelar.Text = "Cancelar";
-            bttnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(272, 36);
-            label5.Name = "label5";
-            label5.Size = new Size(49, 15);
-            label5.TabIndex = 9;
-            label5.Text = "Codigo:";
-            // 
-            // textBox1
-            // 
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(336, 33);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(143, 23);
-            textBox1.TabIndex = 10;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 214);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(540, 219);
-            dataGridView1.TabIndex = 2;
+            dgvMaterial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMaterial.Location = new Point(12, 214);
+            dgvMaterial.Name = "dgvMaterial";
+            dgvMaterial.Size = new Size(540, 219);
+            dgvMaterial.TabIndex = 2;
             // 
             // btnNuevo
             // 
@@ -223,32 +249,6 @@
             bttnDeshabilitar.Text = "Deshabilitar";
             bttnDeshabilitar.UseVisualStyleBackColor = true;
             // 
-            // cbkEstado
-            // 
-            cbkEstado.AutoSize = true;
-            cbkEstado.Location = new Point(414, 75);
-            cbkEstado.Name = "cbkEstado";
-            cbkEstado.Size = new Size(107, 19);
-            cbkEstado.TabIndex = 11;
-            cbkEstado.Text = "Estado Material";
-            cbkEstado.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(272, 77);
-            label6.Name = "label6";
-            label6.Size = new Size(84, 15);
-            label6.TabIndex = 12;
-            label6.Text = "Fecha Registro";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(272, 108);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 13;
-            // 
             // Material
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -258,7 +258,7 @@
             Controls.Add(bttnSalir);
             Controls.Add(btnEditar);
             Controls.Add(btnNuevo);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvMaterial);
             Controls.Add(label3);
             Controls.Add(gbMaterial);
             FormBorderStyle = FormBorderStyle.None;
@@ -266,7 +266,7 @@
             Text = "Material";
             gbMaterial.ResumeLayout(false);
             gbMaterial.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMaterial).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -276,7 +276,7 @@
         private GroupBox gbMaterial;
         private ComboBox cbMaterial;
         private Label label2;
-        private TextBox txtMaterial;
+        private TextBox txtNombre;
         private Label label1;
         private Label label3;
         private TextBox txtPrecio;
@@ -284,14 +284,14 @@
         private Button bttnCancelar;
         private Button bttnModificar;
         private Button bttnAgregar;
-        private TextBox textBox1;
+        private TextBox txtCodigo;
         private Label label5;
-        private DataGridView dataGridView1;
+        private DataGridView dgvMaterial;
         private Button btnNuevo;
         private Button btnEditar;
         private Button bttnSalir;
         private Button bttnDeshabilitar;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpMaterial;
         private Label label6;
         private CheckBox cbkEstado;
     }

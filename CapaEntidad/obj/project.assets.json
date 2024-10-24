@@ -2748,23 +2748,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LUCIANA\\.nuget\\packages\\": {},
+    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LUCIANA\\Desktop\\CICLO 6\\MOANSO\\PROYECTO\\Panel-Murgisa\\CapaEntidad\\CapaEntidad.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\Documents\\Panel-Murgisa\\CapaEntidad\\CapaEntidad.csproj",
       "projectName": "CapaEntidad",
-      "projectPath": "C:\\Users\\LUCIANA\\Desktop\\CICLO 6\\MOANSO\\PROYECTO\\Panel-Murgisa\\CapaEntidad\\CapaEntidad.csproj",
-      "packagesPath": "C:\\Users\\LUCIANA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LUCIANA\\Desktop\\CICLO 6\\MOANSO\\PROYECTO\\Panel-Murgisa\\CapaEntidad\\obj\\",
+      "projectPath": "C:\\Users\\Lenovo\\Documents\\Panel-Murgisa\\CapaEntidad\\CapaEntidad.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lenovo\\Documents\\Panel-Murgisa\\CapaEntidad\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\LUCIANA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2818,7 +2818,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

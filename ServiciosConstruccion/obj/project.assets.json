@@ -2932,8 +2932,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {
-              "projectPath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\CapaAccesoDatos.csproj"
+            "C:\\Users\\Usuario\\Desktop\\MOANSO\\Panel-Murgisa\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\MOANSO\\Panel-Murgisa\\CapaAccesoDatos\\CapaAccesoDatos.csproj"
             }
           }
         }
@@ -2980,5 +2980,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\Usuario\\Desktop\\MOANSO\\Panel-Murgisa\\ServiciosConstruccion\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

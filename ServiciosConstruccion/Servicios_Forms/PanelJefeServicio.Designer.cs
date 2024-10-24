@@ -259,6 +259,7 @@
             btnMaquinaria.TabIndex = 5;
             btnMaquinaria.Text = "Maquinaria";
             btnMaquinaria.UseVisualStyleBackColor = false;
+            btnMaquinaria.Click += btnMaquinaria_Click;
             // 
             // panel3
             // 
@@ -283,6 +284,7 @@
             btnMaterial.TabIndex = 3;
             btnMaterial.Text = "Material";
             btnMaterial.UseVisualStyleBackColor = false;
+            btnMaterial.Click += btnMaterial_Click;
             // 
             // panel2
             // 

@@ -66,5 +66,15 @@ namespace CapaPresentacion
         {
             AbrirFormHija(new RealizarOrdenDeServicio());
         }
+
+        private void btnMaterial_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new MaterialFormServicio());
+        }
+
+        private void btnMaquinaria_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new MaquinariaFormServicio());
+        }
     }
 }

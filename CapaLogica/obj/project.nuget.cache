@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "55GQolc4Xng=",
+  "dgSpecHash": "4Wsm3a/jDCY=",
   "success": true,
-  "projectFilePath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\ServiciosConstruccion\\CapaPresentacion.csproj",
+  "projectFilePath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaLogica\\CapaLogica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\laszl\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
     "C:\\Users\\laszl\\.nuget\\packages\\azure.identity\\1.13.0\\azure.identity.1.13.0.nupkg.sha512",

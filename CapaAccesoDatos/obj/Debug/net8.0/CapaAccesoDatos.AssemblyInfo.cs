@@ -11,15 +11,13 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("CapaPresentacion")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("CapaAccesoDatos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ddd039ddf0d6c6c4bf6be6f0a88d47d3f7caad3")]
-[assembly: System.Reflection.AssemblyProductAttribute("CapaPresentacion")]
-[assembly: System.Reflection.AssemblyTitleAttribute("CapaPresentacion")]
+[assembly: System.Reflection.AssemblyProductAttribute("CapaAccesoDatos")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CapaAccesoDatos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
-[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 

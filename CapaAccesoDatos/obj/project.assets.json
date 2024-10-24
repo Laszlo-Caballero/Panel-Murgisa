@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {
+    "net8.0": {
       "Azure.Core/1.44.1": {
         "type": "package",
         "dependencies": {
@@ -990,20 +990,6 @@
             "assetType": "runtime",
             "rid": "win"
           }
-        }
-      },
-      "CapaAccesoDatos/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Azure.Identity": "1.13.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10"
-        },
-        "compile": {
-          "bin/placeholder/CapaAccesoDatos.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CapaAccesoDatos.dll": {}
         }
       }
     }
@@ -2753,16 +2739,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "CapaAccesoDatos/1.0.0": {
-      "type": "project",
-      "path": "../CapaAccesoDatos/CapaAccesoDatos.csproj",
-      "msbuildProject": "../CapaAccesoDatos/CapaAccesoDatos.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0-windows7.0": [
-      "CapaAccesoDatos >= 1.0.0",
+    "net8.0": [
+      "Azure.Identity >= 1.13.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.10"
     ]
   },
@@ -2772,18 +2753,18 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\ServiciosConstruccion\\CapaPresentacion.csproj",
-      "projectName": "CapaPresentacion",
-      "projectPath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\ServiciosConstruccion\\CapaPresentacion.csproj",
+      "projectUniqueName": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
+      "projectName": "CapaAccesoDatos",
+      "projectPath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
       "packagesPath": "C:\\Users\\laszl\\.nuget\\packages\\",
-      "outputPath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\ServiciosConstruccion\\obj\\",
+      "outputPath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\laszl\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0-windows"
+        "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -2791,13 +2772,9 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
-          "projectReferences": {
-            "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {
-              "projectPath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\CapaAccesoDatos.csproj"
-            }
-          }
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -2812,9 +2789,13 @@
       }
     },
     "frameworks": {
-      "net8.0-windows7.0": {
-        "targetAlias": "net8.0-windows",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
+          "Azure.Identity": {
+            "target": "Package",
+            "version": "[1.13.0, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[8.0.10, )"
@@ -2834,9 +2815,6 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
-          },
-          "Microsoft.WindowsDesktop.App.WindowsForms": {
-            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"

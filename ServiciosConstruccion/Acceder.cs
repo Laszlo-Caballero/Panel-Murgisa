@@ -58,7 +58,22 @@ namespace Capa_Presentacion
                         MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-               
+                else if (seleccion == "Jefe de Mantenimiento")
+                {
+
+                    if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
+                    {
+
+                        PanelMantenimiento formMantenimiento = new PanelMantenimiento();
+                        formMantenimiento.Show();
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
                 else if (seleccion == "Jefe de Almacén")
                 {
                   

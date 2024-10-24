@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\MOANSO\\Panel-Murgisa\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {}
+    "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\MOANSO\\Panel-Murgisa\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {
+    "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\MOANSO\\Panel-Murgisa\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
+        "projectUniqueName": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
         "projectName": "CapaAccesoDatos",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\MOANSO\\Panel-Murgisa\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\MOANSO\\Panel-Murgisa\\CapaAccesoDatos\\obj\\",
+        "projectPath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
+        "packagesPath": "C:\\Users\\laszl\\.nuget\\packages\\",
+        "outputPath": "E:\\Universidad\\moanso\\proyecto\\ProyectoFinal1.0\\ProyectoFinal1\\ServiciosConstruccion\\CapaAccesoDatos\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\laszl\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.13.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

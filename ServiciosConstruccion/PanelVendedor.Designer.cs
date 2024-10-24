@@ -68,7 +68,7 @@
             BarraTitulo.Dock = DockStyle.Top;
             BarraTitulo.Location = new Point(0, 0);
             BarraTitulo.Name = "BarraTitulo";
-            BarraTitulo.Size = new Size(1300, 38);
+            BarraTitulo.Size = new Size(1353, 38);
             BarraTitulo.TabIndex = 0;
             BarraTitulo.Paint += BarraTitulo_Paint;
             BarraTitulo.MouseDown += BarraTitulo_MouseDown;
@@ -78,8 +78,7 @@
             btnResturar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnResturar.BackgroundImageLayout = ImageLayout.Zoom;
             btnResturar.Cursor = Cursors.Hand;
-            btnResturar.Image = (Image)resources.GetObject("btnResturar.Image");
-            btnResturar.Location = new Point(1232, 4);
+            btnResturar.Location = new Point(1285, 4);
             btnResturar.Name = "btnResturar";
             btnResturar.Size = new Size(25, 25);
             btnResturar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -94,7 +93,7 @@
             btnMinimizar.BackgroundImageLayout = ImageLayout.Zoom;
             btnMinimizar.Cursor = Cursors.Hand;
             btnMinimizar.Image = (Image)resources.GetObject("btnMinimizar.Image");
-            btnMinimizar.Location = new Point(1201, 3);
+            btnMinimizar.Location = new Point(1254, 3);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.Size = new Size(25, 25);
             btnMinimizar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -108,7 +107,7 @@
             btnMaximizar.BackgroundImageLayout = ImageLayout.Zoom;
             btnMaximizar.Cursor = Cursors.Hand;
             btnMaximizar.Image = (Image)resources.GetObject("btnMaximizar.Image");
-            btnMaximizar.Location = new Point(1232, 4);
+            btnMaximizar.Location = new Point(1285, 4);
             btnMaximizar.Name = "btnMaximizar";
             btnMaximizar.Size = new Size(25, 25);
             btnMaximizar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -122,7 +121,7 @@
             btnCerrar.BackgroundImageLayout = ImageLayout.Zoom;
             btnCerrar.Cursor = Cursors.Hand;
             btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
-            btnCerrar.Location = new Point(1263, 4);
+            btnCerrar.Location = new Point(1316, 4);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(25, 25);
             btnCerrar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -149,7 +148,7 @@
             MenuVertical.Dock = DockStyle.Left;
             MenuVertical.Location = new Point(0, 38);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(200, 482);
+            MenuVertical.Size = new Size(200, 614);
             MenuVertical.TabIndex = 1;
             // 
             // panel6
@@ -319,14 +318,14 @@
             PanelContenedor.Dock = DockStyle.Fill;
             PanelContenedor.Location = new Point(200, 38);
             PanelContenedor.Name = "PanelContenedor";
-            PanelContenedor.Size = new Size(1100, 482);
+            PanelContenedor.Size = new Size(1153, 614);
             PanelContenedor.TabIndex = 2;
             // 
             // PanelVendedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1300, 520);
+            ClientSize = new Size(1353, 652);
             Controls.Add(PanelContenedor);
             Controls.Add(MenuVertical);
             Controls.Add(BarraTitulo);

@@ -1,0 +1,13 @@
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\bin\Debug\net8.0\CapaAccesoDatos.deps.json
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\bin\Debug\net8.0\CapaAccesoDatos.dll
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\bin\Debug\net8.0\CapaAccesoDatos.pdb
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\obj\Debug\net8.0\CapaAccesoDatos.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\obj\Debug\net8.0\CapaAccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\obj\Debug\net8.0\CapaAccesoDatos.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\obj\Debug\net8.0\CapaAccesoDatos.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\obj\Debug\net8.0\CapaAccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\obj\Debug\net8.0\CapaAccesoDatos.sourcelink.json
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\obj\Debug\net8.0\CapaAccesoDatos.dll
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\obj\Debug\net8.0\refint\CapaAccesoDatos.dll
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\obj\Debug\net8.0\CapaAccesoDatos.pdb
+C:\Users\Usuario\Desktop\MOANSO\Panel-Murgisa\CapaAccesoDatos\obj\Debug\net8.0\ref\CapaAccesoDatos.dll

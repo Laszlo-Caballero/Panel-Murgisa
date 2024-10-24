@@ -318,6 +318,7 @@
             btnEquipoMantenimiento.TabIndex = 5;
             btnEquipoMantenimiento.Text = "Herramientas";
             btnEquipoMantenimiento.UseVisualStyleBackColor = false;
+            btnEquipoMantenimiento.Click += btnEquipoMantenimiento_Click;
             // 
             // panel3
             // 
@@ -367,7 +368,7 @@
             btnRepuestos.TabIndex = 1;
             btnRepuestos.Text = "Respuestos";
             btnRepuestos.UseVisualStyleBackColor = false;
-            btnRepuestos.Click += btnCliente_Click;
+            btnRepuestos.Click += btnRepuestos_Click;
             // 
             // panel1
             // 

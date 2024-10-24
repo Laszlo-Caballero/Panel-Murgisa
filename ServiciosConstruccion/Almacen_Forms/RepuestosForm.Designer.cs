@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion.Almacen_Forms
 {
-    partial class Proveedor
+    partial class RepuestosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,8 @@
             bttnSalir = new Button();
             btnEditar = new Button();
             btnNuevo = new Button();
-            dgvProveedor = new DataGridView();
-            label3 = new Label();
-            gbProveedor = new GroupBox();
-            dtpProveedor = new DateTimePicker();
+            dtpMaterial = new DateTimePicker();
+            dgvMaterial = new DataGridView();
             label6 = new Label();
             cbkEstado = new CheckBox();
             txtCodigo = new TextBox();
@@ -43,17 +41,21 @@
             bttnCancelar = new Button();
             bttnModificar = new Button();
             bttnAgregar = new Button();
-            txtRuc = new TextBox();
+            txtPrecio = new TextBox();
+            cbMaterial = new ComboBox();
             label2 = new Label();
-            txtRazSocial = new TextBox();
+            txtNombre = new TextBox();
+            gbMaterial = new GroupBox();
+            label4 = new Label();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvProveedor).BeginInit();
-            gbProveedor.SuspendLayout();
+            label3 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvMaterial).BeginInit();
+            gbMaterial.SuspendLayout();
             SuspendLayout();
             // 
             // bttnDeshabilitar
             // 
-            bttnDeshabilitar.Location = new Point(572, 309);
+            bttnDeshabilitar.Location = new Point(592, 313);
             bttnDeshabilitar.Name = "bttnDeshabilitar";
             bttnDeshabilitar.Size = new Size(91, 33);
             bttnDeshabilitar.TabIndex = 13;
@@ -62,7 +64,7 @@
             // 
             // bttnSalir
             // 
-            bttnSalir.Location = new Point(572, 348);
+            bttnSalir.Location = new Point(592, 352);
             bttnSalir.Name = "bttnSalir";
             bttnSalir.Size = new Size(91, 33);
             bttnSalir.TabIndex = 12;
@@ -71,7 +73,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(572, 270);
+            btnEditar.Location = new Point(592, 274);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(91, 33);
             btnEditar.TabIndex = 11;
@@ -80,63 +82,32 @@
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(572, 231);
+            btnNuevo.Location = new Point(592, 235);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(91, 33);
             btnNuevo.TabIndex = 10;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
             // 
-            // dgvProveedor
+            // dtpMaterial
             // 
-            dgvProveedor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProveedor.Location = new Point(12, 205);
-            dgvProveedor.Name = "dgvProveedor";
-            dgvProveedor.Size = new Size(540, 219);
-            dgvProveedor.TabIndex = 9;
+            dtpMaterial.Location = new Point(272, 108);
+            dtpMaterial.Name = "dtpMaterial";
+            dtpMaterial.Size = new Size(200, 23);
+            dtpMaterial.TabIndex = 13;
             // 
-            // label3
+            // dgvMaterial
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
-            label3.Location = new Point(301, 5);
-            label3.Name = "label3";
-            label3.Size = new Size(126, 32);
-            label3.TabIndex = 8;
-            label3.Text = "Proveedor";
-            // 
-            // gbProveedor
-            // 
-            gbProveedor.Controls.Add(dtpProveedor);
-            gbProveedor.Controls.Add(label6);
-            gbProveedor.Controls.Add(cbkEstado);
-            gbProveedor.Controls.Add(txtCodigo);
-            gbProveedor.Controls.Add(label5);
-            gbProveedor.Controls.Add(bttnCancelar);
-            gbProveedor.Controls.Add(bttnModificar);
-            gbProveedor.Controls.Add(bttnAgregar);
-            gbProveedor.Controls.Add(txtRuc);
-            gbProveedor.Controls.Add(label2);
-            gbProveedor.Controls.Add(txtRazSocial);
-            gbProveedor.Controls.Add(label1);
-            gbProveedor.Location = new Point(12, 40);
-            gbProveedor.Name = "gbProveedor";
-            gbProveedor.Size = new Size(693, 159);
-            gbProveedor.TabIndex = 7;
-            gbProveedor.TabStop = false;
-            gbProveedor.Text = "Datos Proveedor";
-            // 
-            // dtpProveedor
-            // 
-            dtpProveedor.Location = new Point(121, 114);
-            dtpProveedor.Name = "dtpProveedor";
-            dtpProveedor.Size = new Size(200, 23);
-            dtpProveedor.TabIndex = 13;
+            dgvMaterial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMaterial.Location = new Point(32, 209);
+            dgvMaterial.Name = "dgvMaterial";
+            dgvMaterial.Size = new Size(540, 219);
+            dgvMaterial.TabIndex = 9;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 114);
+            label6.Location = new Point(272, 77);
             label6.Name = "label6";
             label6.Size = new Size(84, 15);
             label6.TabIndex = 12;
@@ -145,13 +116,12 @@
             // cbkEstado
             // 
             cbkEstado.AutoSize = true;
-            cbkEstado.BackColor = SystemColors.Control;
-            cbkEstado.Location = new Point(398, 113);
+            cbkEstado.Location = new Point(414, 75);
             cbkEstado.Name = "cbkEstado";
-            cbkEstado.Size = new Size(118, 19);
+            cbkEstado.Size = new Size(113, 19);
             cbkEstado.TabIndex = 11;
-            cbkEstado.Text = "Estado Proveedor";
-            cbkEstado.UseVisualStyleBackColor = false;
+            cbkEstado.Text = "Estado Repuesto";
+            cbkEstado.UseVisualStyleBackColor = true;
             // 
             // txtCodigo
             // 
@@ -197,57 +167,108 @@
             bttnAgregar.Text = "Agregar";
             bttnAgregar.UseVisualStyleBackColor = true;
             // 
-            // txtRuc
+            // txtPrecio
             // 
-            txtRuc.Location = new Point(105, 71);
-            txtRuc.Name = "txtRuc";
-            txtRuc.Size = new Size(143, 23);
-            txtRuc.TabIndex = 5;
+            txtPrecio.Location = new Point(105, 111);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(143, 23);
+            txtPrecio.TabIndex = 5;
+            // 
+            // cbMaterial
+            // 
+            cbMaterial.FormattingEnabled = true;
+            cbMaterial.Location = new Point(105, 71);
+            cbMaterial.Name = "cbMaterial";
+            cbMaterial.Size = new Size(143, 23);
+            cbMaterial.TabIndex = 3;
+            cbMaterial.SelectedIndexChanged += cbMaterial_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(12, 74);
             label2.Name = "label2";
-            label2.Size = new Size(30, 15);
+            label2.Size = new Size(64, 15);
             label2.TabIndex = 2;
-            label2.Text = "Ruc:";
+            label2.Text = "Proveedor:";
             // 
-            // txtRazSocial
+            // txtNombre
             // 
-            txtRazSocial.Location = new Point(105, 35);
-            txtRazSocial.Name = "txtRazSocial";
-            txtRazSocial.Size = new Size(143, 23);
-            txtRazSocial.TabIndex = 1;
+            txtNombre.Location = new Point(105, 35);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(143, 23);
+            txtNombre.TabIndex = 1;
+            // 
+            // gbMaterial
+            // 
+            gbMaterial.Controls.Add(dtpMaterial);
+            gbMaterial.Controls.Add(label6);
+            gbMaterial.Controls.Add(cbkEstado);
+            gbMaterial.Controls.Add(txtCodigo);
+            gbMaterial.Controls.Add(label5);
+            gbMaterial.Controls.Add(bttnCancelar);
+            gbMaterial.Controls.Add(bttnModificar);
+            gbMaterial.Controls.Add(bttnAgregar);
+            gbMaterial.Controls.Add(txtPrecio);
+            gbMaterial.Controls.Add(label4);
+            gbMaterial.Controls.Add(cbMaterial);
+            gbMaterial.Controls.Add(label2);
+            gbMaterial.Controls.Add(txtNombre);
+            gbMaterial.Controls.Add(label1);
+            gbMaterial.Location = new Point(32, 44);
+            gbMaterial.Name = "gbMaterial";
+            gbMaterial.Size = new Size(693, 159);
+            gbMaterial.TabIndex = 7;
+            gbMaterial.TabStop = false;
+            gbMaterial.Text = "Datos Repuesto";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 114);
+            label4.Name = "label4";
+            label4.Size = new Size(78, 15);
+            label4.TabIndex = 4;
+            label4.Text = "Precio Venta: ";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(12, 35);
             label1.Name = "label1";
-            label1.Size = new Size(76, 15);
+            label1.Size = new Size(54, 15);
             label1.TabIndex = 0;
-            label1.Text = "Razon Social:";
+            label1.Text = "Nombre:";
             // 
-            // Proveedor
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+            label3.Location = new Point(321, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(125, 32);
+            label3.TabIndex = 8;
+            label3.Text = "Repuestos";
+            // 
+            // RepuestosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
-            ClientSize = new Size(733, 450);
+            ClientSize = new Size(800, 450);
             Controls.Add(bttnDeshabilitar);
             Controls.Add(bttnSalir);
             Controls.Add(btnEditar);
             Controls.Add(btnNuevo);
-            Controls.Add(dgvProveedor);
+            Controls.Add(dgvMaterial);
+            Controls.Add(gbMaterial);
             Controls.Add(label3);
-            Controls.Add(gbProveedor);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Proveedor";
-            Text = "Proveedor";
-            ((System.ComponentModel.ISupportInitialize)dgvProveedor).EndInit();
-            gbProveedor.ResumeLayout(false);
-            gbProveedor.PerformLayout();
+            Name = "RepuestosForm";
+            Text = "RepuestosForm";
+            ((System.ComponentModel.ISupportInitialize)dgvMaterial).EndInit();
+            gbMaterial.ResumeLayout(false);
+            gbMaterial.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -258,10 +279,8 @@
         private Button bttnSalir;
         private Button btnEditar;
         private Button btnNuevo;
-        private DataGridView dgvProveedor;
-        private Label label3;
-        private GroupBox gbProveedor;
-        private DateTimePicker dtpProveedor;
+        private DateTimePicker dtpMaterial;
+        private DataGridView dgvMaterial;
         private Label label6;
         private CheckBox cbkEstado;
         private TextBox txtCodigo;
@@ -269,9 +288,13 @@
         private Button bttnCancelar;
         private Button bttnModificar;
         private Button bttnAgregar;
-        private TextBox txtRuc;
+        private TextBox txtPrecio;
+        private ComboBox cbMaterial;
         private Label label2;
-        private TextBox txtRazSocial;
+        private TextBox txtNombre;
+        private GroupBox gbMaterial;
+        private Label label4;
         private Label label1;
+        private Label label3;
     }
 }

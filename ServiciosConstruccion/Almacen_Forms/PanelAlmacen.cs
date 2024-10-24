@@ -53,11 +53,6 @@ namespace CapaPresentacion.Almacen_Forms
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void btnCliente_Click(object sender, EventArgs e)
-        {
-
-        }
         private void AbrirFormHija(object formhija)
         {
             if (this.PanelContenedor.Controls.Count > 0)
@@ -94,6 +89,16 @@ namespace CapaPresentacion.Almacen_Forms
         private void btnProveedor_Click(object sender, EventArgs e)
         {
             AbrirFormHija(new Proveedor());
+        }
+
+        private void btnEquipoMantenimiento_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Herramientas());
+        }
+
+        private void btnRepuestos_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new RepuestosForm());
         }
     }
 }

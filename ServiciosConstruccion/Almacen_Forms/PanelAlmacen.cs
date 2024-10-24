@@ -8,38 +8,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using CapaPresentacion;
-using CapaPresentacion.Almacen_Forms;
 
-namespace Capa_Presentacion
+namespace CapaPresentacion.Almacen_Forms
 {
-    public partial class PanelVendedor : Form
+    public partial class PanelAlmacen : Form
     {
-        public PanelVendedor()
+        public PanelAlmacen()
         {
             InitializeComponent();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnMaximizar1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.WindowState = FormWindowState.Normal;
+            btnResturar1.Visible = true;
+            btnMaximizar1.Visible = false;
+
         }
 
-        private void btnMaximizar_Click(object sender, EventArgs e)
+        private void btnResturar1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            btnMaximizar.Visible = false;
-            btnResturar.Visible = true;
+            btnResturar1.Visible = false;
+            btnMaximizar1.Visible = true;
         }
-        private void btnMinimizar_Click(object sender, EventArgs e)
+
+        private void btnMinimizar1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        private void btnResturar_Click(object sender, EventArgs e)
+
+        private void btnCerrar1_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
-            btnMaximizar.Visible = true;
-            btnResturar.Visible = false;
+            Application.Exit();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -64,40 +65,40 @@ namespace Capa_Presentacion
             fh.Show();
 
         }
-        private void btnVenta_Click(object sender, EventArgs e)
+
+        private void btnNotaDeIngreso_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new Venta());
+            AbrirFormHija(new NotaIngresoForm());
         }
 
-        private void btnCliente_Click(object sender, EventArgs e)
+        private void btnNotaSalida_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new Cliente());
+            AbrirFormHija(new NotaSalidaForm());
         }
 
-        private void btnVentas_Click(object sender, EventArgs e)
+        private void btnMaquinaria_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new Ventas());
+            AbrirFormHija(new Maquinaria());
         }
 
-        private void btnServicios_Click(object sender, EventArgs e)
+        private void btnMaterial_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new Servicios());
+            AbrirFormHija(new Material());
         }
 
-        private void btnPagos_Click(object sender, EventArgs e)
+        private void btnProveedor_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new RealizarPago());
+            AbrirFormHija(new Proveedor());
         }
 
-        private void btnFormaDePago_Click(object sender, EventArgs e)
+        private void btnEquipoMantenimiento_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new FormadePago());
+            AbrirFormHija(new Herramientas());
         }
 
-        private void BarraTitulo_Paint(object sender, PaintEventArgs e)
+        private void btnRepuestos_Click(object sender, EventArgs e)
         {
-
+            AbrirFormHija(new RepuestosForm());
         }
-
     }
 }

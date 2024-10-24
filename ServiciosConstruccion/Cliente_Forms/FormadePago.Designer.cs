@@ -34,6 +34,8 @@
             button4 = new Button();
             dataGridView1 = new DataGridView();
             groupBox1 = new GroupBox();
+            textBox2 = new TextBox();
+            label3 = new Label();
             textBox1 = new TextBox();
             button3 = new Button();
             button2 = new Button();
@@ -41,8 +43,6 @@
             checkBox1 = new CheckBox();
             label7 = new Label();
             label2 = new Label();
-            label3 = new Label();
-            textBox2 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -111,6 +111,22 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Forma de Pago";
             // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(352, 142);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(324, 39);
+            textBox2.TabIndex = 14;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(18, 145);
+            label3.Name = "label3";
+            label3.Size = new Size(263, 32);
+            label3.TabIndex = 13;
+            label3.Text = "Tipo de forma de Pago:";
+            // 
             // textBox1
             // 
             textBox1.Location = new Point(352, 63);
@@ -172,23 +188,7 @@
             label2.TabIndex = 0;
             label2.Text = "Forma de Pago:";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(18, 145);
-            label3.Name = "label3";
-            label3.Size = new Size(306, 32);
-            label3.TabIndex = 13;
-            label3.Text = "Descripción forma de Pago:";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(352, 142);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(324, 39);
-            textBox2.TabIndex = 14;
-            // 
-            // btnFormadePago
+            // FormadePago
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -200,7 +200,7 @@
             Controls.Add(groupBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "btnFormadePago";
+            Name = "FormadePago";
             Text = "btnFormadePago";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);

@@ -29,49 +29,113 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelJefeServicio));
-            BarraTitulo = new Panel();
-            btnResturar = new PictureBox();
-            btnMinimizar = new PictureBox();
-            btnMaximizar = new PictureBox();
+            btnRestaurar2 = new PictureBox();
+            btnMaximizar2 = new PictureBox();
             btnCerrar = new PictureBox();
-            PanelContenedor = new Panel();
+            btnMaximizar = new PictureBox();
+            btnMinimizar = new PictureBox();
+            btnResturar = new PictureBox();
+            btnCerrar2 = new PictureBox();
+            btnMinimizar2 = new PictureBox();
+            BarraTitulo2 = new Panel();
             MenuVertical = new Panel();
-            panel6 = new Panel();
-            btnFormaDePago = new Button();
             panel5 = new Panel();
-            btnPagos = new Button();
+            btnPersonal = new Button();
             panel4 = new Panel();
-            btnPago = new Button();
+            btnMaquinaria = new Button();
             panel3 = new Panel();
-            btnServicio = new Button();
-            panel2 = new Panel();
-            btnCliente = new Button();
+            btnMaterial = new Button();
             panel1 = new Panel();
-            btnVenta = new Button();
+            btnROrdendeServicio = new Button();
             pictureBox1 = new PictureBox();
-            BarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btnResturar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
+            PanelContenedor = new Panel();
+            btnServicios = new Button();
+            panel2 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)btnRestaurar2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnMaximizar2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
-            PanelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnResturar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnCerrar2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnMinimizar2).BeginInit();
+            BarraTitulo2.SuspendLayout();
             MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // BarraTitulo
+            // btnRestaurar2
             // 
-            BarraTitulo.BackColor = Color.FromArgb(0, 80, 200);
-            BarraTitulo.Controls.Add(btnResturar);
-            BarraTitulo.Controls.Add(btnMinimizar);
-            BarraTitulo.Controls.Add(btnMaximizar);
-            BarraTitulo.Controls.Add(btnCerrar);
-            BarraTitulo.Dock = DockStyle.Top;
-            BarraTitulo.Location = new Point(0, 0);
-            BarraTitulo.Margin = new Padding(6);
-            BarraTitulo.Name = "BarraTitulo";
-            BarraTitulo.Size = new Size(2043, 81);
-            BarraTitulo.TabIndex = 1;
+            btnRestaurar2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnRestaurar2.BackgroundImageLayout = ImageLayout.Zoom;
+            btnRestaurar2.Cursor = Cursors.Hand;
+            btnRestaurar2.Image = (Image)resources.GetObject("btnRestaurar2.Image");
+            btnRestaurar2.Location = new Point(2128, 15);
+            btnRestaurar2.Margin = new Padding(6);
+            btnRestaurar2.Name = "btnRestaurar2";
+            btnRestaurar2.Size = new Size(46, 53);
+            btnRestaurar2.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnRestaurar2.TabIndex = 4;
+            btnRestaurar2.TabStop = false;
+            btnRestaurar2.Visible = false;
+            btnRestaurar2.Click += btnRestaurar2_Click;
+            // 
+            // btnMaximizar2
+            // 
+            btnMaximizar2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximizar2.BackgroundImageLayout = ImageLayout.Zoom;
+            btnMaximizar2.Cursor = Cursors.Hand;
+            btnMaximizar2.Image = (Image)resources.GetObject("btnMaximizar2.Image");
+            btnMaximizar2.Location = new Point(2128, 15);
+            btnMaximizar2.Margin = new Padding(6);
+            btnMaximizar2.Name = "btnMaximizar2";
+            btnMaximizar2.Size = new Size(46, 53);
+            btnMaximizar2.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnMaximizar2.TabIndex = 6;
+            btnMaximizar2.TabStop = false;
+            btnMaximizar2.Click += btnMaximizar2_Click;
+            // 
+            // btnCerrar
+            // 
+            btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCerrar.BackgroundImageLayout = ImageLayout.Zoom;
+            btnCerrar.Cursor = Cursors.Hand;
+            btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
+            btnCerrar.Location = new Point(4394, 9);
+            btnCerrar.Margin = new Padding(6);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(46, 53);
+            btnCerrar.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnCerrar.TabIndex = 0;
+            btnCerrar.TabStop = false;
+            // 
+            // btnMaximizar
+            // 
+            btnMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximizar.BackgroundImageLayout = ImageLayout.Zoom;
+            btnMaximizar.Cursor = Cursors.Hand;
+            btnMaximizar.Image = (Image)resources.GetObject("btnMaximizar.Image");
+            btnMaximizar.Location = new Point(4335, 9);
+            btnMaximizar.Margin = new Padding(6);
+            btnMaximizar.Name = "btnMaximizar";
+            btnMaximizar.Size = new Size(46, 53);
+            btnMaximizar.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnMaximizar.TabIndex = 1;
+            btnMaximizar.TabStop = false;
+            // 
+            // btnMinimizar
+            // 
+            btnMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimizar.BackgroundImageLayout = ImageLayout.Zoom;
+            btnMinimizar.Cursor = Cursors.Hand;
+            btnMinimizar.Image = (Image)resources.GetObject("btnMinimizar.Image");
+            btnMinimizar.Location = new Point(4277, 6);
+            btnMinimizar.Margin = new Padding(6);
+            btnMinimizar.Name = "btnMinimizar";
+            btnMinimizar.Size = new Size(46, 53);
+            btnMinimizar.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnMinimizar.TabIndex = 2;
+            btnMinimizar.TabStop = false;
             // 
             // btnResturar
             // 
@@ -79,7 +143,7 @@
             btnResturar.BackgroundImageLayout = ImageLayout.Zoom;
             btnResturar.Cursor = Cursors.Hand;
             btnResturar.Image = (Image)resources.GetObject("btnResturar.Image");
-            btnResturar.Location = new Point(4131, 6);
+            btnResturar.Location = new Point(4335, 6);
             btnResturar.Margin = new Padding(6);
             btnResturar.Name = "btnResturar";
             btnResturar.Size = new Size(46, 53);
@@ -88,211 +152,156 @@
             btnResturar.TabStop = false;
             btnResturar.Visible = false;
             // 
-            // btnMinimizar
+            // btnCerrar2
             // 
-            btnMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMinimizar.BackgroundImageLayout = ImageLayout.Zoom;
-            btnMinimizar.Cursor = Cursors.Hand;
-            btnMinimizar.Image = (Image)resources.GetObject("btnMinimizar.Image");
-            btnMinimizar.Location = new Point(4073, 6);
-            btnMinimizar.Margin = new Padding(6);
-            btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.Size = new Size(46, 53);
-            btnMinimizar.SizeMode = PictureBoxSizeMode.StretchImage;
-            btnMinimizar.TabIndex = 2;
-            btnMinimizar.TabStop = false;
+            btnCerrar2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCerrar2.BackgroundImageLayout = ImageLayout.Zoom;
+            btnCerrar2.Cursor = Cursors.Hand;
+            btnCerrar2.Image = (Image)resources.GetObject("btnCerrar2.Image");
+            btnCerrar2.Location = new Point(2186, 15);
+            btnCerrar2.Margin = new Padding(6);
+            btnCerrar2.Name = "btnCerrar2";
+            btnCerrar2.Size = new Size(46, 53);
+            btnCerrar2.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnCerrar2.TabIndex = 3;
+            btnCerrar2.TabStop = false;
+            btnCerrar2.Click += btnCerrar2_Click;
             // 
-            // btnMaximizar
+            // btnMinimizar2
             // 
-            btnMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMaximizar.BackgroundImageLayout = ImageLayout.Zoom;
-            btnMaximizar.Cursor = Cursors.Hand;
-            btnMaximizar.Image = (Image)resources.GetObject("btnMaximizar.Image");
-            btnMaximizar.Location = new Point(4131, 9);
-            btnMaximizar.Margin = new Padding(6);
-            btnMaximizar.Name = "btnMaximizar";
-            btnMaximizar.Size = new Size(46, 53);
-            btnMaximizar.SizeMode = PictureBoxSizeMode.StretchImage;
-            btnMaximizar.TabIndex = 1;
-            btnMaximizar.TabStop = false;
+            btnMinimizar2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimizar2.BackgroundImageLayout = ImageLayout.Zoom;
+            btnMinimizar2.Cursor = Cursors.Hand;
+            btnMinimizar2.Image = (Image)resources.GetObject("btnMinimizar2.Image");
+            btnMinimizar2.Location = new Point(2071, 15);
+            btnMinimizar2.Margin = new Padding(6);
+            btnMinimizar2.Name = "btnMinimizar2";
+            btnMinimizar2.Size = new Size(46, 53);
+            btnMinimizar2.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnMinimizar2.TabIndex = 5;
+            btnMinimizar2.TabStop = false;
+            btnMinimizar2.Click += btnMinimizar2_Click;
             // 
-            // btnCerrar
+            // BarraTitulo2
             // 
-            btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCerrar.BackgroundImageLayout = ImageLayout.Zoom;
-            btnCerrar.Cursor = Cursors.Hand;
-            btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
-            btnCerrar.Location = new Point(4189, 9);
-            btnCerrar.Margin = new Padding(6);
-            btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(46, 53);
-            btnCerrar.SizeMode = PictureBoxSizeMode.StretchImage;
-            btnCerrar.TabIndex = 0;
-            btnCerrar.TabStop = false;
-            // 
-            // PanelContenedor
-            // 
-            PanelContenedor.BackColor = Color.FromArgb(49, 66, 82);
-            PanelContenedor.Controls.Add(MenuVertical);
-            PanelContenedor.Dock = DockStyle.Fill;
-            PanelContenedor.Location = new Point(0, 81);
-            PanelContenedor.Margin = new Padding(6);
-            PanelContenedor.Name = "PanelContenedor";
-            PanelContenedor.Size = new Size(2043, 1225);
-            PanelContenedor.TabIndex = 3;
+            BarraTitulo2.BackColor = Color.FromArgb(0, 80, 200);
+            BarraTitulo2.Controls.Add(btnMinimizar2);
+            BarraTitulo2.Controls.Add(btnCerrar2);
+            BarraTitulo2.Controls.Add(btnResturar);
+            BarraTitulo2.Controls.Add(btnMinimizar);
+            BarraTitulo2.Controls.Add(btnMaximizar);
+            BarraTitulo2.Controls.Add(btnCerrar);
+            BarraTitulo2.Controls.Add(btnMaximizar2);
+            BarraTitulo2.Controls.Add(btnRestaurar2);
+            BarraTitulo2.Dock = DockStyle.Top;
+            BarraTitulo2.Location = new Point(0, 0);
+            BarraTitulo2.Margin = new Padding(6);
+            BarraTitulo2.Name = "BarraTitulo2";
+            BarraTitulo2.Size = new Size(2247, 81);
+            BarraTitulo2.TabIndex = 1;
+            BarraTitulo2.MouseDown += BarraTitulo2_MouseDown;
             // 
             // MenuVertical
             // 
             MenuVertical.BackColor = Color.FromArgb(26, 32, 40);
-            MenuVertical.Controls.Add(panel6);
-            MenuVertical.Controls.Add(btnFormaDePago);
-            MenuVertical.Controls.Add(panel5);
-            MenuVertical.Controls.Add(btnPagos);
-            MenuVertical.Controls.Add(panel4);
-            MenuVertical.Controls.Add(btnPago);
-            MenuVertical.Controls.Add(panel3);
-            MenuVertical.Controls.Add(btnServicio);
             MenuVertical.Controls.Add(panel2);
-            MenuVertical.Controls.Add(btnCliente);
+            MenuVertical.Controls.Add(btnServicios);
+            MenuVertical.Controls.Add(panel5);
+            MenuVertical.Controls.Add(btnPersonal);
+            MenuVertical.Controls.Add(panel4);
+            MenuVertical.Controls.Add(btnMaquinaria);
+            MenuVertical.Controls.Add(panel3);
+            MenuVertical.Controls.Add(btnMaterial);
             MenuVertical.Controls.Add(panel1);
-            MenuVertical.Controls.Add(btnVenta);
+            MenuVertical.Controls.Add(btnROrdendeServicio);
             MenuVertical.Controls.Add(pictureBox1);
             MenuVertical.Dock = DockStyle.Left;
-            MenuVertical.Location = new Point(0, 0);
+            MenuVertical.Location = new Point(0, 81);
             MenuVertical.Margin = new Padding(6);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(371, 1225);
+            MenuVertical.Size = new Size(371, 1184);
             MenuVertical.TabIndex = 2;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.FromArgb(0, 80, 200);
-            panel6.Location = new Point(0, 594);
-            panel6.Margin = new Padding(6);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(9, 68);
-            panel6.TabIndex = 7;
-            // 
-            // btnFormaDePago
-            // 
-            btnFormaDePago.BackColor = Color.FromArgb(26, 32, 40);
-            btnFormaDePago.FlatAppearance.BorderSize = 0;
-            btnFormaDePago.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            btnFormaDePago.FlatStyle = FlatStyle.Flat;
-            btnFormaDePago.ForeColor = SystemColors.ButtonFace;
-            btnFormaDePago.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFormaDePago.Location = new Point(2, 594);
-            btnFormaDePago.Margin = new Padding(6);
-            btnFormaDePago.Name = "btnFormaDePago";
-            btnFormaDePago.RightToLeft = RightToLeft.No;
-            btnFormaDePago.Size = new Size(366, 68);
-            btnFormaDePago.TabIndex = 8;
-            btnFormaDePago.Text = "Forma de pago";
-            btnFormaDePago.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(0, 80, 200);
-            panel5.Location = new Point(0, 514);
+            panel5.Location = new Point(0, 433);
             panel5.Margin = new Padding(6);
             panel5.Name = "panel5";
             panel5.Size = new Size(9, 68);
             panel5.TabIndex = 6;
             // 
-            // btnPagos
+            // btnPersonal
             // 
-            btnPagos.BackColor = Color.FromArgb(26, 32, 40);
-            btnPagos.FlatAppearance.BorderSize = 0;
-            btnPagos.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            btnPagos.FlatStyle = FlatStyle.Flat;
-            btnPagos.ForeColor = SystemColors.ButtonFace;
-            btnPagos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPagos.Location = new Point(0, 514);
-            btnPagos.Margin = new Padding(6);
-            btnPagos.Name = "btnPagos";
-            btnPagos.RightToLeft = RightToLeft.No;
-            btnPagos.Size = new Size(366, 68);
-            btnPagos.TabIndex = 7;
-            btnPagos.Text = "Pagos";
-            btnPagos.UseVisualStyleBackColor = false;
+            btnPersonal.BackColor = Color.FromArgb(26, 32, 40);
+            btnPersonal.FlatAppearance.BorderSize = 0;
+            btnPersonal.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnPersonal.FlatStyle = FlatStyle.Flat;
+            btnPersonal.ForeColor = SystemColors.ButtonFace;
+            btnPersonal.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPersonal.Location = new Point(2, 430);
+            btnPersonal.Margin = new Padding(6);
+            btnPersonal.Name = "btnPersonal";
+            btnPersonal.RightToLeft = RightToLeft.No;
+            btnPersonal.Size = new Size(366, 68);
+            btnPersonal.TabIndex = 7;
+            btnPersonal.Text = "Personal";
+            btnPersonal.UseVisualStyleBackColor = false;
+            btnPersonal.Click += btnPersonal_Click;
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(0, 80, 200);
-            panel4.Location = new Point(0, 433);
+            panel4.Location = new Point(2, 350);
             panel4.Margin = new Padding(6);
             panel4.Name = "panel4";
             panel4.Size = new Size(9, 68);
             panel4.TabIndex = 4;
             // 
-            // btnPago
+            // btnMaquinaria
             // 
-            btnPago.BackColor = Color.FromArgb(26, 32, 40);
-            btnPago.FlatAppearance.BorderSize = 0;
-            btnPago.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            btnPago.FlatStyle = FlatStyle.Flat;
-            btnPago.ForeColor = SystemColors.ButtonFace;
-            btnPago.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPago.Location = new Point(2, 433);
-            btnPago.Margin = new Padding(6);
-            btnPago.Name = "btnPago";
-            btnPago.RightToLeft = RightToLeft.No;
-            btnPago.Size = new Size(366, 68);
-            btnPago.TabIndex = 5;
-            btnPago.Text = "Servicios";
-            btnPago.UseVisualStyleBackColor = false;
+            btnMaquinaria.BackColor = Color.FromArgb(26, 32, 40);
+            btnMaquinaria.FlatAppearance.BorderSize = 0;
+            btnMaquinaria.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnMaquinaria.FlatStyle = FlatStyle.Flat;
+            btnMaquinaria.ForeColor = SystemColors.ButtonFace;
+            btnMaquinaria.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMaquinaria.Location = new Point(-1, 353);
+            btnMaquinaria.Margin = new Padding(6);
+            btnMaquinaria.Name = "btnMaquinaria";
+            btnMaquinaria.RightToLeft = RightToLeft.No;
+            btnMaquinaria.Size = new Size(366, 68);
+            btnMaquinaria.TabIndex = 5;
+            btnMaquinaria.Text = "Maquinaria";
+            btnMaquinaria.UseVisualStyleBackColor = false;
+            btnMaquinaria.Click += btnMaquinaria_Click;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(0, 80, 200);
-            panel3.Location = new Point(0, 352);
+            panel3.Location = new Point(2, 270);
             panel3.Margin = new Padding(6);
             panel3.Name = "panel3";
             panel3.Size = new Size(9, 68);
             panel3.TabIndex = 2;
             // 
-            // btnServicio
+            // btnMaterial
             // 
-            btnServicio.BackColor = Color.FromArgb(26, 32, 40);
-            btnServicio.FlatAppearance.BorderSize = 0;
-            btnServicio.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            btnServicio.FlatStyle = FlatStyle.Flat;
-            btnServicio.ForeColor = SystemColors.ButtonFace;
-            btnServicio.ImageAlign = ContentAlignment.MiddleLeft;
-            btnServicio.Location = new Point(0, 352);
-            btnServicio.Margin = new Padding(6);
-            btnServicio.Name = "btnServicio";
-            btnServicio.RightToLeft = RightToLeft.No;
-            btnServicio.Size = new Size(366, 68);
-            btnServicio.TabIndex = 3;
-            btnServicio.Text = "Ventas";
-            btnServicio.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(0, 80, 200);
-            panel2.Location = new Point(0, 271);
-            panel2.Margin = new Padding(6);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(9, 68);
-            panel2.TabIndex = 1;
-            // 
-            // btnCliente
-            // 
-            btnCliente.BackColor = Color.FromArgb(26, 32, 40);
-            btnCliente.FlatAppearance.BorderSize = 0;
-            btnCliente.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            btnCliente.FlatStyle = FlatStyle.Flat;
-            btnCliente.ForeColor = SystemColors.ButtonFace;
-            btnCliente.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCliente.Location = new Point(0, 271);
-            btnCliente.Margin = new Padding(6);
-            btnCliente.Name = "btnCliente";
-            btnCliente.RightToLeft = RightToLeft.No;
-            btnCliente.Size = new Size(366, 68);
-            btnCliente.TabIndex = 1;
-            btnCliente.Text = "Clientes";
-            btnCliente.UseVisualStyleBackColor = false;
+            btnMaterial.BackColor = Color.FromArgb(26, 32, 40);
+            btnMaterial.FlatAppearance.BorderSize = 0;
+            btnMaterial.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnMaterial.FlatStyle = FlatStyle.Flat;
+            btnMaterial.ForeColor = SystemColors.ButtonFace;
+            btnMaterial.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMaterial.Location = new Point(0, 270);
+            btnMaterial.Margin = new Padding(6);
+            btnMaterial.Name = "btnMaterial";
+            btnMaterial.RightToLeft = RightToLeft.No;
+            btnMaterial.Size = new Size(366, 68);
+            btnMaterial.TabIndex = 3;
+            btnMaterial.Text = "Material";
+            btnMaterial.UseVisualStyleBackColor = false;
+            btnMaterial.Click += btnMaterial_Click;
             // 
             // panel1
             // 
@@ -303,23 +312,24 @@
             panel1.Size = new Size(9, 68);
             panel1.TabIndex = 0;
             // 
-            // btnVenta
+            // btnROrdendeServicio
             // 
-            btnVenta.BackColor = Color.FromArgb(26, 32, 40);
-            btnVenta.Cursor = Cursors.Hand;
-            btnVenta.FlatAppearance.BorderSize = 0;
-            btnVenta.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            btnVenta.FlatStyle = FlatStyle.Flat;
-            btnVenta.ForeColor = SystemColors.ButtonFace;
-            btnVenta.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVenta.Location = new Point(6, 190);
-            btnVenta.Margin = new Padding(6);
-            btnVenta.Name = "btnVenta";
-            btnVenta.RightToLeft = RightToLeft.No;
-            btnVenta.Size = new Size(366, 68);
-            btnVenta.TabIndex = 0;
-            btnVenta.Text = "Realizar Venta";
-            btnVenta.UseVisualStyleBackColor = false;
+            btnROrdendeServicio.BackColor = Color.FromArgb(26, 32, 40);
+            btnROrdendeServicio.Cursor = Cursors.Hand;
+            btnROrdendeServicio.FlatAppearance.BorderSize = 0;
+            btnROrdendeServicio.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnROrdendeServicio.FlatStyle = FlatStyle.Flat;
+            btnROrdendeServicio.ForeColor = SystemColors.ButtonFace;
+            btnROrdendeServicio.ImageAlign = ContentAlignment.MiddleLeft;
+            btnROrdendeServicio.Location = new Point(6, 190);
+            btnROrdendeServicio.Margin = new Padding(6);
+            btnROrdendeServicio.Name = "btnROrdendeServicio";
+            btnROrdendeServicio.RightToLeft = RightToLeft.No;
+            btnROrdendeServicio.Size = new Size(366, 68);
+            btnROrdendeServicio.TabIndex = 0;
+            btnROrdendeServicio.Text = "Realizar Orden de Servicio";
+            btnROrdendeServicio.UseVisualStyleBackColor = false;
+            btnROrdendeServicio.Click += btnROrdendeServicio_Click;
             // 
             // pictureBox1
             // 
@@ -332,48 +342,91 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // PanelContenedor
+            // 
+            PanelContenedor.BackColor = Color.FromArgb(49, 66, 82);
+            PanelContenedor.Dock = DockStyle.Fill;
+            PanelContenedor.Location = new Point(371, 81);
+            PanelContenedor.Margin = new Padding(6);
+            PanelContenedor.Name = "PanelContenedor";
+            PanelContenedor.Size = new Size(1876, 1184);
+            PanelContenedor.TabIndex = 3;
+            // 
+            // btnServicios
+            // 
+            btnServicios.BackColor = Color.FromArgb(26, 32, 40);
+            btnServicios.FlatAppearance.BorderSize = 0;
+            btnServicios.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnServicios.FlatStyle = FlatStyle.Flat;
+            btnServicios.ForeColor = SystemColors.ButtonFace;
+            btnServicios.ImageAlign = ContentAlignment.MiddleLeft;
+            btnServicios.Location = new Point(-1, 525);
+            btnServicios.Margin = new Padding(6);
+            btnServicios.Name = "btnServicios";
+            btnServicios.RightToLeft = RightToLeft.No;
+            btnServicios.Size = new Size(366, 68);
+            btnServicios.TabIndex = 8;
+            btnServicios.Text = "Servicios";
+            btnServicios.UseVisualStyleBackColor = false;
+            btnServicios.Click += btnServicios_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(0, 80, 200);
+            panel2.Location = new Point(2, 525);
+            panel2.Margin = new Padding(6);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(9, 68);
+            panel2.TabIndex = 7;
+            // 
             // PanelJefeServicio
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2043, 1306);
+            ClientSize = new Size(2247, 1265);
             Controls.Add(PanelContenedor);
-            Controls.Add(BarraTitulo);
+            Controls.Add(MenuVertical);
+            Controls.Add(BarraTitulo2);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 2, 4, 2);
             Name = "PanelJefeServicio";
             Text = "PanelJefeServicio";
-            BarraTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)btnResturar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnRestaurar2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnMaximizar2).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
-            PanelContenedor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnResturar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnCerrar2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnMinimizar2).EndInit();
+            BarraTitulo2.ResumeLayout(false);
             MenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel BarraTitulo;
-        private PictureBox btnResturar;
-        private PictureBox btnMinimizar;
-        private PictureBox btnMaximizar;
+        private PictureBox btnRestaurar2;
+        private PictureBox btnMaximizar2;
         private PictureBox btnCerrar;
-        private Panel PanelContenedor;
+        private PictureBox btnMaximizar;
+        private PictureBox btnMinimizar;
+        private PictureBox btnResturar;
+        private PictureBox btnCerrar2;
+        private PictureBox btnMinimizar2;
+        private Panel BarraTitulo2;
         private Panel MenuVertical;
-        private Panel panel6;
-        private Button btnFormaDePago;
         private Panel panel5;
-        private Button btnPagos;
+        private Button btnPersonal;
         private Panel panel4;
-        private Button btnPago;
+        private Button btnMaquinaria;
         private Panel panel3;
-        private Button btnServicio;
-        private Panel panel2;
-        private Button btnCliente;
+        private Button btnMaterial;
         private Panel panel1;
-        private Button btnVenta;
+        private Button btnROrdendeServicio;
         private PictureBox pictureBox1;
+        private Panel PanelContenedor;
+        private Panel panel2;
+        private Button btnServicios;
     }
 }

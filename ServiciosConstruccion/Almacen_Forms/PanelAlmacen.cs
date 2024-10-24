@@ -58,5 +58,22 @@ namespace CapaPresentacion.Almacen_Forms
         {
 
         }
+        private void AbrirFormHija(object formhija)
+        {
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
+            Form fh = formhija as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(fh);
+            this.PanelContenedor.Tag = fh;
+            fh.Show();
+
+        }
+
+        private void btnNotaDeIngreso_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new NotaIngresoForm());
+        }
     }
 }

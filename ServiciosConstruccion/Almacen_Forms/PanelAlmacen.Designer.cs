@@ -292,6 +292,7 @@
             btnNotaSalida.TabIndex = 7;
             btnNotaSalida.Text = "Nota de Salida";
             btnNotaSalida.UseVisualStyleBackColor = false;
+            btnNotaSalida.Click += btnNotaSalida_Click;
             // 
             // panel4
             // 

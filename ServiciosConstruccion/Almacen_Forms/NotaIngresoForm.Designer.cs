@@ -31,23 +31,23 @@
             label2 = new Label();
             label4 = new Label();
             label5 = new Label();
-            textBox6 = new TextBox();
+            txtCantidadRecibido = new TextBox();
             label8 = new Label();
             label7 = new Label();
             groupBox1 = new GroupBox();
+            cbNombreProducto = new ComboBox();
+            cbNombreProveedor = new ComboBox();
+            btnAgregar = new Button();
             groupBox2 = new GroupBox();
+            dateTimePicker1 = new DateTimePicker();
             dtvNotaIngreso = new DataGridView();
-            button3 = new Button();
-            button1 = new Button();
-            button6 = new Button();
-            button4 = new Button();
-            button7 = new Button();
-            textBox7 = new TextBox();
+            btnCancelar = new Button();
+            btnDeshabilitar = new Button();
+            btnNuevoCliente = new Button();
+            btnBuscar = new Button();
+            txtNotaIngreso = new TextBox();
             groupBox3 = new GroupBox();
             label3 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
             groupBox4 = new GroupBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -83,12 +83,12 @@
             label5.TabIndex = 4;
             label5.Text = "Cantidad recibida:";
             // 
-            // textBox6
+            // txtCantidadRecibido
             // 
-            textBox6.Location = new Point(202, 275);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(54, 23);
-            textBox6.TabIndex = 11;
+            txtCantidadRecibido.Location = new Point(202, 275);
+            txtCantidadRecibido.Name = "txtCantidadRecibido";
+            txtCantidadRecibido.Size = new Size(54, 23);
+            txtCantidadRecibido.TabIndex = 11;
             // 
             // label8
             // 
@@ -112,15 +112,41 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(comboBox2);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(cbNombreProducto);
+            groupBox1.Controls.Add(cbNombreProveedor);
+            groupBox1.Controls.Add(btnAgregar);
             groupBox1.Location = new Point(26, 165);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(357, 172);
             groupBox1.TabIndex = 16;
             groupBox1.TabStop = false;
             groupBox1.Text = "Descripcion del Producto";
+            // 
+            // cbNombreProducto
+            // 
+            cbNombreProducto.FormattingEnabled = true;
+            cbNombreProducto.Location = new Point(176, 31);
+            cbNombreProducto.Name = "cbNombreProducto";
+            cbNombreProducto.Size = new Size(148, 23);
+            cbNombreProducto.TabIndex = 21;
+            // 
+            // cbNombreProveedor
+            // 
+            cbNombreProveedor.FormattingEnabled = true;
+            cbNombreProveedor.Location = new Point(176, 71);
+            cbNombreProveedor.Name = "cbNombreProveedor";
+            cbNombreProveedor.Size = new Size(148, 23);
+            cbNombreProveedor.TabIndex = 20;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(256, 118);
+            btnAgregar.Margin = new Padding(2, 1, 2, 1);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(81, 32);
+            btnAgregar.TabIndex = 19;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -130,6 +156,13 @@
             groupBox2.Size = new Size(357, 69);
             groupBox2.TabIndex = 17;
             groupBox2.TabStop = false;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(176, 22);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(148, 23);
+            dateTimePicker1.TabIndex = 0;
             // 
             // dtvNotaIngreso
             // 
@@ -141,69 +174,59 @@
             dtvNotaIngreso.Size = new Size(313, 321);
             dtvNotaIngreso.TabIndex = 18;
             // 
-            // button3
+            // btnCancelar
             // 
-            button3.Location = new Point(93, 390);
-            button3.Margin = new Padding(2, 1, 2, 1);
-            button3.Name = "button3";
-            button3.Size = new Size(81, 32);
-            button3.TabIndex = 21;
-            button3.Text = "Cancelar";
-            button3.UseVisualStyleBackColor = true;
+            btnCancelar.Location = new Point(93, 390);
+            btnCancelar.Margin = new Padding(2, 1, 2, 1);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(81, 32);
+            btnCancelar.TabIndex = 21;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnDeshabilitar
             // 
-            button1.Location = new Point(256, 118);
-            button1.Margin = new Padding(2, 1, 2, 1);
-            button1.Name = "button1";
-            button1.Size = new Size(81, 32);
-            button1.TabIndex = 19;
-            button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = true;
+            btnDeshabilitar.Location = new Point(232, 390);
+            btnDeshabilitar.Margin = new Padding(2, 1, 2, 1);
+            btnDeshabilitar.Name = "btnDeshabilitar";
+            btnDeshabilitar.Size = new Size(81, 32);
+            btnDeshabilitar.TabIndex = 22;
+            btnDeshabilitar.Text = "Deshabilitar";
+            btnDeshabilitar.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnNuevoCliente
             // 
-            button6.Location = new Point(232, 390);
-            button6.Margin = new Padding(2, 1, 2, 1);
-            button6.Name = "button6";
-            button6.Size = new Size(81, 32);
-            button6.TabIndex = 22;
-            button6.Text = "Deshabilitar";
-            button6.UseVisualStyleBackColor = true;
+            btnNuevoCliente.Location = new Point(456, 390);
+            btnNuevoCliente.Margin = new Padding(2, 1, 2, 1);
+            btnNuevoCliente.Name = "btnNuevoCliente";
+            btnNuevoCliente.Size = new Size(185, 32);
+            btnNuevoCliente.TabIndex = 23;
+            btnNuevoCliente.Text = "Registrar nuevo cliente";
+            btnNuevoCliente.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnBuscar
             // 
-            button4.Location = new Point(456, 390);
-            button4.Margin = new Padding(2, 1, 2, 1);
-            button4.Name = "button4";
-            button4.Size = new Size(185, 32);
-            button4.TabIndex = 23;
-            button4.Text = "Registrar nuevo cliente";
-            button4.UseVisualStyleBackColor = true;
+            btnBuscar.Location = new Point(57, 130);
+            btnBuscar.Margin = new Padding(2, 1, 2, 1);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(55, 22);
+            btnBuscar.TabIndex = 16;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // txtNotaIngreso
             // 
-            button7.Location = new Point(57, 130);
-            button7.Margin = new Padding(2, 1, 2, 1);
-            button7.Name = "button7";
-            button7.Size = new Size(55, 22);
-            button7.TabIndex = 16;
-            button7.Text = "Buscar";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(45, 90);
-            textBox7.Margin = new Padding(2, 1, 2, 1);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(84, 23);
-            textBox7.TabIndex = 20;
+            txtNotaIngreso.Location = new Point(45, 90);
+            txtNotaIngreso.Margin = new Padding(2, 1, 2, 1);
+            txtNotaIngreso.Name = "txtNotaIngreso";
+            txtNotaIngreso.Size = new Size(84, 23);
+            txtNotaIngreso.TabIndex = 20;
             // 
             // groupBox3
             // 
             groupBox3.Controls.Add(label3);
-            groupBox3.Controls.Add(button7);
-            groupBox3.Controls.Add(textBox7);
+            groupBox3.Controls.Add(btnBuscar);
+            groupBox3.Controls.Add(txtNotaIngreso);
             groupBox3.Location = new Point(708, 65);
             groupBox3.Margin = new Padding(2, 1, 2, 1);
             groupBox3.Name = "groupBox3";
@@ -222,29 +245,6 @@
             label3.TabIndex = 21;
             label3.Text = "Nro. Nota de Ingreso:";
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(176, 71);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(148, 23);
-            comboBox1.TabIndex = 20;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(176, 31);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(148, 23);
-            comboBox2.TabIndex = 21;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(176, 22);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(148, 23);
-            dateTimePicker1.TabIndex = 0;
-            // 
             // groupBox4
             // 
             groupBox4.Controls.Add(label8);
@@ -260,12 +260,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(896, 432);
             Controls.Add(groupBox3);
-            Controls.Add(button4);
-            Controls.Add(button6);
-            Controls.Add(button3);
+            Controls.Add(btnNuevoCliente);
+            Controls.Add(btnDeshabilitar);
+            Controls.Add(btnCancelar);
             Controls.Add(dtvNotaIngreso);
             Controls.Add(label7);
-            Controls.Add(textBox6);
+            Controls.Add(txtCantidadRecibido);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -290,22 +290,22 @@
         private Label label2;
         private Label label4;
         private Label label5;
-        private TextBox textBox6;
+        private TextBox txtCantidadRecibido;
         private Label label8;
         private Label label7;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private DataGridView dtvNotaIngreso;
-        private Button button1;
-        private Button button3;
-        private Button button6;
-        private Button button4;
-        private Button button7;
-        private TextBox textBox7;
+        private Button btnAgregar;
+        private Button btnCancelar;
+        private Button btnDeshabilitar;
+        private Button btnNuevoCliente;
+        private Button btnBuscar;
+        private TextBox txtNotaIngreso;
         private GroupBox groupBox3;
         private Label label3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cbNombreProducto;
+        private ComboBox cbNombreProveedor;
         private DateTimePicker dateTimePicker1;
         private GroupBox groupBox4;
     }

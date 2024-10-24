@@ -75,5 +75,10 @@ namespace CapaPresentacion.Almacen_Forms
         {
             AbrirFormHija(new NotaIngresoForm());
         }
+
+        private void btnNotaSalida_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new NotaSalidaForm());
+        }
     }
 }

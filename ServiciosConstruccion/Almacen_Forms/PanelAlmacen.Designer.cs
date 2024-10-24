@@ -39,6 +39,8 @@
             btnMaximizar = new PictureBox();
             btnCerrar = new PictureBox();
             MenuVertical = new Panel();
+            panel7 = new Panel();
+            btnProveedor = new Button();
             panel6 = new Panel();
             btnNotaDeIngreso = new Button();
             panel5 = new Panel();
@@ -197,6 +199,8 @@
             // MenuVertical
             // 
             MenuVertical.BackColor = Color.FromArgb(26, 32, 40);
+            MenuVertical.Controls.Add(panel7);
+            MenuVertical.Controls.Add(btnProveedor);
             MenuVertical.Controls.Add(panel6);
             MenuVertical.Controls.Add(btnNotaDeIngreso);
             MenuVertical.Controls.Add(panel5);
@@ -216,10 +220,34 @@
             MenuVertical.Size = new Size(200, 443);
             MenuVertical.TabIndex = 2;
             // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(0, 80, 200);
+            panel7.Location = new Point(0, 141);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(5, 32);
+            panel7.TabIndex = 10;
+            // 
+            // btnProveedor
+            // 
+            btnProveedor.BackColor = Color.FromArgb(26, 32, 40);
+            btnProveedor.FlatAppearance.BorderSize = 0;
+            btnProveedor.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnProveedor.FlatStyle = FlatStyle.Flat;
+            btnProveedor.ForeColor = SystemColors.ButtonFace;
+            btnProveedor.ImageAlign = ContentAlignment.MiddleLeft;
+            btnProveedor.Location = new Point(0, 141);
+            btnProveedor.Name = "btnProveedor";
+            btnProveedor.RightToLeft = RightToLeft.No;
+            btnProveedor.Size = new Size(197, 32);
+            btnProveedor.TabIndex = 11;
+            btnProveedor.Text = "Proveedor";
+            btnProveedor.UseVisualStyleBackColor = false;
+            // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(0, 80, 200);
-            panel6.Location = new Point(0, 85);
+            panel6.Location = new Point(0, 103);
             panel6.Name = "panel6";
             panel6.Size = new Size(5, 32);
             panel6.TabIndex = 8;
@@ -232,18 +260,19 @@
             btnNotaDeIngreso.FlatStyle = FlatStyle.Flat;
             btnNotaDeIngreso.ForeColor = SystemColors.ButtonFace;
             btnNotaDeIngreso.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNotaDeIngreso.Location = new Point(0, 85);
+            btnNotaDeIngreso.Location = new Point(0, 103);
             btnNotaDeIngreso.Name = "btnNotaDeIngreso";
             btnNotaDeIngreso.RightToLeft = RightToLeft.No;
             btnNotaDeIngreso.Size = new Size(197, 32);
             btnNotaDeIngreso.TabIndex = 9;
             btnNotaDeIngreso.Text = "Nota de Ingreso";
             btnNotaDeIngreso.UseVisualStyleBackColor = false;
+            btnNotaDeIngreso.Click += btnNotaDeIngreso_Click;
             // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(0, 80, 200);
-            panel5.Location = new Point(0, 275);
+            panel5.Location = new Point(0, 331);
             panel5.Name = "panel5";
             panel5.Size = new Size(5, 32);
             panel5.TabIndex = 6;
@@ -256,18 +285,19 @@
             btnNotaSalida.FlatStyle = FlatStyle.Flat;
             btnNotaSalida.ForeColor = SystemColors.ButtonFace;
             btnNotaSalida.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNotaSalida.Location = new Point(3, 275);
+            btnNotaSalida.Location = new Point(3, 331);
             btnNotaSalida.Name = "btnNotaSalida";
             btnNotaSalida.RightToLeft = RightToLeft.No;
             btnNotaSalida.Size = new Size(197, 32);
             btnNotaSalida.TabIndex = 7;
             btnNotaSalida.Text = "Nota de Salida";
             btnNotaSalida.UseVisualStyleBackColor = false;
+            btnNotaSalida.Click += btnNotaSalida_Click;
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(0, 80, 200);
-            panel4.Location = new Point(0, 237);
+            panel4.Location = new Point(0, 293);
             panel4.Name = "panel4";
             panel4.Size = new Size(5, 32);
             panel4.TabIndex = 4;
@@ -280,7 +310,7 @@
             btnEquipoMantenimiento.FlatStyle = FlatStyle.Flat;
             btnEquipoMantenimiento.ForeColor = SystemColors.ButtonFace;
             btnEquipoMantenimiento.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEquipoMantenimiento.Location = new Point(0, 237);
+            btnEquipoMantenimiento.Location = new Point(0, 293);
             btnEquipoMantenimiento.Name = "btnEquipoMantenimiento";
             btnEquipoMantenimiento.RightToLeft = RightToLeft.No;
             btnEquipoMantenimiento.Size = new Size(197, 32);
@@ -291,7 +321,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(0, 80, 200);
-            panel3.Location = new Point(0, 199);
+            panel3.Location = new Point(0, 255);
             panel3.Name = "panel3";
             panel3.Size = new Size(5, 32);
             panel3.TabIndex = 2;
@@ -304,7 +334,7 @@
             btnMaquinaria.FlatStyle = FlatStyle.Flat;
             btnMaquinaria.ForeColor = SystemColors.ButtonFace;
             btnMaquinaria.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMaquinaria.Location = new Point(0, 199);
+            btnMaquinaria.Location = new Point(0, 255);
             btnMaquinaria.Name = "btnMaquinaria";
             btnMaquinaria.RightToLeft = RightToLeft.No;
             btnMaquinaria.Size = new Size(197, 32);
@@ -315,7 +345,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 80, 200);
-            panel2.Location = new Point(0, 161);
+            panel2.Location = new Point(0, 217);
             panel2.Name = "panel2";
             panel2.Size = new Size(5, 32);
             panel2.TabIndex = 1;
@@ -328,7 +358,7 @@
             btnRepuestos.FlatStyle = FlatStyle.Flat;
             btnRepuestos.ForeColor = SystemColors.ButtonFace;
             btnRepuestos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRepuestos.Location = new Point(0, 161);
+            btnRepuestos.Location = new Point(0, 217);
             btnRepuestos.Name = "btnRepuestos";
             btnRepuestos.RightToLeft = RightToLeft.No;
             btnRepuestos.Size = new Size(197, 32);
@@ -340,7 +370,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 80, 200);
-            panel1.Location = new Point(0, 123);
+            panel1.Location = new Point(0, 179);
             panel1.Name = "panel1";
             panel1.Size = new Size(5, 32);
             panel1.TabIndex = 0;
@@ -354,7 +384,7 @@
             btnMaterial.FlatStyle = FlatStyle.Flat;
             btnMaterial.ForeColor = SystemColors.ButtonFace;
             btnMaterial.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMaterial.Location = new Point(3, 123);
+            btnMaterial.Location = new Point(3, 179);
             btnMaterial.Name = "btnMaterial";
             btnMaterial.RightToLeft = RightToLeft.No;
             btnMaterial.Size = new Size(197, 32);
@@ -432,5 +462,7 @@
         private Panel panel5;
         private Button btnNotaSalida;
         private Button btnMaterial;
+        private Panel panel7;
+        private Button btnProveedor;
     }
 }

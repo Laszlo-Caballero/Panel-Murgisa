@@ -4,7 +4,10 @@
     <Compile Update="Acceder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Almacen_Forms\Maquinaria.cs">
+    <Compile Update="Almacen_Forms\NotaIngresoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Almacen_Forms\NotaSalidaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Almacen_Forms\PanelAlmacen.cs">

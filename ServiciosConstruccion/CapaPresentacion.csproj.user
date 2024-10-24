@@ -4,6 +4,9 @@
     <Compile Update="Acceder.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Almacen_Forms\Herramienta.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Almacen_Forms\Maquinaria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -19,7 +22,7 @@
     <Compile Update="Almacen_Forms\PanelAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Almacen_Forms\Proveedor.cs">
+    <Compile Update="Almacen_Forms\RespuestosForms.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Cliente_Forms\FormadePago.cs">

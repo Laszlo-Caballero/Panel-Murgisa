@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Almacen_Forms
 {
-    public partial class Herramienta : Form
+    public partial class Proveedor : Form
     {
-        public Herramienta()
+        public Proveedor()
         {
             InitializeComponent();
         }

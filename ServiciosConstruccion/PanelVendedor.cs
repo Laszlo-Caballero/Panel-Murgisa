@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using CapaPresentacion;
-using CapaPresentacion.Almacen_Forms;
+
 
 namespace Capa_Presentacion
 {

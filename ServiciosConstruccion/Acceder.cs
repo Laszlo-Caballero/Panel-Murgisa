@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaAccesoDatos;
 using CapaPresentacion;
-using CapaPresentacion.Almacen_Forms;
 
 namespace Capa_Presentacion
 {

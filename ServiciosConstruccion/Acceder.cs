@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaAccesoDatos;
 using CapaPresentacion;
-using CapaPresentacion.Almacen_Forms;
 
 namespace Capa_Presentacion
 {
@@ -70,22 +69,6 @@ namespace Capa_Presentacion
                     else
                     {
 
-                        MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-
-                else if (seleccion == "Jefe de Almacén")
-                {
-                  
-                    if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
-                    {
-                        
-                        PanelAlmacen formAlmacen = new PanelAlmacen();
-                        formAlmacen.Show();
-                    }
-                    else
-                    {
-                      
                         MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }

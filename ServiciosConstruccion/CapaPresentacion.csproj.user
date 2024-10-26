@@ -4,34 +4,28 @@
     <Compile Update="Acceder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Almacen_Forms\Herramientas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Almacen_Forms\Maquinaria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Almacen_Forms\Material.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Almacen_Forms\NotaIngresoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Almacen_Forms\NotaSalidaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Almacen_Forms\PanelAlmacen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Almacen_Forms\Proveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Almacen_Forms\RepuestosForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Cliente_Forms\FormadePago.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Cliente_Forms\Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Mantenimiento_Forms\MantenimientoCorrectivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Mantenimiento_Forms\MantenimientoPreventivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Mantenimiento_Forms\Motivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Mantenimiento_Forms\PanelMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Mantenimiento_Forms\Tecnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Mantenimiento_Forms\TipoMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Servicios_Forms\MantenedorPersonal.cs">

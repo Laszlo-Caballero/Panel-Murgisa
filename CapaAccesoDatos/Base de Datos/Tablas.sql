@@ -226,3 +226,41 @@ create table OrdenManCor(
     primary key(idOrdenManCor),
     foreign key(idDiagnostico) REFERENCES Diagnostico(idDiagnostico)
 )
+
+
+create table PedidoMaterial(
+    idPedidoMaterial int identity(1,1),
+    idMaterial int,
+    fecha date,
+    cantidad int,
+    estado bit,
+    primary key(idPedidoMaterial),
+    foreign key(idMaterial) references Material(idMaterial)
+)
+
+create table NotaIngresoMaterial(
+    indNotaIngresoMaterial int identity(1,1),
+    idPedidoMaterial int,
+    fecha datetime,
+    primary key(idNotaIngresoMaterial),
+    foreign key(idPedidoMaterial) references PedidoMaterial(idPedidoMaterial)
+)
+
+
+create table PedidoMaquinaria(
+    idPedidoMaquinaria int identity(1,1),
+    idMaquinaria int,
+    fecha date,
+    cantidad int,
+    estado bit,
+    primary key(idPedidoMaquinaria),
+    foreign key (idMaquinaria) references Maquinaria(idMaquinaria)
+)
+
+create table NotaIngresoMaquinaria(
+    idNotaIngresoMaquinaria int identity(1,1),
+    idPedidoMaquinaria int,
+    fecha datetime,
+    primary key(idNotaIngresoMaquinaria),
+    foreign key(idPedidoMaquinaria) references PedidoMaquinaria(idPedidoMaquinaria)
+)

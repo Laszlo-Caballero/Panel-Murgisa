@@ -45,7 +45,6 @@
             dataGridView1 = new DataGridView();
             label8 = new Label();
             label9 = new Label();
-            textBox4 = new TextBox();
             textBox5 = new TextBox();
             button1 = new Button();
             textBox6 = new TextBox();
@@ -60,6 +59,7 @@
             textBox7 = new TextBox();
             label11 = new Label();
             button5 = new Button();
+            dateTimePicker2 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -208,13 +208,6 @@
             label9.TabIndex = 32;
             label9.Text = "Fecha:";
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(596, 1078);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(242, 39);
-            textBox4.TabIndex = 33;
-            // 
             // textBox5
             // 
             textBox5.Location = new Point(219, 1085);
@@ -224,7 +217,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(896, 1071);
+            button1.Location = new Point(1055, 1080);
             button1.Name = "button1";
             button1.Size = new Size(150, 46);
             button1.TabIndex = 35;
@@ -356,15 +349,22 @@
             button5.Text = "Anular Orden";
             button5.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(592, 1081);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(400, 39);
+            dateTimePicker2.TabIndex = 44;
+            // 
             // RealizarOrdenDeServicio
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1715, 1157);
+            Controls.Add(dateTimePicker2);
             Controls.Add(button5);
             Controls.Add(button1);
             Controls.Add(textBox5);
-            Controls.Add(textBox4);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(dataGridView1);
@@ -399,7 +399,6 @@
         private DataGridView dataGridView1;
         private Label label8;
         private Label label9;
-        private TextBox textBox4;
         private TextBox textBox5;
         private Button button1;
         private TextBox textBox6;
@@ -414,5 +413,6 @@
         private Label label11;
         private Label label12;
         private ComboBox comboBox3;
+        private DateTimePicker dateTimePicker2;
     }
 }

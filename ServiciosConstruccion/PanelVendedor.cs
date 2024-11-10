@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using CapaPresentacion;
 
-
 namespace Capa_Presentacion
 {
     public partial class PanelVendedor : Form

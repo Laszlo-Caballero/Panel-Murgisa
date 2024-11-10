@@ -1,7 +1,6 @@
 using Capa_Presentacion;
 using CapaPresentacion;
 
-
 namespace ServiciosConstruccion
 {
     internal static class Program

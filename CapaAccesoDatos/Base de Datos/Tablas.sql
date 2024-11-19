@@ -1,12 +1,22 @@
+
 -- SQLBook: Code
+create table Ciudad(
+    idCiudad int identity(1,1),
+    nombre VARCHAR(50),
+    PRIMARY KEY(idCiudad)
+);
+
 create table Cliente(
     idCliente int identity(1,1),
-    nombre varchar(15),
-    apellido_paterno varchar(15),
-    apellido_materno varchar(15),
+    nombreRepresentante varchar(15),
     dni char(9),
     estado bit,
-    primary key(idCliente)
+    correo VARCHAR(50),
+    telefono char(9),
+    direccion VARCHAR(50),
+    idCiudad int,
+    primary key(idCliente),
+    Foreign Key (idCiudad) REFERENCES Ciudad(idCiudad)
 )
 -- SQLBook: Code
 create table Cargo(
@@ -239,7 +249,7 @@ create table PedidoMaterial(
 )
 
 create table NotaIngresoMaterial(
-    indNotaIngresoMaterial int identity(1,1),
+    idNotaIngresoMaterial int identity(1,1),
     idPedidoMaterial int,
     fecha datetime,
     primary key(idNotaIngresoMaterial),

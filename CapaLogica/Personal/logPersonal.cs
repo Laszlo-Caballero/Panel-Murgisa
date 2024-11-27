@@ -16,10 +16,6 @@ namespace CapaLogica.Personal
         {
             get { return _instancia; }
         }
-        public List<entPersonal> listarPersonal()
-        {
-            return datPersonal.Instancia.listarPersonal();
-        }
 
         public bool agregarPersonal(entPersonal nuevo)
         {

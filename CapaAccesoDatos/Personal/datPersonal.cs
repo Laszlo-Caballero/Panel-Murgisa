@@ -17,41 +17,6 @@ namespace CapaAccesoDatos.Personal
             get { return _instancia; }
         }
 
-        public List<entPersonal> listarPersonal()
-        {
-            SqlCommand cmd = null;
-            List<entPersonal> lista = new List<entPersonal>();
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("listarPersonal", cn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    entPersonal nuevo = new entPersonal();
-                    nuevo.id = Convert.ToInt32(dr["idPersonal"]);
-                    nuevo.nombre = dr["nombre"].ToString();
-                    nuevo.paterno = dr["apellido_parterno"].ToString();
-                    nuevo.materno = dr["apellido_materno"].ToString();
-                    nuevo.cargo = dr["cargo"].ToString();
-                    nuevo.prof = dr["titulo"].ToString();
-                    nuevo.depa = dr["departamento"].ToString();
-                    nuevo.sueldo = Convert.ToSingle(dr["sueldo"]);
-                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
-                    lista.Add(nuevo);
-                }
-            }
-            catch (Exception ex) {
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return lista;
-        }
-
         public bool agregarPersonal(entPersonal nuevo)
         {
             SqlCommand cmd = null;

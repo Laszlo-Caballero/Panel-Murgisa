@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaLogica.Cliente;
+using CapaLogica.FormaPago;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,18 @@ namespace CapaPresentacion
         public RealizarPago()
         {
             InitializeComponent();
+            listarDatos();
+        }
+
+        public void listarDatos()
+        {
+            cbCliente.DataSource = logCliente.Instancia.listarClientes();
+            cbCliente.DisplayMember = "nombreRepresentatne";
+        }
+
+        public void listarPago()
+        {
+            dgvPago.DataSource = logFormaPago.Instancia.listarPagos();
         }
     }
 }

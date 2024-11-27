@@ -30,5 +30,10 @@ namespace CapaLogica.Venta
         {
             return datVenta.Instancia.deshabilitarVenta(id);
         }
+
+        public List<entVenta> listarVentaCliente(int id)
+        {
+            return datVenta.Instancia.listarVentaCliente(id);
+        }
     }
 }

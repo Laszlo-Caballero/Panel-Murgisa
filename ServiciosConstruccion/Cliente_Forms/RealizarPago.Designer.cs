@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvPago = new DataGridView();
             groupBox1 = new GroupBox();
             cbFormaPago = new ComboBox();
             cbCliente = new ComboBox();
@@ -56,7 +56,7 @@
             label12 = new Label();
             textBox5 = new TextBox();
             button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPago).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,15 +71,15 @@
             label1.TabIndex = 16;
             label1.Text = "Realizar Pago";
             // 
-            // dataGridView1
+            // dgvPago
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(103, 282);
-            dataGridView1.Margin = new Padding(2, 1, 2, 1);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(635, 187);
-            dataGridView1.TabIndex = 18;
+            dgvPago.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPago.Location = new Point(103, 282);
+            dgvPago.Margin = new Padding(2, 1, 2, 1);
+            dgvPago.Name = "dgvPago";
+            dgvPago.RowHeadersWidth = 82;
+            dgvPago.Size = new Size(635, 187);
+            dgvPago.TabIndex = 18;
             // 
             // groupBox1
             // 
@@ -352,14 +352,14 @@
             Controls.Add(button2);
             Controls.Add(textBox5);
             Controls.Add(label12);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPago);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2, 1, 2, 1);
             Name = "RealizarPago";
             Text = "RealizarPago";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPago).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -369,7 +369,7 @@
         #endregion
 
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvPago;
         private GroupBox groupBox1;
         private CheckBox cbParcial;
         private ComboBox comboBox1;

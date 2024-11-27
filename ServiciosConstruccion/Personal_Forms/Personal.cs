@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using CapaLogica.Personal;
 using CapaAccesoDatos.Personal;
 using CapaEntidad.Personal;
+using CapaEntidad.Cliente;
 
 namespace CapaPresentacion.Personal_Forms
 {
@@ -45,9 +46,15 @@ namespace CapaPresentacion.Personal_Forms
             txtNombre.Text = filaActual.Cells[1].Value.ToString();
             txtPaterno.Text = filaActual.Cells[2].Value.ToString();
             txtMaterno.Text = filaActual.Cells[3].Value.ToString();
-            cbCargo.SelectedItem = filaActual.Cells[4].Value.ToString();
-            //cbProfesion.SelectedItem = filaActual.Cells[5].Value.ToString();
-            //cbDepartamento.SelectedItem = filaActual.Cells[6].Value.ToString();
+            string selecC = filaActual.Cells[4].Value.ToString();
+            cbCargo.SelectedItem = cbCargo.Items.Cast<entCargo>().FirstOrDefault(item => item.cargo == selecC);
+
+            string selecP = filaActual.Cells[5].Value.ToString();
+            cbProfesion.SelectedItem = cbProfesion.Items.Cast<entProfesion>().FirstOrDefault(item => item.titulo == selecP);
+
+            string selecD = filaActual.Cells[6].Value.ToString();
+            cbDepartamento.SelectedItem = cbDepartamento.Items.Cast<entDepartamento>().FirstOrDefault(item => item.nombre == selecD);
+
             txtSueldo.Text = filaActual.Cells[7].Value.ToString();
             cbkEstado.Checked = Convert.ToBoolean(filaActual.Cells[8].Value);
         }

@@ -118,6 +118,7 @@
             btnDeshabilitar.TabIndex = 9;
             btnDeshabilitar.Text = "Deshabilitar";
             btnDeshabilitar.UseVisualStyleBackColor = true;
+            btnDeshabilitar.Click += btnDeshabilitar_Click;
             // 
             // Condicion
             // 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using CapaPresentacion;
+using CapaPresentacion.Mantenimiento_Forms;
 
 namespace Capa_Presentacion
 {
@@ -96,6 +97,17 @@ namespace Capa_Presentacion
         private void BarraTitulo_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnOManCorrectivo_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new MantenimientoCorrectivo());
+
+        }
+
+        private void btnOManPreventivo_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new MantenimientoPreventivo());
         }
 
     }

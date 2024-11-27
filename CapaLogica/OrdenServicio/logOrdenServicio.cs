@@ -1,15 +1,8 @@
-//using CapaAccesoDatos.OrdenServicio;
-using CapaEntidad.OrdenServicio;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-//namespace CapaLogica.OrdenServicio
-//{
-//    public class logOrdenServicio
-//    {
+namespace CapaLogica.OrdenServicio
+{
+    public class logOrdenServicio
+    {
 //        private static readonly logOrdenServicio _instancia = new logOrdenServicio();
 
 //        public static logOrdenServicio Instancia
@@ -35,5 +28,5 @@ using System.Threading.Tasks;
 //        {
 //            return datOrdenServicio.Instancia.deshabilitarOrdenServicio(id);
 //        }
-//    }
-//}
+   }
+}

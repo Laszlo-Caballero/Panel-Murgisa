@@ -73,3 +73,20 @@ as
 begin
 	select * from FormaPago where estado = 1
 end
+
+
+create or alter procedure agregarPago
+@tipo varchar(50),
+@estado bit
+as
+begin
+	insert into FormaPago (tipo, estado) values (@tipo, @estado)
+end
+
+
+create or alter procedure deshabilitar
+@idPago int
+as
+begin
+	update FormaPago set estado = 0 where idFormaPago = @idPago
+end

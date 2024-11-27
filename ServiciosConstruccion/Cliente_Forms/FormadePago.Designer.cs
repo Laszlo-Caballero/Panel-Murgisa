@@ -34,11 +34,12 @@
             txtFormaPago = new TextBox();
             label3 = new Label();
             txtId = new TextBox();
-            btnModificar = new Button();
+            btnDeshabilitar = new Button();
             btnAgregar = new Button();
             cbkForma = new CheckBox();
             label7 = new Label();
             label2 = new Label();
+            btnActualizar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgForma).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -61,15 +62,17 @@
             dgForma.Margin = new Padding(2);
             dgForma.Name = "dgForma";
             dgForma.RowHeadersWidth = 82;
-            dgForma.Size = new Size(726, 249);
+            dgForma.Size = new Size(897, 249);
             dgForma.TabIndex = 18;
+            dgForma.CellClick += dgForma_CellClick;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnActualizar);
             groupBox1.Controls.Add(txtFormaPago);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txtId);
-            groupBox1.Controls.Add(btnModificar);
+            groupBox1.Controls.Add(btnDeshabilitar);
             groupBox1.Controls.Add(btnAgregar);
             groupBox1.Controls.Add(cbkForma);
             groupBox1.Controls.Add(label7);
@@ -103,28 +106,30 @@
             // 
             // txtId
             // 
+            txtId.Enabled = false;
             txtId.Location = new Point(217, 39);
             txtId.Margin = new Padding(2);
             txtId.Name = "txtId";
             txtId.Size = new Size(201, 27);
             txtId.TabIndex = 12;
             // 
-            // btnModificar
+            // btnDeshabilitar
             // 
-            btnModificar.Location = new Point(770, 86);
-            btnModificar.Margin = new Padding(2);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(92, 29);
-            btnModificar.TabIndex = 10;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
+            btnDeshabilitar.Location = new Point(765, 86);
+            btnDeshabilitar.Margin = new Padding(2);
+            btnDeshabilitar.Name = "btnDeshabilitar";
+            btnDeshabilitar.Size = new Size(97, 29);
+            btnDeshabilitar.TabIndex = 10;
+            btnDeshabilitar.Text = "Deshabilitar";
+            btnDeshabilitar.UseVisualStyleBackColor = true;
+            btnDeshabilitar.Click += btnDeshabilitar_Click;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(770, 41);
+            btnAgregar.Location = new Point(765, 41);
             btnAgregar.Margin = new Padding(2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(92, 29);
+            btnAgregar.Size = new Size(97, 29);
             btnAgregar.TabIndex = 9;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -160,6 +165,17 @@
             label2.TabIndex = 0;
             label2.Text = "Forma de Pago:";
             // 
+            // btnActualizar
+            // 
+            btnActualizar.Location = new Point(765, 128);
+            btnActualizar.Margin = new Padding(2);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(97, 29);
+            btnActualizar.TabIndex = 15;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
+            // 
             // FormadePago
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -189,11 +205,12 @@
         private GroupBox groupBox1;
         private TextBox txtId;
         private Button btnAgregar;
-        private Button btnModificar;
+        private Button btnDeshabilitar;
         private CheckBox cbkForma;
         private Label label7;
         private Label label2;
         private TextBox txtFormaPago;
         private Label label3;
+        private Button btnActualizar;
     }
 }

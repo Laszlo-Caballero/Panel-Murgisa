@@ -44,8 +44,73 @@ namespace CapaAccesoDatos.FormaPago
             }
             return lista;
         }
-        public bool actualizarFormaPago(){
-            
+        public bool agregarFormaPago(entFormaPago pago){
+            SqlCommand cmd = null;
+            bool agregarEstado = false;
+
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("agregarPago", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@tipo", pago.tipo);
+
+                cmd.Parameters.AddWithValue("@estado", pago.estado);
+                int rows = cmd.ExecuteNonQuery();
+                
+                agregarEstado = rows >= 1;
+            }
+            catch (Exception ex) { throw ex; }
+            finally { 
+                cmd.Connection.Close();
+            }
+            return agregarEstado;
+        }
+        public bool deshabilitarFormaPago(int id)
+        {
+            SqlCommand cmd = null;
+            bool deshabilitado = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("deshabilitarPago", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idPago", id);
+                int rows = cmd.ExecuteNonQuery();
+                deshabilitado = rows >= 1;
+            }
+            catch (Exception ex) { throw ex; }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return deshabilitado;
+        }
+
+        public bool actualizarPago(entFormaPago pago)
+        {
+            SqlCommand cmd = null;
+            bool actalizar = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("actualizarPago", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idPago", pago.idFormaPago);
+                cmd.Parameters.AddWithValue("@tipo", pago.tipo);
+                cmd.Parameters.AddWithValue("@estado", pago.estado);
+                int rows = cmd.ExecuteNonQuery();
+                actalizar = rows >= 1;
+            }
+            catch (Exception ex) { throw ex; }
+            finally {
+                cmd.Connection.Close();
+            }
+            return actalizar;
         }
     }
 }

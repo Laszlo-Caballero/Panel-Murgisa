@@ -16,5 +16,23 @@ namespace CapaLogica.FormaPago
         {
             get { return _instancia; }
         }
+
+        public List<entFormaPago> listarPagos()
+        {
+            return datFormaPago.Instancia.listarFormaPagos();
+        }
+        public bool agregarPago(entFormaPago formapago)
+        {
+            return datFormaPago.Instancia.agregarFormaPago(formapago);
+        }
+
+        public bool deshabilitarPago(int id)
+        {
+            return datFormaPago.Instancia.deshabilitarFormaPago(id);
+        }
+        public bool actualizarPago(entFormaPago pago)
+        {
+            return datFormaPago.Instancia.actualizarPago(pago);
+        }
     }
 }

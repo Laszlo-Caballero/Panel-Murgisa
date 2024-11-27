@@ -301,7 +301,6 @@
             btnTecnico.TabIndex = 14;
             btnTecnico.Text = "Tecnico";
             btnTecnico.UseVisualStyleBackColor = false;
-            btnTecnico.Click += btnTecnico_Click_1;
             // 
             // panel2
             // 

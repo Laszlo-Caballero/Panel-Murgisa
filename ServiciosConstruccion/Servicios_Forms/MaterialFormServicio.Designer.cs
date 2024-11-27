@@ -35,8 +35,6 @@
             cbkEstado = new CheckBox();
             txtCodigo = new TextBox();
             bttnSalir = new Button();
-            dtpMaterial = new DateTimePicker();
-            label6 = new Label();
             label5 = new Label();
             bttnCancelar = new Button();
             bttnModificar = new Button();
@@ -47,10 +45,11 @@
             txtNombre = new TextBox();
             label1 = new Label();
             gbMaterial = new GroupBox();
+            label7 = new Label();
+            textBox1 = new TextBox();
             txtPrecio = new TextBox();
             label3 = new Label();
-            textBox1 = new TextBox();
-            label7 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvMaterial).BeginInit();
             gbMaterial.SuspendLayout();
             SuspendLayout();
@@ -88,7 +87,7 @@
             // dgvMaterial
             // 
             dgvMaterial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMaterial.Location = new Point(72, 448);
+            dgvMaterial.Location = new Point(72, 491);
             dgvMaterial.Margin = new Padding(6);
             dgvMaterial.Name = "dgvMaterial";
             dgvMaterial.RowHeadersWidth = 82;
@@ -98,12 +97,12 @@
             // cbkEstado
             // 
             cbkEstado.AutoSize = true;
-            cbkEstado.Location = new Point(505, 122);
+            cbkEstado.Location = new Point(505, 243);
             cbkEstado.Margin = new Padding(6);
             cbkEstado.Name = "cbkEstado";
-            cbkEstado.Size = new Size(210, 36);
+            cbkEstado.Size = new Size(201, 36);
             cbkEstado.TabIndex = 11;
-            cbkEstado.Text = "Estado Material";
+            cbkEstado.Text = "Estado recurso";
             cbkEstado.UseVisualStyleBackColor = true;
             // 
             // txtCodigo
@@ -124,24 +123,6 @@
             bttnSalir.TabIndex = 12;
             bttnSalir.Text = "Salir";
             bttnSalir.UseVisualStyleBackColor = true;
-            // 
-            // dtpMaterial
-            // 
-            dtpMaterial.Location = new Point(505, 230);
-            dtpMaterial.Margin = new Padding(6);
-            dtpMaterial.Name = "dtpMaterial";
-            dtpMaterial.Size = new Size(368, 39);
-            dtpMaterial.TabIndex = 13;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(505, 187);
-            label6.Margin = new Padding(6, 0, 6, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(169, 32);
-            label6.TabIndex = 12;
-            label6.Text = "Fecha Registro";
             // 
             // label5
             // 
@@ -232,10 +213,9 @@
             // 
             // gbMaterial
             // 
+            gbMaterial.Controls.Add(label6);
             gbMaterial.Controls.Add(label7);
             gbMaterial.Controls.Add(textBox1);
-            gbMaterial.Controls.Add(dtpMaterial);
-            gbMaterial.Controls.Add(label6);
             gbMaterial.Controls.Add(cbkEstado);
             gbMaterial.Controls.Add(txtCodigo);
             gbMaterial.Controls.Add(label5);
@@ -257,6 +237,24 @@
             gbMaterial.TabStop = false;
             gbMaterial.Text = "Datos Material";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(22, 279);
+            label7.Margin = new Padding(6, 0, 6, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(83, 32);
+            label7.TabIndex = 15;
+            label7.Text = "Stock: ";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(192, 272);
+            textBox1.Margin = new Padding(6);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(262, 39);
+            textBox1.TabIndex = 14;
+            // 
             // txtPrecio
             // 
             txtPrecio.Location = new Point(192, 214);
@@ -272,34 +270,25 @@
             label3.Location = new Point(609, 21);
             label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
-            label3.Size = new Size(256, 65);
+            label3.Size = new Size(223, 65);
             label3.TabIndex = 8;
-            label3.Text = "Materiales";
+            label3.Text = "Recursos";
             // 
-            // textBox1
+            // label6
             // 
-            textBox1.Location = new Point(192, 272);
-            textBox1.Margin = new Padding(6);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(262, 39);
-            textBox1.TabIndex = 14;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(22, 279);
-            label7.Margin = new Padding(6, 0, 6, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(83, 32);
-            label7.TabIndex = 15;
-            label7.Text = "Stock: ";
+            label6.AutoSize = true;
+            label6.Location = new Point(505, 169);
+            label6.Name = "label6";
+            label6.Size = new Size(172, 32);
+            label6.TabIndex = 16;
+            label6.Text = "Disponibilidad:";
             // 
             // MaterialFormServicio
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(1486, 960);
+            ClientSize = new Size(1486, 1010);
             Controls.Add(bttnDeshabilitar);
             Controls.Add(btnEditar);
             Controls.Add(btnNuevo);
@@ -327,8 +316,6 @@
         private CheckBox cbkEstado;
         private TextBox txtCodigo;
         private Button bttnSalir;
-        private DateTimePicker dtpMaterial;
-        private Label label6;
         private Label label5;
         private Button bttnCancelar;
         private Button bttnModificar;
@@ -343,5 +330,6 @@
         private Label label3;
         private Label label7;
         private TextBox textBox1;
+        private Label label6;
     }
 }

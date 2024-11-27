@@ -112,8 +112,6 @@ create table Recurso(
 )
 
 -- SQLBook: Code
-
--- SQLBook: Code
 create table FormaPago(
     idFormaPago int identity(1,1),
     tipo varchar(25),

@@ -97,7 +97,7 @@
             // cbSistemas
             // 
             cbSistemas.FormattingEnabled = true;
-            cbSistemas.Items.AddRange(new object[] { "Vendedor", "Jefe de Servicio", "Jefe de Mantenimiento" });
+            cbSistemas.Items.AddRange(new object[] { "Vendedor", "Jefe de Servicio", "Jefe de Mantenimiento", "Jefe de Personal" });
             cbSistemas.Location = new Point(252, 461);
             cbSistemas.Margin = new Padding(5, 6, 5, 6);
             cbSistemas.Name = "cbSistemas";

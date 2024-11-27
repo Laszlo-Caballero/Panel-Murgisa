@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaAccesoDatos;
 using CapaPresentacion;
+using CapaPresentacion.Personal_Forms;
 
 namespace Capa_Presentacion
 {
@@ -65,6 +66,21 @@ namespace Capa_Presentacion
 
                         PanelMantenimiento formMantenimiento = new PanelMantenimiento();
                         formMantenimiento.Show();
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else if (seleccion == "Jefe de Personal")
+                {
+
+                    if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
+                    {
+
+                        PanelJefePersonal formJefep = new PanelJefePersonal();
+                        formJefep.Show();
                     }
                     else
                     {

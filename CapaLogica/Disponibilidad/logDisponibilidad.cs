@@ -21,19 +21,19 @@ namespace CapaLogica.Disponibilidad
             return datDisponibilidad.Instancia.listarDisponibilidad();
         }
 
-        public bool agregarDisponibilidad(entDisponibilidad nuevo)
+        public bool agregarDisponibilidad(entDisponibilidad disponibilidad)
         {
-            return datDisponibilidad.Instancia.agregarDisponibilidad(nuevo);
+            return datDisponibilidad.Instancia.agregarDisponibilidad(disponibilidad);
         }
 
-        public bool actualizarDisponibilidad(entDisponibilidad nuevo)
+        public bool actualizarDisponibilidad(entDisponibilidad disponibilidad)
         {
-            return datDisponibilidad.Instancia.actualizarDisponibilidad(nuevo);
+            return datDisponibilidad.Instancia.actualizarDisponibilidad(disponibilidad);
         }
 
-        public bool deshablitarDisponibilidad(int id)
+        public bool deshablitarDisponibilidad(entDisponibilidad disponibilidad)
         {
-            return datDisponibilidad.Instancia.deshabilitarDisponibilidad(id);
+            return datDisponibilidad.Instancia.deshabilitarDisponibilidad(disponibilidad);
         }
     }
 }

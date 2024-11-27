@@ -30,15 +30,15 @@
         {
             label1 = new Label();
             txtCargo = new TextBox();
-            textBox1 = new TextBox();
+            txtNombre = new TextBox();
             label2 = new Label();
-            textBox2 = new TextBox();
+            txtDesc = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txtSueldo = new TextBox();
             label4 = new Label();
-            checkBox1 = new CheckBox();
+            cbkEstado = new CheckBox();
             dataGridView1 = new DataGridView();
-            textBox4 = new TextBox();
+            txtCriterio = new TextBox();
             label5 = new Label();
             btnBuscar = new Button();
             btnAgregar = new Button();
@@ -63,12 +63,12 @@
             txtCargo.Size = new Size(125, 23);
             txtCargo.TabIndex = 1;
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Location = new Point(100, 63);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 23);
-            textBox1.TabIndex = 3;
+            txtNombre.Location = new Point(100, 63);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(125, 23);
+            txtNombre.TabIndex = 3;
             // 
             // label2
             // 
@@ -79,12 +79,12 @@
             label2.TabIndex = 2;
             label2.Text = "NOMBRE:";
             // 
-            // textBox2
+            // txtDesc
             // 
-            textBox2.Location = new Point(373, 18);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(364, 23);
-            textBox2.TabIndex = 5;
+            txtDesc.Location = new Point(373, 18);
+            txtDesc.Name = "txtDesc";
+            txtDesc.Size = new Size(364, 23);
+            txtDesc.TabIndex = 5;
             // 
             // label3
             // 
@@ -95,12 +95,12 @@
             label3.TabIndex = 4;
             label3.Text = "DESCRIPCION:";
             // 
-            // textBox3
+            // txtSueldo
             // 
-            textBox3.Location = new Point(355, 66);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 23);
-            textBox3.TabIndex = 7;
+            txtSueldo.Location = new Point(355, 66);
+            txtSueldo.Name = "txtSueldo";
+            txtSueldo.Size = new Size(125, 23);
+            txtSueldo.TabIndex = 7;
             // 
             // label4
             // 
@@ -111,15 +111,15 @@
             label4.TabIndex = 6;
             label4.Text = "SUELDO";
             // 
-            // checkBox1
+            // cbkEstado
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(532, 66);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(68, 19);
-            checkBox1.TabIndex = 8;
-            checkBox1.Text = "ESTADO";
-            checkBox1.UseVisualStyleBackColor = true;
+            cbkEstado.AutoSize = true;
+            cbkEstado.Location = new Point(532, 66);
+            cbkEstado.Name = "cbkEstado";
+            cbkEstado.Size = new Size(68, 19);
+            cbkEstado.TabIndex = 8;
+            cbkEstado.Text = "ESTADO";
+            cbkEstado.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -129,12 +129,12 @@
             dataGridView1.Size = new Size(615, 241);
             dataGridView1.TabIndex = 9;
             // 
-            // textBox4
+            // txtCriterio
             // 
-            textBox4.Location = new Point(100, 105);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 23);
-            textBox4.TabIndex = 11;
+            txtCriterio.Location = new Point(100, 105);
+            txtCriterio.Name = "txtCriterio";
+            txtCriterio.Size = new Size(125, 23);
+            txtCriterio.TabIndex = 11;
             // 
             // label5
             // 
@@ -190,15 +190,15 @@
             Controls.Add(btnEditar);
             Controls.Add(btnAgregar);
             Controls.Add(btnBuscar);
-            Controls.Add(textBox4);
+            Controls.Add(txtCriterio);
             Controls.Add(label5);
             Controls.Add(dataGridView1);
-            Controls.Add(checkBox1);
-            Controls.Add(textBox3);
+            Controls.Add(cbkEstado);
+            Controls.Add(txtSueldo);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(txtDesc);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtNombre);
             Controls.Add(label2);
             Controls.Add(txtCargo);
             Controls.Add(label1);
@@ -213,15 +213,15 @@
 
         private Label label1;
         private TextBox txtCargo;
-        private TextBox textBox1;
+        private TextBox txtNombre;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txtDesc;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtSueldo;
         private Label label4;
-        private CheckBox checkBox1;
+        private CheckBox cbkEstado;
         private DataGridView dataGridView1;
-        private TextBox textBox4;
+        private TextBox txtCriterio;
         private Label label5;
         private Button btnBuscar;
         private Button btnAgregar;

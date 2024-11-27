@@ -30,6 +30,9 @@ namespace CapaAccesoDatos.Profesion
                 while (dr.Read())
                 {
                     entProfesion nuevo = new entProfesion();
+                    nuevo.id = Convert.ToInt32(dr["idProfesion"]);
+                    nuevo.titulo = dr["titulo"].ToString();
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
                 }
             }
@@ -53,6 +56,8 @@ namespace CapaAccesoDatos.Profesion
                 cn.Open();
                 cmd = new SqlCommand("agregarProfesion", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@titulo", nuevo.titulo);
+                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -77,6 +82,9 @@ namespace CapaAccesoDatos.Profesion
                 cn.Open();
                 cmd = new SqlCommand("actualizarProfesion", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idProfesion", nuevo.id);
+                cmd.Parameters.AddWithValue("@titulo", nuevo.titulo);
+                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;
             }

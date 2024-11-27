@@ -30,6 +30,15 @@ namespace CapaAccesoDatos.Personal
                 while (dr.Read())
                 {
                     entPersonal nuevo = new entPersonal();
+                    nuevo.id = Convert.ToInt32(dr["idPersonal"]);
+                    nuevo.nombre = dr["nombre"].ToString();
+                    nuevo.paterno = dr["apellido_parterno"].ToString();
+                    nuevo.materno = dr["apellido_materno"].ToString();
+                    nuevo.cargo = dr["cargo"].ToString();
+                    nuevo.prof = dr["titulo"].ToString();
+                    nuevo.depa = dr["departamento"].ToString();
+                    nuevo.sueldo = Convert.ToSingle(dr["sueldo"]);
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
                 }
             }
@@ -53,6 +62,14 @@ namespace CapaAccesoDatos.Personal
                 cn.Open();
                 cmd = new SqlCommand("agregarPersonal", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idCargo", nuevo.idCargo);
+                cmd.Parameters.AddWithValue("@idProf", nuevo.idProf);
+                cmd.Parameters.AddWithValue("@idDep", nuevo.idDepa);
+                cmd.Parameters.AddWithValue("@nombre", nuevo.nombre);
+                cmd.Parameters.AddWithValue("@parterno", nuevo.paterno);
+                cmd.Parameters.AddWithValue("@materno", nuevo.materno);
+                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
+                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -77,6 +94,15 @@ namespace CapaAccesoDatos.Personal
                 cn.Open();
                 cmd = new SqlCommand("actualizarPersonal", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idPersonal", nuevo.id);
+                cmd.Parameters.AddWithValue("@idCargo", nuevo.idCargo);
+                cmd.Parameters.AddWithValue("@idProf", nuevo.idProf);
+                cmd.Parameters.AddWithValue("@idDep", nuevo.idDepa);
+                cmd.Parameters.AddWithValue("@nombre", nuevo.nombre);
+                cmd.Parameters.AddWithValue("@parterno", nuevo.paterno);
+                cmd.Parameters.AddWithValue("@materno", nuevo.materno);
+                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
+                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;
             }

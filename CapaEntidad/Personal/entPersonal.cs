@@ -9,15 +9,17 @@ namespace CapaEntidad.Personal
     public class entPersonal
     {
         public int id {  get; set; }
-
         public int idCargo { get; set; }
         public int idProf { get; set; }
         public int idDepa { get; set; }
         public string nombre { get; set; }
         public string paterno { get; set; }
         public string materno { get; set; }
+        public string cargo { get; set; }
+        public string prof { get; set; }
+        public string depa { get; set; }
         public float sueldo {  get; set; }
-        public bool estadoo { get; set; }
+        public bool estado { get; set; }
 
     }
 }

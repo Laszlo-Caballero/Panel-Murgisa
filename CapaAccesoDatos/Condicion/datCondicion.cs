@@ -29,8 +29,11 @@ namespace CapaAccesoDatos.Condicion
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    entCondicion nuevo = new entCondicion();
-                    lista.Add(nuevo);
+                    entCondicion condicion = new entCondicion();
+                    condicion.idCondicion = Convert.ToInt32(dr["idCondicion"]);
+                    condicion.condicion = dr["condicion"].ToString();
+                    condicion.estado = Convert.ToBoolean(dr["estado"]);
+                    lista.Add(condicion);
                 }
             }
             catch (Exception ex) {
@@ -43,7 +46,7 @@ namespace CapaAccesoDatos.Condicion
             return lista;
         }
 
-        public bool agregarCondicion(entCondicion nuevo)
+        public bool agregarCondicion(entCondicion condicion)
         {
             SqlCommand cmd = null;
             bool agregar = false;
@@ -53,6 +56,10 @@ namespace CapaAccesoDatos.Condicion
                 cn.Open();
                 cmd = new SqlCommand("agregarCondicion", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@condicion", condicion.condicion);
+                cmd.Parameters.AddWithValue("@estado", condicion.estado);
+
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -67,7 +74,7 @@ namespace CapaAccesoDatos.Condicion
             return agregar;
         }
 
-        public bool actualizarCondicion(entCondicion nuevo)
+        public bool actualizarCondicion(entCondicion condicion)
         {
             SqlCommand cmd = null;
             bool actualizar = false;
@@ -77,6 +84,10 @@ namespace CapaAccesoDatos.Condicion
                 cn.Open();
                 cmd = new SqlCommand("actualizarCondicion", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@condicion", condicion.condicion);
+                cmd.Parameters.AddWithValue("@estado", condicion.estado);
+
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;
             }
@@ -90,7 +101,7 @@ namespace CapaAccesoDatos.Condicion
             return actualizar;
         }
 
-        public bool deshabilitarCondicion(int id)
+        public bool deshabilitarCondicion(entCondicion condicion)
         {
             SqlCommand cmd = null;
             bool deshabilitar = false;
@@ -100,7 +111,7 @@ namespace CapaAccesoDatos.Condicion
                 cn.Open();
                 cmd = new SqlCommand("deshabilitarCondicion", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idCondicion", id);
+                cmd.Parameters.AddWithValue("@idCondicion", condicion.idCondicion);
                 int rows = cmd.ExecuteNonQuery();
                 deshabilitar = rows >= 1;
             }

@@ -76,7 +76,11 @@ namespace CapaPresentacion
             txtCorreo.Text = filaActular.Cells[4].Value.ToString();
             txtTelefono.Text = filaActular.Cells[5].Value.ToString();
             txtDireccion.Text = filaActular.Cells[6].Value.ToString();
-            cbCiudad.SelectedItem = filaActular.Cells[7].Value.ToString();
+
+            string nombre = filaActular.Cells[7].Value.ToString();
+
+
+            cbCiudad.SelectedItem = cbCiudad.Items.Cast<entCiudad>().FirstOrDefault(item => item.nombre == nombre);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

@@ -1,5 +1,5 @@
 ﻿using CapaEntidad.Venta;
-using CapaLogica.Venta;
+using CapaLogica.Recurso;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

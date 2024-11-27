@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaAccesoDatos.Venta
+namespace CapaAccesoDatos.Recurso
 {
     public class datTipoRecurso
     {
@@ -36,7 +36,8 @@ namespace CapaAccesoDatos.Venta
                     lista.Add(nuevo);
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 throw ex;
             }
             finally

@@ -1,4 +1,4 @@
-using CapaAccesoDatos.Venta;
+using CapaAccesoDatos.Recurso;
 using CapaEntidad.Venta;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaLogica.Venta
+namespace CapaLogica.Recurso
 {
     public class logTipoRecurso
     {

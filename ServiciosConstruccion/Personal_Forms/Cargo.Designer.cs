@@ -56,6 +56,7 @@
             // 
             // txtCargo
             // 
+            txtCargo.Enabled = false;
             txtCargo.Location = new Point(100, 18);
             txtCargo.Name = "txtCargo";
             txtCargo.Size = new Size(125, 23);
@@ -113,6 +114,7 @@
             dgvCargo.Size = new Size(615, 241);
             dgvCargo.TabIndex = 9;
             dgvCargo.CellContentDoubleClick += dgvCargo_CellContentDoubleClick;
+            dgvCargo.CellDoubleClick += dgvCargo_CellDoubleClick;
             // 
             // txtCriterio
             // 

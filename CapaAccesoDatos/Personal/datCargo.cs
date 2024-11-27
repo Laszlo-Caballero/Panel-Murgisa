@@ -30,7 +30,7 @@ namespace CapaAccesoDatos.Personal
                 while (dr.Read())
                 {
                     entCargo nuevo = new entCargo();
-                    nuevo.id = Convert.ToInt32(dr["cargoId"]);
+                    nuevo.id = Convert.ToInt32(dr["idCargo"]);
                     nuevo.cargo = dr["cargo"].ToString();
                     nuevo.desc = dr["descripcion"].ToString();
                     nuevo.estado = Convert.ToBoolean(dr["estado"]);
@@ -85,7 +85,7 @@ namespace CapaAccesoDatos.Personal
                 cn.Open();
                 cmd = new SqlCommand("actualizarCargo", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@@idCargo", nuevo.id);
+                cmd.Parameters.AddWithValue("@idCargo", nuevo.id);
                 cmd.Parameters.AddWithValue("@cargo", nuevo.cargo);
                 cmd.Parameters.AddWithValue("@desc", nuevo.desc);
                 cmd.Parameters.AddWithValue("@estado", nuevo.estado);

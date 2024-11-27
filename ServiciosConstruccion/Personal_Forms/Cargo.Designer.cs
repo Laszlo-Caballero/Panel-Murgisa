@@ -34,8 +34,6 @@
             label2 = new Label();
             txtDesc = new TextBox();
             label3 = new Label();
-            txtSueldo = new TextBox();
-            label4 = new Label();
             cbkEstado = new CheckBox();
             dgvCargo = new DataGridView();
             txtCriterio = new TextBox();
@@ -95,26 +93,10 @@
             label3.TabIndex = 4;
             label3.Text = "DESCRIPCION:";
             // 
-            // txtSueldo
-            // 
-            txtSueldo.Location = new Point(355, 66);
-            txtSueldo.Name = "txtSueldo";
-            txtSueldo.Size = new Size(125, 23);
-            txtSueldo.TabIndex = 7;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(288, 69);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 15);
-            label4.TabIndex = 6;
-            label4.Text = "SUELDO";
-            // 
             // cbkEstado
             // 
             cbkEstado.AutoSize = true;
-            cbkEstado.Location = new Point(532, 66);
+            cbkEstado.Location = new Point(283, 63);
             cbkEstado.Name = "cbkEstado";
             cbkEstado.Size = new Size(68, 19);
             cbkEstado.TabIndex = 8;
@@ -126,9 +108,11 @@
             dgvCargo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCargo.Location = new Point(12, 144);
             dgvCargo.Name = "dgvCargo";
+            dgvCargo.ReadOnly = true;
             dgvCargo.RowHeadersWidth = 82;
             dgvCargo.Size = new Size(615, 241);
             dgvCargo.TabIndex = 9;
+            dgvCargo.CellContentDoubleClick += dgvCargo_CellContentDoubleClick;
             // 
             // txtCriterio
             // 
@@ -148,7 +132,7 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(283, 100);
+            btnBuscar.Location = new Point(277, 96);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(90, 38);
             btnBuscar.TabIndex = 12;
@@ -157,36 +141,39 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(647, 144);
+            btnAgregar.Location = new Point(643, 170);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(100, 38);
             btnAgregar.TabIndex = 13;
             btnAgregar.Text = "AGREGAR";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(647, 206);
+            btnEditar.Location = new Point(643, 234);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(100, 38);
             btnEditar.TabIndex = 14;
             btnEditar.Text = "EDITAR";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnDeshabilitar
             // 
-            btnDeshabilitar.Location = new Point(647, 266);
+            btnDeshabilitar.Location = new Point(643, 291);
             btnDeshabilitar.Name = "btnDeshabilitar";
             btnDeshabilitar.Size = new Size(100, 38);
             btnDeshabilitar.TabIndex = 15;
             btnDeshabilitar.Text = "DESHABILITAR";
             btnDeshabilitar.UseVisualStyleBackColor = true;
+            btnDeshabilitar.Click += btnDeshabilitar_Click;
             // 
             // Cargo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(775, 406);
+            ClientSize = new Size(755, 406);
             Controls.Add(btnDeshabilitar);
             Controls.Add(btnEditar);
             Controls.Add(btnAgregar);
@@ -195,8 +182,6 @@
             Controls.Add(label5);
             Controls.Add(dgvCargo);
             Controls.Add(cbkEstado);
-            Controls.Add(txtSueldo);
-            Controls.Add(label4);
             Controls.Add(txtDesc);
             Controls.Add(label3);
             Controls.Add(txtNombre);
@@ -219,8 +204,6 @@
         private Label label2;
         private TextBox txtDesc;
         private Label label3;
-        private TextBox txtSueldo;
-        private Label label4;
         private CheckBox cbkEstado;
         private DataGridView dgvCargo;
         private TextBox txtCriterio;

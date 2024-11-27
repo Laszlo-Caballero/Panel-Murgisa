@@ -36,8 +36,8 @@ namespace CapaEntidad.{carpeta}
     }}
 }}
         """
-    codigo_csharp_log = f"""using {carpeta};
-using {carpeta};
+    codigo_csharp_log = f"""using CapaAccesoDatos.{carpeta};
+using CapaEntidad.{carpeta};
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,7 +72,7 @@ namespace CapaLogica.{carpeta}
         
     ruta_archivo_dat = os.path.join(carpeta1, f"dat{nombre}.cs")
     ruta_archivo_ent = os.path.join(carpeta2, f"ent{nombre}.cs")
-    ruta_archivo_log = os.path.join(carpeta3, f"ent{nombre}.cs")
+    ruta_archivo_log = os.path.join(carpeta3, f"log{nombre}.cs")
     
     with open(ruta_archivo_dat, 'w') as dat:
         dat.write(codigo_csharp_dat)

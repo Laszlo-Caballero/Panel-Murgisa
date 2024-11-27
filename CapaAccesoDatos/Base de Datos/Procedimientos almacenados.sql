@@ -66,3 +66,10 @@ as
 begin
 	select * from Ciudad
 end
+
+
+create or alter procedure listarFormaPagos
+as
+begin
+	select * from FormaPago where estado = 1
+end

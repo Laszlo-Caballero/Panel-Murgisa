@@ -1,5 +1,5 @@
-using FormaPago;
-using FormaPago;
+using CapaAccesoDatos.FormaPago;
+using CapaEntidad.FormaPago;
 using System;
 using System.Collections.Generic;
 using System.Linq;

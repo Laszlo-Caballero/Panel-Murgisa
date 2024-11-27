@@ -8,6 +8,10 @@ namespace CapaEntidad.FormaPago
 {
     public class entFormaPago
     {
+        public int idFormaPago {get; set;}
+        public string tipo {get; set;}
+
+        public bool estado {get; set;}
     }
 }
         

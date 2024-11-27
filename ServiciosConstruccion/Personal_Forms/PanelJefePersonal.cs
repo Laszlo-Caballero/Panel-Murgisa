@@ -10,21 +10,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaPresentacion
+namespace CapaPresentacion.Personal_Forms
 {
-    public partial class PanelJefeServicio : Form
+    public partial class PanelJefePersonal : Form
     {
-        public PanelJefeServicio()
+        public PanelJefePersonal()
         {
             InitializeComponent();
         }
 
-        private void btnCerrar2_Click(object sender, EventArgs e)
+        private void btnCerrarP_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnRestaurar2_Click(object sender, EventArgs e)
+        private void btnMaximizarP_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnMaximizar2.Visible = false;
+            btnRestaurar2.Visible = true;
+        }
+
+        private void btnRestaurarP_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
             btnMaximizar.Visible = true;
@@ -34,20 +41,14 @@ namespace CapaPresentacion
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int IParam);
+
         private void BarraTitulo2_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnMaximizar2_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            btnMaximizar2.Visible = false;
-            btnRestaurar2.Visible = true;
-        }
-
-        private void btnMinimizar2_Click(object sender, EventArgs e)
+        private void btnMinimizarP_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
@@ -64,35 +65,24 @@ namespace CapaPresentacion
 
         }
 
-        private void btnROrdendeServicio_Click(object sender, EventArgs e)
+        private void btnManPersonal_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new RealizarOrdenDeServicio());
+            AbrirFormHija(new Personal());
         }
 
-
-        private void btnMaquinaria_Click(object sender, EventArgs e)
+        private void btnCargo_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new MaquinariaFormServicio());
+            AbrirFormHija(new Cargo());
         }
 
-        private void btnPersonal_Click(object sender, EventArgs e)
+        private void btnDepartamento_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new MantenedorPersonal());
+            AbrirFormHija(new Departamento());
         }
 
-        private void btnServicios_Click(object sender, EventArgs e)
+        private void btnProfesion_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new Servicios());
-        }
-
-        private void btnRecursos_Click(object sender, EventArgs e)
-        {
-            AbrirFormHija(new RecursosFormServicio());
-        }
-
-        private void PanelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-
+            AbrirFormHija(new Profesion());
         }
     }
 }

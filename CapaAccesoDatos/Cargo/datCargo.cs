@@ -86,7 +86,7 @@ namespace CapaAccesoDatos.Cargo
                 cn.Open();
                 cmd = new SqlCommand("actualizarCargo", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", nuevo.id);
+                cmd.Parameters.AddWithValue("@@idCargo", nuevo.id);
                 cmd.Parameters.AddWithValue("@cargo", nuevo.cargo);
                 cmd.Parameters.AddWithValue("@desc", nuevo.desc);
                 cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);

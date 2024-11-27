@@ -1,12 +1,12 @@
-using CapaAccesoDatos.Departamento;
-using CapaEntidad.Departamento;
+using CapaAccesoDatos.Personal;
+using CapaEntidad.Personal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaLogica.Departamento
+namespace CapaLogica.Personal
 {
     public class logDepartamento
     {

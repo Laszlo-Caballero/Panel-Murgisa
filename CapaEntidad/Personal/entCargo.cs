@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaEntidad.Cargo
+namespace CapaEntidad.Personal
 {
     public class entCargo
     {
-        public int id {  get; set; }
+        public int id { get; set; }
 
         public string cargo { get; set; }
 
-        public string desc {  get; set; }
+        public string desc { get; set; }
 
         public float sueldo { get; set; }
 
         public bool estado { get; set; }
     }
 }
-        

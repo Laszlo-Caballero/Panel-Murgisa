@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaEntidad.Departamento
+namespace CapaEntidad.Personal
 {
     public class entDepartamento
     {
@@ -17,4 +17,3 @@ namespace CapaEntidad.Departamento
         public bool estado { get; set; }
     }
 }
-        

@@ -1,12 +1,12 @@
-using CapaAccesoDatos.Profesion;
-using CapaEntidad.Profesion;
+using CapaAccesoDatos.Personal;
+using CapaEntidad.Personal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaLogica.Profesion
+namespace CapaLogica.Personal
 {
     public class logProfesion
     {

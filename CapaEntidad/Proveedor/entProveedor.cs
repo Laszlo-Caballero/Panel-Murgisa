@@ -8,7 +8,10 @@ namespace CapaEntidad.Proveedor
 {
     public class entProveedor
     {
-      
+        public int idProveedor { get; set; }
+        public string razsocial { get; set; }
+        public string ruc { get; set; }
+        public bool estado { get; set; }
     }
 }
         

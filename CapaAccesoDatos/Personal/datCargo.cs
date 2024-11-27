@@ -1,4 +1,4 @@
-using CapaEntidad.Profesion;
+using CapaEntidad.Personal;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -6,37 +6,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaAccesoDatos.Profesion
+namespace CapaAccesoDatos.Personal
 {
-    public class datProfesion
+    public class datCargo
     {
-        private static readonly datProfesion _instancia = new datProfesion();
+        private static readonly datCargo _instancia = new datCargo();
 
-        public static datProfesion Instancia
+        public static datCargo Instancia
         {
             get { return _instancia; }
         }
 
-        public List<entProfesion> listarProfesion()
+        public List<entCargo> listarCargo()
         {
             SqlCommand cmd = null;
-            List<entProfesion> lista = new List<entProfesion>();
+            List<entCargo> lista = new List<entCargo>();
             try
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("listarProfesion", cn);
+                cmd = new SqlCommand("listarCargo", cn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    entProfesion nuevo = new entProfesion();
-                    nuevo.id = Convert.ToInt32(dr["idProfesion"]);
-                    nuevo.titulo = dr["titulo"].ToString();
+                    entCargo nuevo = new entCargo();
+                    nuevo.id = Convert.ToInt32(dr["cargoId"]);
+                    nuevo.cargo = dr["cargo"].ToString();
+                    nuevo.desc = dr["descripcion"].ToString();
+                    nuevo.sueldo = Convert.ToSingle(dr["sueldo"]);
                     nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 throw ex;
             }
             finally
@@ -46,7 +49,7 @@ namespace CapaAccesoDatos.Profesion
             return lista;
         }
 
-        public bool agregarProfesion(entProfesion nuevo)
+        public bool agregarCargo(entCargo nuevo)
         {
             SqlCommand cmd = null;
             bool agregar = false;
@@ -54,9 +57,11 @@ namespace CapaAccesoDatos.Profesion
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("agregarProfesion", cn);
+                cmd = new SqlCommand("agregarCargo", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@titulo", nuevo.titulo);
+                cmd.Parameters.AddWithValue("@cargo", nuevo.cargo);
+                cmd.Parameters.AddWithValue("@desc", nuevo.desc);
+                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
                 cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
@@ -72,7 +77,7 @@ namespace CapaAccesoDatos.Profesion
             return agregar;
         }
 
-        public bool actualizarProfesion(entProfesion nuevo)
+        public bool actualizarCargo(entCargo nuevo)
         {
             SqlCommand cmd = null;
             bool actualizar = false;
@@ -80,15 +85,18 @@ namespace CapaAccesoDatos.Profesion
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("actualizarProfesion", cn);
+                cmd = new SqlCommand("actualizarCargo", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idProfesion", nuevo.id);
-                cmd.Parameters.AddWithValue("@titulo", nuevo.titulo);
+                cmd.Parameters.AddWithValue("@@idCargo", nuevo.id);
+                cmd.Parameters.AddWithValue("@cargo", nuevo.cargo);
+                cmd.Parameters.AddWithValue("@desc", nuevo.desc);
+                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
                 cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;
             }
-            catch (Exception ex) { 
+            catch (Exception ex)
+            {
                 throw ex;
             }
             finally
@@ -98,7 +106,7 @@ namespace CapaAccesoDatos.Profesion
             return actualizar;
         }
 
-        public bool deshabilitarProfesion(int id)
+        public bool deshabilitarCargo(int id)
         {
             SqlCommand cmd = null;
             bool deshabilitar = false;
@@ -106,9 +114,9 @@ namespace CapaAccesoDatos.Profesion
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("deshabilitarProfesion", cn);
+                cmd = new SqlCommand("deshabilitarCargo", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idProfesion", id);
+                cmd.Parameters.AddWithValue("@idCargo", id);
                 int rows = cmd.ExecuteNonQuery();
                 deshabilitar = rows >= 1;
             }

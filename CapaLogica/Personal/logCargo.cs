@@ -1,12 +1,12 @@
-using CapaAccesoDatos.Cargo;
-using CapaEntidad.Cargo;
+using CapaAccesoDatos.Personal;
+using CapaEntidad.Personal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaLogica.Cargo
+namespace CapaLogica.Personal
 {
     public class logCargo
     {

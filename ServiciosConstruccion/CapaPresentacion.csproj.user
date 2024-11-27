@@ -34,6 +34,9 @@
     <Compile Update="Personal_Forms\Departamento.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Personal_Forms\Personal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Personal_Forms\Profesion.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -21,19 +21,19 @@ namespace CapaLogica.Condicion
             return datCondicion.Instancia.listarCondicion();
         }
 
-        public bool agregarCondicion(entCondicion nuevo)
+        public bool agregarCondicion(entCondicion condicion)
         {
-            return datCondicion.Instancia.agregarCondicion(nuevo);
+            return datCondicion.Instancia.agregarCondicion(condicion);
         }
 
-        public bool actualizarCondicion(entCondicion nuevo)
+        public bool actualizarCondicion(entCondicion condicion)
         {
-            return datCondicion.Instancia.actualizarCondicion(nuevo);
+            return datCondicion.Instancia.actualizarCondicion(condicion);
         }
 
-        public bool deshablitarCondicion(int id)
+        public bool deshablitarCondicion(entCondicion condicion)
         {
-            return datCondicion.Instancia.deshabilitarCondicion(id);
+            return datCondicion.Instancia.deshabilitarCondicion(condicion);
         }
     }
 }

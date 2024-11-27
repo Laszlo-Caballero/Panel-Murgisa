@@ -33,7 +33,6 @@ namespace CapaAccesoDatos.Personal
                     nuevo.id = Convert.ToInt32(dr["cargoId"]);
                     nuevo.cargo = dr["cargo"].ToString();
                     nuevo.desc = dr["descripcion"].ToString();
-                    nuevo.sueldo = Convert.ToSingle(dr["sueldo"]);
                     nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
                 }
@@ -61,7 +60,6 @@ namespace CapaAccesoDatos.Personal
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cargo", nuevo.cargo);
                 cmd.Parameters.AddWithValue("@desc", nuevo.desc);
-                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
                 cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
@@ -90,7 +88,6 @@ namespace CapaAccesoDatos.Personal
                 cmd.Parameters.AddWithValue("@@idCargo", nuevo.id);
                 cmd.Parameters.AddWithValue("@cargo", nuevo.cargo);
                 cmd.Parameters.AddWithValue("@desc", nuevo.desc);
-                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
                 cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;

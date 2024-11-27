@@ -14,8 +14,6 @@ namespace CapaEntidad.Personal
 
         public string desc { get; set; }
 
-        public float sueldo { get; set; }
-
         public bool estado { get; set; }
     }
 }

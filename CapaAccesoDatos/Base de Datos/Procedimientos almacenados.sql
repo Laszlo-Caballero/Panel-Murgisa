@@ -6,6 +6,11 @@ begin
 end;
 
 
+select * from Cliente
+
+
+
+
 create or alter procedure agregarCliente
 @nombreRepresentante varchar(15),
 @dni char(9),
@@ -48,9 +53,16 @@ end
 
 
 create or alter procedure buscarCliente
-@idCliente int
+@dni varchar(8)
 as
 begin
 	select Cl.idCliente, Cl.nombreRepresentante, Cl.dni, Cl.estado, Cl.correo, cl.telefono, cl.direccion, C.nombre as Ciudad
-	from Cliente Cl inner join Ciudad C on C.idCiudad = Cl.idCiudad where Cl.idCliente = @idCliente
+	from Cliente Cl inner join Ciudad C on C.idCiudad = Cl.idCiudad where Cl.dni = @dni
 end;
+
+
+create or alter procedure listarCiudades
+as
+begin
+	select * from Ciudad
+end

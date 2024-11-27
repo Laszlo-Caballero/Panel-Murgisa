@@ -30,35 +30,31 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
-            textBox7 = new TextBox();
+            label4 = new Label();
+            txtTelefono = new TextBox();
+            txtDni = new TextBox();
             label11 = new Label();
             label9 = new Label();
-            textBox5 = new TextBox();
-            textBox3 = new TextBox();
-            comboBox1 = new ComboBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            checkBox1 = new CheckBox();
+            txtCorreo = new TextBox();
+            txtDireccion = new TextBox();
+            cbCiudad = new ComboBox();
+            txtNombreRepresentante = new TextBox();
+            txtId = new TextBox();
+            btnModificar = new Button();
+            btnAgregar = new Button();
+            cbEstadoCliente = new CheckBox();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
             label3 = new Label();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            dtCliente = new DataGridView();
             groupBox2 = new GroupBox();
-            button7 = new Button();
-            textBox6 = new TextBox();
+            btnBuscar = new Button();
+            txtBuscar = new TextBox();
             label10 = new Label();
-            label4 = new Label();
-            textBox4 = new TextBox();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtCliente).BeginInit();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,40 +72,57 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(textBox7);
+            groupBox1.Controls.Add(txtTelefono);
+            groupBox1.Controls.Add(txtDni);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(textBox5);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(checkBox1);
+            groupBox1.Controls.Add(txtCorreo);
+            groupBox1.Controls.Add(txtDireccion);
+            groupBox1.Controls.Add(cbCiudad);
+            groupBox1.Controls.Add(txtNombreRepresentante);
+            groupBox1.Controls.Add(txtId);
+            groupBox1.Controls.Add(btnModificar);
+            groupBox1.Controls.Add(btnAgregar);
+            groupBox1.Controls.Add(cbEstadoCliente);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Location = new Point(26, 81);
-            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Padding = new Padding(2);
             groupBox1.Size = new Size(908, 232);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del Cliente";
             // 
-            // textBox7
+            // label4
             // 
-            textBox7.Location = new Point(516, 34);
-            textBox7.Margin = new Padding(2, 2, 2, 2);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(201, 27);
-            textBox7.TabIndex = 21;
+            label4.AutoSize = true;
+            label4.Location = new Point(362, 104);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(70, 20);
+            label4.TabIndex = 23;
+            label4.Text = "Telefono:";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(516, 101);
+            txtTelefono.Margin = new Padding(2);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(201, 27);
+            txtTelefono.TabIndex = 22;
+            // 
+            // txtDni
+            // 
+            txtDni.Location = new Point(516, 34);
+            txtDni.Margin = new Padding(2);
+            txtDni.Name = "txtDni";
+            txtDni.Size = new Size(201, 27);
+            txtDni.TabIndex = 21;
             // 
             // label11
             // 
@@ -131,87 +144,80 @@
             label9.TabIndex = 19;
             label9.Text = "Correo electrónico:";
             // 
-            // textBox5
+            // txtCorreo
             // 
-            textBox5.Location = new Point(516, 66);
-            textBox5.Margin = new Padding(2, 2, 2, 2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(201, 27);
-            textBox5.TabIndex = 18;
+            txtCorreo.Location = new Point(516, 66);
+            txtCorreo.Margin = new Padding(2);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(201, 27);
+            txtCorreo.TabIndex = 18;
             // 
-            // textBox3
+            // txtDireccion
             // 
-            textBox3.Location = new Point(128, 148);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(197, 27);
-            textBox3.TabIndex = 17;
+            txtDireccion.Location = new Point(128, 148);
+            txtDireccion.Margin = new Padding(2);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(197, 27);
+            txtDireccion.TabIndex = 17;
             // 
-            // comboBox1
+            // cbCiudad
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(125, 108);
-            comboBox1.Margin = new Padding(2, 2, 2, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(199, 28);
-            comboBox1.TabIndex = 16;
+            cbCiudad.FormattingEnabled = true;
+            cbCiudad.Location = new Point(125, 108);
+            cbCiudad.Margin = new Padding(2);
+            cbCiudad.Name = "cbCiudad";
+            cbCiudad.Size = new Size(199, 28);
+            cbCiudad.TabIndex = 16;
             // 
-            // textBox2
+            // txtNombreRepresentante
             // 
-            textBox2.Location = new Point(123, 69);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(201, 27);
-            textBox2.TabIndex = 13;
+            txtNombreRepresentante.Location = new Point(123, 69);
+            txtNombreRepresentante.Margin = new Padding(2);
+            txtNombreRepresentante.Name = "txtNombreRepresentante";
+            txtNombreRepresentante.Size = new Size(201, 27);
+            txtNombreRepresentante.TabIndex = 13;
             // 
-            // textBox1
+            // txtId
             // 
-            textBox1.Location = new Point(123, 37);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(201, 27);
-            textBox1.TabIndex = 12;
+            txtId.Enabled = false;
+            txtId.Location = new Point(123, 37);
+            txtId.Margin = new Padding(2);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(201, 27);
+            txtId.TabIndex = 12;
             // 
-            // button3
+            // btnModificar
             // 
-            button3.Location = new Point(770, 136);
-            button3.Margin = new Padding(2, 2, 2, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(92, 29);
-            button3.TabIndex = 11;
-            button3.Text = "Cancelar";
-            button3.UseVisualStyleBackColor = true;
+            btnModificar.Location = new Point(770, 86);
+            btnModificar.Margin = new Padding(2);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(92, 29);
+            btnModificar.TabIndex = 10;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
-            // button2
+            // btnAgregar
             // 
-            button2.Location = new Point(770, 86);
-            button2.Margin = new Padding(2, 2, 2, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(92, 29);
-            button2.TabIndex = 10;
-            button2.Text = "Modificar";
-            button2.UseVisualStyleBackColor = true;
+            btnAgregar.Location = new Point(770, 41);
+            btnAgregar.Margin = new Padding(2);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(92, 29);
+            btnAgregar.TabIndex = 9;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
-            // button1
+            // cbEstadoCliente
             // 
-            button1.Location = new Point(770, 41);
-            button1.Margin = new Padding(2, 2, 2, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 29);
-            button1.TabIndex = 9;
-            button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(362, 148);
-            checkBox1.Margin = new Padding(2, 2, 2, 2);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(149, 24);
-            checkBox1.TabIndex = 6;
-            checkBox1.Text = "Estado del cliente";
-            checkBox1.UseVisualStyleBackColor = true;
+            cbEstadoCliente.AutoSize = true;
+            cbEstadoCliente.Location = new Point(362, 148);
+            cbEstadoCliente.Margin = new Padding(2);
+            cbEstadoCliente.Name = "cbEstadoCliente";
+            cbEstadoCliente.Size = new Size(149, 24);
+            cbEstadoCliente.TabIndex = 6;
+            cbEstadoCliente.Text = "Estado del cliente";
+            cbEstadoCliente.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -262,77 +268,49 @@
             label2.TabIndex = 0;
             label2.Text = "Cliente";
             // 
-            // dataGridView1
+            // dtCliente
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(38, 331);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(726, 249);
-            dataGridView1.TabIndex = 2;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(790, 331);
-            button4.Margin = new Padding(2, 2, 2, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(130, 49);
-            button4.TabIndex = 12;
-            button4.Text = "Registrar nuevo cliente";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(790, 407);
-            button5.Margin = new Padding(2, 2, 2, 2);
-            button5.Name = "button5";
-            button5.Size = new Size(92, 29);
-            button5.TabIndex = 13;
-            button5.Text = "Editar";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(790, 459);
-            button6.Margin = new Padding(2, 2, 2, 2);
-            button6.Name = "button6";
-            button6.Size = new Size(92, 29);
-            button6.TabIndex = 14;
-            button6.Text = "Deshabilitar";
-            button6.UseVisualStyleBackColor = true;
+            dtCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtCliente.Location = new Point(38, 331);
+            dtCliente.Margin = new Padding(2);
+            dtCliente.Name = "dtCliente";
+            dtCliente.RowHeadersWidth = 82;
+            dtCliente.Size = new Size(726, 249);
+            dtCliente.TabIndex = 2;
+            dtCliente.CellClick += dtCliente_CellClick;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button7);
-            groupBox2.Controls.Add(textBox6);
+            groupBox2.Controls.Add(btnBuscar);
+            groupBox2.Controls.Add(txtBuscar);
             groupBox2.Controls.Add(label10);
             groupBox2.Location = new Point(38, 600);
-            groupBox2.Margin = new Padding(2, 2, 2, 2);
+            groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(2, 2, 2, 2);
+            groupBox2.Padding = new Padding(2);
             groupBox2.Size = new Size(609, 110);
             groupBox2.TabIndex = 15;
             groupBox2.TabStop = false;
             groupBox2.Text = "Buscar Cliente";
             // 
-            // button7
+            // btnBuscar
             // 
-            button7.Location = new Point(460, 39);
-            button7.Margin = new Padding(2, 2, 2, 2);
-            button7.Name = "button7";
-            button7.Size = new Size(92, 29);
-            button7.TabIndex = 16;
-            button7.Text = "Buscar";
-            button7.UseVisualStyleBackColor = true;
+            btnBuscar.Location = new Point(460, 39);
+            btnBuscar.Margin = new Padding(2);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(92, 29);
+            btnBuscar.TabIndex = 16;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
-            // textBox6
+            // txtBuscar
             // 
-            textBox6.Location = new Point(204, 41);
-            textBox6.Margin = new Padding(2, 2, 2, 2);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(197, 27);
-            textBox6.TabIndex = 20;
+            txtBuscar.Location = new Point(204, 41);
+            txtBuscar.Margin = new Padding(2);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(197, 27);
+            txtBuscar.TabIndex = 20;
             // 
             // label10
             // 
@@ -344,43 +322,22 @@
             label10.TabIndex = 0;
             label10.Text = "Nro de indentificación:";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(362, 104);
-            label4.Margin = new Padding(2, 0, 2, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(70, 20);
-            label4.TabIndex = 23;
-            label4.Text = "Telefono:";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(516, 101);
-            textBox4.Margin = new Padding(2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(201, 27);
-            textBox4.TabIndex = 22;
-            // 
             // Cliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(977, 725);
             Controls.Add(groupBox2);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(dataGridView1);
+            Controls.Add(dtCliente);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Cliente";
             Text = "Cliente";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtCliente).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);
@@ -393,30 +350,26 @@
         private GroupBox groupBox1;
         private Label label3;
         private Label label2;
-        private CheckBox checkBox1;
+        private CheckBox cbEstadoCliente;
         private Label label7;
         private Label label6;
         private Label label5;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private DataGridView dataGridView1;
-        private Button button4;
-        private Button button5;
-        private TextBox textBox3;
-        private ComboBox comboBox1;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Button button6;
-        private TextBox textBox7;
+        private Button btnModificar;
+        private Button btnAgregar;
+        private DataGridView dtCliente;
+        private TextBox txtDireccion;
+        private ComboBox cbCiudad;
+        private TextBox txtNombreRepresentante;
+        private TextBox txtId;
+        private TextBox txtDni;
         private Label label11;
         private Label label9;
-        private TextBox textBox5;
+        private TextBox txtCorreo;
         private GroupBox groupBox2;
-        private Button button7;
-        private TextBox textBox6;
+        private Button btnBuscar;
+        private TextBox txtBuscar;
         private Label label10;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox txtTelefono;
     }
 }

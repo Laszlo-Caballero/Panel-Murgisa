@@ -143,7 +143,7 @@ namespace CapaAccesoDatos.Cliente
                 cn.Open();
                 cmd = new SqlCommand("buscarCliente", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idCliente", dni);
+                cmd.Parameters.AddWithValue("@dni", dni);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {

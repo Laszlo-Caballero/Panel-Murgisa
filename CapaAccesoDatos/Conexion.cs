@@ -16,8 +16,8 @@ namespace CapaAccesoDatos
             {
                 SqlConnection cn = new SqlConnection();
                 cn.ConnectionString = "Data Source=" + server + "; Initial Catalog=murgisa;" +//"User ID=sa; Password=123";
-                                    "Integrated Security=true";
-               
+                                    "Integrated Security=true; TrustServerCertificate=True;";
+
                 return cn;
             }
             catch (Exception ex) {

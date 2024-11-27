@@ -365,6 +365,8 @@ begin
 	where idPersonal = @idPersonal
 end
 
+alter table PagoServicio add estado bit
+
 -- REALIZAR PAGO
 
 create or alter procedure listarPagoServicio
@@ -400,7 +402,7 @@ as
 begin
 	update PagoServicio set
 	estado = 0
-	where idPagoServicio = @idPagoServicio
+	where idPago_Servicio = @idPagoServicio
 end
 
 ---

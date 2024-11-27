@@ -202,6 +202,7 @@ create table PagoServicio(
    idVenta int,
    fecha datetime,
    idFormaPago int,
+   estado bit,
    primary key(idPago_Servicio),
    foreign key(idVenta) REFERENCES Venta(idVenta),
    foreign key(idFormaPago) REFERENCES FormaPago(idFormaPago),

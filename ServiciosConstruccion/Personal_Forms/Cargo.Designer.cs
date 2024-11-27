@@ -113,7 +113,6 @@
             dgvCargo.RowHeadersWidth = 82;
             dgvCargo.Size = new Size(615, 241);
             dgvCargo.TabIndex = 9;
-            dgvCargo.CellContentDoubleClick += dgvCargo_CellContentDoubleClick;
             dgvCargo.CellDoubleClick += dgvCargo_CellDoubleClick;
             // 
             // txtCriterio

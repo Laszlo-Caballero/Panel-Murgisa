@@ -99,13 +99,6 @@ namespace CapaPresentacion.Personal_Forms
                 MessageBox.Show("error al deshabilitar cargo");
         }
 
-        private void dgvCargo_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow filaActual = dgvCargo.Rows[e.RowIndex];
-            txtCargo.Text = filaActual.Cells[0].Value.ToString();
-            txtNombre.Text = filaActual.Cells[1].Value.ToString();
-            txtDesc.Text = filaActual.Cells[2].Value.ToString();
-            cbkEstado.Checked = Convert.ToBoolean(filaActual.Cells[3].Value);
-        }
+
     }
 }

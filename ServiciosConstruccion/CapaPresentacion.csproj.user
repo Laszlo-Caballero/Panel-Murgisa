@@ -43,7 +43,7 @@
     <Compile Update="Servicios_Forms\MaquinariaFormServicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Servicios_Forms\MaterialFormServicio.cs">
+    <Compile Update="Servicios_Forms\RecursosFormServicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Servicios_Forms\PanelJefeServicio.cs">

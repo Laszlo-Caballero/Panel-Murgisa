@@ -69,10 +69,6 @@ namespace CapaPresentacion
             AbrirFormHija(new RealizarOrdenDeServicio());
         }
 
-        private void btnMaterial_Click(object sender, EventArgs e)
-        {
-            AbrirFormHija(new MaterialFormServicio());
-        }
 
         private void btnMaquinaria_Click(object sender, EventArgs e)
         {
@@ -87,6 +83,11 @@ namespace CapaPresentacion
         private void btnServicios_Click(object sender, EventArgs e)
         {
             AbrirFormHija(new Servicios());
+        }
+
+        private void btnRecursos_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new RecursosFormServicio());
         }
     }
 }

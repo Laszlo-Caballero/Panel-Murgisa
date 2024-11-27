@@ -28,50 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button5 = new Button();
-            button4 = new Button();
+            btnEliminar = new Button();
+            btnModificar = new Button();
             btnAgregar = new Button();
-            dataGridView2 = new DataGridView();
-            Column12 = new DataGridViewTextBoxColumn();
-            Column13 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column11 = new DataGridViewTextBoxColumn();
-            Column10 = new DataGridViewTextBoxColumn();
-            comboBox3 = new ComboBox();
             label13 = new Label();
-            comboBox1 = new ComboBox();
+            cbMaquinaria = new ComboBox();
             label11 = new Label();
             label10 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            label5 = new Label();
-            label7 = new Label();
-            dateTimePicker3 = new DateTimePicker();
+            cbkEstadoOperador = new CheckBox();
+            txtCantidad = new TextBox();
+            dtgvMaquinarias = new DataGridView();
+            txtId = new TextBox();
+            label1 = new Label();
             label6 = new Label();
-            textBox1 = new TextBox();
-            checkBox1 = new CheckBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            dtInicio = new DateTimePicker();
+            label5 = new Label();
+            dtFin = new DateTimePicker();
+            idMaquinaria = new DataGridViewTextBoxColumn();
+            nombre = new DataGridViewTextBoxColumn();
+            fechaInicio = new DataGridViewTextBoxColumn();
+            fechaFin = new DataGridViewTextBoxColumn();
+            cantidad = new DataGridViewTextBoxColumn();
+            operador = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dtgvMaquinarias).BeginInit();
             SuspendLayout();
             // 
-            // button5
+            // btnEliminar
             // 
-            button5.Location = new Point(889, 293);
-            button5.Margin = new Padding(2);
-            button5.Name = "button5";
-            button5.Size = new Size(92, 29);
-            button5.TabIndex = 49;
-            button5.Text = "Eliminar";
-            button5.UseVisualStyleBackColor = true;
+            btnEliminar.Location = new Point(889, 293);
+            btnEliminar.Margin = new Padding(2);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(92, 29);
+            btnEliminar.TabIndex = 49;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click_1;
             // 
-            // button4
+            // btnModificar
             // 
-            button4.Location = new Point(889, 245);
-            button4.Margin = new Padding(2);
-            button4.Name = "button4";
-            button4.Size = new Size(92, 29);
-            button4.TabIndex = 48;
-            button4.Text = "Modificar";
-            button4.UseVisualStyleBackColor = true;
+            btnModificar.Location = new Point(889, 245);
+            btnModificar.Margin = new Padding(2);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(92, 29);
+            btnModificar.TabIndex = 48;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += button4_Click;
             // 
             // btnAgregar
             // 
@@ -82,68 +84,7 @@
             btnAgregar.TabIndex = 47;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column12, Column13, Column7, Column8, Column11, Column10 });
-            dataGridView2.Location = new Point(34, 156);
-            dataGridView2.Margin = new Padding(2);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 82;
-            dataGridView2.Size = new Size(790, 188);
-            dataGridView2.TabIndex = 46;
-            // 
-            // Column12
-            // 
-            Column12.HeaderText = "Fecha Inicio";
-            Column12.MinimumWidth = 10;
-            Column12.Name = "Column12";
-            Column12.Width = 200;
-            // 
-            // Column13
-            // 
-            Column13.HeaderText = "Fecha fin";
-            Column13.MinimumWidth = 10;
-            Column13.Name = "Column13";
-            Column13.Width = 200;
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Nombre de Maquinaria";
-            Column7.MinimumWidth = 10;
-            Column7.Name = "Column7";
-            Column7.Width = 200;
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Cantidad";
-            Column8.MinimumWidth = 10;
-            Column8.Name = "Column8";
-            Column8.Width = 200;
-            // 
-            // Column11
-            // 
-            Column11.HeaderText = "Cantidad de horas";
-            Column11.MinimumWidth = 10;
-            Column11.Name = "Column11";
-            Column11.Width = 200;
-            // 
-            // Column10
-            // 
-            Column10.HeaderText = "Operador";
-            Column10.MinimumWidth = 10;
-            Column10.Name = "Column10";
-            Column10.Width = 200;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(400, 82);
-            comboBox3.Margin = new Padding(2);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(118, 28);
-            comboBox3.TabIndex = 45;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // label13
             // 
@@ -155,14 +96,14 @@
             label13.TabIndex = 44;
             label13.Text = "Cantidad:";
             // 
-            // comboBox1
+            // cbMaquinaria
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(170, 85);
-            comboBox1.Margin = new Padding(2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(118, 28);
-            comboBox1.TabIndex = 40;
+            cbMaquinaria.FormattingEnabled = true;
+            cbMaquinaria.Location = new Point(170, 85);
+            cbMaquinaria.Margin = new Padding(2);
+            cbMaquinaria.Name = "cbMaquinaria";
+            cbMaquinaria.Size = new Size(118, 28);
+            cbMaquinaria.TabIndex = 40;
             // 
             // label11
             // 
@@ -183,41 +124,51 @@
             label10.TabIndex = 38;
             label10.Text = "Tipo de maquinaria:";
             // 
-            // dateTimePicker2
+            // cbkEstadoOperador
             // 
-            dateTimePicker2.Location = new Point(326, 42);
-            dateTimePicker2.Margin = new Padding(2);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(248, 27);
-            dateTimePicker2.TabIndex = 37;
+            cbkEstadoOperador.AutoSize = true;
+            cbkEstadoOperador.Location = new Point(595, 85);
+            cbkEstadoOperador.Name = "cbkEstadoOperador";
+            cbkEstadoOperador.Size = new Size(178, 24);
+            cbkEstadoOperador.TabIndex = 51;
+            cbkEstadoOperador.Text = "Se necesita operador?";
+            cbkEstadoOperador.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // txtCantidad
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(326, 20);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(92, 20);
-            label5.TabIndex = 36;
-            label5.Text = "Fecha de fin:";
+            txtCantidad.Location = new Point(403, 85);
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.Size = new Size(125, 27);
+            txtCantidad.TabIndex = 52;
             // 
-            // label7
+            // dtgvMaquinarias
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(604, 41);
-            label7.Margin = new Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(133, 20);
-            label7.TabIndex = 34;
-            label7.Text = "Cantidad de horas:";
+            dtgvMaquinarias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvMaquinarias.Columns.AddRange(new DataGridViewColumn[] { idMaquinaria, nombre, fechaInicio, fechaFin, cantidad, operador });
+            dtgvMaquinarias.Location = new Point(30, 155);
+            dtgvMaquinarias.Name = "dtgvMaquinarias";
+            dtgvMaquinarias.RowHeadersWidth = 51;
+            dtgvMaquinarias.Size = new Size(827, 200);
+            dtgvMaquinarias.TabIndex = 53;
+            dtgvMaquinarias.CellClick += dtgvMaquinarias_CellClick;
             // 
-            // dateTimePicker3
+            // txtId
             // 
-            dateTimePicker3.Location = new Point(26, 42);
-            dateTimePicker3.Margin = new Padding(2);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(248, 27);
-            dateTimePicker3.TabIndex = 33;
+            txtId.Enabled = false;
+            txtId.Location = new Point(637, 42);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(125, 27);
+            txtId.TabIndex = 55;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(601, 45);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(22, 20);
+            label1.TabIndex = 54;
+            label1.Text = "id";
             // 
             // label6
             // 
@@ -229,75 +180,127 @@
             label6.TabIndex = 32;
             label6.Text = "Fecha de inicio:";
             // 
-            // textBox1
+            // dtInicio
             // 
-            textBox1.Location = new Point(742, 38);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 50;
+            dtInicio.Location = new Point(26, 42);
+            dtInicio.Margin = new Padding(2);
+            dtInicio.Name = "dtInicio";
+            dtInicio.Size = new Size(248, 27);
+            dtInicio.TabIndex = 33;
             // 
-            // checkBox1
+            // label5
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(595, 85);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(178, 24);
-            checkBox1.TabIndex = 51;
-            checkBox1.Text = "Se necesita operador?";
-            checkBox1.UseVisualStyleBackColor = true;
+            label5.AutoSize = true;
+            label5.Location = new Point(326, 20);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(92, 20);
+            label5.TabIndex = 36;
+            label5.Text = "Fecha de fin:";
+            // 
+            // dtFin
+            // 
+            dtFin.Location = new Point(326, 42);
+            dtFin.Margin = new Padding(2);
+            dtFin.Name = "dtFin";
+            dtFin.Size = new Size(248, 27);
+            dtFin.TabIndex = 37;
+            // 
+            // idMaquinaria
+            // 
+            idMaquinaria.HeaderText = "idMaquinaria";
+            idMaquinaria.MinimumWidth = 6;
+            idMaquinaria.Name = "idMaquinaria";
+            idMaquinaria.Width = 125;
+            // 
+            // nombre
+            // 
+            nombre.HeaderText = "nombre";
+            nombre.MinimumWidth = 6;
+            nombre.Name = "nombre";
+            nombre.Width = 125;
+            // 
+            // fechaInicio
+            // 
+            fechaInicio.HeaderText = "fechaInicio";
+            fechaInicio.MinimumWidth = 6;
+            fechaInicio.Name = "fechaInicio";
+            fechaInicio.Width = 125;
+            // 
+            // fechaFin
+            // 
+            fechaFin.HeaderText = "fechaFin";
+            fechaFin.MinimumWidth = 6;
+            fechaFin.Name = "fechaFin";
+            fechaFin.Width = 125;
+            // 
+            // cantidad
+            // 
+            cantidad.HeaderText = "cantidad";
+            cantidad.MinimumWidth = 6;
+            cantidad.Name = "cantidad";
+            cantidad.Width = 125;
+            // 
+            // operador
+            // 
+            operador.HeaderText = "operador";
+            operador.MinimumWidth = 6;
+            operador.Name = "operador";
+            operador.Width = 125;
             // 
             // AlquilerMaqReq
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1009, 397);
-            Controls.Add(checkBox1);
-            Controls.Add(textBox1);
-            Controls.Add(button5);
-            Controls.Add(button4);
+            ClientSize = new Size(1169, 397);
+            Controls.Add(txtId);
+            Controls.Add(label1);
+            Controls.Add(dtgvMaquinarias);
+            Controls.Add(txtCantidad);
+            Controls.Add(cbkEstadoOperador);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
-            Controls.Add(dataGridView2);
-            Controls.Add(comboBox3);
             Controls.Add(label13);
-            Controls.Add(comboBox1);
+            Controls.Add(cbMaquinaria);
             Controls.Add(label11);
             Controls.Add(label10);
-            Controls.Add(dateTimePicker2);
+            Controls.Add(dtFin);
             Controls.Add(label5);
-            Controls.Add(label7);
-            Controls.Add(dateTimePicker3);
+            Controls.Add(dtInicio);
             Controls.Add(label6);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AlquilerMaqReq";
             Text = "AlquilerMaqReq";
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvMaquinarias).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button5;
-        private Button button4;
+        private Button btnEliminar;
+        private Button btnModificar;
         private Button btnAgregar;
-        private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn Column12;
-        private DataGridViewTextBoxColumn Column13;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column10;
         private ComboBox comboBox3;
         private Label label13;
-        private ComboBox comboBox1;
+        private ComboBox cbMaquinaria;
         private Label label11;
         private Label label10;
-        private DateTimePicker dateTimePicker2;
-        private Label label5;
-        private Label label7;
-        private DateTimePicker dateTimePicker3;
+        private CheckBox cbkEstadoOperador;
+        private TextBox txtCantidad;
+        private DataGridView dtgvMaquinarias;
+        private TextBox txtId;
+        private Label label1;
         private Label label6;
-        private TextBox textBox1;
-        private CheckBox checkBox1;
+        private DateTimePicker dtInicio;
+        private Label label5;
+        private DateTimePicker dtFin;
+        private DataGridViewTextBoxColumn idMaquinaria;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn fechaInicio;
+        private DataGridViewTextBoxColumn fechaFin;
+        private DataGridViewTextBoxColumn cantidad;
+        private DataGridViewTextBoxColumn operador;
     }
 }

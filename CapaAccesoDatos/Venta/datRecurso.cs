@@ -30,6 +30,14 @@ namespace CapaAccesoDatos.Venta
                 while (dr.Read())
                 {
                     entRecurso nuevo = new entRecurso();
+                    nuevo.idRecurso = Convert.ToInt32(dr["idRecurso"]);
+                    nuevo.idTipoRecurso = Convert.ToInt32(dr["idTipoRecurso"]);
+                    nuevo.idDisponiblidad = Convert.ToInt32(dr["idDisponibilidad"]);
+                    nuevo.idCondicion = Convert.ToInt32(dr["idCondicion"]);
+                    nuevo.idProveedor = Convert.ToInt32(dr["idProveedor"]);
+                    nuevo.nombre = dr["nombre"].ToString();
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
+                    nuevo.precio = float.Parse(dr["precio"].ToString());
                     lista.Add(nuevo);
                 }
             }
@@ -43,18 +51,31 @@ namespace CapaAccesoDatos.Venta
             return lista;
         }
 
-        public bool agregarRecurso(entRecurso nuevo)
+        public List<entRecurso> listarRecursoTipo(entTipoRecurso tipo)
         {
             SqlCommand cmd = null;
-            bool agregar = false;
+            List<entRecurso> lista = new List<entRecurso>();
             try
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("agregarRecurso", cn);
+                cmd = new SqlCommand("listarRecursoTipo", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                agregar = rows >= 1;
+                cmd.Parameters.AddWithValue("@idTipo", tipo.idTipoRecurso);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    entRecurso nuevo = new entRecurso();
+                    nuevo.idRecurso = Convert.ToInt32(dr["idRecurso"]);
+                    nuevo.idTipoRecurso = Convert.ToInt32(dr["idTipoRecurso"]);
+                    nuevo.idDisponiblidad = Convert.ToInt32(dr["idDisponibilidad"]);
+                    nuevo.idCondicion = Convert.ToInt32(dr["idCondicion"]);
+                    nuevo.idProveedor = Convert.ToInt32(dr["idProveedor"]);
+                    nuevo.nombre = dr["nombre"].ToString();
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
+                    nuevo.precio = float.Parse(dr["precio"].ToString());
+                    lista.Add(nuevo);
+                }
             }
             catch (Exception ex)
             {
@@ -64,52 +85,7 @@ namespace CapaAccesoDatos.Venta
             {
                 cmd.Connection.Close();
             }
-            return agregar;
-        }
-
-        public bool actualizarRecurso(entRecurso nuevo)
-        {
-            SqlCommand cmd = null;
-            bool actualizar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("actualizarRecurso", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                actualizar = rows >= 1;
-            }
-            catch (Exception ex) { 
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return actualizar;
-        }
-
-        public bool deshabilitarRecurso(int id)
-        {
-            SqlCommand cmd = null;
-            bool deshabilitar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("deshabilitarRecurso", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idRecurso", id);
-                int rows = cmd.ExecuteNonQuery();
-                deshabilitar = rows >= 1;
-            }
-            catch (Exception ex) { throw ex; }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return deshabilitar;
+            return lista;
         }
     }
 }

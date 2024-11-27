@@ -21,19 +21,9 @@ namespace CapaLogica.Venta
             return datRecurso.Instancia.listarRecurso();
         }
 
-        public bool agregarRecurso(entRecurso nuevo)
+        public List<entRecurso> listarRecursoTipo(entTipoRecurso tipo)
         {
-            return datRecurso.Instancia.agregarRecurso(nuevo);
-        }
-
-        public bool actualizarRecurso(entRecurso nuevo)
-        {
-            return datRecurso.Instancia.actualizarRecurso(nuevo);
-        }
-
-        public bool deshablitarRecurso(int id)
-        {
-            return datRecurso.Instancia.deshabilitarRecurso(id);
+            return datRecurso.Instancia.listarRecursoTipo(tipo);
         }
     }
 }

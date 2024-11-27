@@ -8,6 +8,11 @@ namespace CapaEntidad.Venta
 {
     public class entTipoRecurso
     {
+        public int idTipoRecurso {  get; set; }
+
+        public string tipo {  get; set; }
+
+        public bool estado { get; set; }    
     }
 }
         

@@ -64,9 +64,6 @@
     <Compile Update="Ventas_Forms\Requerimientos\AlquilerMaqReq.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Ventas_Forms\Requerimientos\DemolicionReq.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Ventas_Forms\Requerimientos\EdificacionesReq.cs">
       <SubType>Form</SubType>
     </Compile>

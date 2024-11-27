@@ -30,6 +30,9 @@ namespace CapaAccesoDatos.Venta
                 while (dr.Read())
                 {
                     entTipoRecurso nuevo = new entTipoRecurso();
+                    nuevo.idTipoRecurso = Convert.ToInt32(dr["idTipoRecurso"]);
+                    nuevo.tipo = dr["tipo"].ToString();
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
                 }
             }
@@ -41,75 +44,6 @@ namespace CapaAccesoDatos.Venta
                 cmd.Connection.Close();
             }
             return lista;
-        }
-
-        public bool agregarTipoRecurso(entTipoRecurso nuevo)
-        {
-            SqlCommand cmd = null;
-            bool agregar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("agregarTipoRecurso", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                agregar = rows >= 1;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return agregar;
-        }
-
-        public bool actualizarTipoRecurso(entTipoRecurso nuevo)
-        {
-            SqlCommand cmd = null;
-            bool actualizar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("actualizarTipoRecurso", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                actualizar = rows >= 1;
-            }
-            catch (Exception ex) { 
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return actualizar;
-        }
-
-        public bool deshabilitarTipoRecurso(int id)
-        {
-            SqlCommand cmd = null;
-            bool deshabilitar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("deshabilitarTipoRecurso", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idTipoRecurso", id);
-                int rows = cmd.ExecuteNonQuery();
-                deshabilitar = rows >= 1;
-            }
-            catch (Exception ex) { throw ex; }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return deshabilitar;
         }
     }
 }

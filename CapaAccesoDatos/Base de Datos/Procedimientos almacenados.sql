@@ -137,4 +137,24 @@ begin
 	update Servicio set estado = 0 where idServicio = @idServicio
 end
 
+create or alter procedure listarTipoRecurso
+as
+begin
+	select * from TipoRecurso where estado = 1
+end
 
+create or alter procedure listarRecurso
+as
+begin
+	select * from Recurso where estado = 1
+end
+
+create or alter Procedure listarRecursoTipo
+@idTipo int
+as
+begin
+	select * from Recurso where idTipoRecurso = @idTipo and estado = 1
+end
+
+
+select * from TipoRecurso

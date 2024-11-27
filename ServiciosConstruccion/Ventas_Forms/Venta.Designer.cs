@@ -30,16 +30,12 @@
         {
             label1 = new Label();
             label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            label3 = new Label();
             textBox1 = new TextBox();
             label4 = new Label();
             cbTipoServicio = new ComboBox();
-            button1 = new Button();
             button2 = new Button();
             textBox2 = new TextBox();
             label8 = new Label();
-            textBox3 = new TextBox();
             label9 = new Label();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -49,7 +45,13 @@
             Column5 = new DataGridViewTextBoxColumn();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel = new Panel();
+            groupBox1 = new GroupBox();
+            button3 = new Button();
+            textBox3 = new TextBox();
+            label3 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -72,24 +74,6 @@
             label2.Size = new Size(49, 20);
             label2.TabIndex = 1;
             label2.Text = "Venta:";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(752, 81);
-            dateTimePicker1.Margin = new Padding(2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(248, 27);
-            dateTimePicker1.TabIndex = 2;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(547, 83);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(203, 20);
-            label3.TabIndex = 3;
-            label3.Text = "Fecha de registro de la venta:";
             // 
             // textBox1
             // 
@@ -119,16 +103,6 @@
             cbTipoServicio.TabIndex = 6;
             cbTipoServicio.SelectedIndexChanged += cbTipoServicio_SelectedIndexChanged;
             // 
-            // button1
-            // 
-            button1.Location = new Point(383, 123);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(151, 59);
-            button1.TabIndex = 7;
-            button1.Text = "Consultar disponibilidad";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             button2.Location = new Point(860, 752);
@@ -157,18 +131,10 @@
             label8.TabIndex = 15;
             label8.Text = "Total:";
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(752, 126);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(188, 27);
-            textBox3.TabIndex = 12;
-            // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(547, 123);
+            label9.Location = new Point(425, 125);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(58, 20);
@@ -223,19 +189,64 @@
             // 
             // panel
             // 
+            panel.Controls.Add(groupBox1);
             panel.Location = new Point(26, 346);
             panel.Name = "panel";
             panel.Size = new Size(1027, 391);
             panel.TabIndex = 17;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(3, 0);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1041, 397);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Tipo Servicio";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(774, 189);
+            button3.Name = "button3";
+            button3.Size = new Size(149, 49);
+            button3.TabIndex = 18;
+            button3.Text = "Agregar Venta";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(501, 122);
+            textBox3.Margin = new Padding(2);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(188, 27);
+            textBox3.TabIndex = 12;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(425, 85);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(203, 20);
+            label3.TabIndex = 3;
+            label3.Text = "Fecha de registro de la venta:";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(630, 83);
+            dateTimePicker1.Margin = new Padding(2);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(248, 27);
+            dateTimePicker1.TabIndex = 2;
             // 
             // Venta
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1089, 863);
+            Controls.Add(button3);
             Controls.Add(panel);
             Controls.Add(dataGridView1);
-            Controls.Add(button1);
             Controls.Add(cbTipoServicio);
             Controls.Add(button2);
             Controls.Add(label4);
@@ -253,6 +264,7 @@
             Name = "Venta";
             Text = "0";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -261,15 +273,11 @@
 
         private Label label1;
         private Label label2;
-        private DateTimePicker dateTimePicker1;
-        private Label label3;
         private TextBox textBox1;
         private Label label4;
         private ComboBox cbTipoServicio;
-        private Button button1;
         private Button button2;
         private Label label8;
-        private TextBox textBox3;
         private Label label9;
         private TextBox textBox2;
         private DataGridView dataGridView1;
@@ -280,5 +288,10 @@
         private DataGridViewTextBoxColumn Column5;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel panel;
+        private GroupBox groupBox1;
+        private Button button3;
+        private TextBox textBox3;
+        private Label label3;
+        private DateTimePicker dateTimePicker1;
     }
 }

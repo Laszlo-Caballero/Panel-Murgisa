@@ -57,11 +57,11 @@ namespace CapaPresentacion
                     muro.Show();
                     break;
                 case 4:
-                    DemolicionReq demolicion = new DemolicionReq();
-                    demolicion.TopLevel = false;
-                    demolicion.Dock = DockStyle.Fill;
-                    panel.Controls.Add(demolicion);
-                    demolicion.Show();
+                    AlquilerMaqReq alquilerDemolicion = new AlquilerMaqReq();
+                    alquilerDemolicion.TopLevel = false;
+                    alquilerDemolicion.Dock = DockStyle.Fill;
+                    panel.Controls.Add(alquilerDemolicion);
+                    alquilerDemolicion.Show();
                     break;
             }
         }

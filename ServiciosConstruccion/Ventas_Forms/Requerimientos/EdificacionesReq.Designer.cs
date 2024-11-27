@@ -29,15 +29,7 @@
         private void InitializeComponent()
         {
             textBox8 = new TextBox();
-            textBox5 = new TextBox();
             textBox4 = new TextBox();
-            label19 = new Label();
-            label15 = new Label();
-            listBox1 = new ListBox();
-            button3 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            comboBox4 = new ComboBox();
             label14 = new Label();
             label16 = new Label();
             label17 = new Label();
@@ -45,6 +37,22 @@
             label18 = new Label();
             dateTimePicker5 = new DateTimePicker();
             label20 = new Label();
+            groupBox1 = new GroupBox();
+            txtId = new TextBox();
+            label1 = new Label();
+            dtgvMateriales = new DataGridView();
+            idMaterial = new DataGridViewTextBoxColumn();
+            Material = new DataGridViewTextBoxColumn();
+            cantidad = new DataGridViewTextBoxColumn();
+            txtCantidad = new TextBox();
+            label19 = new Label();
+            label15 = new Label();
+            btnEliminar = new Button();
+            btnModificar = new Button();
+            btnAgregar = new Button();
+            cbMateriales = new ComboBox();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvMateriales).BeginInit();
             SuspendLayout();
             // 
             // textBox8
@@ -55,14 +63,6 @@
             textBox8.Size = new Size(125, 27);
             textBox8.TabIndex = 55;
             // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(176, 183);
-            textBox5.Margin = new Padding(2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 54;
-            // 
             // textBox4
             // 
             textBox4.Location = new Point(447, 85);
@@ -70,74 +70,6 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(125, 27);
             textBox4.TabIndex = 53;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(15, 187);
-            label19.Margin = new Padding(2, 0, 2, 0);
-            label19.Name = "label19";
-            label19.Size = new Size(72, 20);
-            label19.TabIndex = 52;
-            label19.Text = "Cantidad:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(9, 145);
-            label15.Margin = new Padding(2, 0, 2, 0);
-            label15.Name = "label15";
-            label15.Size = new Size(156, 20);
-            label15.TabIndex = 51;
-            label15.Text = "Materiales requeridos:";
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(327, 140);
-            listBox1.Margin = new Padding(2);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(193, 184);
-            listBox1.TabIndex = 50;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(545, 228);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(92, 29);
-            button3.TabIndex = 49;
-            button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(545, 183);
-            button6.Margin = new Padding(2);
-            button6.Name = "button6";
-            button6.Size = new Size(92, 29);
-            button6.TabIndex = 48;
-            button6.Text = "Modificar";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.Location = new Point(207, 228);
-            button7.Margin = new Padding(2);
-            button7.Name = "button7";
-            button7.Size = new Size(92, 29);
-            button7.TabIndex = 47;
-            button7.Text = "Agregar";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // comboBox4
-            // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(176, 143);
-            comboBox4.Margin = new Padding(2);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(125, 28);
-            comboBox4.TabIndex = 46;
             // 
             // label14
             // 
@@ -204,21 +136,154 @@
             label20.TabIndex = 39;
             label20.Text = "Fecha de inicio:";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(txtId);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(dtgvMateriales);
+            groupBox1.Controls.Add(txtCantidad);
+            groupBox1.Controls.Add(label19);
+            groupBox1.Controls.Add(label15);
+            groupBox1.Controls.Add(btnEliminar);
+            groupBox1.Controls.Add(btnModificar);
+            groupBox1.Controls.Add(btnAgregar);
+            groupBox1.Controls.Add(cbMateriales);
+            groupBox1.Location = new Point(12, 135);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(850, 336);
+            groupBox1.TabIndex = 56;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Materiales";
+            // 
+            // txtId
+            // 
+            txtId.Enabled = false;
+            txtId.Location = new Point(179, 39);
+            txtId.Margin = new Padding(2);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(125, 27);
+            txtId.TabIndex = 66;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(143, 42);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(25, 20);
+            label1.TabIndex = 65;
+            label1.Text = "id:";
+            // 
+            // dtgvMateriales
+            // 
+            dtgvMateriales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvMateriales.Columns.AddRange(new DataGridViewColumn[] { idMaterial, Material, cantidad });
+            dtgvMateriales.Location = new Point(334, 39);
+            dtgvMateriales.Name = "dtgvMateriales";
+            dtgvMateriales.RowHeadersWidth = 51;
+            dtgvMateriales.Size = new Size(463, 212);
+            dtgvMateriales.TabIndex = 64;
+            dtgvMateriales.CellClick += dtgvMateriales_CellClick;
+            // 
+            // idMaterial
+            // 
+            idMaterial.HeaderText = "idMaterial";
+            idMaterial.MinimumWidth = 6;
+            idMaterial.Name = "idMaterial";
+            idMaterial.Width = 125;
+            // 
+            // Material
+            // 
+            Material.HeaderText = "Material";
+            Material.MinimumWidth = 6;
+            Material.Name = "Material";
+            Material.Width = 125;
+            // 
+            // cantidad
+            // 
+            cantidad.HeaderText = "cantidad";
+            cantidad.MinimumWidth = 6;
+            cantidad.Name = "cantidad";
+            cantidad.Width = 125;
+            // 
+            // txtCantidad
+            // 
+            txtCantidad.Location = new Point(179, 120);
+            txtCantidad.Margin = new Padding(2);
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.Size = new Size(125, 27);
+            txtCantidad.TabIndex = 63;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(18, 124);
+            label19.Margin = new Padding(2, 0, 2, 0);
+            label19.Name = "label19";
+            label19.Size = new Size(72, 20);
+            label19.TabIndex = 62;
+            label19.Text = "Cantidad:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(12, 82);
+            label15.Margin = new Padding(2, 0, 2, 0);
+            label15.Name = "label15";
+            label15.Size = new Size(156, 20);
+            label15.TabIndex = 61;
+            label15.Text = "Materiales requeridos:";
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(210, 210);
+            btnEliminar.Margin = new Padding(2);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(92, 29);
+            btnEliminar.TabIndex = 60;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnModificar
+            // 
+            btnModificar.Location = new Point(87, 165);
+            btnModificar.Margin = new Padding(2);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(92, 29);
+            btnModificar.TabIndex = 59;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(210, 165);
+            btnAgregar.Margin = new Padding(2);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(92, 29);
+            btnAgregar.TabIndex = 58;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // cbMateriales
+            // 
+            cbMateriales.FormattingEnabled = true;
+            cbMateriales.Location = new Point(179, 80);
+            cbMateriales.Margin = new Padding(2);
+            cbMateriales.Name = "cbMateriales";
+            cbMateriales.Size = new Size(125, 28);
+            cbMateriales.TabIndex = 57;
+            // 
             // EdificacionesReq
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(694, 374);
+            ClientSize = new Size(887, 501);
+            Controls.Add(groupBox1);
             Controls.Add(textBox8);
-            Controls.Add(textBox5);
             Controls.Add(textBox4);
-            Controls.Add(label19);
-            Controls.Add(label15);
-            Controls.Add(listBox1);
-            Controls.Add(button3);
-            Controls.Add(button6);
-            Controls.Add(button7);
-            Controls.Add(comboBox4);
             Controls.Add(label14);
             Controls.Add(label16);
             Controls.Add(label17);
@@ -229,6 +294,9 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "EdificacionesReq";
             Text = "EdificacionesReq";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvMateriales).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -236,14 +304,8 @@
         #endregion
 
         private TextBox textBox8;
-        private TextBox textBox5;
         private TextBox textBox4;
-        private Label label19;
-        private Label label15;
         private ListBox listBox1;
-        private Button button3;
-        private Button button6;
-        private Button button7;
         private ComboBox comboBox4;
         private Label label14;
         private Label label16;
@@ -252,5 +314,19 @@
         private Label label18;
         private DateTimePicker dateTimePicker5;
         private Label label20;
+        private GroupBox groupBox1;
+        private DataGridView dtgvMateriales;
+        private TextBox txtCantidad;
+        private Label label19;
+        private Label label15;
+        private Button btnEliminar;
+        private Button btnModificar;
+        private Button btnAgregar;
+        private ComboBox cbMateriales;
+        private DataGridViewTextBoxColumn idMaterial;
+        private DataGridViewTextBoxColumn Material;
+        private DataGridViewTextBoxColumn cantidad;
+        private TextBox txtId;
+        private Label label1;
     }
 }

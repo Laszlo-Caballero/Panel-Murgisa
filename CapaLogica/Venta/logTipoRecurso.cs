@@ -20,20 +20,5 @@ namespace CapaLogica.Venta
         {
             return datTipoRecurso.Instancia.listarTipoRecurso();
         }
-
-        public bool agregarTipoRecurso(entTipoRecurso nuevo)
-        {
-            return datTipoRecurso.Instancia.agregarTipoRecurso(nuevo);
-        }
-
-        public bool actualizarTipoRecurso(entTipoRecurso nuevo)
-        {
-            return datTipoRecurso.Instancia.actualizarTipoRecurso(nuevo);
-        }
-
-        public bool deshablitarTipoRecurso(int id)
-        {
-            return datTipoRecurso.Instancia.deshabilitarTipoRecurso(id);
-        }
     }
 }

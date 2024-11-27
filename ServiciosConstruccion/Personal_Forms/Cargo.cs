@@ -46,7 +46,7 @@ namespace CapaPresentacion.Personal_Forms
                 limpiar();
             }
             else
-                MessageBox.Show("error al insertar clientes");
+                MessageBox.Show("error al insertar cargo");
 
         }
 
@@ -65,7 +65,7 @@ namespace CapaPresentacion.Personal_Forms
                 limpiar();
             }
             else
-                MessageBox.Show("error al actualizar clientes");
+                MessageBox.Show("error al actualizar cargo");
         }
 
         private void dgvCargo_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -96,7 +96,7 @@ namespace CapaPresentacion.Personal_Forms
                 limpiar();
             }
             else
-                MessageBox.Show("error al deshabilitar clientes");
+                MessageBox.Show("error al deshabilitar cargo");
         }
     }
 }

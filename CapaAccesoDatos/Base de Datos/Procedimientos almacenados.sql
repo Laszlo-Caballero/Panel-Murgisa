@@ -158,3 +158,20 @@ end
 
 
 select * from TipoRecurso
+
+select * from Venta
+
+alter table venta add estado bit
+
+create or alter procedure agregarVenta
+@idServicio int,
+@idCliente int,
+@fechaInicio datetime,
+@fechaFin datetime,
+@fechaVenta date,
+@estado bit
+as
+begin
+	insert into venta (idServicio, idCliente, fechaInicioServicio, fechaFFinServicio, fechaVenta, estado)
+	values (
+end

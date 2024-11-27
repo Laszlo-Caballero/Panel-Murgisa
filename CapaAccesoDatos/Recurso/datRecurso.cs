@@ -1,4 +1,4 @@
-using CapaEntidad.Venta;
+using CapaEntidad.Recurso;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;

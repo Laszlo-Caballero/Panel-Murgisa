@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaEntidad.Personal;
+using CapaEntidad.Recurso;
 
 namespace CapaEntidad.Venta
 {
@@ -21,6 +23,8 @@ namespace CapaEntidad.Venta
         public DateTime fechaVenta { get; set; }
 
         public List<entRecurso> recursos  { get; set; } = new List<entRecurso>();
+
+        public List<entPersonal> personal { get; set; } = new List<entPersonal>();
     }
 }
         

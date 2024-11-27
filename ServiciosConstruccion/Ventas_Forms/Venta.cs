@@ -1,4 +1,8 @@
-﻿using CapaEntidad.Servicios;
+﻿using CapaEntidad.Cliente;
+using CapaEntidad.Personal;
+using CapaEntidad.Servicios;
+using CapaLogica.Cliente;
+using CapaLogica.Personal;
 using CapaLogica.Servicios;
 using CapaPresentacion.Ventas_Forms.Requerimientos;
 using System;
@@ -15,10 +19,14 @@ namespace CapaPresentacion
 {
     public partial class Venta : Form
     {
+
+        private List<entPersonalVista> personal = new List<entPersonalVista>();   
+
         public Venta()
         {
             InitializeComponent();
             listarServicios();
+            listarPersonal();
         }
 
         private void listarServicios()
@@ -26,6 +34,14 @@ namespace CapaPresentacion
             cbTipoServicio.Items.Clear();
             cbTipoServicio.DataSource = logServicios.Instancia.listarServicios();
             cbTipoServicio.ValueMember = "nombre";
+            cbPersonal.Items.Clear();
+            cbPersonal.DataSource = logPersonalVista.Instancia.listarPersonal();
+            cbPersonal.DisplayMember = "nombre";
+        }
+
+        private void listarPersonal()
+        {
+            dtgvPersonal.DataSource = personal;
         }
 
 
@@ -64,6 +80,28 @@ namespace CapaPresentacion
                     alquilerDemolicion.Show();
                     break;
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string ruc = txtRuc.Text;
+            entCliente cliente = logCliente.Instancia.buscarCliente(ruc);
+            if (cliente.idCliente != 0)
+            {
+                txtCliente.Text = cliente.nombreRepresentatne;
+                txtidCliente.Text = cliente.idCliente.ToString();
+            }
+            else
+            {
+                MessageBox.Show("no se encontro");
+            }
+        }
+
+        private void btnAgregarPersonal_Click(object sender, EventArgs e)
+        {
+            entPersonalVista persona = cbPersonal.SelectedItem as entPersonalVista;
+            personal.Add(persona);
+            listarPersonal();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using CapaEntidad.Venta;
+﻿using CapaEntidad.Recurso;
 using CapaLogica.Recurso;
 using System;
 using System.Collections.Generic;

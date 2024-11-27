@@ -22,7 +22,8 @@ namespace CapaEntidad.Recurso
 
         public bool estado { get; set; }
 
+        public int cantidad { get; set; }
+
         public float precio { get; set; }
     }
 }
-        

@@ -1,4 +1,4 @@
-﻿using CapaEntidad.Venta;
+﻿using CapaEntidad.Recurso;
 using CapaLogica.Recurso;
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,10 @@ namespace CapaPresentacion.Ventas_Forms.Requerimientos
         {
             DataGridViewRow row = dtgvMaquinarias.Rows[e.RowIndex];
             txtId.Text = e.RowIndex.ToString();
-            cbMaquinaria.SelectedItem = row.Cells[1].Value.ToString();
+
+            int id = Convert.ToInt32(row.Cells[0].Value);
+
+            cbMaquinaria.SelectedItem = cbMaquinaria.Items.Cast<entRecurso>().FirstOrDefault(item => item.idRecurso == id);
             txtCantidad.Text = row.Cells[2].Value.ToString();
         }
 

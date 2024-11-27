@@ -141,6 +141,7 @@ create table Venta(
     fechaInicioServicio datetime,
     fechaFFinServicio datetime,
     fechaVenta date,
+	estado bit,
 	primary key(idVenta),
     foreign key(idCliente) REFERENCES Cliente(idCliente),
     Foreign Key (idServicio) REFERENCES Servicio(idServicio)

@@ -87,9 +87,11 @@
             bttnAgregar.TabIndex = 3;
             bttnAgregar.Text = "AGREGAR";
             bttnAgregar.UseVisualStyleBackColor = true;
+            bttnAgregar.Click += bttnAgregar_Click;
             // 
             // cbCargo
             // 
+            cbCargo.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCargo.FormattingEnabled = true;
             cbCargo.Location = new Point(76, 114);
             cbCargo.Name = "cbCargo";
@@ -180,6 +182,7 @@
             // 
             // cbProfesion
             // 
+            cbProfesion.DropDownStyle = ComboBoxStyle.DropDownList;
             cbProfesion.FormattingEnabled = true;
             cbProfesion.Location = new Point(317, 114);
             cbProfesion.Name = "cbProfesion";
@@ -197,6 +200,7 @@
             // 
             // cbDepartamento
             // 
+            cbDepartamento.DropDownStyle = ComboBoxStyle.DropDownList;
             cbDepartamento.FormattingEnabled = true;
             cbDepartamento.Location = new Point(590, 114);
             cbDepartamento.Name = "cbDepartamento";
@@ -211,6 +215,7 @@
             bttnEditar.TabIndex = 18;
             bttnEditar.Text = "EDITAR";
             bttnEditar.UseVisualStyleBackColor = true;
+            bttnEditar.Click += bttnEditar_Click;
             // 
             // bttnDeshabilitar
             // 
@@ -220,6 +225,7 @@
             bttnDeshabilitar.TabIndex = 19;
             bttnDeshabilitar.Text = "DESHABILITAR";
             bttnDeshabilitar.UseVisualStyleBackColor = true;
+            bttnDeshabilitar.Click += bttnDeshabilitar_Click;
             // 
             // bttnBuscar
             // 
@@ -235,9 +241,11 @@
             dgvPersonal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPersonal.Location = new Point(23, 163);
             dgvPersonal.Name = "dgvPersonal";
+            dgvPersonal.ReadOnly = true;
             dgvPersonal.RowHeadersWidth = 82;
             dgvPersonal.Size = new Size(622, 251);
             dgvPersonal.TabIndex = 21;
+            dgvPersonal.CellDoubleClick += dgvPersonal_CellDoubleClick;
             // 
             // Personal
             // 

@@ -1,5 +1,7 @@
-﻿using CapaLogica.Cliente;
+﻿using CapaEntidad.Cliente;
+using CapaLogica.Cliente;
 using CapaLogica.FormaPago;
+using CapaLogica.Venta;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +31,14 @@ namespace CapaPresentacion
         public void listarPago()
         {
             dgvPago.DataSource = logFormaPago.Instancia.listarPagos();
+        }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            entCliente cliente = cbCliente.SelectedValue as entCliente;
+            cbVenta.DataSource = logVenta.Instancia.listarVentaCliente(cliente.idCliente);
+            cbVenta.DisplayMember = "id";
+            txtDni = cliente;
         }
     }
 }

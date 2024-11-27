@@ -129,6 +129,7 @@
             cbCliente.Name = "cbCliente";
             cbCliente.Size = new Size(121, 23);
             cbCliente.TabIndex = 39;
+            cbCliente.SelectedIndexChanged += cbCliente_SelectedIndexChanged;
             // 
             // txtCorreo
             // 

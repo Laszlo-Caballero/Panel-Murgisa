@@ -35,6 +35,10 @@
             btnMaximizar = new PictureBox();
             btnCerrar = new PictureBox();
             MenuVertical = new Panel();
+            panel8 = new Panel();
+            btnOSManPreventivo = new Button();
+            panel7 = new Panel();
+            btnOManCorrectivo = new Button();
             panel6 = new Panel();
             btnFormaDePago = new Button();
             panel5 = new Panel();
@@ -132,6 +136,10 @@
             // MenuVertical
             // 
             MenuVertical.BackColor = Color.FromArgb(26, 32, 40);
+            MenuVertical.Controls.Add(panel8);
+            MenuVertical.Controls.Add(btnOSManPreventivo);
+            MenuVertical.Controls.Add(panel7);
+            MenuVertical.Controls.Add(btnOManCorrectivo);
             MenuVertical.Controls.Add(panel6);
             MenuVertical.Controls.Add(btnFormaDePago);
             MenuVertical.Controls.Add(panel5);
@@ -150,6 +158,56 @@
             MenuVertical.Name = "MenuVertical";
             MenuVertical.Size = new Size(200, 614);
             MenuVertical.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(0, 80, 200);
+            panel8.Location = new Point(0, 354);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(5, 32);
+            panel8.TabIndex = 11;
+            // 
+            // btnOSManPreventivo
+            // 
+            btnOSManPreventivo.BackColor = Color.FromArgb(26, 32, 40);
+            btnOSManPreventivo.FlatAppearance.BorderSize = 0;
+            btnOSManPreventivo.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnOSManPreventivo.FlatStyle = FlatStyle.Flat;
+            btnOSManPreventivo.ForeColor = SystemColors.ButtonFace;
+            btnOSManPreventivo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOSManPreventivo.Location = new Point(1, 354);
+            btnOSManPreventivo.Name = "btnOSManPreventivo";
+            btnOSManPreventivo.RightToLeft = RightToLeft.No;
+            btnOSManPreventivo.Size = new Size(197, 32);
+            btnOSManPreventivo.TabIndex = 12;
+            btnOSManPreventivo.Text = "OS Mantenimiendo Preventivo";
+            btnOSManPreventivo.UseVisualStyleBackColor = false;
+            btnOSManPreventivo.Click += btnOManPreventivo_Click;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(0, 80, 200);
+            panel7.Location = new Point(0, 316);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(5, 32);
+            panel7.TabIndex = 9;
+            // 
+            // btnOManCorrectivo
+            // 
+            btnOManCorrectivo.BackColor = Color.FromArgb(26, 32, 40);
+            btnOManCorrectivo.FlatAppearance.BorderSize = 0;
+            btnOManCorrectivo.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnOManCorrectivo.FlatStyle = FlatStyle.Flat;
+            btnOManCorrectivo.ForeColor = SystemColors.ButtonFace;
+            btnOManCorrectivo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOManCorrectivo.Location = new Point(1, 316);
+            btnOManCorrectivo.Name = "btnOManCorrectivo";
+            btnOManCorrectivo.RightToLeft = RightToLeft.No;
+            btnOManCorrectivo.Size = new Size(197, 32);
+            btnOManCorrectivo.TabIndex = 10;
+            btnOManCorrectivo.Text = "OS Mantenimiendo Correctivo";
+            btnOManCorrectivo.UseVisualStyleBackColor = false;
+            btnOManCorrectivo.Click += btnOManCorrectivo_Click;
             // 
             // panel6
             // 
@@ -364,5 +422,9 @@
         private Button btnPagos;
         private Panel panel6;
         private Button btnFormaDePago;
+        private Panel panel8;
+        private Button btnOSManPreventivo;
+        private Panel panel7;
+        private Button btnOManCorrectivo;
     }
 }

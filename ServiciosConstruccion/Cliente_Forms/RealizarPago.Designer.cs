@@ -31,6 +31,11 @@
             label1 = new Label();
             dataGridView1 = new DataGridView();
             groupBox1 = new GroupBox();
+            cbFormaPago = new ComboBox();
+            cbCliente = new ComboBox();
+            txtCorreo = new TextBox();
+            txtDni = new TextBox();
+            txtNombre = new TextBox();
             button3 = new Button();
             label16 = new Label();
             label15 = new Label();
@@ -51,11 +56,6 @@
             label12 = new Label();
             textBox5 = new TextBox();
             button2 = new Button();
-            txtNombre = new TextBox();
-            txtDni = new TextBox();
-            txtCorreo = new TextBox();
-            cbCliente = new ComboBox();
-            cbFormaPago = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -114,6 +114,43 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos";
             // 
+            // cbFormaPago
+            // 
+            cbFormaPago.FormattingEnabled = true;
+            cbFormaPago.Location = new Point(551, 80);
+            cbFormaPago.Name = "cbFormaPago";
+            cbFormaPago.Size = new Size(121, 23);
+            cbFormaPago.TabIndex = 40;
+            // 
+            // cbCliente
+            // 
+            cbCliente.FormattingEnabled = true;
+            cbCliente.Location = new Point(85, 33);
+            cbCliente.Name = "cbCliente";
+            cbCliente.Size = new Size(121, 23);
+            cbCliente.TabIndex = 39;
+            // 
+            // txtCorreo
+            // 
+            txtCorreo.Location = new Point(500, 36);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(229, 23);
+            txtCorreo.TabIndex = 38;
+            // 
+            // txtDni
+            // 
+            txtDni.Location = new Point(301, 78);
+            txtDni.Name = "txtDni";
+            txtDni.Size = new Size(106, 23);
+            txtDni.TabIndex = 37;
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(301, 36);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(106, 23);
+            txtNombre.TabIndex = 36;
+            // 
             // button3
             // 
             button3.Location = new Point(500, 161);
@@ -127,7 +164,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(456, 33);
+            label16.Location = new Point(452, 41);
             label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
             label16.Size = new Size(43, 15);
@@ -147,7 +184,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(235, 41);
+            label14.Location = new Point(242, 41);
             label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
             label14.Size = new Size(54, 15);
@@ -306,43 +343,6 @@
             button2.TabIndex = 37;
             button2.Text = "Buscar";
             button2.UseVisualStyleBackColor = true;
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(294, 36);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(106, 23);
-            txtNombre.TabIndex = 36;
-            // 
-            // txtDni
-            // 
-            txtDni.Location = new Point(301, 78);
-            txtDni.Name = "txtDni";
-            txtDni.Size = new Size(106, 23);
-            txtDni.TabIndex = 37;
-            // 
-            // txtCorreo
-            // 
-            txtCorreo.Location = new Point(504, 28);
-            txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(229, 23);
-            txtCorreo.TabIndex = 38;
-            // 
-            // cbCliente
-            // 
-            cbCliente.FormattingEnabled = true;
-            cbCliente.Location = new Point(85, 33);
-            cbCliente.Name = "cbCliente";
-            cbCliente.Size = new Size(121, 23);
-            cbCliente.TabIndex = 39;
-            // 
-            // cbFormaPago
-            // 
-            cbFormaPago.FormattingEnabled = true;
-            cbFormaPago.Location = new Point(551, 80);
-            cbFormaPago.Name = "cbFormaPago";
-            cbFormaPago.Size = new Size(121, 23);
-            cbFormaPago.TabIndex = 40;
             // 
             // RealizarPago
             // 

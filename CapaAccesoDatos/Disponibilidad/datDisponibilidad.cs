@@ -29,8 +29,11 @@ namespace CapaAccesoDatos.Disponibilidad
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    entDisponibilidad nuevo = new entDisponibilidad();
-                    lista.Add(nuevo);
+                    entDisponibilidad disponibilidad = new entDisponibilidad();
+                    disponibilidad.idDisponibilidad = Convert.ToInt32(dr["idDisponibilidad"]);
+                    disponibilidad.disponibilidad = dr["disponibilidad"].ToString();
+                    disponibilidad.estado = Convert.ToBoolean(dr["estado"]);
+                    lista.Add(disponibilidad);
                 }
             }
             catch (Exception ex) {
@@ -43,7 +46,7 @@ namespace CapaAccesoDatos.Disponibilidad
             return lista;
         }
 
-        public bool agregarDisponibilidad(entDisponibilidad nuevo)
+        public bool agregarDisponibilidad(entDisponibilidad disponibilidad)
         {
             SqlCommand cmd = null;
             bool agregar = false;
@@ -53,6 +56,10 @@ namespace CapaAccesoDatos.Disponibilidad
                 cn.Open();
                 cmd = new SqlCommand("agregarDisponibilidad", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@disponibilidad", disponibilidad.disponibilidad);
+                cmd.Parameters.AddWithValue("@estado", disponibilidad.estado);
+
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -67,7 +74,7 @@ namespace CapaAccesoDatos.Disponibilidad
             return agregar;
         }
 
-        public bool actualizarDisponibilidad(entDisponibilidad nuevo)
+        public bool actualizarDisponibilidad(entDisponibilidad disponibilidad)
         {
             SqlCommand cmd = null;
             bool actualizar = false;
@@ -77,6 +84,10 @@ namespace CapaAccesoDatos.Disponibilidad
                 cn.Open();
                 cmd = new SqlCommand("actualizarDisponibilidad", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@disponibilidad", disponibilidad.disponibilidad);
+                cmd.Parameters.AddWithValue("@estado", disponibilidad.estado);
+
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;
             }
@@ -90,7 +101,7 @@ namespace CapaAccesoDatos.Disponibilidad
             return actualizar;
         }
 
-        public bool deshabilitarDisponibilidad(int id)
+        public bool deshabilitarDisponibilidad(entDisponibilidad disponibilidad)
         {
             SqlCommand cmd = null;
             bool deshabilitar = false;
@@ -100,7 +111,7 @@ namespace CapaAccesoDatos.Disponibilidad
                 cn.Open();
                 cmd = new SqlCommand("deshabilitarDisponibilidad", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idDisponibilidad", id);
+                cmd.Parameters.AddWithValue("@idDisponibilidad", disponibilidad.idDisponibilidad);
                 int rows = cmd.ExecuteNonQuery();
                 deshabilitar = rows >= 1;
             }

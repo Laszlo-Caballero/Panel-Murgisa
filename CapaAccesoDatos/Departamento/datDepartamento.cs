@@ -30,6 +30,10 @@ namespace CapaAccesoDatos.Departamento
                 while (dr.Read())
                 {
                     entDepartamento nuevo = new entDepartamento();
+                    nuevo.id = Convert.ToInt32(dr["idDepartamento"]);
+                    nuevo.nombre = dr["nombre"].ToString();
+                    nuevo.desc = dr["descripcion"].ToString();
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
                 }
             }
@@ -53,6 +57,9 @@ namespace CapaAccesoDatos.Departamento
                 cn.Open();
                 cmd = new SqlCommand("agregarDepartamento", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombre", nuevo.nombre);
+                cmd.Parameters.AddWithValue("@descripcion", nuevo.desc);
+                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -77,6 +84,10 @@ namespace CapaAccesoDatos.Departamento
                 cn.Open();
                 cmd = new SqlCommand("actualizarDepartamento", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idDepartamento", nuevo.id);
+                cmd.Parameters.AddWithValue("@nombre", nuevo.nombre);
+                cmd.Parameters.AddWithValue("@descripcion", nuevo.desc);
+                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;
             }

@@ -30,6 +30,15 @@ namespace CapaAccesoDatos.PagoServicio
                 while (dr.Read())
                 {
                     entPagoServicio nuevo = new entPagoServicio();
+                    nuevo.id = Convert.ToInt32(dr["idPago_Servicio"]);
+                    nuevo.idVenta = Convert.ToInt32(dr["idVenta"]);
+                    nuevo.nombre = dr["nombre"].ToString();
+                    nuevo.dni = dr["dni"].ToString();
+                    nuevo.correo = dr["correo"].ToString();
+                    nuevo.tipo = dr["tipo"].ToString();
+                    nuevo.total = Convert.ToInt32(dr["total"]);
+                    nuevo.fecha = Convert.ToDateTime(dr["fecha"]);
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
                 }
             }
@@ -53,6 +62,10 @@ namespace CapaAccesoDatos.PagoServicio
                 cn.Open();
                 cmd = new SqlCommand("agregarPagoServicio", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idVenta", nuevo.idVenta);
+                cmd.Parameters.AddWithValue("@fecha", nuevo.fecha);
+                cmd.Parameters.AddWithValue("@idFormaPago", nuevo.idFormaPago);
+                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -65,29 +78,6 @@ namespace CapaAccesoDatos.PagoServicio
                 cmd.Connection.Close();
             }
             return agregar;
-        }
-
-        public bool actualizarPagoServicio(entPagoServicio nuevo)
-        {
-            SqlCommand cmd = null;
-            bool actualizar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("actualizarPagoServicio", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                actualizar = rows >= 1;
-            }
-            catch (Exception ex) { 
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return actualizar;
         }
 
         public bool deshabilitarPagoServicio(int id)

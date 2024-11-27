@@ -10,6 +10,9 @@
     <Compile Update="Cliente_Forms\Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Mantenimiento_Forms\Condicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Mantenimiento_Forms\MantenimientoCorrectivo.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -31,7 +31,7 @@ namespace CapaLogica.Proveedor
             return datProveedor.Instancia.actualizarProveedor(nuevo);
         }
 
-        public bool deshablitarServicio(int id)
+        public bool deshablitarProveedor(int id)
         {
             return datProveedor.Instancia.deshabilitarProveedor(id);
         }

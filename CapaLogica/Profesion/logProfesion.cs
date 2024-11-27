@@ -31,7 +31,7 @@ namespace CapaLogica.Profesion
             return datProfesion.Instancia.actualizarProfesion(nuevo);
         }
 
-        public bool deshablitarServicio(int id)
+        public bool deshablitarProfesion(int id)
         {
             return datProfesion.Instancia.deshabilitarProfesion(id);
         }

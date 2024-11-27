@@ -31,7 +31,7 @@ namespace CapaLogica.OrdenMantenimientoCorrectivo
             return datOrdenMantenimientoCorrectivo.Instancia.actualizarOrdenMantenimientoCorrectivo(nuevo);
         }
 
-        public bool deshablitarServicio(int id)
+        public bool deshablitarMantenimientoCorrectivo(int id)
         {
             return datOrdenMantenimientoCorrectivo.Instancia.deshabilitarOrdenMantenimientoCorrectivo(id);
         }

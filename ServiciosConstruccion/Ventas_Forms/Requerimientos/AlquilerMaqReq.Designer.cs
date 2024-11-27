@@ -40,9 +40,6 @@
             Column10 = new DataGridViewTextBoxColumn();
             comboBox3 = new ComboBox();
             label13 = new Label();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
-            label12 = new Label();
             comboBox1 = new ComboBox();
             label11 = new Label();
             label10 = new Label();
@@ -51,6 +48,8 @@
             label7 = new Label();
             dateTimePicker3 = new DateTimePicker();
             label6 = new Label();
+            textBox1 = new TextBox();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
@@ -156,38 +155,6 @@
             label13.TabIndex = 44;
             label13.Text = "Cantidad:";
             // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(604, 130);
-            checkBox2.Margin = new Padding(2);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(51, 24);
-            checkBox2.TabIndex = 43;
-            checkBox2.Text = "No";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(604, 104);
-            checkBox1.Margin = new Padding(2);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(43, 24);
-            checkBox1.TabIndex = 42;
-            checkBox1.Text = "Si";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(604, 82);
-            label12.Margin = new Padding(2, 0, 2, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(156, 20);
-            label12.TabIndex = 41;
-            label12.Text = "Se necesita operador?";
-            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
@@ -262,20 +229,36 @@
             label6.TabIndex = 32;
             label6.Text = "Fecha de inicio:";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(742, 38);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(125, 27);
+            textBox1.TabIndex = 50;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(595, 85);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(178, 24);
+            checkBox1.TabIndex = 51;
+            checkBox1.Text = "Se necesita operador?";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // AlquilerMaqReq
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1009, 397);
+            Controls.Add(checkBox1);
+            Controls.Add(textBox1);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(btnAgregar);
             Controls.Add(dataGridView2);
             Controls.Add(comboBox3);
             Controls.Add(label13);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
-            Controls.Add(label12);
             Controls.Add(comboBox1);
             Controls.Add(label11);
             Controls.Add(label10);
@@ -306,9 +289,6 @@
         private DataGridViewTextBoxColumn Column10;
         private ComboBox comboBox3;
         private Label label13;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
-        private Label label12;
         private ComboBox comboBox1;
         private Label label11;
         private Label label10;
@@ -317,5 +297,7 @@
         private Label label7;
         private DateTimePicker dateTimePicker3;
         private Label label6;
+        private TextBox textBox1;
+        private CheckBox checkBox1;
     }
 }

@@ -35,28 +35,28 @@ namespace CapaPresentacion
             panel.Controls.Clear();
             switch (servicio.idServicio)
             {
-                case 2:
+                case 1:
                     AlquilerMaqReq alquiler = new AlquilerMaqReq();
                     alquiler.TopLevel = false;
                     alquiler.Dock = DockStyle.Fill;
                     panel.Controls.Add(alquiler);
                     alquiler.Show();
                     break;
-                case 3:
+                case 2:
                     EdificacionesReq edificaciones = new EdificacionesReq();
                     edificaciones.TopLevel = false;
                     edificaciones.Dock = DockStyle.Fill;
                     panel.Controls.Add(edificaciones);
                     edificaciones.Show();
                     break;
-                case 4:
+                case 3:
                     MuroContencionReq muro = new MuroContencionReq();
                     muro.TopLevel = false;
                     muro.Dock = DockStyle.Fill;
                     panel.Controls.Add(muro);
                     muro.Show();
                     break;
-                case 5:
+                case 4:
                     DemolicionReq demolicion = new DemolicionReq();
                     demolicion.TopLevel = false;
                     demolicion.Dock = DockStyle.Fill;

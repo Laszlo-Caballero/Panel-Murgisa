@@ -31,7 +31,7 @@ namespace CapaLogica.TipoMantenimiento
             return datTipoMantenimientoCorrectivo.Instancia.actualizarTipoMantenimientoCorrectivo(nuevo);
         }
 
-        public bool deshablitarServicio(int id)
+        public bool deshablitarTipoMantenimientoCorrectivo(int id)
         {
             return datTipoMantenimientoCorrectivo.Instancia.deshabilitarTipoMantenimientoCorrectivo(id);
         }

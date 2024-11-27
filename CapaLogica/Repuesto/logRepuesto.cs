@@ -31,7 +31,7 @@ namespace CapaLogica.Repuesto
             return datRepuesto.Instancia.actualizarRepuesto(nuevo);
         }
 
-        public bool deshablitarServicio(int id)
+        public bool deshablitarRepuesto(int id)
         {
             return datRepuesto.Instancia.deshabilitarRepuesto(id);
         }

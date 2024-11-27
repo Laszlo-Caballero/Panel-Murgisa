@@ -1,4 +1,4 @@
-using CapaEntidad.Cargo;
+using CapaEntidad.OrdenMantenimientoPreventivo;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -6,35 +6,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaAccesoDatos.Cargo
+namespace CapaAccesoDatos.OrdenMantenimientoPreventivo
 {
-    public class datCargo
+    public class datOrdenMantenimientoPreventivo
     {
-        private static readonly datCargo _instancia = new datCargo();
+        private static readonly datOrdenMantenimientoPreventivo _instancia = new datOrdenMantenimientoPreventivo();
 
-        public static datCargo Instancia
+        public static datOrdenMantenimientoPreventivo Instancia
         {
             get { return _instancia; }
         }
 
-        public List<entCargo> listarCargo()
+        public List<entOrdenMantenimientoPreventivo> listarOrdenMantenimientoPreventivo()
         {
             SqlCommand cmd = null;
-            List<entCargo> lista = new List<entCargo>();
+            List<entOrdenMantenimientoPreventivo> lista = new List<entOrdenMantenimientoPreventivo>();
             try
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("listarCargo", cn);
+                cmd = new SqlCommand("listarOrdenMantenimientoPreventivo", cn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    entCargo nuevo = new entCargo();
-                    nuevo.id = Convert.ToInt32(dr["cargoId"]);
-                    nuevo.cargo = dr["cargo"].ToString();
-                    nuevo.desc = dr["descripcion"].ToString();
-                    nuevo.sueldo = Convert.ToSingle(dr["sueldo"]);
-                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
+                    entOrdenMantenimientoPreventivo nuevo = new entOrdenMantenimientoPreventivo();
                     lista.Add(nuevo);
                 }
             }
@@ -48,7 +43,7 @@ namespace CapaAccesoDatos.Cargo
             return lista;
         }
 
-        public bool agregarCargo(entCargo nuevo)
+        public bool agregarOrdenMantenimientoPreventivo(entOrdenMantenimientoPreventivo nuevo)
         {
             SqlCommand cmd = null;
             bool agregar = false;
@@ -56,12 +51,8 @@ namespace CapaAccesoDatos.Cargo
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("agregarCargo", cn);
+                cmd = new SqlCommand("agregarOrdenMantenimientoPreventivo", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cargo", nuevo.cargo);
-                cmd.Parameters.AddWithValue("@desc", nuevo.desc);
-                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
-                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -76,7 +67,7 @@ namespace CapaAccesoDatos.Cargo
             return agregar;
         }
 
-        public bool actualizarCargo(entCargo nuevo)
+        public bool actualizarOrdenMantenimientoPreventivo(entOrdenMantenimientoPreventivo nuevo)
         {
             SqlCommand cmd = null;
             bool actualizar = false;
@@ -84,13 +75,8 @@ namespace CapaAccesoDatos.Cargo
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("actualizarCargo", cn);
+                cmd = new SqlCommand("actualizarOrdenMantenimientoPreventivo", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@@idCargo", nuevo.id);
-                cmd.Parameters.AddWithValue("@cargo", nuevo.cargo);
-                cmd.Parameters.AddWithValue("@desc", nuevo.desc);
-                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
-                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;
             }
@@ -104,7 +90,7 @@ namespace CapaAccesoDatos.Cargo
             return actualizar;
         }
 
-        public bool deshabilitarCargo(int id)
+        public bool deshabilitarOrdenMantenimientoPreventivo(int id)
         {
             SqlCommand cmd = null;
             bool deshabilitar = false;
@@ -112,9 +98,9 @@ namespace CapaAccesoDatos.Cargo
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("deshabilitarCargo", cn);
+                cmd = new SqlCommand("deshabilitarOrdenMantenimientoPreventivo", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idCargo", id);
+                cmd.Parameters.AddWithValue("@idOrdenMantenimientoPreventivo", id);
                 int rows = cmd.ExecuteNonQuery();
                 deshabilitar = rows >= 1;
             }

@@ -164,7 +164,7 @@ namespace CapaLogica.{carpeta}
             return dat{nombre}.Instancia.actualizar{nombre}(nuevo);
         }}
 
-        public bool deshablitarServicio(int id)
+        public bool deshablitar{nombre}(int id)
         {{
             return dat{nombre}.Instancia.deshabilitar{nombre}(id);
         }}

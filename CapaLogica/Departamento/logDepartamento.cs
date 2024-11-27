@@ -31,7 +31,7 @@ namespace CapaLogica.Departamento
             return datDepartamento.Instancia.actualizarDepartamento(nuevo);
         }
 
-        public bool deshablitarServicio(int id)
+        public bool deshablitarDepartamento(int id)
         {
             return datDepartamento.Instancia.deshabilitarDepartamento(id);
         }

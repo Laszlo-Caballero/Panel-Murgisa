@@ -31,7 +31,7 @@ namespace CapaLogica.Condicion
             return datCondicion.Instancia.actualizarCondicion(nuevo);
         }
 
-        public bool deshablitarServicio(int id)
+        public bool deshablitarCondicion(int id)
         {
             return datCondicion.Instancia.deshabilitarCondicion(id);
         }

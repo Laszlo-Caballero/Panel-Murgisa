@@ -31,7 +31,7 @@ namespace CapaLogica.Cargo
             return datCargo.Instancia.actualizarCargo(nuevo);
         }
 
-        public bool deshablitarServicio(int id)
+        public bool deshablitarCargo(int id)
         {
             return datCargo.Instancia.deshabilitarCargo(id);
         }

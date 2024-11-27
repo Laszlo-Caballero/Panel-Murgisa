@@ -1,4 +1,4 @@
-using CapaEntidad.Departamento;
+using CapaEntidad.Venta;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -6,34 +6,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaAccesoDatos.Departamento
+namespace CapaAccesoDatos.Venta
 {
-    public class datDepartamento
+    public class datTipoRecurso
     {
-        private static readonly datDepartamento _instancia = new datDepartamento();
+        private static readonly datTipoRecurso _instancia = new datTipoRecurso();
 
-        public static datDepartamento Instancia
+        public static datTipoRecurso Instancia
         {
             get { return _instancia; }
         }
 
-        public List<entDepartamento> listarDepartamento()
+        public List<entTipoRecurso> listarTipoRecurso()
         {
             SqlCommand cmd = null;
-            List<entDepartamento> lista = new List<entDepartamento>();
+            List<entTipoRecurso> lista = new List<entTipoRecurso>();
             try
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("listarDepartamento", cn);
+                cmd = new SqlCommand("listarTipoRecurso", cn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    entDepartamento nuevo = new entDepartamento();
-                    nuevo.id = Convert.ToInt32(dr["idDepartamento"]);
-                    nuevo.nombre = dr["nombre"].ToString();
-                    nuevo.desc = dr["descripcion"].ToString();
-                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
+                    entTipoRecurso nuevo = new entTipoRecurso();
                     lista.Add(nuevo);
                 }
             }
@@ -47,7 +43,7 @@ namespace CapaAccesoDatos.Departamento
             return lista;
         }
 
-        public bool agregarDepartamento(entDepartamento nuevo)
+        public bool agregarTipoRecurso(entTipoRecurso nuevo)
         {
             SqlCommand cmd = null;
             bool agregar = false;
@@ -55,11 +51,8 @@ namespace CapaAccesoDatos.Departamento
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("agregarDepartamento", cn);
+                cmd = new SqlCommand("agregarTipoRecurso", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@nombre", nuevo.nombre);
-                cmd.Parameters.AddWithValue("@descripcion", nuevo.desc);
-                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -74,7 +67,7 @@ namespace CapaAccesoDatos.Departamento
             return agregar;
         }
 
-        public bool actualizarDepartamento(entDepartamento nuevo)
+        public bool actualizarTipoRecurso(entTipoRecurso nuevo)
         {
             SqlCommand cmd = null;
             bool actualizar = false;
@@ -82,12 +75,8 @@ namespace CapaAccesoDatos.Departamento
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("actualizarDepartamento", cn);
+                cmd = new SqlCommand("actualizarTipoRecurso", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idDepartamento", nuevo.id);
-                cmd.Parameters.AddWithValue("@nombre", nuevo.nombre);
-                cmd.Parameters.AddWithValue("@descripcion", nuevo.desc);
-                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;
             }
@@ -101,7 +90,7 @@ namespace CapaAccesoDatos.Departamento
             return actualizar;
         }
 
-        public bool deshabilitarDepartamento(int id)
+        public bool deshabilitarTipoRecurso(int id)
         {
             SqlCommand cmd = null;
             bool deshabilitar = false;
@@ -109,9 +98,9 @@ namespace CapaAccesoDatos.Departamento
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("deshabilitarDepartamento", cn);
+                cmd = new SqlCommand("deshabilitarTipoRecurso", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idDepartamento", id);
+                cmd.Parameters.AddWithValue("@idTipoRecurso", id);
                 int rows = cmd.ExecuteNonQuery();
                 deshabilitar = rows >= 1;
             }

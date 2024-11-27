@@ -36,11 +36,11 @@
             label3 = new Label();
             cbkEstado = new CheckBox();
             btnBuscar = new Button();
-            dataGridView1 = new DataGridView();
+            dgvProfesion = new DataGridView();
             btnAgregar = new Button();
             btnEditar = new Button();
             btnDeshabilitar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProfesion).BeginInit();
             SuspendLayout();
             // 
             // txtProfesion
@@ -110,13 +110,13 @@
             btnBuscar.Text = "BUSCAR";
             btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvProfesion
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(38, 123);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(363, 202);
-            dataGridView1.TabIndex = 10;
+            dgvProfesion.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProfesion.Location = new Point(38, 123);
+            dgvProfesion.Name = "dgvProfesion";
+            dgvProfesion.Size = new Size(363, 202);
+            dgvProfesion.TabIndex = 10;
             // 
             // btnAgregar
             // 
@@ -153,7 +153,7 @@
             Controls.Add(btnDeshabilitar);
             Controls.Add(btnEditar);
             Controls.Add(btnAgregar);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvProfesion);
             Controls.Add(btnBuscar);
             Controls.Add(cbkEstado);
             Controls.Add(txtCriterio);
@@ -164,7 +164,7 @@
             Controls.Add(label1);
             Name = "Profesion";
             Text = "Profesion";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProfesion).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -179,7 +179,7 @@
         private Label label3;
         private CheckBox cbkEstado;
         private Button btnBuscar;
-        private DataGridView dataGridView1;
+        private DataGridView dgvProfesion;
         private Button btnAgregar;
         private Button btnEditar;
         private Button btnDeshabilitar;

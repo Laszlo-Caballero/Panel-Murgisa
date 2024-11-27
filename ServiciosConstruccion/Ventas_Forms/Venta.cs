@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CapaEntidad.Servicios;
+using CapaLogica.Servicios;
+using CapaPresentacion.Ventas_Forms.Requerimientos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,52 +18,51 @@ namespace CapaPresentacion
         public Venta()
         {
             InitializeComponent();
-            // Inicializamos los groupBox como invisibles
-            gbAlquilerMaquinaria.Visible = false;
-            gbEdificaciones.Visible = false;
-            gbMurosContencion.Visible = false;
-            gbDemolicion.Visible = false;
-
-            // Suscribimos el evento SelectedIndexChanged del ComboBox
-            cbTipoServicio.SelectedIndexChanged += new EventHandler(cbTipoServicio_SelectedIndexChanged);
-
-            // Añadir opciones al ComboBox (Alquiler de Maquinarias, Edificaciones)
-            cbTipoServicio.Items.Add("Alquiler de maquinarias");
-            cbTipoServicio.Items.Add("Edificaciones");
-            cbTipoServicio.Items.Add("Muro de Contención");
-            cbTipoServicio.Items.Add("Demoliciones");
+            listarServicios();
         }
+
+        private void listarServicios()
+        {
+            cbTipoServicio.Items.Clear();
+            cbTipoServicio.DataSource = logServicios.Instancia.listarServicios();
+            cbTipoServicio.ValueMember = "nombre";
+        }
+
 
         private void cbTipoServicio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Ocultar todos los GroupBox inicialmente
-            gbAlquilerMaquinaria.Visible = false;
-            gbEdificaciones.Visible = false;
-            gbMurosContencion.Visible = false;
-            gbDemolicion.Visible = false;
-
-            // Verificar si hay un item seleccionado
-            if (cbTipoServicio.SelectedItem != null)
+            entServicios servicio = cbTipoServicio.SelectedItem as entServicios;
+            panel.Controls.Clear();
+            switch (servicio.idServicio)
             {
-                // Obtener el valor seleccionado del ComboBox
-                string servicioSeleccionado = cbTipoServicio.SelectedItem.ToString();
-
-                // Mostrar el GroupBox correspondiente según la selección
-                switch (servicioSeleccionado)
-                {
-                    case "Alquiler de maquinarias":
-                        gbAlquilerMaquinaria.Visible = true;
-                        break;
-                    case "Edificaciones":
-                        gbEdificaciones.Visible = true;
-                        break;
-                    case "Muro de Contención":
-                        gbMurosContencion.Visible = true;
-                        break;
-                    case "Demoliciones":
-                        gbDemolicion.Visible = true;
-                        break;
-                }
+                case 1:
+                    AlquilerMaqReq alquiler = new AlquilerMaqReq();
+                    alquiler.TopLevel = false;
+                    alquiler.Dock = DockStyle.Fill;
+                    panel.Controls.Add(alquiler);
+                    alquiler.Show();
+                    break;
+                case 2:
+                    EdificacionesReq edificaciones = new EdificacionesReq();
+                    edificaciones.TopLevel = false;
+                    edificaciones.Dock = DockStyle.Fill;
+                    panel.Controls.Add(edificaciones);
+                    edificaciones.Show();
+                    break;
+                case 3:
+                    MuroContencionReq muro = new MuroContencionReq();
+                    muro.TopLevel = false;
+                    muro.Dock = DockStyle.Fill;
+                    panel.Controls.Add(muro);
+                    muro.Show();
+                    break;
+                case 4:
+                    DemolicionReq demolicion = new DemolicionReq();
+                    demolicion.TopLevel = false;
+                    demolicion.Dock = DockStyle.Fill;
+                    panel.Controls.Add(demolicion);
+                    demolicion.Show();
+                    break;
             }
         }
     }

@@ -37,14 +37,14 @@
             txtSueldo = new TextBox();
             label4 = new Label();
             cbkEstado = new CheckBox();
-            dataGridView1 = new DataGridView();
+            dgvCargo = new DataGridView();
             txtCriterio = new TextBox();
             label5 = new Label();
             btnBuscar = new Button();
             btnAgregar = new Button();
             btnEditar = new Button();
             btnDeshabilitar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCargo).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -121,13 +121,13 @@
             cbkEstado.Text = "ESTADO";
             cbkEstado.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvCargo
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 144);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(615, 241);
-            dataGridView1.TabIndex = 9;
+            dgvCargo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCargo.Location = new Point(12, 144);
+            dgvCargo.Name = "dgvCargo";
+            dgvCargo.Size = new Size(615, 241);
+            dgvCargo.TabIndex = 9;
             // 
             // txtCriterio
             // 
@@ -192,7 +192,7 @@
             Controls.Add(btnBuscar);
             Controls.Add(txtCriterio);
             Controls.Add(label5);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvCargo);
             Controls.Add(cbkEstado);
             Controls.Add(txtSueldo);
             Controls.Add(label4);
@@ -204,7 +204,7 @@
             Controls.Add(label1);
             Name = "Cargo";
             Text = "Cargo";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCargo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -220,7 +220,7 @@
         private TextBox txtSueldo;
         private Label label4;
         private CheckBox cbkEstado;
-        private DataGridView dataGridView1;
+        private DataGridView dgvCargo;
         private TextBox txtCriterio;
         private Label label5;
         private Button btnBuscar;

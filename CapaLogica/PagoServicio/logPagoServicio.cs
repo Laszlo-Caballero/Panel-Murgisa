@@ -26,11 +26,6 @@ namespace CapaLogica.PagoServicio
             return datPagoServicio.Instancia.agregarPagoServicio(nuevo);
         }
 
-        public bool actualizarPagoServicio(entPagoServicio nuevo)
-        {
-            return datPagoServicio.Instancia.actualizarPagoServicio(nuevo);
-        }
-
         public bool deshablitarPagoServicio(int id)
         {
             return datPagoServicio.Instancia.deshabilitarPagoServicio(id);

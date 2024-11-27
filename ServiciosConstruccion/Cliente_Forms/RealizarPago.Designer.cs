@@ -31,9 +31,14 @@
             label1 = new Label();
             dataGridView1 = new DataGridView();
             groupBox1 = new GroupBox();
+            button3 = new Button();
+            label16 = new Label();
+            label15 = new Label();
+            label14 = new Label();
+            cbVenta = new ComboBox();
+            label13 = new Label();
             label6 = new Label();
             cbParcial = new CheckBox();
-            this.cbForma = new ComboBox();
             txtTotal = new TextBox();
             button1 = new Button();
             dateTimePicker1 = new DateTimePicker();
@@ -45,17 +50,12 @@
             label2 = new Label();
             label12 = new Label();
             textBox5 = new TextBox();
-            button3 = new Button();
-            this.cbCliente = new ComboBox();
-            cbVenta = new ComboBox();
-            label13 = new Label();
-            this.txtNombre = new TextBox();
-            label14 = new Label();
-            this.txtDni7 = new TextBox();
-            label15 = new Label();
-            this.txtCorreo = new TextBox();
-            label16 = new Label();
             button2 = new Button();
+            txtNombre = new TextBox();
+            txtDni = new TextBox();
+            txtCorreo = new TextBox();
+            cbCliente = new ComboBox();
+            cbFormaPago = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -83,19 +83,19 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(cbFormaPago);
+            groupBox1.Controls.Add(cbCliente);
+            groupBox1.Controls.Add(txtCorreo);
+            groupBox1.Controls.Add(txtDni);
+            groupBox1.Controls.Add(txtNombre);
             groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(this.txtCorreo);
             groupBox1.Controls.Add(label16);
-            groupBox1.Controls.Add(this.txtDni7);
             groupBox1.Controls.Add(label15);
-            groupBox1.Controls.Add(this.txtNombre);
             groupBox1.Controls.Add(label14);
             groupBox1.Controls.Add(cbVenta);
             groupBox1.Controls.Add(label13);
-            groupBox1.Controls.Add(this.cbCliente);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(cbParcial);
-            groupBox1.Controls.Add(this.cbForma);
             groupBox1.Controls.Add(txtTotal);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(dateTimePicker1);
@@ -113,6 +113,64 @@
             groupBox1.TabIndex = 17;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(500, 161);
+            button3.Margin = new Padding(2, 1, 2, 1);
+            button3.Name = "button3";
+            button3.Size = new Size(92, 32);
+            button3.TabIndex = 27;
+            button3.Text = "Anular";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(456, 33);
+            label16.Margin = new Padding(2, 0, 2, 0);
+            label16.Name = "label16";
+            label16.Size = new Size(43, 15);
+            label16.TabIndex = 35;
+            label16.Text = "Correo";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(242, 81);
+            label15.Margin = new Padding(2, 0, 2, 0);
+            label15.Name = "label15";
+            label15.Size = new Size(28, 15);
+            label15.TabIndex = 33;
+            label15.Text = "Dni:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(235, 41);
+            label14.Margin = new Padding(2, 0, 2, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(54, 15);
+            label14.TabIndex = 31;
+            label14.Text = "Nombre:";
+            // 
+            // cbVenta
+            // 
+            cbVenta.FormattingEnabled = true;
+            cbVenta.Location = new Point(85, 75);
+            cbVenta.Name = "cbVenta";
+            cbVenta.Size = new Size(121, 23);
+            cbVenta.TabIndex = 30;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(20, 78);
+            label13.Margin = new Padding(2, 0, 2, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(36, 15);
+            label13.TabIndex = 29;
+            label13.Text = "Venta";
             // 
             // label6
             // 
@@ -134,15 +192,6 @@
             cbParcial.TabIndex = 24;
             cbParcial.Text = "Pago parcial";
             cbParcial.UseVisualStyleBackColor = true;
-            // 
-            // cbForma
-            // 
-            this.cbForma.FormattingEnabled = true;
-            this.cbForma.Location = new Point(550, 65);
-            this.cbForma.Margin = new Padding(2, 1, 2, 1);
-            this.cbForma.Name = "cbForma";
-            this.cbForma.Size = new Size(132, 23);
-            this.cbForma.TabIndex = 23;
             // 
             // txtTotal
             // 
@@ -203,7 +252,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(456, 71);
+            label5.Location = new Point(456, 83);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(90, 15);
@@ -248,96 +297,6 @@
             textBox5.Size = new Size(176, 23);
             textBox5.TabIndex = 31;
             // 
-            // button3
-            // 
-            button3.Location = new Point(500, 161);
-            button3.Margin = new Padding(2, 1, 2, 1);
-            button3.Name = "button3";
-            button3.Size = new Size(92, 32);
-            button3.TabIndex = 27;
-            button3.Text = "Anular";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // cbCliente
-            // 
-            this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new Point(85, 33);
-            this.cbCliente.Name = "cbCliente";
-            this.cbCliente.Size = new Size(121, 23);
-            this.cbCliente.TabIndex = 27;
-            // 
-            // cbVenta
-            // 
-            cbVenta.FormattingEnabled = true;
-            cbVenta.Location = new Point(85, 75);
-            cbVenta.Name = "cbVenta";
-            cbVenta.Size = new Size(121, 23);
-            cbVenta.TabIndex = 30;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(20, 78);
-            label13.Margin = new Padding(2, 0, 2, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(36, 15);
-            label13.TabIndex = 29;
-            label13.Text = "Venta";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new Point(300, 30);
-            this.txtNombre.Margin = new Padding(2, 1, 2, 1);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new Size(123, 23);
-            this.txtNombre.TabIndex = 32;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(242, 33);
-            label14.Margin = new Padding(2, 0, 2, 0);
-            label14.Name = "label14";
-            label14.Size = new Size(54, 15);
-            label14.TabIndex = 31;
-            label14.Text = "Nombre:";
-            // 
-            // txtDni7
-            // 
-            this.txtDni7.Location = new Point(300, 68);
-            this.txtDni7.Margin = new Padding(2, 1, 2, 1);
-            this.txtDni7.Name = "txtDni7";
-            this.txtDni7.Size = new Size(123, 23);
-            this.txtDni7.TabIndex = 34;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(242, 71);
-            label15.Margin = new Padding(2, 0, 2, 0);
-            label15.Name = "label15";
-            label15.Size = new Size(28, 15);
-            label15.TabIndex = 33;
-            label15.Text = "Dni:";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new Point(514, 30);
-            this.txtCorreo.Margin = new Padding(2, 1, 2, 1);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new Size(230, 23);
-            this.txtCorreo.TabIndex = 36;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(456, 33);
-            label16.Margin = new Padding(2, 0, 2, 0);
-            label16.Name = "label16";
-            label16.Size = new Size(43, 15);
-            label16.TabIndex = 35;
-            label16.Text = "Correo";
-            // 
             // button2
             // 
             button2.Location = new Point(360, 478);
@@ -347,6 +306,43 @@
             button2.TabIndex = 37;
             button2.Text = "Buscar";
             button2.UseVisualStyleBackColor = true;
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(294, 36);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(106, 23);
+            txtNombre.TabIndex = 36;
+            // 
+            // txtDni
+            // 
+            txtDni.Location = new Point(301, 78);
+            txtDni.Name = "txtDni";
+            txtDni.Size = new Size(106, 23);
+            txtDni.TabIndex = 37;
+            // 
+            // txtCorreo
+            // 
+            txtCorreo.Location = new Point(504, 28);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(229, 23);
+            txtCorreo.TabIndex = 38;
+            // 
+            // cbCliente
+            // 
+            cbCliente.FormattingEnabled = true;
+            cbCliente.Location = new Point(85, 33);
+            cbCliente.Name = "cbCliente";
+            cbCliente.Size = new Size(121, 23);
+            cbCliente.TabIndex = 39;
+            // 
+            // cbFormaPago
+            // 
+            cbFormaPago.FormattingEnabled = true;
+            cbFormaPago.Location = new Point(551, 80);
+            cbFormaPago.Name = "cbFormaPago";
+            cbFormaPago.Size = new Size(121, 23);
+            cbFormaPago.TabIndex = 40;
             // 
             // RealizarPago
             // 
@@ -405,5 +401,10 @@
         private ComboBox cbVenta;
         private Label label13;
         private Button button2;
+        private ComboBox cbFormaPago;
+        private ComboBox cbCliente;
+        private TextBox txtCorreo;
+        private TextBox txtDni;
+        private TextBox txtNombre;
     }
 }

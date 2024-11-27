@@ -92,7 +92,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(356, 36);
+            btnAgregar.Location = new Point(377, 37);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(137, 23);
             btnAgregar.TabIndex = 7;
@@ -101,7 +101,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(356, 76);
+            btnEditar.Location = new Point(377, 76);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(137, 23);
             btnEditar.TabIndex = 8;
@@ -110,7 +110,7 @@
             // 
             // btnDeshabilitar
             // 
-            btnDeshabilitar.Location = new Point(356, 119);
+            btnDeshabilitar.Location = new Point(377, 119);
             btnDeshabilitar.Name = "btnDeshabilitar";
             btnDeshabilitar.Size = new Size(137, 23);
             btnDeshabilitar.TabIndex = 9;

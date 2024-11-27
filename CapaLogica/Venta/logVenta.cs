@@ -26,11 +26,6 @@ namespace CapaLogica.Venta
             return datVenta.Instancia.agregarVenta(nuevo);
         }
 
-        public bool actualizarVenta(entVenta nuevo)
-        {
-            return datVenta.Instancia.actualizarVenta(nuevo);
-        }
-
         public bool deshablitarVenta(int id)
         {
             return datVenta.Instancia.deshabilitarVenta(id);

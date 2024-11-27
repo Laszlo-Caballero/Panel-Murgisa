@@ -14,7 +14,7 @@ namespace CapaPresentacion.Ventas_Forms.Requerimientos
 {
     public partial class EdificacionesReq : Form
     {
-        public List<entMaterialVenta> materiales = new List<entMaterialVenta>();
+        public List<entRecurso> materiales = new List<entRecurso>();
         public EdificacionesReq()
         {
             InitializeComponent();
@@ -33,21 +33,18 @@ namespace CapaPresentacion.Ventas_Forms.Requerimientos
         private void listarMateriales()
         {
             dtgvMateriales.Rows.Clear();
-            foreach (entMaterialVenta r in materiales)
+            foreach (entRecurso r in materiales)
             {
-                dtgvMateriales.Rows.Add(r.idMaterial, r.nombre, r.cantidad);
+                dtgvMateriales.Rows.Add(r.idRecurso, r.nombre, r.cantidad);
             }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             entRecurso recurso = cbMateriales.SelectedValue as entRecurso;
-            entMaterialVenta material = new entMaterialVenta();
-            material.idMaterial = recurso.idRecurso;
-            material.nombre = recurso.nombre;
-            material.cantidad = Convert.ToInt32(txtCantidad.Text);
+            recurso.cantidad = Convert.ToInt32(txtCantidad.Text);
 
-            materiales.Add(material);
+            materiales.Add(recurso);
             listarMateriales();
         }
 
@@ -55,12 +52,9 @@ namespace CapaPresentacion.Ventas_Forms.Requerimientos
         {
             int id = Convert.ToInt32(txtId.Text);
             entRecurso recurso = cbMateriales.SelectedValue as entRecurso;
-            entMaterialVenta material = new entMaterialVenta();
-            material.idMaterial = recurso.idRecurso;
-            material.nombre = recurso.nombre;
-            material.cantidad = Convert.ToInt32(txtCantidad.Text);
+            recurso.cantidad = Convert.ToInt32(txtCantidad.Text);
 
-            materiales[id] = material;
+            materiales[id] = recurso;
             listarMateriales();
         }
 

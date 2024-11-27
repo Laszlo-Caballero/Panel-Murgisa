@@ -35,7 +35,6 @@
             cbMaquinaria = new ComboBox();
             label11 = new Label();
             label10 = new Label();
-            cbkEstadoOperador = new CheckBox();
             txtCantidad = new TextBox();
             dtgvMaquinarias = new DataGridView();
             txtId = new TextBox();
@@ -46,10 +45,7 @@
             dtFin = new DateTimePicker();
             idMaquinaria = new DataGridViewTextBoxColumn();
             nombre = new DataGridViewTextBoxColumn();
-            fechaInicio = new DataGridViewTextBoxColumn();
-            fechaFin = new DataGridViewTextBoxColumn();
             cantidad = new DataGridViewTextBoxColumn();
-            operador = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dtgvMaquinarias).BeginInit();
             SuspendLayout();
             // 
@@ -124,16 +120,6 @@
             label10.TabIndex = 38;
             label10.Text = "Tipo de maquinaria:";
             // 
-            // cbkEstadoOperador
-            // 
-            cbkEstadoOperador.AutoSize = true;
-            cbkEstadoOperador.Location = new Point(595, 85);
-            cbkEstadoOperador.Name = "cbkEstadoOperador";
-            cbkEstadoOperador.Size = new Size(178, 24);
-            cbkEstadoOperador.TabIndex = 51;
-            cbkEstadoOperador.Text = "Se necesita operador?";
-            cbkEstadoOperador.UseVisualStyleBackColor = true;
-            // 
             // txtCantidad
             // 
             txtCantidad.Location = new Point(403, 85);
@@ -144,7 +130,7 @@
             // dtgvMaquinarias
             // 
             dtgvMaquinarias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvMaquinarias.Columns.AddRange(new DataGridViewColumn[] { idMaquinaria, nombre, fechaInicio, fechaFin, cantidad, operador });
+            dtgvMaquinarias.Columns.AddRange(new DataGridViewColumn[] { idMaquinaria, nombre, cantidad });
             dtgvMaquinarias.Location = new Point(30, 155);
             dtgvMaquinarias.Name = "dtgvMaquinarias";
             dtgvMaquinarias.RowHeadersWidth = 51;
@@ -220,33 +206,12 @@
             nombre.Name = "nombre";
             nombre.Width = 125;
             // 
-            // fechaInicio
-            // 
-            fechaInicio.HeaderText = "fechaInicio";
-            fechaInicio.MinimumWidth = 6;
-            fechaInicio.Name = "fechaInicio";
-            fechaInicio.Width = 125;
-            // 
-            // fechaFin
-            // 
-            fechaFin.HeaderText = "fechaFin";
-            fechaFin.MinimumWidth = 6;
-            fechaFin.Name = "fechaFin";
-            fechaFin.Width = 125;
-            // 
             // cantidad
             // 
             cantidad.HeaderText = "cantidad";
             cantidad.MinimumWidth = 6;
             cantidad.Name = "cantidad";
             cantidad.Width = 125;
-            // 
-            // operador
-            // 
-            operador.HeaderText = "operador";
-            operador.MinimumWidth = 6;
-            operador.Name = "operador";
-            operador.Width = 125;
             // 
             // AlquilerMaqReq
             // 
@@ -257,7 +222,6 @@
             Controls.Add(label1);
             Controls.Add(dtgvMaquinarias);
             Controls.Add(txtCantidad);
-            Controls.Add(cbkEstadoOperador);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
@@ -287,7 +251,6 @@
         private ComboBox cbMaquinaria;
         private Label label11;
         private Label label10;
-        private CheckBox cbkEstadoOperador;
         private TextBox txtCantidad;
         private DataGridView dtgvMaquinarias;
         private TextBox txtId;
@@ -298,9 +261,6 @@
         private DateTimePicker dtFin;
         private DataGridViewTextBoxColumn idMaquinaria;
         private DataGridViewTextBoxColumn nombre;
-        private DataGridViewTextBoxColumn fechaInicio;
-        private DataGridViewTextBoxColumn fechaFin;
         private DataGridViewTextBoxColumn cantidad;
-        private DataGridViewTextBoxColumn operador;
     }
 }

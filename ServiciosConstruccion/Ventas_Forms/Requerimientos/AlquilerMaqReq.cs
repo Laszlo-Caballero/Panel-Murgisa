@@ -14,7 +14,7 @@ namespace CapaPresentacion.Ventas_Forms.Requerimientos
 {
     public partial class AlquilerMaqReq : Form
     {
-        public List<entAlquilerMaquinaria> maquinarias = new List<entAlquilerMaquinaria>();
+        public List<entRecurso> maquinarias = new List<entRecurso>();
         public AlquilerMaqReq()
         {
             InitializeComponent();
@@ -33,27 +33,22 @@ namespace CapaPresentacion.Ventas_Forms.Requerimientos
         private void listarMaquinarias()
         {
             dtgvMaquinarias.Rows.Clear();
-            foreach (entAlquilerMaquinaria m in maquinarias)
+
+            foreach (entRecurso m in maquinarias)
             {
-                dtgvMaquinarias.Rows.Add(m.idMaquinaria, m.nombre, m.fechaInicio, m.fechaFin, m.cantidad, m.operador);
+                dtgvMaquinarias.Rows.Add(m.idRecurso, m.nombre,  m.cantidad);
             }
         }
 
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            entAlquilerMaquinaria maquinaria = new entAlquilerMaquinaria();
 
             entRecurso recurso = cbMaquinaria.SelectedValue as entRecurso;
 
-            maquinaria.idMaquinaria = recurso.idRecurso;
-            maquinaria.nombre = recurso.nombre;
-            maquinaria.fechaInicio = dtInicio.Value;
-            maquinaria.fechaFin = dtFin.Value;
-            maquinaria.cantidad = Convert.ToInt32(txtCantidad.Text);
-            maquinaria.operador = cbkEstadoOperador.Checked;
+            recurso.cantidad = Convert.ToInt32(txtCantidad.Text);
 
-            maquinarias.Add(maquinaria);
+            maquinarias.Add(recurso);
             listarMaquinarias();
         }
 
@@ -62,27 +57,18 @@ namespace CapaPresentacion.Ventas_Forms.Requerimientos
             DataGridViewRow row = dtgvMaquinarias.Rows[e.RowIndex];
             txtId.Text = e.RowIndex.ToString();
             cbMaquinaria.SelectedItem = row.Cells[0].Value;
-            dtInicio.Value = Convert.ToDateTime(row.Cells[2].Value);
-            dtFin.Value = Convert.ToDateTime(row.Cells[3].Value);
-            txtCantidad.Text = row.Cells[4].Value.ToString();
-            cbkEstadoOperador.Checked = Convert.ToBoolean(row.Cells[5].Value);
+            txtCantidad.Text = row.Cells[2].Value.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txtId.Text);
-            entAlquilerMaquinaria maquinaria = new entAlquilerMaquinaria();
 
             entRecurso recurso = cbMaquinaria.SelectedValue as entRecurso;
 
-            maquinaria.idMaquinaria = recurso.idRecurso;
-            maquinaria.nombre = recurso.nombre;
-            maquinaria.fechaInicio = dtInicio.Value;
-            maquinaria.fechaFin = dtFin.Value;
-            maquinaria.cantidad = Convert.ToInt32(txtCantidad.Text);
-            maquinaria.operador = cbkEstadoOperador.Checked;
+            recurso.cantidad = Convert.ToInt32(txtCantidad.Text);
 
-            maquinarias[id] = maquinaria;
+            maquinarias[id] = recurso;
             listarMaquinarias();
         }
 

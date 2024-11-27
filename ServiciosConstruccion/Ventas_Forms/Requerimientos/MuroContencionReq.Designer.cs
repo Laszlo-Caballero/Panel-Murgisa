@@ -184,6 +184,7 @@
             dtgvMateriales.RowHeadersWidth = 51;
             dtgvMateriales.Size = new Size(463, 212);
             dtgvMateriales.TabIndex = 64;
+            dtgvMateriales.CellClick += dtgvMateriales_CellClick;
             // 
             // idMaterial
             // 
@@ -243,6 +244,7 @@
             btnEliminar.TabIndex = 60;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnModificar
             // 
@@ -253,6 +255,7 @@
             btnModificar.TabIndex = 59;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnAgregar
             // 
@@ -263,6 +266,7 @@
             btnAgregar.TabIndex = 58;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // cbMateriales
             // 

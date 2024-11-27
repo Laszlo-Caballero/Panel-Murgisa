@@ -22,6 +22,8 @@ namespace CapaEntidad.Venta
 
         public bool estado { get; set; }
 
+        public int cantidad { get; set; }   
+
         public float precio { get; set; }
     }
 }

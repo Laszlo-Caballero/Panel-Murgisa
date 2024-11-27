@@ -67,29 +67,6 @@ namespace CapaAccesoDatos.Venta
             return agregar;
         }
 
-        public bool actualizarVenta(entVenta nuevo)
-        {
-            SqlCommand cmd = null;
-            bool actualizar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("actualizarVenta", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                actualizar = rows >= 1;
-            }
-            catch (Exception ex) { 
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return actualizar;
-        }
-
         public bool deshabilitarVenta(int id)
         {
             SqlCommand cmd = null;

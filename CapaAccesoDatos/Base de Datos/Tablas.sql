@@ -1,3 +1,4 @@
+
 -- SQLBook: Code
 create table Ciudad(
     idCiudad int identity(1,1),

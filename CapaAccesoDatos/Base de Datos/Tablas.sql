@@ -39,8 +39,10 @@ create table Personal(
 -- SQLBook: Code
 create table Servicio(
     idServicio int identity(1,1),
-    descripción varchar(50),
+    nombre varchar(50),
     estado bit,
+    precio float,
+	cualquiera bit
     primary key(idServicio)
 )
     

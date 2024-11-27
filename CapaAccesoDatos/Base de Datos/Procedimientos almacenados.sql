@@ -83,10 +83,58 @@ begin
 	insert into FormaPago (tipo, estado) values (@tipo, @estado)
 end
 
+create or alter procedure actualizarPago
+@idPago int,
+@tipo varchar(60),
+@estado bit
+as
+begin
+	update FormaPago set tipo = @tipo, estado = @estado where idFormaPago = @idPago
+end
 
-create or alter procedure deshabilitar
+create or alter procedure deshabilitarPago
 @idPago int
 as
 begin
 	update FormaPago set estado = 0 where idFormaPago = @idPago
 end
+
+select * from Servicio
+
+
+create or alter procedure listarServicios
+as
+begin
+	select * from Servicio where estado = 1
+end
+
+
+create or alter procedure agregarServicio
+@nombre varchar(50),
+@precio float,
+@estado bit
+as
+begin
+	insert into Servicio (estado, nombre, precio) 
+	values (@estado, @nombre, @precio)
+end
+
+create or alter procedure actualizarServicio
+@idServicio int,
+@nombre varchar(50),
+@precio float,
+@estado bit
+as
+begin
+	update Servicio set estado = @estado, nombre = @nombre, precio = @precio where idServicio = @idServicio
+end
+
+
+create or alter procedure deshabilitarServicio
+@idServicio int
+as
+begin
+	update Servicio set estado = 0 where idServicio = @idServicio
+end
+
+

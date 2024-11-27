@@ -21,6 +21,101 @@ namespace CapaAccesoDatos.{carpeta}
         {{
             get {{ return _instancia; }}
         }}
+
+        public List<ent{nombre}> listar{nombre}()
+        {{
+            SqlCommand cmd = null;
+            List<ent{nombre}> lista = new List<ent{nombre}>();
+            try
+            {{
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("listar{nombre}", cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {{
+                    ent{nombre} nuevo = new ent{nombre}();
+                    lista.Add(nuevo);
+                }}
+            }}
+            catch (Exception ex) {{
+                throw ex;
+            }}
+            finally
+            {{
+                cmd.Connection.Close();
+            }}
+            return lista;
+        }}
+
+        public bool agregar{nombre}(ent{nombre} nuevo)
+        {{
+            SqlCommand cmd = null;
+            bool agregar = false;
+            try
+            {{
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("agregar{nombre}", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                int rows = cmd.ExecuteNonQuery();
+                agregar = rows >= 1;
+            }}
+            catch (Exception ex)
+            {{
+                throw ex;
+            }}
+            finally
+            {{
+                cmd.Connection.Close();
+            }}
+            return agregar;
+        }}
+
+        public bool actualizar{nombre}(ent{nombre} nuevo)
+        {{
+            SqlCommand cmd = null;
+            bool actualizar = false;
+            try
+            {{
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("actualizar{nombre}", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                int rows = cmd.ExecuteNonQuery();
+                actualizar = rows >= 1;
+            }}
+            catch (Exception ex) {{ 
+                throw ex;
+            }}
+            finally
+            {{
+                cmd.Connection.Close();
+            }}
+            return actualizar;
+        }}
+
+        public bool deshabilitar{nombre}(int id)
+        {{
+            SqlCommand cmd = null;
+            bool deshabilitar = false;
+            try
+            {{
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("deshabilitar{nombre}", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id{nombre}", id);
+                int rows = cmd.ExecuteNonQuery();
+                deshabilitar = rows >= 1;
+            }}
+            catch (Exception ex) {{ throw ex; }}
+            finally
+            {{
+                cmd.Connection.Close();
+            }}
+            return deshabilitar;
+        }}
     }}
 }}"""
     codigo_csharp_ent =  f"""using System;
@@ -53,6 +148,25 @@ namespace CapaLogica.{carpeta}
         public static log{nombre} Instancia
         {{
             get {{ return _instancia; }}
+        }}
+        public List<ent{nombre}> listar{nombre}()
+        {{
+            return dat{nombre}.Instancia.listar{nombre}();
+        }}
+
+        public bool agregar{nombre}(ent{nombre} nuevo)
+        {{
+            return dat{nombre}.Instancia.agregar{nombre}(nuevo);
+        }}
+
+        public bool actualizar{nombre}(ent{nombre} nuevo)
+        {{
+            return dat{nombre}.Instancia.actualizar{nombre}(nuevo);
+        }}
+
+        public bool deshablitarServicio(int id)
+        {{
+            return dat{nombre}.Instancia.deshabilitar{nombre}(id);
         }}
     }}
 }}"""

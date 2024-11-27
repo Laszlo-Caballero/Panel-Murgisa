@@ -10,3 +10,9 @@ insert into Ciudad (nombre) values
 ('Simbal'),
 ('Trujillo'),
 ('Victor Larco Herrera')
+
+insert into Servicio (nombre, precio, estado)
+values ('Alquiler de maquinaria', 1000, 1),
+('Edificaciones', 2000, 1),
+('Muro de Conteción', 2000, 1),
+('Demoliciones', 2000, 1)

@@ -88,5 +88,40 @@ namespace CapaAccesoDatos.Venta
             }
             return deshabilitar;
         }
+
+        public List<entVenta> listarVentaCliente(int id)
+        {
+            SqlCommand cmd = null;
+            List<entVenta> lista = new List<entVenta>();
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("listarVentaCliente", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idCliente", id);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    entVenta nuevo = new entVenta();
+                    nuevo.idVenta = Convert.ToInt32(dr["idVenta"]);
+                    nuevo.idServicio = Convert.ToInt32(dr["idServicio"]);
+                    nuevo.idCliente = Convert.ToInt32(dr["idCliente"]);
+                    nuevo.fIncioServicio = Convert.ToDateTime(dr["fechaInicioServicio"]);
+                    nuevo.fFinServicio = Convert.ToDateTime(dr["fechaFFinServicio"]);
+                    nuevo.fechaVenta = Convert.ToDateTime(dr["fechaVenta"]);
+                    lista.Add(nuevo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return lista;
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace CapaPresentacion
             entCliente cliente = cbCliente.SelectedValue as entCliente;
             cbVenta.DataSource = logVenta.Instancia.listarVentaCliente(cliente.idCliente);
             cbVenta.DisplayMember = "id";
-            txtDni = cliente;
+            txtDni.Text = cliente.dni;
         }
     }
 }

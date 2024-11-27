@@ -30,6 +30,11 @@ namespace CapaAccesoDatos.Cargo
                 while (dr.Read())
                 {
                     entCargo nuevo = new entCargo();
+                    nuevo.id = Convert.ToInt32(dr["cargoId"]);
+                    nuevo.cargo = dr["cargo"].ToString();
+                    nuevo.desc = dr["descripcion"].ToString();
+                    nuevo.sueldo = Convert.ToSingle(dr["sueldo"]);
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
                 }
             }
@@ -53,6 +58,10 @@ namespace CapaAccesoDatos.Cargo
                 cn.Open();
                 cmd = new SqlCommand("agregarCargo", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cargo", nuevo.cargo);
+                cmd.Parameters.AddWithValue("@desc", nuevo.desc);
+                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
+                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -77,6 +86,11 @@ namespace CapaAccesoDatos.Cargo
                 cn.Open();
                 cmd = new SqlCommand("actualizarCargo", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", nuevo.id);
+                cmd.Parameters.AddWithValue("@cargo", nuevo.cargo);
+                cmd.Parameters.AddWithValue("@desc", nuevo.desc);
+                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
+                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;
             }

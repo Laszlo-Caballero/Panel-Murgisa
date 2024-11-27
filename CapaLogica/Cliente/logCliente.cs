@@ -1,7 +1,7 @@
-﻿using CapaAccesoDatos;
-using CapaEntidad;
+﻿using CapaAccesoDatos.Cliente;
+using CapaEntidad.Cliente;
 
-namespace CapaLogica
+namespace CapaLogica.Cliente
 {
     public class logCliente
     {
@@ -17,17 +17,17 @@ namespace CapaLogica
             return datCliente.instacia.listaClientes();
         }
 
-        public Boolean agregarCliente(entCliente cliente)
+        public bool agregarCliente(entCliente cliente)
         {
             return datCliente.instacia.agregarCliente(cliente);
         }
 
-        public Boolean deshabilitarCliente(entCliente cliente)
+        public bool deshabilitarCliente(entCliente cliente)
         {
             return datCliente.instacia.deshabilitarCliente(cliente);
         }
 
-        public Boolean actualizarCliente(entCliente cliente)
+        public bool actualizarCliente(entCliente cliente)
         {
             return datCliente.instacia.actualizarCliente(cliente);
         }

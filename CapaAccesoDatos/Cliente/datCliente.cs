@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaEntidad;
+using CapaEntidad.Cliente;
 using Microsoft.Data.SqlClient;
 
-namespace CapaAccesoDatos
+namespace CapaAccesoDatos.Cliente
 {
     public class datCliente
     {
         private static readonly datCliente _instacia = new datCliente();
-        
+
         public static datCliente instacia { get { return _instacia; } }
 
         public List<entCliente> listaClientes()
@@ -38,7 +38,8 @@ namespace CapaAccesoDatos
                     lista.Add(cliente);
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 throw ex;
             }
             finally
@@ -48,10 +49,10 @@ namespace CapaAccesoDatos
             return lista;
         }
 
-        public Boolean agregarCliente(entCliente cliente)
+        public bool agregarCliente(entCliente cliente)
         {
             SqlCommand cmd = null;
-            Boolean estado = false;
+            bool estado = false;
 
             try
             {
@@ -80,10 +81,10 @@ namespace CapaAccesoDatos
             return estado;
         }
 
-        public Boolean deshabilitarCliente(entCliente cliente)
+        public bool deshabilitarCliente(entCliente cliente)
         {
             SqlCommand cmd = null;
-            Boolean estado = false;
+            bool estado = false;
             try
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
@@ -102,10 +103,10 @@ namespace CapaAccesoDatos
             return estado;
         }
 
-        public Boolean actualizarCliente(entCliente cliente)
+        public bool actualizarCliente(entCliente cliente)
         {
             SqlCommand cmd = null;
-            Boolean estado = false;
+            bool estado = false;
             try
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();

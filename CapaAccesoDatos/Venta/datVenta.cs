@@ -62,7 +62,7 @@ namespace CapaAccesoDatos.Venta
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("listarVentasCliente", cn);
+                cmd = new SqlCommand("listarVentasDni", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@dni", dni);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -109,6 +109,7 @@ namespace CapaAccesoDatos.Venta
                     entDetalleVenta nuevo = new entDetalleVenta();
 
                     nuevo.idDetalleVenta = Convert.ToInt32(dr["idDetalleVenta"]);
+                    nuevo.idRecurso = Convert.ToInt32(dr["idRecurso"]);
                     nuevo.tipo = dr["tipo"].ToString();
                     nuevo.disponibilidad = dr["disponibilidad"].ToString();
                     nuevo.condicion = dr["condicion"].ToString();
@@ -147,6 +148,7 @@ namespace CapaAccesoDatos.Venta
                 {
                     entAsignacionPersonal nuevo = new entAsignacionPersonal();
                     nuevo.idAsignacionPersonal = Convert.ToInt32(dr["idAsignacionPersonal"]);
+                    nuevo.idPersonal = Convert.ToInt32(dr["idPersonal"]);
                     nuevo.nombre = dr["nombre"].ToString();
                     nuevo.paterno = dr["apellido_parterno"].ToString();
                     nuevo.materno = dr["apellido_materno"].ToString();
@@ -248,6 +250,60 @@ namespace CapaAccesoDatos.Venta
             }
             return deshabilitar;
         }
+
+        public bool hibilitarRecurso(int idVenta, int idRecurso)
+        {
+            SqlCommand cmd = null;
+            bool habilitar = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("habilitarRecurso", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idRecurso", idRecurso);
+                cmd.Parameters.AddWithValue("@idVenta", idVenta);
+                int rows = cmd.ExecuteNonQuery();
+                habilitar = rows >= 1;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return habilitar;
+        }
+
+        public bool deshabilitarPersonal(int idVenta, int idPersonal)
+        {
+            SqlCommand cmd = null;
+            bool habilitar = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("deshabilitarPersonal", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idPersonal", idPersonal);
+                cmd.Parameters.AddWithValue("@idVenta", idVenta);
+                int rows = cmd.ExecuteNonQuery();
+                habilitar = rows >= 1;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return habilitar;
+        }
+
+
 
         public List<entVenta> listarVentaCliente(int id)
         {

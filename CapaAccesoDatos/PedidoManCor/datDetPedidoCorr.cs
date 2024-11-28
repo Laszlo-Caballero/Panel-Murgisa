@@ -17,7 +17,7 @@ namespace CapaAccesoDatos.PedidoManCor
             get { return _instancia; }
         }
 
-        public bool agregarDetOrdenCorr(List<entDetPedidoCorr> detalle)
+        public bool agregarDetOrdenCorr(entDetPedidoCorr detalle)
         {
             SqlCommand cmd = null;
             bool agregar = false;

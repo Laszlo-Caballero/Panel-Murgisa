@@ -45,6 +45,16 @@ namespace CapaLogica.Venta
             return datVenta.Instancia.deshabilitarVenta(id);
         }
 
+        public bool habilitarRecurso(int idVenta, int idRecurso)
+        {
+            return datVenta.Instancia.hibilitarRecurso(idVenta, idRecurso);
+        }
+
+        public bool deshabilitarPersonal(int idVenta, int idPersonal)
+        {
+            return datVenta.Instancia.deshabilitarPersonal(idVenta, idPersonal);
+        }
+
         public List<entVenta> listarVentaCliente(int id)
         {
             return datVenta.Instancia.listarVentaCliente(id);

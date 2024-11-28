@@ -109,7 +109,7 @@
             btnDeshabilita.Location = new Point(670, 136);
             btnDeshabilita.Margin = new Padding(2);
             btnDeshabilita.Name = "btnDeshabilita";
-            btnDeshabilita.Size = new Size(92, 29);
+            btnDeshabilita.Size = new Size(117, 28);
             btnDeshabilita.TabIndex = 11;
             btnDeshabilita.Text = "deshabilitar";
             btnDeshabilita.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             btnModificar.Location = new Point(670, 82);
             btnModificar.Margin = new Padding(2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(92, 29);
+            btnModificar.Size = new Size(117, 24);
             btnModificar.TabIndex = 10;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             btnAgregar.Location = new Point(670, 34);
             btnAgregar.Margin = new Padding(2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(92, 29);
+            btnAgregar.Size = new Size(117, 27);
             btnAgregar.TabIndex = 9;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;

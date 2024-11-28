@@ -35,5 +35,10 @@ namespace CapaLogica.Recurso
         {
             return datRecurso.Instancia.buscar(id);
         }
+
+        public bool actualizarDisponibilidad(int id)
+        {
+            return datRecurso.Instancia.actualizarDispoMant(id);
+        }
     }
 }

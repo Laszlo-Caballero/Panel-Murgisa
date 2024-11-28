@@ -114,6 +114,7 @@
             dgvOrdenMan.RowHeadersWidth = 51;
             dgvOrdenMan.Size = new Size(481, 158);
             dgvOrdenMan.TabIndex = 23;
+            dgvOrdenMan.CellDoubleClick += dgvOrdenMan_CellDoubleClick;
             // 
             // Planificacion
             // 

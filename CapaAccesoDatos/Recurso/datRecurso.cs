@@ -161,5 +161,30 @@ namespace CapaAccesoDatos.Recurso
 
         }
 
+        public bool actualizarDispoMant(int id)
+        {
+            SqlCommand cmd = null;
+            bool actualizar = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("actualizarDispoMant", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                int rows = cmd.ExecuteNonQuery();
+                actualizar = rows >= 1;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return actualizar;
+        }
+
     }
 }

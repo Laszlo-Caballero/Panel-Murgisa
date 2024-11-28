@@ -59,11 +59,12 @@
             // dgvpedido
             // 
             dgvpedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvpedido.Location = new Point(22, 12);
+            dgvpedido.Location = new Point(32, 12);
             dgvpedido.Name = "dgvpedido";
             dgvpedido.RowHeadersWidth = 82;
             dgvpedido.Size = new Size(450, 187);
             dgvpedido.TabIndex = 1;
+            dgvpedido.CellDoubleClick += dgvpedido_CellDoubleClick;
             // 
             // txtRegistrar
             // 
@@ -83,6 +84,7 @@
             txtDeshabilitar.TabIndex = 3;
             txtDeshabilitar.Text = "DESHABILITAR";
             txtDeshabilitar.UseVisualStyleBackColor = true;
+            txtDeshabilitar.Click += txtDeshabilitar_Click;
             // 
             // cbMaquinaria
             // 

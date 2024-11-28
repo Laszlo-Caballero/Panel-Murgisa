@@ -4,7 +4,7 @@ using CapaLogica.Horario;
 using CapaLogica.MantenimientoPlanificacion;
 using CapaLogica.Personal;
 using CapaLogica.Recurso;
-using CapaLogica.TipoMan;
+using CapaLogica.Mantenimiento.TipoMan;
 namespace CapaPresentacion.Mantenimiento_Forms
 {
     public partial class MantenimientoPlanificacion : Form

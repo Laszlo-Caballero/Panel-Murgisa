@@ -801,3 +801,12 @@ BEGIN
     SET Estado = 0
     WHERE idOrdenMantenimiento = @idOrdenMantenimiento;
 END;
+
+CREATE PROCEDURE logear
+	@usuario varchar(20),
+	@contrasena varchar(20)
+AS
+BEGIN
+    SELECT * FROM Usuario U
+	where Usuario=@usuario and Contrasena=@contrasena
+END;

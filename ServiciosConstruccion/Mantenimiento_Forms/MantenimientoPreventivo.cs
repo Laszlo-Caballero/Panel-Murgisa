@@ -5,7 +5,7 @@ using CapaLogica.MantenimientoPlanificacion;
 using CapaLogica.OrdenMantenimientoPreventivo;
 using CapaLogica.Personal;
 using CapaLogica.Recurso;
-using CapaLogica.TipoMan;
+using CapaLogica.Mantenimiento.TipoMan;
 using CapaPresentacion.Personal_Forms;
 
 namespace CapaPresentacion.Mantenimiento_Forms

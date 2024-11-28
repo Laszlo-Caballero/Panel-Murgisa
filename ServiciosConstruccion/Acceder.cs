@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using CapaAccesoDatos;
 using CapaPresentacion;
 using CapaPresentacion.Personal_Forms;
+using CapaLogica.Usuario;
+using CapaEntidad.Usuario;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Capa_Presentacion
 {
@@ -23,73 +26,45 @@ namespace Capa_Presentacion
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            if (cbSistemas.SelectedItem != null)
+            if (txtUsuario.Text == "") {
+                MessageBox.Show("Ingrese Usuario");
+            }else if (txtContraseña.Text == "")
             {
-                string seleccion = cbSistemas.SelectedItem.ToString();
-                
-                if (seleccion == "Vendedor")
+                MessageBox.Show("Ingrese Contraseña");
+            }
+            else { 
+            entUsuario datos = logUsuario.Instancia.logear(txtUsuario.Text, txtContraseña.Text);
+            if(datos == null) {
+                MessageBox.Show("Usuario o Contraseña incorrectos", "Campos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (datos.idCargo == 5)
                 {
-                    
-                    if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
-                    {
-                       
-                        PanelVendedor formVenta = new PanelVendedor();
-                        formVenta.Show();
-                    }
-                    else
-                    {
-                        
-                        MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    MessageBox.Show("Ingresando al Panel Vendedor");
+                    PanelVendedor formVenta = new PanelVendedor();
+                    formVenta.Show();
                 }
-               
-                else if (seleccion == "Jefe de Servicio")
-                {
-                   
-                    if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
-                    {
-
-                        PanelJefeServicio formJefe = new PanelJefeServicio();                     
-                        formJefe.Show();
-                    }
-                    else
-                    {
-                      
-                        MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                else if(datos.idCargo==6){
+                    MessageBox.Show("Ingresando al Panel Jefe de Servicio");
+                    PanelJefeServicio formJefe = new PanelJefeServicio();
+                    formJefe.Show();
                 }
-                else if (seleccion == "Jefe de Mantenimiento")
+                else if (datos.idCargo == 7)
                 {
-
-                    if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
-                    {
-
-                        PanelMantenimiento formMantenimiento = new PanelMantenimiento();
-                        formMantenimiento.Show();
-                    }
-                    else
-                    {
-
-                        MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    MessageBox.Show("Ingresando al Panel Jefe de Mantenimiento");
+                    PanelMantenimiento formMantenimiento = new PanelMantenimiento();
+                    formMantenimiento.Show();
                 }
-                else if (seleccion == "Jefe de Personal")
+                else if (datos.idCargo == 8)
                 {
-
-                    if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContraseña.Text))
-                    {
-
-                        PanelJefePersonal formJefep = new PanelJefePersonal();
-                        formJefep.Show();
-                    }
-                    else
-                    {
-
-                        MessageBox.Show("Debe llenar todos los campos: usuario y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    MessageBox.Show("Ingresando al Panel Jefe de Personal");
+                    PanelJefePersonal formJefep = new PanelJefePersonal();
+                    formJefep.Show();
                 }
             }
 
+            }
         }
 
         private void cbSistemas_SelectedIndexChanged(object sender, EventArgs e)

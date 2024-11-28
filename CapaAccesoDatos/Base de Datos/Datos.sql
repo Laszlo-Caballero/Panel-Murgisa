@@ -69,7 +69,11 @@ INSERT INTO Cargo (cargo, descripcion, estado) VALUES
 ('Gerente', 'Supervisa las operaciones generales', 1),
 ('Analista', 'Realiza análisis de datos', 1),
 ('Técnico', 'Encargado del mantenimiento técnico', 1),
-('Asistente', 'Apoya en tareas administrativas', 1);
+('Asistente', 'Apoya en tareas administrativas', 1),
+('Vendedor', 'Supervisa las operaciones generales', 1),
+('JefeServicio', 'Realiza análisis de datos', 1),
+('JefeMantenimiento', 'Encargado del mantenimiento técnico', 1),
+('JefePersonal', 'Apoya en tareas administrativas', 1);
 
 INSERT INTO Profesion (titulo, estado) VALUES
 ('Ingeniero', 1),
@@ -103,6 +107,13 @@ VALUES
 ('Ana', '321654987', 1, 'ana.garcia@gmail.com', '956783421', 'Av. Los Laureles 89', 1),
 ('Luis', '159753456', 0, 'luis.torres@example.com', '923456789', 'Calle Los Jazmines 234', 2)
 
-
+INSERT INTO Usuario (Usuario, Contrasena, idCargo) VALUES
+('Antonella', 'antonella123', 5),
+('Manuel', 'manuel123', 6),
+('Gian', 'gian123', 7),
+('Luciana', 'luciana123', 7),
+('Fernanda', 'fernanda123', 6),
+('Alexis', 'alexis123', 5),
+('Lazli','lazlo123',8);
 
 select * from cliente

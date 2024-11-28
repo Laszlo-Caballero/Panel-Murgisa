@@ -276,3 +276,13 @@ create table PedidoReemplazo(
 	foreign key(idRecurso) references Recurso(idRecurso)
 )
 
+create table Usuario(
+	idUsuario int identity(1,1),
+	idCargo int,
+	usuario varchar(50),
+	contrasena varchar(50),
+	primary key (idUsuario),
+	foreign key(idCargo) references Cargo(idCargo)
+)
+
+

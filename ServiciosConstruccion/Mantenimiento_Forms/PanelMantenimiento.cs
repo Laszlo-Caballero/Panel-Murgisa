@@ -89,5 +89,11 @@ namespace CapaPresentacion
         {
             AbrirFormHija(new Motivo());
         }
+
+        private void btnMP_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new MantenimientoPlanificacion());
+
+        }
     }
 }

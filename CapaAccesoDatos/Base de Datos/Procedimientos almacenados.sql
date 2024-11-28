@@ -437,3 +437,30 @@ begin
 	insert into venta (idServicio, idCliente, fechaInicioServicio, fechaFFinServicio, fechaVenta, estado)
 	values (
 end
+
+
+
+create or alter procedure listarVentaCliente
+@idCliente int
+as
+begin
+	Select * from Venta
+	where idCliente = @idCliente AND estado = 1;
+end;
+
+
+
+create or alter procedure listarMantenimientoPlanificacion
+
+as
+begin
+	Select * from PlanificacionMantenimiento 
+end;
+
+
+create or alter procedure listarPersonalTecnico
+
+as
+begin
+	Select * from Personal Where idCargo='28' 
+end;

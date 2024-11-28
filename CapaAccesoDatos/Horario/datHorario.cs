@@ -1,19 +1,20 @@
-using CapaEntidad.Personal;
+using CapaEntidad.Horario;
 using Microsoft.Data.SqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
 
-namespace CapaAccesoDatos.Personal
+namespace CapaAccesoDatos.Horario
 {
-    public class datPersonal
+    public class datHorario
     {
-        private static readonly datPersonal _instancia = new datPersonal();
+        private static readonly datHorario _instancia = new datHorario();
 
-        public static datPersonal Instancia
+        public static datHorario Instancia
         {
             get { return _instancia; }
         }
-
-        public  DataTable listarPersonalTecnico()
+        public DataTable listarHorarioActivo()
         {
             SqlCommand cmd = null;
             DataTable dt = new DataTable();
@@ -23,11 +24,11 @@ namespace CapaAccesoDatos.Personal
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
 
-                cmd = new SqlCommand("listarPersonalTecnico", cn);
+                cmd = new SqlCommand("listarHorarioActivo", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                 {
-                    da.Fill(dt); 
+                    da.Fill(dt);
                 }
             }
             catch (Exception ex)
@@ -42,7 +43,33 @@ namespace CapaAccesoDatos.Personal
             return dt;
         }
 
-    public bool agregarPersonal(entPersonal nuevo)
+        public List<entHorario> listarHorario()
+        {
+            SqlCommand cmd = null;
+            List<entHorario> lista = new List<entHorario>();
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("listarHorario", cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    entHorario nuevo = new entHorario();
+                    lista.Add(nuevo);
+                }
+            }
+            catch (Exception ex) {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return lista;
+        }
+
+        public bool agregarHorario(entHorario nuevo)
         {
             SqlCommand cmd = null;
             bool agregar = false;
@@ -50,16 +77,8 @@ namespace CapaAccesoDatos.Personal
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("agregarPersonal", cn);
+                cmd = new SqlCommand("agregarHorario", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idCargo", nuevo.idCargo);
-                cmd.Parameters.AddWithValue("@idProf", nuevo.idProf);
-                cmd.Parameters.AddWithValue("@idDep", nuevo.idDepa);
-                cmd.Parameters.AddWithValue("@nombre", nuevo.nombre);
-                cmd.Parameters.AddWithValue("@parterno", nuevo.paterno);
-                cmd.Parameters.AddWithValue("@materno", nuevo.materno);
-                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
-                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -74,7 +93,7 @@ namespace CapaAccesoDatos.Personal
             return agregar;
         }
 
-        public bool actualizarPersonal(entPersonal nuevo)
+        public bool actualizarHorario(entHorario nuevo)
         {
             SqlCommand cmd = null;
             bool actualizar = false;
@@ -82,17 +101,8 @@ namespace CapaAccesoDatos.Personal
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("actualizarPersonal", cn);
+                cmd = new SqlCommand("actualizarHorario", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idPersonal", nuevo.id);
-                cmd.Parameters.AddWithValue("@idCargo", nuevo.idCargo);
-                cmd.Parameters.AddWithValue("@idProf", nuevo.idProf);
-                cmd.Parameters.AddWithValue("@idDep", nuevo.idDepa);
-                cmd.Parameters.AddWithValue("@nombre", nuevo.nombre);
-                cmd.Parameters.AddWithValue("@parterno", nuevo.paterno);
-                cmd.Parameters.AddWithValue("@materno", nuevo.materno);
-                cmd.Parameters.AddWithValue("@sueldo", nuevo.sueldo);
-                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;
             }
@@ -106,7 +116,7 @@ namespace CapaAccesoDatos.Personal
             return actualizar;
         }
 
-        public bool deshabilitarPersonal(int id)
+        public bool deshabilitarHorario(int id)
         {
             SqlCommand cmd = null;
             bool deshabilitar = false;
@@ -114,9 +124,9 @@ namespace CapaAccesoDatos.Personal
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("deshabilitarPersonal", cn);
+                cmd = new SqlCommand("deshabilitarHorario", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idPersonal", id);
+                cmd.Parameters.AddWithValue("@idHorario", id);
                 int rows = cmd.ExecuteNonQuery();
                 deshabilitar = rows >= 1;
             }

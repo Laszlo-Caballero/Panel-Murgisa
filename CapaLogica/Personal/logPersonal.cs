@@ -1,10 +1,6 @@
 using CapaAccesoDatos.Personal;
 using CapaEntidad.Personal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace CapaLogica.Personal
 {
@@ -16,7 +12,10 @@ namespace CapaLogica.Personal
         {
             get { return _instancia; }
         }
-
+        public  DataTable listarPersonalTecnico()
+        {
+            return datPersonal.Instancia.listarPersonalTecnico();
+        }
         public bool agregarPersonal(entPersonal nuevo)
         {
             return datPersonal.Instancia.agregarPersonal(nuevo);

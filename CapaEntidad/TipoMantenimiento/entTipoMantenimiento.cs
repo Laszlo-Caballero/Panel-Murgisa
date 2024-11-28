@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace CapaEntidad.TipoMantenimiento
 {
     public class entTipoMantenimiento
     {
-
+        public int IdTipoMantenimiento { get; set; }
+        public string Tipo { get; set; }
+        public bool Estado { get; set; }
     }
 }
         

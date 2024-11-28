@@ -34,12 +34,12 @@
             btnConsultarMP = new Button();
             dtPickerFechaMP = new DateTimePicker();
             label8 = new Label();
-            btnSalirMc = new Button();
+            btnSalirMP = new Button();
             btnDesahabilitarMP = new Button();
             btnEditarMP = new Button();
             dgvMP = new DataGridView();
             Planificacion = new GroupBox();
-            comboBox1 = new ComboBox();
+            cbTipoMant = new ComboBox();
             label11 = new Label();
             cbHorario = new ComboBox();
             label10 = new Label();
@@ -125,15 +125,16 @@
             label8.TabIndex = 28;
             label8.Text = "Fecha:";
             // 
-            // btnSalirMc
+            // btnSalirMP
             // 
-            btnSalirMc.Location = new Point(646, 210);
-            btnSalirMc.Margin = new Padding(3, 2, 3, 2);
-            btnSalirMc.Name = "btnSalirMc";
-            btnSalirMc.Size = new Size(100, 43);
-            btnSalirMc.TabIndex = 41;
-            btnSalirMc.Text = "Salir";
-            btnSalirMc.UseVisualStyleBackColor = true;
+            btnSalirMP.Location = new Point(646, 210);
+            btnSalirMP.Margin = new Padding(3, 2, 3, 2);
+            btnSalirMP.Name = "btnSalirMP";
+            btnSalirMP.Size = new Size(100, 43);
+            btnSalirMP.TabIndex = 41;
+            btnSalirMP.Text = "Salir";
+            btnSalirMP.UseVisualStyleBackColor = true;
+            btnSalirMP.Click += btnSalirMP_Click;
             // 
             // btnDesahabilitarMP
             // 
@@ -169,7 +170,7 @@
             // 
             // Planificacion
             // 
-            Planificacion.Controls.Add(comboBox1);
+            Planificacion.Controls.Add(cbTipoMant);
             Planificacion.Controls.Add(label11);
             Planificacion.Controls.Add(cbHorario);
             Planificacion.Controls.Add(label10);
@@ -196,13 +197,13 @@
             Planificacion.TabStop = false;
             Planificacion.Text = "Planificación";
             // 
-            // comboBox1
+            // cbTipoMant
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(9, 147);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(114, 23);
-            comboBox1.TabIndex = 20;
+            cbTipoMant.FormattingEnabled = true;
+            cbTipoMant.Location = new Point(9, 147);
+            cbTipoMant.Name = "cbTipoMant";
+            cbTipoMant.Size = new Size(114, 23);
+            cbTipoMant.TabIndex = 20;
             // 
             // label11
             // 
@@ -221,6 +222,7 @@
             cbHorario.Name = "cbHorario";
             cbHorario.Size = new Size(248, 23);
             cbHorario.TabIndex = 18;
+            cbHorario.SelectedIndexChanged += cbHorario_SelectedIndexChanged;
             // 
             // label10
             // 
@@ -386,7 +388,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(877, 524);
             Controls.Add(groupBox1);
-            Controls.Add(btnSalirMc);
+            Controls.Add(btnSalirMP);
             Controls.Add(btnDesahabilitarMP);
             Controls.Add(btnEditarMP);
             Controls.Add(dgvMP);
@@ -414,7 +416,7 @@
         private Button btnConsultarMP;
         private DateTimePicker dtPickerFechaMP;
         private Label label8;
-        private Button btnSalirMc;
+        private Button btnSalirMP;
         private Button btnDesahabilitarMP;
         private Button btnEditarMP;
         private DataGridView dgvMP;
@@ -438,7 +440,7 @@
         private ComboBox cbPrioridad;
         private ComboBox cbHorario;
         private Label label10;
-        private ComboBox comboBox1;
+        private ComboBox cbTipoMant;
         private Label label11;
     }
 }

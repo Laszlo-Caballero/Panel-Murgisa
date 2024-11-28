@@ -4,17 +4,7 @@ using CapaLogica.Horario;
 using CapaLogica.MantenimientoPlanificacion;
 using CapaLogica.Personal;
 using CapaLogica.Recurso;
-using CapaLogica.Servicios;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+using CapaLogica.TipoMan;
 namespace CapaPresentacion.Mantenimiento_Forms
 {
     public partial class MantenimientoPlanificacion : Form
@@ -28,6 +18,7 @@ namespace CapaPresentacion.Mantenimiento_Forms
             cbPrioridad.Items.Add("Alta");
             cbPrioridad.Items.Add("Media");
             cbPrioridad.Items.Add("Baja");
+            cbPrioridad.Text = "Alta";
             dgvMP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMP.MultiSelect = false;
             dgvMP.ReadOnly = true;
@@ -39,10 +30,16 @@ namespace CapaPresentacion.Mantenimiento_Forms
             cbPersonal.DataSource = logPersonal.Instancia.listarPersonalTecnico();
             cbPersonal.DisplayMember = "nombre_completo";
             cbPersonal.ValueMember = "idPersonal";
+            cbPersonal.SelectedIndex = -1;
 
             cbHorario.DataSource = logHorario.Instancia.listarHorarioActivo();
             cbHorario.DisplayMember = "horario";
             cbHorario.ValueMember = "idHorario";
+            cbHorario.SelectedIndex = -1;
+
+            cbTipoMant.DataSource = logTipoMan.Instancia.listarTipoManDT();
+            cbTipoMant.DisplayMember = "tipo";
+            cbTipoMant.ValueMember = "idTipoMantenimiento";
         }
 
         private void MantenimientoPlanificacion_Load(object sender, EventArgs e)
@@ -55,6 +52,7 @@ namespace CapaPresentacion.Mantenimiento_Forms
             if (string.IsNullOrEmpty(cbPrioridad.SelectedItem?.ToString()) ||
                 cbRecurso.SelectedIndex == -1 ||
                 cbPersonal.SelectedIndex == -1 ||
+                cbTipoMant.SelectedIndex == -1 ||
                 cbHorario.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -69,6 +67,7 @@ namespace CapaPresentacion.Mantenimiento_Forms
             mp.Prioridad = cbPrioridad.SelectedItem.ToString();
             mp.IdRecurso = Convert.ToInt32(cbRecurso.SelectedValue);
             mp.IdPersonal = Convert.ToInt32(cbPersonal.SelectedValue);
+            mp.IdTipoMantenimiento = Convert.ToInt32(cbTipoMant.SelectedValue);
             mp.IdHorario = Convert.ToInt32(cbHorario.SelectedValue);
 
             bool agregado = logMantenimientoPlanificacion.Instancia.agregarMantenimientoPlanificacion(mp);
@@ -90,6 +89,7 @@ namespace CapaPresentacion.Mantenimiento_Forms
             cbPrioridad.SelectedIndex = -1;
             cbRecurso.SelectedIndex = -1;
             cbPersonal.SelectedIndex = -1;
+            cbTipoMant.SelectedIndex = -1;
             cbHorario.SelectedIndex = -1;
         }
 
@@ -107,7 +107,12 @@ namespace CapaPresentacion.Mantenimiento_Forms
             }
 
             int idPlanificacion = Convert.ToInt32(dgvMP.SelectedRows[0].Cells["IdPlanificacion"].Value);
-            MessageBox.Show("dasdas." + idPlanificacion, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+            logMantenimientoPlanificacion.Instancia.desabilitarMatenimientoPlanificacion(idPlanificacion);
+            dgvMP.DataSource = logMantenimientoPlanificacion.Instancia.listarMantenimientoPlanificacionParaGrid();
+
+            MessageBox.Show("Se deashabilito correctamente", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnEditarMP_Click(object sender, EventArgs e)
@@ -128,6 +133,7 @@ namespace CapaPresentacion.Mantenimiento_Forms
                 cbRecurso.SelectedValue = mantenimiento.IdRecurso ?? 0;
                 cbPersonal.SelectedValue = mantenimiento.IdPersonal ?? 0;
                 cbHorario.SelectedValue = mantenimiento.IdHorario ?? 0;
+                cbTipoMant.SelectedValue = mantenimiento.IdTipoMantenimiento ?? 0;
             }
             else
             {
@@ -159,6 +165,7 @@ namespace CapaPresentacion.Mantenimiento_Forms
                         cbRecurso.SelectedValue = mantenimiento.IdRecurso ?? 0;
                         cbPersonal.SelectedValue = mantenimiento.IdPersonal ?? 0;
                         cbHorario.SelectedValue = mantenimiento.IdHorario ?? 0;
+                        cbTipoMant.SelectedValue = mantenimiento.IdTipoMantenimiento ?? 0;
                     }
                     else
                     {
@@ -183,6 +190,7 @@ namespace CapaPresentacion.Mantenimiento_Forms
             cbRecurso.SelectedIndex == -1 ||
             cbPersonal.SelectedIndex == -1 ||
             cbHorario.SelectedIndex == -1 ||
+            cbTipoMant.SelectedIndex == -1 ||
             string.IsNullOrEmpty(txtIdMP.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -195,7 +203,8 @@ namespace CapaPresentacion.Mantenimiento_Forms
                 Prioridad = cbPrioridad.SelectedItem.ToString(),
                 IdRecurso = Convert.ToInt32(cbRecurso.SelectedValue),
                 IdPersonal = Convert.ToInt32(cbPersonal.SelectedValue),
-                IdHorario = Convert.ToInt32(cbHorario.SelectedValue)
+                IdHorario = Convert.ToInt32(cbHorario.SelectedValue),
+                IdTipoMantenimiento = Convert.ToInt32(cbTipoMant.SelectedValue)
             };
 
             bool actualizado = logMantenimientoPlanificacion.Instancia.actualizarMantenimientoPlanificacion(mantenimiento);
@@ -221,14 +230,30 @@ namespace CapaPresentacion.Mantenimiento_Forms
             {
                 idPlanificacion = Convert.ToInt32(txtIdPlanificacion.Text.Trim());
             }
-
             if (dtPickerFechaMP.Value != null)
             {
                 fechaMantenimiento = dtPickerFechaMP.Value.Date;
             }
-
             dgvMP.DataSource = logMantenimientoPlanificacion.Instancia.listarMantenimientoPlanificacionParaGrid(idPlanificacion, fechaMantenimiento);
+        }
+        private void cbHorario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /* bool existe = logMantenimientoPlanificacion
+                 .Instancia
+                 .existeMantenimientoPorPersonalYHorario(
+                 Convert.ToInt32(cbPersonal.SelectedValue),
+                 Convert.ToInt32(cbHorario.SelectedValue)
+                 );
+             if( existe )
+             {
+                 cbHorario.SelectedIndex = -1;
+                 MessageBox.Show("Este horario no se encuentra disponible.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                 return;
+             }*/
+        }
 
+        private void btnSalirMP_Click(object sender, EventArgs e)
+        {
 
         }
     }

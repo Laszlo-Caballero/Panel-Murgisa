@@ -1,11 +1,14 @@
-﻿using CapaEntidad.OrdenManCorr;
+﻿using CapaAccesoDatos.Personal;
+using CapaEntidad.OrdenManCorr;
 using CapaEntidad.PedidoManCor;
+using CapaEntidad.Personal;
 using CapaEntidad.Proveedor;
 using CapaEntidad.Recurso;
 using CapaLogica.OrdenManCorr;
 using CapaLogica.PedidoManCor;
 using CapaLogica.Proveedor;
 using CapaLogica.Recurso;
+using CapaPresentacion.Personal_Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -74,6 +77,17 @@ namespace CapaPresentacion.Mantenimiento_Forms
             txtMaquinaria.Text = "";
             txtProveedor.Text = "";
             txtRuc.Text = "";
+        }
+
+        private void dgvOrdenMan_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow filaActual = dgvOrdenMan.Rows[e.RowIndex];
+            txtOrden.Text = filaActual.Cells[0].Value.ToString();
+            txtMaquinaria.Text = filaActual.Cells[2].Value.ToString();
+            txtProveedor.Text = filaActual.Cells[3].Value.ToString();
+            txtRuc.Text = filaActual.Cells[4].Value.ToString();
+            dtPickerFechaOrden.Value = Convert.ToDateTime(filaActual.Cells[5].Value.ToString());
+            cbEstado.Checked = Convert.ToBoolean(filaActual.Cells[6].Value);
         }
     }
 }

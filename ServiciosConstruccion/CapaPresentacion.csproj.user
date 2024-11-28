@@ -25,6 +25,9 @@
     <Compile Update="Mantenimiento_Forms\PanelMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Mantenimiento_Forms\PedidoMantenimientoCorrectivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Mantenimiento_Forms\TipoMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>

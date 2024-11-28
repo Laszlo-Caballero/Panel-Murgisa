@@ -53,13 +53,14 @@ end
 
 
 create or alter procedure buscarCliente
-@dni varchar(8)
+@dni varchar(9)
 as
 begin
 	select Cl.idCliente, Cl.nombreRepresentante, Cl.dni, Cl.estado, Cl.correo, cl.telefono, cl.direccion, C.nombre as Ciudad
 	from Cliente Cl inner join Ciudad C on C.idCiudad = Cl.idCiudad where Cl.dni = @dni
 end;
 
+execute buscarCliente '123456789'
 
 create or alter procedure listarCiudades
 as
@@ -146,14 +147,14 @@ end
 create or alter procedure listarRecurso
 as
 begin
-	select * from Recurso where estado = 1
+	select * from Recurso where estado = 1 and idDisponibilidad = 1
 end
 
 create or alter Procedure listarRecursoTipo
 @idTipo int
 as
 begin
-	select * from Recurso where idTipoRecurso = @idTipo and estado = 1
+	select * from Recurso where idTipoRecurso = @idTipo and estado = 1 and idDisponibilidad = 1
 end
 
 
@@ -425,6 +426,7 @@ select * from Venta
 
 alter table venta add estado bit
 
+--venta
 create or alter procedure agregarVenta
 @idServicio int,
 @idCliente int,
@@ -435,5 +437,49 @@ create or alter procedure agregarVenta
 as
 begin
 	insert into venta (idServicio, idCliente, fechaInicioServicio, fechaFFinServicio, fechaVenta, estado)
-	values (
+	values (@idServicio, @idCliente, @fechaInicio, @fechaFin, @fechaVenta, @estado)
 end
+
+create or alter procedure buscarUltimaVenta
+as
+begin
+	select top 1 idVenta from Venta order by idVenta desc
+end
+
+select * from DetalleVenta
+
+create or alter procedure agergarDetalleRecurso
+@idVenta int,
+@idRecurso int,
+@cantidad int,
+@precio float
+as		
+begin
+	insert into DetalleVenta (idVenta, idRecurso, cantidad, precio)
+	values (@idVenta, @idRecurso, @cantidad, @precio)
+	update Recurso set idDisponibilidad = 3 where idRecurso = @idRecurso
+end
+
+select * from Recurso
+select * from Disponibilidad
+
+select * from AsignacionPersonal
+
+create or alter procedure agregarAsignacionPersonal
+@idVenta int,
+@idPersonal int,
+@costo float
+as
+begin
+	insert into AsignacionPersonal (idVenta, idPersonal, costo)
+	values (@idVenta, @idPersonal, @costo)
+end
+
+---venta
+
+
+select * from Cliente
+
+select * from Venta
+select * from DetalleVenta
+select * from AsignacionPersonal

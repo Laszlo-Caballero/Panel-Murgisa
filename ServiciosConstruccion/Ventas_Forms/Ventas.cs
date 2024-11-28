@@ -16,5 +16,12 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+
+
+        private void dtVentas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

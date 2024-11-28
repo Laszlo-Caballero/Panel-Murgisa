@@ -1,9 +1,11 @@
 ﻿using CapaEntidad.Cliente;
 using CapaEntidad.Personal;
 using CapaEntidad.Servicios;
+using CapaEntidad.Venta;
 using CapaLogica.Cliente;
 using CapaLogica.Personal;
 using CapaLogica.Servicios;
+using CapaLogica.Venta;
 using CapaPresentacion.Ventas_Forms.Requerimientos;
 using System;
 using System.Collections.Generic;
@@ -20,7 +22,13 @@ namespace CapaPresentacion
     public partial class Venta : Form
     {
 
-        private List<entPersonalVista> personal = new List<entPersonalVista>();   
+        private List<entPersonalVista> personal = new List<entPersonalVista>();
+        private AlquilerMaqReq alquiler;
+        private EdificacionesReq edificaciones;
+        private MuroContencionReq muro;
+        private AlquilerMaqReq alquilerDemolicion;
+
+        private List<entVenta> ventas = new List<entVenta>();
 
         public Venta()
         {
@@ -41,7 +49,12 @@ namespace CapaPresentacion
 
         private void listarPersonal()
         {
-            dtgvPersonal.DataSource = personal;
+            dtgvPersonal.Rows.Clear();
+
+            foreach (entPersonalVista p in personal)
+            {
+                dtgvPersonal.Rows.Add(p.id, p.nombre, p.sueldo);
+            }
         }
 
 
@@ -52,28 +65,28 @@ namespace CapaPresentacion
             switch (servicio.idServicio)
             {
                 case 1:
-                    AlquilerMaqReq alquiler = new AlquilerMaqReq();
+                    alquiler = new AlquilerMaqReq();
                     alquiler.TopLevel = false;
                     alquiler.Dock = DockStyle.Fill;
                     panel.Controls.Add(alquiler);
                     alquiler.Show();
                     break;
                 case 2:
-                    EdificacionesReq edificaciones = new EdificacionesReq();
+                    edificaciones = new EdificacionesReq();
                     edificaciones.TopLevel = false;
                     edificaciones.Dock = DockStyle.Fill;
                     panel.Controls.Add(edificaciones);
                     edificaciones.Show();
                     break;
                 case 3:
-                    MuroContencionReq muro = new MuroContencionReq();
+                    muro = new MuroContencionReq();
                     muro.TopLevel = false;
                     muro.Dock = DockStyle.Fill;
                     panel.Controls.Add(muro);
                     muro.Show();
                     break;
                 case 4:
-                    AlquilerMaqReq alquilerDemolicion = new AlquilerMaqReq();
+                    alquilerDemolicion = new AlquilerMaqReq();
                     alquilerDemolicion.TopLevel = false;
                     alquilerDemolicion.Dock = DockStyle.Fill;
                     panel.Controls.Add(alquilerDemolicion);
@@ -81,6 +94,17 @@ namespace CapaPresentacion
                     break;
             }
         }
+
+        private void listarVenta()
+        {
+            dtgvServicios.Rows.Clear();
+            foreach (entVenta v in ventas)
+            {
+                string nombre = cbTipoServicio.Items.Cast<entServicios>().FirstOrDefault(item => item.idServicio == v.idServicio).nombre;
+                dtgvServicios.Rows.Add(nombre, v.fIncioServicio, v.fFinServicio, v.estado);
+            }
+        }
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -102,6 +126,76 @@ namespace CapaPresentacion
             entPersonalVista persona = cbPersonal.SelectedItem as entPersonalVista;
             personal.Add(persona);
             listarPersonal();
+        }
+
+        private void dtgvPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dtgvPersonal.Rows[e.RowIndex];
+            txtIdPersonal.Text = e.RowIndex.ToString();
+            int id = Convert.ToInt32(row.Cells[0].Value);
+            cbPersonal.SelectedItem = cbPersonal.Items.Cast<entPersonalVista>().FirstOrDefault(item => item.id == id);
+        }
+
+        private void btnEliminarPersonal_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtIdPersonal.Text);
+            personal.RemoveAt(id);
+            listarPersonal();
+        }
+
+        private void btnAgergarVenta_Click(object sender, EventArgs e)
+        {
+            entVenta venta = new entVenta();
+            entServicios servicio = cbTipoServicio.SelectedItem as entServicios;
+            venta.idServicio = servicio.idServicio;
+            venta.idCliente = int.Parse(txtidCliente.Text);
+
+            switch (servicio.idServicio)
+            {
+                case 1:
+                    (DateTime finicio, DateTime ffin) = alquiler.getTiempos();
+                    venta.fIncioServicio = finicio;
+                    venta.fFinServicio = ffin;
+                    venta.recursos = alquiler.maquinarias;
+                    break;
+                case 2:
+                    (finicio, ffin) = edificaciones.getTiempos();
+                    venta.fIncioServicio = finicio;
+                    venta.fFinServicio = ffin;
+                    venta.recursos = edificaciones.materiales;
+                    break;
+                case 3:
+                    (finicio, ffin) = muro.getTiempos();
+                    venta.fIncioServicio = finicio;
+                    venta.fFinServicio = ffin;
+                    venta.recursos = muro.materiales;
+                    break;
+                case 4:
+                    (finicio, ffin) = alquilerDemolicion.getTiempos();
+                    venta.fIncioServicio = finicio;
+                    venta.fFinServicio = ffin;
+                    venta.recursos = alquiler.maquinarias;
+                    break;
+            }
+            venta.fechaVenta = dtRegistro.Value;
+            venta.estado = cbkEstado.Checked;
+            venta.personal = personal;
+
+            ventas.Add(venta);
+            listarVenta();
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            foreach (entVenta v in ventas)
+            {
+                bool estado = logVenta.Instancia.agregarVenta(v);
+                if (!estado)
+                {
+                    MessageBox.Show("ocurrio algo mal xd");
+                    break;
+                }
+            }
         }
     }
 }

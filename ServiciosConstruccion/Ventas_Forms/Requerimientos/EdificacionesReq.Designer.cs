@@ -33,9 +33,9 @@
             label14 = new Label();
             label16 = new Label();
             label17 = new Label();
-            dateTimePicker4 = new DateTimePicker();
+            dtFin = new DateTimePicker();
             label18 = new Label();
-            dateTimePicker5 = new DateTimePicker();
+            dtInicio = new DateTimePicker();
             label20 = new Label();
             groupBox1 = new GroupBox();
             txtId = new TextBox();
@@ -100,13 +100,13 @@
             label17.TabIndex = 43;
             label17.Text = "Área a construir:";
             // 
-            // dateTimePicker4
+            // dtFin
             // 
-            dateTimePicker4.Location = new Point(315, 45);
-            dateTimePicker4.Margin = new Padding(2);
-            dateTimePicker4.Name = "dateTimePicker4";
-            dateTimePicker4.Size = new Size(248, 27);
-            dateTimePicker4.TabIndex = 42;
+            dtFin.Location = new Point(315, 45);
+            dtFin.Margin = new Padding(2);
+            dtFin.Name = "dtFin";
+            dtFin.Size = new Size(248, 27);
+            dtFin.TabIndex = 42;
             // 
             // label18
             // 
@@ -118,13 +118,13 @@
             label18.TabIndex = 41;
             label18.Text = "Fecha de fin:";
             // 
-            // dateTimePicker5
+            // dtInicio
             // 
-            dateTimePicker5.Location = new Point(15, 45);
-            dateTimePicker5.Margin = new Padding(2);
-            dateTimePicker5.Name = "dateTimePicker5";
-            dateTimePicker5.Size = new Size(248, 27);
-            dateTimePicker5.TabIndex = 40;
+            dtInicio.Location = new Point(15, 45);
+            dtInicio.Margin = new Padding(2);
+            dtInicio.Name = "dtInicio";
+            dtInicio.Size = new Size(248, 27);
+            dtInicio.TabIndex = 40;
             // 
             // label20
             // 
@@ -287,9 +287,9 @@
             Controls.Add(label14);
             Controls.Add(label16);
             Controls.Add(label17);
-            Controls.Add(dateTimePicker4);
+            Controls.Add(dtFin);
             Controls.Add(label18);
-            Controls.Add(dateTimePicker5);
+            Controls.Add(dtInicio);
             Controls.Add(label20);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EdificacionesReq";
@@ -310,9 +310,9 @@
         private Label label14;
         private Label label16;
         private Label label17;
-        private DateTimePicker dateTimePicker4;
+        private DateTimePicker dtFin;
         private Label label18;
-        private DateTimePicker dateTimePicker5;
+        private DateTimePicker dtInicio;
         private Label label20;
         private GroupBox groupBox1;
         private DataGridView dtgvMateriales;

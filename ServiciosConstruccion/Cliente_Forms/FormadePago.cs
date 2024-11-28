@@ -1,4 +1,5 @@
-﻿using CapaEntidad.PagoServicio;
+﻿using CapaAccesoDatos.PagoServicio;
+using CapaEntidad.PagoServicio;
 using CapaLogica.PagoServicio;
 using System;
 using System.Collections.Generic;

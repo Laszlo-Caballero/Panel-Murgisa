@@ -198,7 +198,7 @@
             ClientSize = new Size(1510, 832);
             Controls.Add(cbMantenimiento);
             Controls.Add(label6);
-            Controls.Add(button3);
+            Controls.Add(btnAñadir);
             Controls.Add(listaDetalle);
             Controls.Add(txtPedido);
             Controls.Add(label5);
@@ -232,7 +232,7 @@
         private Label label5;
         private TextBox txtPedido;
         private ListView listaDetalle;
-        private Button button3;
+        private Button btnAñadir;
         private Label label6;
         private ComboBox cbMantenimiento;
         private ColumnHeader columnHeader1;

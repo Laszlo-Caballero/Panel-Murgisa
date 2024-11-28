@@ -18,10 +18,10 @@ namespace CapaLogica.DetOrdenCorr
         }
  
 
-        public bool agregarDetOrdenCorr(entDetPedidoCorr nuevo)
-        {
-            return datDetPedidoCorr.Instancia.agregarDetOrdenCorr(nuevo);
-        }
+        //public bool agregarDetOrdenCorr(entDetPedidoCorr nuevo)
+        //{
+        //    return datDetPedidoCorr.Instancia.agregarDetOrdenCorr(nuevo);
+        //}
 
         public bool actualizarDetOrdenCorr(entDetPedidoCorr nuevo)
         {

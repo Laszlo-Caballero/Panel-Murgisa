@@ -71,38 +71,34 @@
             groupBox1.Controls.Add(btnConsultarMP);
             groupBox1.Controls.Add(dtPickerFechaMP);
             groupBox1.Controls.Add(label8);
-            groupBox1.Location = new Point(304, 275);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Location = new Point(347, 367);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(528, 213);
+            groupBox1.Size = new Size(603, 284);
             groupBox1.TabIndex = 42;
             groupBox1.TabStop = false;
             groupBox1.Text = "Buscar";
             // 
             // txtIdPlanificacion
             // 
-            txtIdPlanificacion.Location = new Point(298, 65);
-            txtIdPlanificacion.Margin = new Padding(3, 2, 3, 2);
+            txtIdPlanificacion.Location = new Point(341, 87);
             txtIdPlanificacion.Name = "txtIdPlanificacion";
-            txtIdPlanificacion.Size = new Size(177, 23);
+            txtIdPlanificacion.Size = new Size(202, 27);
             txtIdPlanificacion.TabIndex = 17;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(298, 33);
+            label9.Location = new Point(341, 44);
             label9.Name = "label9";
-            label9.Size = new Size(114, 15);
+            label9.Size = new Size(143, 20);
             label9.TabIndex = 31;
             label9.Text = "Nro de Planificación";
             // 
             // btnConsultarMP
             // 
-            btnConsultarMP.Location = new Point(375, 108);
-            btnConsultarMP.Margin = new Padding(3, 2, 3, 2);
+            btnConsultarMP.Location = new Point(429, 144);
             btnConsultarMP.Name = "btnConsultarMP";
-            btnConsultarMP.Size = new Size(100, 43);
+            btnConsultarMP.Size = new Size(114, 57);
             btnConsultarMP.TabIndex = 27;
             btnConsultarMP.Text = "Consultar";
             btnConsultarMP.UseVisualStyleBackColor = true;
@@ -110,27 +106,25 @@
             // 
             // dtPickerFechaMP
             // 
-            dtPickerFechaMP.Location = new Point(24, 65);
-            dtPickerFechaMP.Margin = new Padding(3, 2, 3, 2);
+            dtPickerFechaMP.Location = new Point(27, 87);
             dtPickerFechaMP.Name = "dtPickerFechaMP";
-            dtPickerFechaMP.Size = new Size(253, 23);
+            dtPickerFechaMP.Size = new Size(289, 27);
             dtPickerFechaMP.TabIndex = 30;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(24, 33);
+            label8.Location = new Point(27, 44);
             label8.Name = "label8";
-            label8.Size = new Size(41, 15);
+            label8.Size = new Size(50, 20);
             label8.TabIndex = 28;
             label8.Text = "Fecha:";
             // 
             // btnSalirMP
             // 
-            btnSalirMP.Location = new Point(646, 210);
-            btnSalirMP.Margin = new Padding(3, 2, 3, 2);
+            btnSalirMP.Location = new Point(738, 280);
             btnSalirMP.Name = "btnSalirMP";
-            btnSalirMP.Size = new Size(100, 43);
+            btnSalirMP.Size = new Size(114, 57);
             btnSalirMP.TabIndex = 41;
             btnSalirMP.Text = "Salir";
             btnSalirMP.UseVisualStyleBackColor = true;
@@ -138,10 +132,9 @@
             // 
             // btnDesahabilitarMP
             // 
-            btnDesahabilitarMP.Location = new Point(541, 210);
-            btnDesahabilitarMP.Margin = new Padding(3, 2, 3, 2);
+            btnDesahabilitarMP.Location = new Point(618, 280);
             btnDesahabilitarMP.Name = "btnDesahabilitarMP";
-            btnDesahabilitarMP.Size = new Size(100, 43);
+            btnDesahabilitarMP.Size = new Size(114, 57);
             btnDesahabilitarMP.TabIndex = 37;
             btnDesahabilitarMP.Text = "Desahabilitar";
             btnDesahabilitarMP.UseVisualStyleBackColor = true;
@@ -149,10 +142,9 @@
             // 
             // btnEditarMP
             // 
-            btnEditarMP.Location = new Point(428, 210);
-            btnEditarMP.Margin = new Padding(3, 2, 3, 2);
+            btnEditarMP.Location = new Point(489, 280);
             btnEditarMP.Name = "btnEditarMP";
-            btnEditarMP.Size = new Size(100, 43);
+            btnEditarMP.Size = new Size(114, 57);
             btnEditarMP.TabIndex = 39;
             btnEditarMP.Text = "Editar";
             btnEditarMP.UseVisualStyleBackColor = true;
@@ -161,11 +153,10 @@
             // dgvMP
             // 
             dgvMP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMP.Location = new Point(315, 29);
-            dgvMP.Margin = new Padding(3, 2, 3, 2);
+            dgvMP.Location = new Point(360, 39);
             dgvMP.Name = "dgvMP";
             dgvMP.RowHeadersWidth = 51;
-            dgvMP.Size = new Size(481, 158);
+            dgvMP.Size = new Size(550, 211);
             dgvMP.TabIndex = 36;
             // 
             // Planificacion
@@ -188,11 +179,9 @@
             Planificacion.Controls.Add(label3);
             Planificacion.Controls.Add(txtIdMP);
             Planificacion.Controls.Add(label1);
-            Planificacion.Location = new Point(5, 17);
-            Planificacion.Margin = new Padding(3, 2, 3, 2);
+            Planificacion.Location = new Point(6, 23);
             Planificacion.Name = "Planificacion";
-            Planificacion.Padding = new Padding(3, 2, 3, 2);
-            Planificacion.Size = new Size(280, 481);
+            Planificacion.Size = new Size(320, 641);
             Planificacion.TabIndex = 40;
             Planificacion.TabStop = false;
             Planificacion.Text = "Planificación";
@@ -200,71 +189,69 @@
             // cbTipoMant
             // 
             cbTipoMant.FormattingEnabled = true;
-            cbTipoMant.Location = new Point(9, 147);
+            cbTipoMant.Location = new Point(10, 196);
+            cbTipoMant.Margin = new Padding(3, 4, 3, 4);
             cbTipoMant.Name = "cbTipoMant";
-            cbTipoMant.Size = new Size(114, 23);
+            cbTipoMant.Size = new Size(130, 28);
             cbTipoMant.TabIndex = 20;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(9, 129);
+            label11.Location = new Point(10, 172);
             label11.Name = "label11";
-            label11.Size = new Size(101, 15);
+            label11.Size = new Size(125, 20);
             label11.TabIndex = 19;
             label11.Text = "T. Mantenimiento";
             // 
             // cbHorario
             // 
             cbHorario.FormattingEnabled = true;
-            cbHorario.Location = new Point(9, 258);
-            cbHorario.Margin = new Padding(3, 2, 3, 2);
+            cbHorario.Location = new Point(10, 344);
             cbHorario.Name = "cbHorario";
-            cbHorario.Size = new Size(248, 23);
+            cbHorario.Size = new Size(283, 28);
             cbHorario.TabIndex = 18;
             cbHorario.SelectedIndexChanged += cbHorario_SelectedIndexChanged;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(9, 235);
+            label10.Location = new Point(10, 313);
             label10.Name = "label10";
-            label10.Size = new Size(50, 15);
+            label10.Size = new Size(63, 20);
             label10.TabIndex = 17;
             label10.Text = "Horario:";
             // 
             // cbPrioridad
             // 
             cbPrioridad.FormattingEnabled = true;
-            cbPrioridad.Location = new Point(141, 147);
+            cbPrioridad.Location = new Point(161, 196);
+            cbPrioridad.Margin = new Padding(3, 4, 3, 4);
             cbPrioridad.Name = "cbPrioridad";
-            cbPrioridad.Size = new Size(116, 23);
+            cbPrioridad.Size = new Size(132, 28);
             cbPrioridad.TabIndex = 16;
             // 
             // cbRecurso
             // 
             cbRecurso.FormattingEnabled = true;
-            cbRecurso.Location = new Point(141, 204);
-            cbRecurso.Margin = new Padding(3, 2, 3, 2);
+            cbRecurso.Location = new Point(161, 272);
             cbRecurso.Name = "cbRecurso";
-            cbRecurso.Size = new Size(116, 23);
+            cbRecurso.Size = new Size(132, 28);
             cbRecurso.TabIndex = 15;
             // 
             // cbPersonal
             // 
             cbPersonal.FormattingEnabled = true;
-            cbPersonal.Location = new Point(9, 204);
-            cbPersonal.Margin = new Padding(3, 2, 3, 2);
+            cbPersonal.Location = new Point(10, 272);
             cbPersonal.Name = "cbPersonal";
-            cbPersonal.Size = new Size(114, 23);
+            cbPersonal.Size = new Size(130, 28);
             cbPersonal.TabIndex = 14;
             // 
             // btnCancelarMP
             // 
-            btnCancelarMP.Location = new Point(84, 366);
-            btnCancelarMP.Margin = new Padding(3, 2, 3, 2);
+            btnCancelarMP.Location = new Point(156, 476);
             btnCancelarMP.Name = "btnCancelarMP";
-            btnCancelarMP.Size = new Size(100, 35);
+            btnCancelarMP.Size = new Size(114, 47);
             btnCancelarMP.TabIndex = 12;
             btnCancelarMP.Text = "Cancelar";
             btnCancelarMP.UseVisualStyleBackColor = true;
@@ -272,10 +259,9 @@
             // 
             // btnModificarMP
             // 
-            btnModificarMP.Location = new Point(162, 323);
-            btnModificarMP.Margin = new Padding(3, 2, 3, 2);
+            btnModificarMP.Location = new Point(161, 411);
             btnModificarMP.Name = "btnModificarMP";
-            btnModificarMP.Size = new Size(95, 35);
+            btnModificarMP.Size = new Size(109, 47);
             btnModificarMP.TabIndex = 11;
             btnModificarMP.Text = "Modificar";
             btnModificarMP.UseVisualStyleBackColor = true;
@@ -283,10 +269,9 @@
             // 
             // btnRegistrarMP
             // 
-            btnRegistrarMP.Location = new Point(6, 323);
-            btnRegistrarMP.Margin = new Padding(3, 2, 3, 2);
+            btnRegistrarMP.Location = new Point(21, 411);
             btnRegistrarMP.Name = "btnRegistrarMP";
-            btnRegistrarMP.Size = new Size(100, 35);
+            btnRegistrarMP.Size = new Size(114, 47);
             btnRegistrarMP.TabIndex = 9;
             btnRegistrarMP.Text = "Registrar";
             btnRegistrarMP.UseVisualStyleBackColor = true;
@@ -295,88 +280,85 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(141, 187);
+            label7.Location = new Point(161, 249);
             label7.Name = "label7";
-            label7.Size = new Size(52, 15);
+            label7.Size = new Size(64, 20);
             label7.TabIndex = 8;
             label7.Text = "Recurso:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(9, 187);
+            label6.Location = new Point(10, 249);
             label6.Name = "label6";
-            label6.Size = new Size(50, 15);
+            label6.Size = new Size(62, 20);
             label6.TabIndex = 7;
             label6.Text = "Tecnico:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(141, 129);
+            label5.Location = new Point(161, 172);
             label5.Name = "label5";
-            label5.Size = new Size(55, 15);
+            label5.Size = new Size(70, 20);
             label5.TabIndex = 6;
             label5.Text = "Prioridad";
             // 
             // dtPickerFechaMantenimiento
             // 
-            dtPickerFechaMantenimiento.Location = new Point(9, 91);
-            dtPickerFechaMantenimiento.Margin = new Padding(3, 2, 3, 2);
+            dtPickerFechaMantenimiento.Location = new Point(10, 121);
             dtPickerFechaMantenimiento.Name = "dtPickerFechaMantenimiento";
-            dtPickerFechaMantenimiento.Size = new Size(248, 23);
+            dtPickerFechaMantenimiento.Size = new Size(283, 27);
             dtPickerFechaMantenimiento.TabIndex = 5;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(9, 74);
+            label4.Location = new Point(10, 99);
             label4.Name = "label4";
-            label4.Size = new Size(139, 15);
+            label4.Size = new Size(173, 20);
             label4.TabIndex = 4;
             label4.Text = "Fecha de Mantenimiento";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 91);
+            label3.Location = new Point(7, 121);
             label3.Name = "label3";
-            label3.Size = new Size(0, 15);
+            label3.Size = new Size(0, 20);
             label3.TabIndex = 3;
             // 
             // txtIdMP
             // 
-            txtIdMP.Location = new Point(9, 43);
-            txtIdMP.Margin = new Padding(3, 2, 3, 2);
+            txtIdMP.Location = new Point(10, 57);
             txtIdMP.Name = "txtIdMP";
-            txtIdMP.Size = new Size(97, 23);
+            txtIdMP.Size = new Size(110, 27);
             txtIdMP.TabIndex = 1;
             txtIdMP.KeyDown += txtIdMP_KeyDown;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(9, 26);
+            label1.Location = new Point(10, 35);
             label1.Name = "label1";
-            label1.Size = new Size(114, 15);
+            label1.Size = new Size(143, 20);
             label1.TabIndex = 0;
             label1.Text = "Nro de Planificación";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(315, 9);
+            label2.Location = new Point(360, 12);
             label2.Name = "label2";
-            label2.Size = new Size(75, 15);
+            label2.Size = new Size(93, 20);
             label2.TabIndex = 35;
             label2.Text = "Planificación";
             // 
             // btnNuevoMP
             // 
-            btnNuevoMP.Location = new Point(315, 210);
-            btnNuevoMP.Margin = new Padding(3, 2, 3, 2);
+            btnNuevoMP.Location = new Point(360, 280);
             btnNuevoMP.Name = "btnNuevoMP";
-            btnNuevoMP.Size = new Size(100, 43);
+            btnNuevoMP.Size = new Size(114, 57);
             btnNuevoMP.TabIndex = 38;
             btnNuevoMP.Text = "Nuevo";
             btnNuevoMP.UseVisualStyleBackColor = true;
@@ -384,9 +366,9 @@
             // 
             // MantenimientoPlanificacion
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(877, 524);
+            ClientSize = new Size(1002, 699);
             Controls.Add(groupBox1);
             Controls.Add(btnSalirMP);
             Controls.Add(btnDesahabilitarMP);
@@ -396,6 +378,7 @@
             Controls.Add(label2);
             Controls.Add(btnNuevoMP);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MantenimientoPlanificacion";
             Text = "Mantenimiento Planificacion";
             Load += MantenimientoPlanificacion_Load;

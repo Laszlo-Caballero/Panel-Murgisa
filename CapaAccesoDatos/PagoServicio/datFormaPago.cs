@@ -1,4 +1,4 @@
-using CapaEntidad.FormaPago;
+using CapaEntidad.PagoServicio;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaAccesoDatos.FormaPago
+namespace CapaAccesoDatos.PagoServicio
 {
     public class datFormaPago
     {
@@ -28,7 +28,8 @@ namespace CapaAccesoDatos.FormaPago
                 cn.Open();
                 cmd = new SqlCommand("listarFormaPagos", cn);
                 SqlDataReader dr = cmd.ExecuteReader();
-                while(dr.Read()){
+                while (dr.Read())
+                {
                     entFormaPago pago = new entFormaPago();
                     pago.idFormaPago = Convert.ToInt32(dr["idFormaPago"]);
                     pago.tipo = dr["tipo"].ToString();
@@ -36,15 +37,18 @@ namespace CapaAccesoDatos.FormaPago
                     lista.Add(pago);
                 }
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
                 throw ex;
             }
-            finally{
+            finally
+            {
                 cmd.Connection.Close();
             }
             return lista;
         }
-        public bool agregarFormaPago(entFormaPago pago){
+        public bool agregarFormaPago(entFormaPago pago)
+        {
             SqlCommand cmd = null;
             bool agregarEstado = false;
 
@@ -59,11 +63,12 @@ namespace CapaAccesoDatos.FormaPago
 
                 cmd.Parameters.AddWithValue("@estado", pago.estado);
                 int rows = cmd.ExecuteNonQuery();
-                
+
                 agregarEstado = rows >= 1;
             }
             catch (Exception ex) { throw ex; }
-            finally { 
+            finally
+            {
                 cmd.Connection.Close();
             }
             return agregarEstado;
@@ -107,7 +112,8 @@ namespace CapaAccesoDatos.FormaPago
                 actalizar = rows >= 1;
             }
             catch (Exception ex) { throw ex; }
-            finally {
+            finally
+            {
                 cmd.Connection.Close();
             }
             return actalizar;

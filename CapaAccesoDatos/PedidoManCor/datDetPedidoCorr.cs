@@ -17,7 +17,7 @@ namespace CapaAccesoDatos.PedidoManCor
             get { return _instancia; }
         }
 
-        public bool agregarDetOrdenCorr(List<entDetPedidoCorr> detalle)
+        public bool agregarDetOrdenCorr(List<entDetPedidoCorr> detalle, int id)
         {
             SqlCommand cmd = null;
             bool agregar = false;
@@ -25,10 +25,18 @@ namespace CapaAccesoDatos.PedidoManCor
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("agregarDetOrdenCorr", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                agregar = rows >= 1;
+                foreach(entDetPedidoCorr item in detalle)
+                {
+                    cmd = new SqlCommand("agregarDetallePedido", cn);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@pedido", id);
+                    cmd.Parameters.AddWithValue("@tipo", item.mantenimiento);
+                    cmd.Parameters.AddWithValue("@estado", item.estado);
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows == 0)
+                        break;
+                }
+                agregar = true;
             }
             catch (Exception ex)
             {
@@ -40,31 +48,6 @@ namespace CapaAccesoDatos.PedidoManCor
             }
             return agregar;
         }
-
-        public bool actualizarDetOrdenCorr(entDetPedidoCorr nuevo)
-        {
-            SqlCommand cmd = null;
-            bool actualizar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("actualizarDetOrdenCorr", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                actualizar = rows >= 1;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return actualizar;
-        }
-
         public bool deshabilitarDetOrdenCorr(int id)
         {
             SqlCommand cmd = null;

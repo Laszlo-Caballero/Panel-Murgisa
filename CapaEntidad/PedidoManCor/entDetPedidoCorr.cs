@@ -14,8 +14,6 @@ namespace CapaEntidad.PedidoManCor
 
         public int mantenimiento { get; set; }
 
-        public string nombre { get; set; }
-
         public bool estado { get; set; }
 
     }

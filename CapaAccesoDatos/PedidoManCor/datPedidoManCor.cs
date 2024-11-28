@@ -31,7 +31,7 @@ namespace CapaAccesoDatos.PedidoManCor
                 {
                     entPedidoManCor nuevo = new entPedidoManCor();
                     nuevo.id = Convert.ToInt32(dr["idPedidoMan"]);
-                    nuevo.recurso = Convert.ToInt32(dr["idRecurso "]);
+                    nuevo.recurso = Convert.ToInt32(dr["idRecurso"]);
                     nuevo.nombre = dr["nombre"].ToString();
                     nuevo.fecha = Convert.ToDateTime(dr["fecha"]);
                     nuevo.estado = Convert.ToBoolean(dr["estado"]);

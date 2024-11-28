@@ -35,7 +35,7 @@
             cbMaquinaria = new ComboBox();
             label3 = new Label();
             dtpFecha = new DateTimePicker();
-            checkBox1 = new CheckBox();
+            cbEstado = new CheckBox();
             label5 = new Label();
             txtPedido = new TextBox();
             listaDetalle = new ListView();
@@ -50,39 +50,36 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(479, 518);
-            label1.Margin = new Padding(6, 0, 6, 0);
+            label1.Location = new Point(258, 243);
             label1.Name = "label1";
-            label1.Size = new Size(139, 32);
+            label1.Size = new Size(70, 15);
             label1.TabIndex = 0;
             label1.Text = "Maquinaria:";
             // 
             // dgvpedido
             // 
             dgvpedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvpedido.Location = new Point(41, 26);
-            dgvpedido.Margin = new Padding(6, 6, 6, 6);
+            dgvpedido.Location = new Point(22, 12);
             dgvpedido.Name = "dgvpedido";
             dgvpedido.RowHeadersWidth = 82;
-            dgvpedido.Size = new Size(836, 399);
+            dgvpedido.Size = new Size(450, 187);
             dgvpedido.TabIndex = 1;
             // 
             // txtRegistrar
             // 
-            txtRegistrar.Location = new Point(1044, 591);
-            txtRegistrar.Margin = new Padding(6, 6, 6, 6);
-            txtRegistrar.Name = "button1";
-            txtRegistrar.Size = new Size(193, 79);
+            txtRegistrar.Location = new Point(562, 277);
+            txtRegistrar.Name = "txtRegistrar";
+            txtRegistrar.Size = new Size(104, 37);
             txtRegistrar.TabIndex = 2;
             txtRegistrar.Text = "REGISTRAR";
             txtRegistrar.UseVisualStyleBackColor = true;
+            txtRegistrar.Click += txtRegistrar_Click;
             // 
             // txtDeshabilitar
             // 
-            txtDeshabilitar.Location = new Point(1294, 591);
-            txtDeshabilitar.Margin = new Padding(6, 6, 6, 6);
-            txtDeshabilitar.Name = "button2";
-            txtDeshabilitar.Size = new Size(193, 79);
+            txtDeshabilitar.Location = new Point(683, 277);
+            txtDeshabilitar.Name = "txtDeshabilitar";
+            txtDeshabilitar.Size = new Size(104, 37);
             txtDeshabilitar.TabIndex = 3;
             txtDeshabilitar.Text = "DESHABILITAR";
             txtDeshabilitar.UseVisualStyleBackColor = true;
@@ -90,66 +87,59 @@
             // cbMaquinaria
             // 
             cbMaquinaria.FormattingEnabled = true;
-            cbMaquinaria.Location = new Point(652, 512);
-            cbMaquinaria.Margin = new Padding(6, 6, 6, 6);
+            cbMaquinaria.Location = new Point(351, 240);
             cbMaquinaria.Name = "cbMaquinaria";
-            cbMaquinaria.Size = new Size(221, 40);
+            cbMaquinaria.Size = new Size(121, 23);
             cbMaquinaria.TabIndex = 4;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(59, 614);
-            label3.Margin = new Padding(6, 0, 6, 0);
+            label3.Location = new Point(32, 288);
             label3.Name = "label3";
-            label3.Size = new Size(76, 32);
+            label3.Size = new Size(38, 15);
             label3.TabIndex = 7;
             label3.Text = "Fecha";
             // 
             // dtpFecha
             // 
-            dtpFecha.Location = new Point(175, 606);
-            dtpFecha.Margin = new Padding(6, 6, 6, 6);
+            dtpFecha.Location = new Point(94, 284);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(385, 39);
+            dtpFecha.Size = new Size(209, 23);
             dtpFecha.TabIndex = 8;
             // 
-            // checkBox1
+            // cbEstado
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(650, 610);
-            checkBox1.Margin = new Padding(6, 6, 6, 6);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(116, 36);
-            checkBox1.TabIndex = 11;
-            checkBox1.Text = "Estado";
-            checkBox1.UseVisualStyleBackColor = true;
+            cbEstado.AutoSize = true;
+            cbEstado.Location = new Point(351, 287);
+            cbEstado.Name = "cbEstado";
+            cbEstado.Size = new Size(61, 19);
+            cbEstado.TabIndex = 11;
+            cbEstado.Text = "Estado";
+            cbEstado.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(46, 518);
-            label5.Margin = new Padding(6, 0, 6, 0);
+            label5.Location = new Point(25, 243);
             label5.Name = "label5";
-            label5.Size = new Size(114, 32);
+            label5.Size = new Size(57, 15);
             label5.TabIndex = 12;
             label5.Text = "Pedido Id";
             // 
             // txtPedido
             // 
-            txtPedido.Location = new Point(214, 512);
-            txtPedido.Margin = new Padding(6, 6, 6, 6);
+            txtPedido.Location = new Point(115, 240);
             txtPedido.Name = "txtPedido";
-            txtPedido.Size = new Size(221, 39);
+            txtPedido.Size = new Size(121, 23);
             txtPedido.TabIndex = 13;
             // 
             // listaDetalle
             // 
             listaDetalle.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
-            listaDetalle.Location = new Point(956, 26);
-            listaDetalle.Margin = new Padding(6, 6, 6, 6);
-            listaDetalle.Name = "listView1";
-            listaDetalle.Size = new Size(407, 394);
+            listaDetalle.Location = new Point(515, 12);
+            listaDetalle.Name = "listaDetalle";
+            listaDetalle.Size = new Size(221, 187);
             listaDetalle.TabIndex = 15;
             listaDetalle.UseCompatibleStateImageBehavior = false;
             listaDetalle.View = View.Details;
@@ -165,44 +155,44 @@
             // 
             // btnAñadir
             // 
-            btnAñadir.Location = new Point(429, 277);
-            btnAñadir.Name = "button3";
-            btnAñadir.Size = new Size(101, 37);
+            btnAñadir.Location = new Point(455, 279);
+            btnAñadir.Margin = new Padding(2, 1, 2, 1);
+            btnAñadir.Name = "btnAñadir";
+            btnAñadir.Size = new Size(88, 37);
             btnAñadir.TabIndex = 16;
             btnAñadir.Text = "AÑADIR";
             btnAñadir.UseVisualStyleBackColor = true;
+            btnAñadir.Click += btnAñadir_Click_1;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(975, 512);
-            label6.Margin = new Padding(6, 0, 6, 0);
+            label6.Location = new Point(525, 240);
             label6.Name = "label6";
-            label6.Size = new Size(179, 32);
+            label6.Size = new Size(89, 15);
             label6.TabIndex = 17;
             label6.Text = "Mantenimiento";
             // 
             // cbMantenimiento
             // 
             cbMantenimiento.FormattingEnabled = true;
-            cbMantenimiento.Location = new Point(1176, 501);
-            cbMantenimiento.Margin = new Padding(6, 6, 6, 6);
+            cbMantenimiento.Location = new Point(633, 235);
             cbMantenimiento.Name = "cbMantenimiento";
-            cbMantenimiento.Size = new Size(221, 40);
+            cbMantenimiento.Size = new Size(121, 23);
             cbMantenimiento.TabIndex = 18;
             // 
             // PedidoMantenimientoCorrectivo
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1510, 832);
+            ClientSize = new Size(813, 390);
             Controls.Add(cbMantenimiento);
             Controls.Add(label6);
             Controls.Add(btnAñadir);
             Controls.Add(listaDetalle);
             Controls.Add(txtPedido);
             Controls.Add(label5);
-            Controls.Add(checkBox1);
+            Controls.Add(cbEstado);
             Controls.Add(dtpFecha);
             Controls.Add(label3);
             Controls.Add(cbMaquinaria);
@@ -211,7 +201,6 @@
             Controls.Add(dgvpedido);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(6, 6, 6, 6);
             Name = "PedidoMantenimientoCorrectivo";
             Text = "PedidoMantenimientoCorrectivo";
             ((System.ComponentModel.ISupportInitialize)dgvpedido).EndInit();
@@ -228,7 +217,7 @@
         private ComboBox cbMaquinaria;
         private Label label3;
         private DateTimePicker dtpFecha;
-        private CheckBox checkBox1;
+        private CheckBox cbEstado;
         private Label label5;
         private TextBox txtPedido;
         private ListView listaDetalle;

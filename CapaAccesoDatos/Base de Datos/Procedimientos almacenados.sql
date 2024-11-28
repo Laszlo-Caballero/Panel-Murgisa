@@ -577,3 +577,73 @@ alter table DetalleVenta add estado bit
 
 select * from DetalleVenta
 
+-- LISTAR PEDIDOS MANTENIMIENTO
+
+create or alter procedure listarPedidoManCor
+as
+begin
+	Select PM.idPedidoMan, pm.idRecurso, R.nombre, PM.fecha, pm.estado from PedidoMantenimientoCorrectivo PM 
+	inner join Recurso r on r.idRecurso = PM.idRecurso
+	where PM.estado = 1
+end
+
+-- AGREGAR PEDIDOS MANTENIMIENTO
+Select * from PedidoMantenimientoCorrectivo
+
+create or alter procedure agregarPedidoManCor
+@recurso int,
+@fecha date,
+@estado bit
+as
+begin
+	insert into PedidoMantenimientoCorrectivo (idRecurso, fecha, estado) 
+	values (@recurso, @fecha, @estado)
+end
+
+-- DESHABILITAR PEDIDOS
+create or alter procedure deshabilitarPedidoManCor
+@idPedido int
+as
+begin
+	update PedidoMantenimientoCorrectivo set estado = 0 where idPedidoMan = @idPedido 
+end
+
+-- ULTIMO PEDIDO
+create or alter procedure ultimoPedido
+as
+begin
+	SELECT TOP 1 idPedidoMan
+	FROM PedidoMantenimientoCorrectivo
+	ORDER BY idPedidoMan DESC;
+end
+
+-- AGREGAR DETALLE
+
+create or alter procedure agregarDetallePedido
+@pedido int,
+@tipo int,
+@estado bit
+as
+begin
+	insert into DetallePedidoManCorrectivo (idPedido, idTipo, estado) 
+	values (@pedido, @tipo, @estado)
+end
+
+
+-- LISTAR RECURSO POR MAQUINARIA
+
+create or alter procedure listarMaquinaria
+as
+begin
+	select * from Recurso where idTipoRecurso = 1
+end
+
+-- LISTARMANTENIMIENTO
+
+create or alter procedure listarTipoMan
+as
+begin
+	Select * from TipoMantenimiento where estado = 1
+end
+
+

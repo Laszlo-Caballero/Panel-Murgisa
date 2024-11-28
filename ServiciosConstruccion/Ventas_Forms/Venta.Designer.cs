@@ -33,22 +33,20 @@
             txtIdVenta = new TextBox();
             label4 = new Label();
             cbTipoServicio = new ComboBox();
-            button2 = new Button();
+            btnConfirmar = new Button();
             textBox2 = new TextBox();
             label8 = new Label();
             dtgvServicios = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
+            FechaInicio = new DataGridViewTextBoxColumn();
+            FechaFin = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel = new Panel();
-            groupBox1 = new GroupBox();
-            button3 = new Button();
+            btnAgergarVenta = new Button();
             label3 = new Label();
             dtRegistro = new DateTimePicker();
-            checkBox1 = new CheckBox();
+            cbkEstado = new CheckBox();
             groupBox2 = new GroupBox();
             btnEliminarPersonal = new Button();
             txtIdPersonal = new TextBox();
@@ -56,6 +54,9 @@
             label6 = new Label();
             btnAgregarPersonal = new Button();
             dtgvPersonal = new DataGridView();
+            idPersonal = new DataGridViewTextBoxColumn();
+            nombre = new DataGridViewTextBoxColumn();
+            sueldo = new DataGridViewTextBoxColumn();
             label5 = new Label();
             groupBox3 = new GroupBox();
             btnBuscar = new Button();
@@ -65,6 +66,7 @@
             txtidCliente = new TextBox();
             label7 = new Label();
             label9 = new Label();
+            groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dtgvServicios).BeginInit();
             panel.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -122,15 +124,16 @@
             cbTipoServicio.TabIndex = 6;
             cbTipoServicio.SelectedIndexChanged += cbTipoServicio_SelectedIndexChanged;
             // 
-            // button2
+            // btnConfirmar
             // 
-            button2.Location = new Point(801, 754);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(160, 52);
-            button2.TabIndex = 10;
-            button2.Text = "Confirmar venta";
-            button2.UseVisualStyleBackColor = true;
+            btnConfirmar.Location = new Point(801, 754);
+            btnConfirmar.Margin = new Padding(2);
+            btnConfirmar.Name = "btnConfirmar";
+            btnConfirmar.Size = new Size(160, 52);
+            btnConfirmar.TabIndex = 10;
+            btnConfirmar.Text = "Confirmar venta";
+            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.Click += btnConfirmar_Click;
             // 
             // textBox2
             // 
@@ -153,7 +156,7 @@
             // dtgvServicios
             // 
             dtgvServicios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvServicios.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
+            dtgvServicios.Columns.AddRange(new DataGridViewColumn[] { Column1, FechaInicio, FechaFin, Column5 });
             dtgvServicios.Location = new Point(62, 189);
             dtgvServicios.Margin = new Padding(2);
             dtgvServicios.Name = "dtgvServicios";
@@ -168,26 +171,19 @@
             Column1.Name = "Column1";
             Column1.Width = 200;
             // 
-            // Column2
+            // FechaInicio
             // 
-            Column2.HeaderText = "fecha de disponibilidad";
-            Column2.MinimumWidth = 10;
-            Column2.Name = "Column2";
-            Column2.Width = 200;
+            FechaInicio.HeaderText = "FechaInicio";
+            FechaInicio.MinimumWidth = 10;
+            FechaInicio.Name = "FechaInicio";
+            FechaInicio.Width = 200;
             // 
-            // Column3
+            // FechaFin
             // 
-            Column3.HeaderText = "Precio";
-            Column3.MinimumWidth = 10;
-            Column3.Name = "Column3";
-            Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Características";
-            Column4.MinimumWidth = 10;
-            Column4.Name = "Column4";
-            Column4.Width = 200;
+            FechaFin.HeaderText = "FechaFin";
+            FechaFin.MinimumWidth = 6;
+            FechaFin.Name = "FechaFin";
+            FechaFin.Width = 125;
             // 
             // Column5
             // 
@@ -201,26 +197,18 @@
             panel.Controls.Add(groupBox1);
             panel.Location = new Point(26, 346);
             panel.Name = "panel";
-            panel.Size = new Size(955, 405);
+            panel.Size = new Size(996, 405);
             panel.TabIndex = 17;
             // 
-            // groupBox1
+            // btnAgergarVenta
             // 
-            groupBox1.Location = new Point(3, 0);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(952, 397);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Tipo Servicio";
-            // 
-            // button3
-            // 
-            button3.Location = new Point(597, 757);
-            button3.Name = "button3";
-            button3.Size = new Size(149, 49);
-            button3.TabIndex = 18;
-            button3.Text = "Agregar Venta";
-            button3.UseVisualStyleBackColor = true;
+            btnAgergarVenta.Location = new Point(597, 757);
+            btnAgergarVenta.Name = "btnAgergarVenta";
+            btnAgergarVenta.Size = new Size(149, 49);
+            btnAgergarVenta.TabIndex = 18;
+            btnAgergarVenta.Text = "Agregar Venta";
+            btnAgergarVenta.UseVisualStyleBackColor = true;
+            btnAgergarVenta.Click += btnAgergarVenta_Click;
             // 
             // label3
             // 
@@ -240,15 +228,15 @@
             dtRegistro.Size = new Size(248, 27);
             dtRegistro.TabIndex = 2;
             // 
-            // checkBox1
+            // cbkEstado
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(426, 148);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(76, 24);
-            checkBox1.TabIndex = 19;
-            checkBox1.Text = "estado";
-            checkBox1.UseVisualStyleBackColor = true;
+            cbkEstado.AutoSize = true;
+            cbkEstado.Location = new Point(426, 148);
+            cbkEstado.Name = "cbkEstado";
+            cbkEstado.Size = new Size(76, 24);
+            cbkEstado.TabIndex = 19;
+            cbkEstado.Text = "estado";
+            cbkEstado.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -259,7 +247,7 @@
             groupBox2.Controls.Add(btnAgregarPersonal);
             groupBox2.Controls.Add(dtgvPersonal);
             groupBox2.Controls.Add(label5);
-            groupBox2.Location = new Point(997, 348);
+            groupBox2.Location = new Point(1028, 346);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(289, 431);
             groupBox2.TabIndex = 20;
@@ -274,6 +262,7 @@
             btnEliminarPersonal.TabIndex = 26;
             btnEliminarPersonal.Text = "eliminar";
             btnEliminarPersonal.UseVisualStyleBackColor = true;
+            btnEliminarPersonal.Click += btnEliminarPersonal_Click;
             // 
             // txtIdPersonal
             // 
@@ -316,11 +305,34 @@
             // dtgvPersonal
             // 
             dtgvPersonal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvPersonal.Columns.AddRange(new DataGridViewColumn[] { idPersonal, nombre, sueldo });
             dtgvPersonal.Location = new Point(15, 230);
             dtgvPersonal.Name = "dtgvPersonal";
             dtgvPersonal.RowHeadersWidth = 51;
             dtgvPersonal.Size = new Size(255, 171);
             dtgvPersonal.TabIndex = 23;
+            dtgvPersonal.CellClick += dtgvPersonal_CellClick;
+            // 
+            // idPersonal
+            // 
+            idPersonal.HeaderText = "idPersonal";
+            idPersonal.MinimumWidth = 6;
+            idPersonal.Name = "idPersonal";
+            idPersonal.Width = 125;
+            // 
+            // nombre
+            // 
+            nombre.HeaderText = "nombre";
+            nombre.MinimumWidth = 6;
+            nombre.Name = "nombre";
+            nombre.Width = 125;
+            // 
+            // sueldo
+            // 
+            sueldo.HeaderText = "sueldo";
+            sueldo.MinimumWidth = 6;
+            sueldo.Name = "sueldo";
+            sueldo.Width = 125;
             // 
             // label5
             // 
@@ -360,7 +372,6 @@
             // 
             // txtRuc
             // 
-            txtRuc.Enabled = false;
             txtRuc.Location = new Point(18, 162);
             txtRuc.Margin = new Padding(2);
             txtRuc.Name = "txtRuc";
@@ -379,6 +390,7 @@
             // 
             // txtCliente
             // 
+            txtCliente.Enabled = false;
             txtCliente.Location = new Point(242, 63);
             txtCliente.Margin = new Padding(2);
             txtCliente.Name = "txtCliente";
@@ -414,19 +426,28 @@
             label9.TabIndex = 28;
             label9.Text = "id";
             // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(2, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(993, 397);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Tipo Servicio";
+            // 
             // Venta
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1317, 863);
-            Controls.Add(button3);
+            Controls.Add(btnAgergarVenta);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
-            Controls.Add(checkBox1);
+            Controls.Add(cbkEstado);
             Controls.Add(panel);
             Controls.Add(dtgvServicios);
             Controls.Add(cbTipoServicio);
-            Controls.Add(button2);
+            Controls.Add(btnConfirmar);
             Controls.Add(label4);
             Controls.Add(txtIdVenta);
             Controls.Add(label3);
@@ -457,22 +478,16 @@
         private TextBox txtIdVenta;
         private Label label4;
         private ComboBox cbTipoServicio;
-        private Button button2;
+        private Button btnConfirmar;
         private Label label8;
         private TextBox textBox2;
         private DataGridView dtgvServicios;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel panel;
-        private GroupBox groupBox1;
-        private Button button3;
+        private Button btnAgergarVenta;
         private Label label3;
         private DateTimePicker dtRegistro;
-        private CheckBox checkBox1;
+        private CheckBox cbkEstado;
         private GroupBox groupBox2;
         private Button btnEliminarPersonal;
         private TextBox txtIdPersonal;
@@ -489,5 +504,13 @@
         private TextBox txtidCliente;
         private Label label7;
         private Label label9;
+        private DataGridViewTextBoxColumn idPersonal;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn sueldo;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn FechaInicio;
+        private DataGridViewTextBoxColumn FechaFin;
+        private DataGridViewTextBoxColumn Column5;
+        private GroupBox groupBox1;
     }
 }

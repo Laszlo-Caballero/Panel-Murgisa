@@ -16,9 +16,23 @@ namespace CapaLogica.Venta
         {
             get { return _instancia; }
         }
-        public List<entVenta> listarVenta()
+        public List<entVentaVista> listarVenta()
         {
             return datVenta.Instancia.listarVenta();
+        }
+        public List<entVentaVista> listarVentaClienteDni(string dni)
+        {
+            return datVenta.Instancia.listarVentaCliente(dni);
+        }
+
+        public List<entDetalleVenta> listarDetalleVentas(int id)
+        {
+            return datVenta.Instancia.listarDetalleVenta(id);
+        }
+
+        public List<entAsignacionPersonal> listarPersonal(int id)
+        {
+            return datVenta.Instancia.listarPersonal(id);
         }
 
         public bool agregarVenta(entVenta nuevo)
@@ -29,6 +43,16 @@ namespace CapaLogica.Venta
         public bool deshablitarVenta(int id)
         {
             return datVenta.Instancia.deshabilitarVenta(id);
+        }
+
+        public bool habilitarRecurso(int idVenta, int idRecurso)
+        {
+            return datVenta.Instancia.hibilitarRecurso(idVenta, idRecurso);
+        }
+
+        public bool deshabilitarPersonal(int idVenta, int idPersonal)
+        {
+            return datVenta.Instancia.deshabilitarPersonal(idVenta, idPersonal);
         }
 
         public List<entVenta> listarVentaCliente(int id)

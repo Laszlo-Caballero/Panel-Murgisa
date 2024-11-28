@@ -1,4 +1,4 @@
-using CapaEntidad.TipoMantenimiento;
+using CapaEntidad.PedidoManCor;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -6,30 +6,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaAccesoDatos.TipoMantenimiento
+namespace CapaAccesoDatos.PedidoManCor
 {
-    public class datTipoMantenimientoCorrectivo
+    public class datPedidoManCor
     {
-        private static readonly datTipoMantenimientoCorrectivo _instancia = new datTipoMantenimientoCorrectivo();
+        private static readonly datPedidoManCor _instancia = new datPedidoManCor();
 
-        public static datTipoMantenimientoCorrectivo Instancia
+        public static datPedidoManCor Instancia
         {
             get { return _instancia; }
         }
 
-        public List<entTipoMantenimiento> listarTipoMantenimientoCorrectivo()
+        public List<entPedidoManCor> listarPedidoManCor()
         {
             SqlCommand cmd = null;
-            List<entTipoMantenimiento> lista = new List<entTipoMantenimiento>();
+            List<entPedidoManCor> lista = new List<entPedidoManCor>();
             try
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("listarTipoMantenimientoCorrectivo", cn);
+                cmd = new SqlCommand("listarPedidoManCor", cn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    entTipoMantenimiento nuevo = new entTipoMantenimiento();
+                    entPedidoManCor nuevo = new entPedidoManCor();
+                    nuevo.id = Convert.ToInt32(dr["idPedidoMan"]);
+                    nuevo.recurso = Convert.ToInt32(dr["idRecurso"]);
+                    nuevo.nombre = dr["nombre"].ToString();
+                    nuevo.fecha = Convert.ToDateTime(dr["fecha"]);
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
                 }
             }
@@ -43,7 +48,7 @@ namespace CapaAccesoDatos.TipoMantenimiento
             return lista;
         }
 
-        public bool agregarTipoMantenimientoCorrectivo(entTipoMantenimiento nuevo)
+        public bool agregarPedidoManCor(entPedidoManCor nuevo)
         {
             SqlCommand cmd = null;
             bool agregar = false;
@@ -51,8 +56,11 @@ namespace CapaAccesoDatos.TipoMantenimiento
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("agregarTipoMantenimientoCorrectivo", cn);
+                cmd = new SqlCommand("agregarPedidoManCor", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@recurso", nuevo.recurso);
+                cmd.Parameters.AddWithValue("@fecha", nuevo.fecha);
+                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -66,31 +74,7 @@ namespace CapaAccesoDatos.TipoMantenimiento
             }
             return agregar;
         }
-
-        public bool actualizarTipoMantenimientoCorrectivo(entTipoMantenimiento nuevo)
-        {
-            SqlCommand cmd = null;
-            bool actualizar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("actualizarTipoMantenimientoCorrectivo", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                actualizar = rows >= 1;
-            }
-            catch (Exception ex) { 
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return actualizar;
-        }
-
-        public bool deshabilitarTipoMantenimientoCorrectivo(int id)
+        public bool deshabilitarPedidoManCor(int id)
         {
             SqlCommand cmd = null;
             bool deshabilitar = false;
@@ -98,9 +82,9 @@ namespace CapaAccesoDatos.TipoMantenimiento
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("deshabilitarTipoMantenimientoCorrectivo", cn);
+                cmd = new SqlCommand("deshabilitarPedidoManCor", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idTipoMantenimientoCorrectivo", id);
+                cmd.Parameters.AddWithValue("@idPedidoManCor", id);
                 int rows = cmd.ExecuteNonQuery();
                 deshabilitar = rows >= 1;
             }
@@ -110,6 +94,32 @@ namespace CapaAccesoDatos.TipoMantenimiento
                 cmd.Connection.Close();
             }
             return deshabilitar;
+        }
+
+        public int ultimoPedido()
+        {
+            SqlCommand cmd = null;
+            int id = -1;
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("ultimoPedido", cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    id = Convert.ToInt32(dr["idPedidoMan"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return id;
         }
     }
 }

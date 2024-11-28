@@ -29,6 +29,8 @@ namespace CapaPresentacion.Mantenimiento_Forms
             cbPrioridad.Items.Add("Media");
             cbPrioridad.Items.Add("Baja");
             dgvMP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMP.MultiSelect = false;
+            dgvMP.ReadOnly = true;
             dgvMP.DataSource = logMantenimientoPlanificacion.Instancia.listarMantenimientoPlanificacionParaGrid();
             cbRecurso.DataSource = logRecurso.Instancia.listarRecurso();
             cbRecurso.DisplayMember = "nombre";

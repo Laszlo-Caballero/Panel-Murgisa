@@ -25,5 +25,10 @@ namespace CapaLogica.Recurso
         {
             return datRecurso.Instancia.listarRecursoTipo(tipo);
         }
+
+        public List<entRecurso> listarMaquinaria()
+        {
+            return datRecurso.Instancia.listarMaquinaria();
+        }
     }
 }

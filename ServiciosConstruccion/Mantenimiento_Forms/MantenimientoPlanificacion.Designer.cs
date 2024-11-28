@@ -57,6 +57,8 @@
             label1 = new Label();
             label2 = new Label();
             btnNuevoMP = new Button();
+            label11 = new Label();
+            comboBox1 = new ComboBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMP).BeginInit();
             Planificacion.SuspendLayout();
@@ -167,6 +169,8 @@
             // 
             // Planificacion
             // 
+            Planificacion.Controls.Add(comboBox1);
+            Planificacion.Controls.Add(label11);
             Planificacion.Controls.Add(cbHorario);
             Planificacion.Controls.Add(label10);
             Planificacion.Controls.Add(cbPrioridad);
@@ -195,16 +199,16 @@
             // cbHorario
             // 
             cbHorario.FormattingEnabled = true;
-            cbHorario.Location = new Point(7, 326);
+            cbHorario.Location = new Point(9, 258);
             cbHorario.Margin = new Padding(3, 2, 3, 2);
             cbHorario.Name = "cbHorario";
-            cbHorario.Size = new Size(219, 23);
+            cbHorario.Size = new Size(248, 23);
             cbHorario.TabIndex = 18;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(7, 303);
+            label10.Location = new Point(9, 235);
             label10.Name = "label10";
             label10.Size = new Size(50, 15);
             label10.TabIndex = 17;
@@ -213,35 +217,35 @@
             // cbPrioridad
             // 
             cbPrioridad.FormattingEnabled = true;
-            cbPrioridad.Location = new Point(9, 147);
+            cbPrioridad.Location = new Point(141, 147);
             cbPrioridad.Name = "cbPrioridad";
-            cbPrioridad.Size = new Size(220, 23);
+            cbPrioridad.Size = new Size(116, 23);
             cbPrioridad.TabIndex = 16;
             // 
             // cbRecurso
             // 
             cbRecurso.FormattingEnabled = true;
-            cbRecurso.Location = new Point(9, 272);
+            cbRecurso.Location = new Point(141, 204);
             cbRecurso.Margin = new Padding(3, 2, 3, 2);
             cbRecurso.Name = "cbRecurso";
-            cbRecurso.Size = new Size(219, 23);
+            cbRecurso.Size = new Size(116, 23);
             cbRecurso.TabIndex = 15;
             // 
             // cbPersonal
             // 
             cbPersonal.FormattingEnabled = true;
-            cbPersonal.Location = new Point(9, 213);
+            cbPersonal.Location = new Point(9, 204);
             cbPersonal.Margin = new Padding(3, 2, 3, 2);
             cbPersonal.Name = "cbPersonal";
-            cbPersonal.Size = new Size(219, 23);
+            cbPersonal.Size = new Size(114, 23);
             cbPersonal.TabIndex = 14;
             // 
             // btnCancelarMP
             // 
-            btnCancelarMP.Location = new Point(75, 413);
+            btnCancelarMP.Location = new Point(84, 366);
             btnCancelarMP.Margin = new Padding(3, 2, 3, 2);
             btnCancelarMP.Name = "btnCancelarMP";
-            btnCancelarMP.Size = new Size(100, 43);
+            btnCancelarMP.Size = new Size(100, 35);
             btnCancelarMP.TabIndex = 12;
             btnCancelarMP.Text = "Cancelar";
             btnCancelarMP.UseVisualStyleBackColor = true;
@@ -249,10 +253,10 @@
             // 
             // btnModificarMP
             // 
-            btnModificarMP.Location = new Point(131, 366);
+            btnModificarMP.Location = new Point(162, 323);
             btnModificarMP.Margin = new Padding(3, 2, 3, 2);
             btnModificarMP.Name = "btnModificarMP";
-            btnModificarMP.Size = new Size(100, 43);
+            btnModificarMP.Size = new Size(95, 35);
             btnModificarMP.TabIndex = 11;
             btnModificarMP.Text = "Modificar";
             btnModificarMP.UseVisualStyleBackColor = true;
@@ -260,19 +264,19 @@
             // 
             // btnRegistrarMP
             // 
-            btnRegistrarMP.Location = new Point(6, 366);
+            btnRegistrarMP.Location = new Point(6, 323);
             btnRegistrarMP.Margin = new Padding(3, 2, 3, 2);
             btnRegistrarMP.Name = "btnRegistrarMP";
-            btnRegistrarMP.Size = new Size(100, 43);
+            btnRegistrarMP.Size = new Size(100, 35);
             btnRegistrarMP.TabIndex = 9;
-            btnRegistrarMP.Text = "Registrar Planificación";
+            btnRegistrarMP.Text = "Registrar";
             btnRegistrarMP.UseVisualStyleBackColor = true;
             btnRegistrarMP.Click += btnRegistrarMP_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(9, 249);
+            label7.Location = new Point(141, 187);
             label7.Name = "label7";
             label7.Size = new Size(52, 15);
             label7.TabIndex = 8;
@@ -281,7 +285,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(7, 190);
+            label6.Location = new Point(9, 187);
             label6.Name = "label6";
             label6.Size = new Size(50, 15);
             label6.TabIndex = 7;
@@ -290,7 +294,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(9, 129);
+            label5.Location = new Point(141, 129);
             label5.Name = "label5";
             label5.Size = new Size(55, 15);
             label5.TabIndex = 6;
@@ -301,7 +305,7 @@
             dtPickerFechaMantenimiento.Location = new Point(9, 91);
             dtPickerFechaMantenimiento.Margin = new Padding(3, 2, 3, 2);
             dtPickerFechaMantenimiento.Name = "dtPickerFechaMantenimiento";
-            dtPickerFechaMantenimiento.Size = new Size(219, 23);
+            dtPickerFechaMantenimiento.Size = new Size(248, 23);
             dtPickerFechaMantenimiento.TabIndex = 5;
             // 
             // label4
@@ -358,6 +362,23 @@
             btnNuevoMP.Text = "Nuevo";
             btnNuevoMP.UseVisualStyleBackColor = true;
             btnNuevoMP.Click += btnNuevoMP_Click;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(9, 129);
+            label11.Name = "label11";
+            label11.Size = new Size(101, 15);
+            label11.TabIndex = 19;
+            label11.Text = "T. Mantenimiento";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(9, 147);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(114, 23);
+            comboBox1.TabIndex = 20;
             // 
             // MantenimientoPlanificacion
             // 
@@ -417,5 +438,7 @@
         private ComboBox cbPrioridad;
         private ComboBox cbHorario;
         private Label label10;
+        private ComboBox comboBox1;
+        private Label label11;
     }
 }

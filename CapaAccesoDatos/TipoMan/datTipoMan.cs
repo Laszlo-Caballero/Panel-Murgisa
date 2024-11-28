@@ -1,4 +1,4 @@
-using CapaEntidad.TipoMantenimiento;
+using CapaEntidad.TipoMan;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -6,30 +6,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaAccesoDatos.TipoMantenimiento
+namespace CapaAccesoDatos.TipoMan
 {
-    public class datTipoMantenimientoCorrectivo
+    public class datTipoMan
     {
-        private static readonly datTipoMantenimientoCorrectivo _instancia = new datTipoMantenimientoCorrectivo();
+        private static readonly datTipoMan _instancia = new datTipoMan();
 
-        public static datTipoMantenimientoCorrectivo Instancia
+        public static datTipoMan Instancia
         {
             get { return _instancia; }
         }
 
-        public List<entTipoMantenimiento> listarTipoMantenimientoCorrectivo()
+        public List<entTipoMan> listarTipoMan()
         {
             SqlCommand cmd = null;
-            List<entTipoMantenimiento> lista = new List<entTipoMantenimiento>();
+            List<entTipoMan> lista = new List<entTipoMan>();
             try
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("listarTipoMantenimientoCorrectivo", cn);
+                cmd = new SqlCommand("listarTipoMan", cn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    entTipoMantenimiento nuevo = new entTipoMantenimiento();
+                    entTipoMan nuevo = new entTipoMan();
+                    nuevo.id = Convert.ToInt32(dr["idTipoMantenimiento"]);
+                    nuevo.tipo = dr["tipo"].ToString();
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
                 }
             }
@@ -43,7 +46,7 @@ namespace CapaAccesoDatos.TipoMantenimiento
             return lista;
         }
 
-        public bool agregarTipoMantenimientoCorrectivo(entTipoMantenimiento nuevo)
+        public bool agregarTipoMan(entTipoMan nuevo)
         {
             SqlCommand cmd = null;
             bool agregar = false;
@@ -51,7 +54,7 @@ namespace CapaAccesoDatos.TipoMantenimiento
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("agregarTipoMantenimientoCorrectivo", cn);
+                cmd = new SqlCommand("agregarTipoMan", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
@@ -67,7 +70,7 @@ namespace CapaAccesoDatos.TipoMantenimiento
             return agregar;
         }
 
-        public bool actualizarTipoMantenimientoCorrectivo(entTipoMantenimiento nuevo)
+        public bool actualizarTipoMan(entTipoMan nuevo)
         {
             SqlCommand cmd = null;
             bool actualizar = false;
@@ -75,7 +78,7 @@ namespace CapaAccesoDatos.TipoMantenimiento
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("actualizarTipoMantenimientoCorrectivo", cn);
+                cmd = new SqlCommand("actualizarTipoMan", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 int rows = cmd.ExecuteNonQuery();
                 actualizar = rows >= 1;
@@ -90,7 +93,7 @@ namespace CapaAccesoDatos.TipoMantenimiento
             return actualizar;
         }
 
-        public bool deshabilitarTipoMantenimientoCorrectivo(int id)
+        public bool deshabilitarTipoMan(int id)
         {
             SqlCommand cmd = null;
             bool deshabilitar = false;
@@ -98,9 +101,9 @@ namespace CapaAccesoDatos.TipoMantenimiento
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("deshabilitarTipoMantenimientoCorrectivo", cn);
+                cmd = new SqlCommand("deshabilitarTipoMan", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idTipoMantenimientoCorrectivo", id);
+                cmd.Parameters.AddWithValue("@idTipoMan", id);
                 int rows = cmd.ExecuteNonQuery();
                 deshabilitar = rows >= 1;
             }

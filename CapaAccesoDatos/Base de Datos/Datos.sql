@@ -86,10 +86,13 @@ INSERT INTO Departamento (nombre, descripcion, estado) VALUES
 ('Produccion', 'Supervisión de procesos productivos', 1);
 
 INSERT INTO Personal (idCargo, idProfesion, idDepartamento, nombre, apellido_parterno, apellido_materno, sueldo, estado) VALUES
-(1, 5, 1, 'Juan', 'Pérez', 'García', 3500.50, 1),
-(2, 6, 2, 'Ana', 'López', 'Martínez', 2800.75, 1),
-(3, 7, 3, 'Carlos', 'Hernández', 'Sánchez', 3000.00, 1),
-(4, 8, 4, 'María', 'Rodríguez', 'Fernández', 2500.25, 1);
+(1, 1, 1, 'Juan', 'Pérez', 'García', 3500.50, 1),
+(2, 2, 2, 'Ana', 'López', 'Martínez', 2800.75, 1),
+(3, 3, 3, 'Carlos', 'Hernández', 'Sánchez', 3000.00, 1),
+(4, 4, 4, 'María', 'Rodríguez', 'Fernández', 2500.25, 1);
+
+
+select * from Personal
 
 
 INSERT INTO Cliente (nombreRepresentante, dni, estado, correo, telefono, direccion, idCiudad)
@@ -99,3 +102,7 @@ VALUES
 ('Carlos', '654321987', 1, 'carlos.ramos@hotmail.com', '945612378', 'Jr. Los Olivos 567', 3),
 ('Ana', '321654987', 1, 'ana.garcia@gmail.com', '956783421', 'Av. Los Laureles 89', 1),
 ('Luis', '159753456', 0, 'luis.torres@example.com', '923456789', 'Calle Los Jazmines 234', 2)
+
+
+
+select * from cliente

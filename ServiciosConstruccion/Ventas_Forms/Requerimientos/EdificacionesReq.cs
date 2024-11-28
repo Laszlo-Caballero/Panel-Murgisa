@@ -38,7 +38,10 @@ namespace CapaPresentacion.Ventas_Forms.Requerimientos
                 dtgvMateriales.Rows.Add(r.idRecurso, r.nombre, r.cantidad);
             }
         }
-
+        public (DateTime, DateTime) getTiempos()
+        {
+            return (dtInicio.Value, dtFin.Value);
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             entRecurso recurso = cbMateriales.SelectedValue as entRecurso;

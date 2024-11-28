@@ -41,17 +41,18 @@
             panel1 = new Panel();
             panel4 = new Panel();
             btnMP = new Button();
+            panel3 = new Panel();
+            btnPedidoMantenimiento = new Button();
             panel6 = new Panel();
             btnMotivo = new Button();
             panel5 = new Panel();
             btnTipo = new Button();
-            panel3 = new Panel();
-            btnTecnico = new Button();
             panel2 = new Panel();
             btnCorrectivo = new Button();
             panel7 = new Panel();
             btnPreventivo = new Button();
             pictureBox1 = new PictureBox();
+            btnTecnico = new Button();
             PanelContenedorM = new Panel();
             BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnMaziminizarr).BeginInit();
@@ -199,12 +200,12 @@
             panel1.BackColor = Color.FromArgb(26, 32, 40);
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(btnMP);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(btnPedidoMantenimiento);
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(btnMotivo);
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(btnTipo);
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(btnTecnico);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(btnCorrectivo);
             panel1.Controls.Add(panel7);
@@ -220,7 +221,7 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(0, 80, 200);
-            panel4.Location = new Point(-1, 263);
+            panel4.Location = new Point(0, 149);
             panel4.Name = "panel4";
             panel4.Size = new Size(5, 31);
             panel4.TabIndex = 21;
@@ -233,7 +234,7 @@
             btnMP.FlatStyle = FlatStyle.Flat;
             btnMP.ForeColor = SystemColors.ButtonFace;
             btnMP.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMP.Location = new Point(3, 263);
+            btnMP.Location = new Point(4, 149);
             btnMP.Name = "btnMP";
             btnMP.RightToLeft = RightToLeft.No;
             btnMP.Size = new Size(194, 31);
@@ -242,10 +243,38 @@
             btnMP.UseVisualStyleBackColor = false;
             btnMP.Click += btnMP_Click;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(0, 80, 200);
+            panel3.Location = new Point(0, 275);
+            panel3.Margin = new Padding(6);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(5, 31);
+            panel3.TabIndex = 19;
+            // 
+            // btnPedidoMantenimiento
+            // 
+            btnPedidoMantenimiento.BackColor = Color.FromArgb(26, 32, 40);
+            btnPedidoMantenimiento.FlatAppearance.BorderSize = 0;
+            btnPedidoMantenimiento.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnPedidoMantenimiento.FlatStyle = FlatStyle.Flat;
+            btnPedidoMantenimiento.ForeColor = SystemColors.ButtonFace;
+            btnPedidoMantenimiento.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPedidoMantenimiento.Location = new Point(6, 275);
+            btnPedidoMantenimiento.Margin = new Padding(6);
+            btnPedidoMantenimiento.Name = "btnPedidoMantenimiento";
+            btnPedidoMantenimiento.RightToLeft = RightToLeft.No;
+            btnPedidoMantenimiento.Size = new Size(194, 31);
+            btnPedidoMantenimiento.TabIndex = 21;
+            btnPedidoMantenimiento.Text = "Pedido Mantenimiento Correctivo";
+            btnPedidoMantenimiento.UseVisualStyleBackColor = false;
+            btnPedidoMantenimiento.Click += btnPedidoMantenimiento_Click;
+            // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(0, 80, 200);
-            panel6.Location = new Point(-1, 226);
+            panel6.Location = new Point(0, 232);
+            panel6.Margin = new Padding(6);
             panel6.Name = "panel6";
             panel6.Size = new Size(5, 31);
             panel6.TabIndex = 18;
@@ -258,7 +287,8 @@
             btnMotivo.FlatStyle = FlatStyle.Flat;
             btnMotivo.ForeColor = SystemColors.ButtonFace;
             btnMotivo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMotivo.Location = new Point(3, 226);
+            btnMotivo.Location = new Point(5, 232);
+            btnMotivo.Margin = new Padding(6);
             btnMotivo.Name = "btnMotivo";
             btnMotivo.RightToLeft = RightToLeft.No;
             btnMotivo.Size = new Size(194, 31);
@@ -270,7 +300,8 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(0, 80, 200);
-            panel5.Location = new Point(-1, 188);
+            panel5.Location = new Point(0, 189);
+            panel5.Margin = new Padding(6);
             panel5.Name = "panel5";
             panel5.Size = new Size(5, 31);
             panel5.TabIndex = 17;
@@ -283,7 +314,8 @@
             btnTipo.FlatStyle = FlatStyle.Flat;
             btnTipo.ForeColor = SystemColors.ButtonFace;
             btnTipo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTipo.Location = new Point(-1, 188);
+            btnTipo.Location = new Point(0, 189);
+            btnTipo.Margin = new Padding(6);
             btnTipo.Name = "btnTipo";
             btnTipo.RightToLeft = RightToLeft.No;
             btnTipo.Size = new Size(197, 31);
@@ -291,30 +323,6 @@
             btnTipo.Text = "Tipo de Mantenimiento";
             btnTipo.UseVisualStyleBackColor = false;
             btnTipo.Click += btnTipo_Click;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(0, 80, 200);
-            panel3.Location = new Point(0, 151);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(5, 31);
-            panel3.TabIndex = 13;
-            // 
-            // btnTecnico
-            // 
-            btnTecnico.BackColor = Color.FromArgb(26, 32, 40);
-            btnTecnico.FlatAppearance.BorderSize = 0;
-            btnTecnico.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            btnTecnico.FlatStyle = FlatStyle.Flat;
-            btnTecnico.ForeColor = SystemColors.ButtonFace;
-            btnTecnico.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTecnico.Location = new Point(0, 151);
-            btnTecnico.Name = "btnTecnico";
-            btnTecnico.RightToLeft = RightToLeft.No;
-            btnTecnico.Size = new Size(197, 31);
-            btnTecnico.TabIndex = 14;
-            btnTecnico.Text = "Tecnico";
-            btnTecnico.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -377,6 +385,22 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
+            // btnTecnico
+            // 
+            btnTecnico.BackColor = Color.FromArgb(26, 32, 40);
+            btnTecnico.FlatAppearance.BorderSize = 0;
+            btnTecnico.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnTecnico.FlatStyle = FlatStyle.Flat;
+            btnTecnico.ForeColor = SystemColors.ButtonFace;
+            btnTecnico.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTecnico.Location = new Point(0, 151);
+            btnTecnico.Name = "btnTecnico";
+            btnTecnico.RightToLeft = RightToLeft.No;
+            btnTecnico.Size = new Size(197, 31);
+            btnTecnico.TabIndex = 14;
+            btnTecnico.Text = "Tecnico";
+            btnTecnico.UseVisualStyleBackColor = false;
+            // 
             // PanelContenedorM
             // 
             PanelContenedorM.BackColor = Color.FromArgb(49, 66, 82);
@@ -425,8 +449,6 @@
         private Button btnMotivo;
         private Panel panel5;
         private Button btnTipo;
-        private Panel panel3;
-        private Button btnTecnico;
         private Panel panel2;
         private Button btnCorrectivo;
         private Panel panel7;
@@ -438,5 +460,8 @@
         private Panel PanelContenedorM;
         private Panel panel4;
         private Button btnMP;
+        private Panel panel3;
+        private Button btnPedidoMantenimiento;
+        private Button btnTecnico;
     }
 }

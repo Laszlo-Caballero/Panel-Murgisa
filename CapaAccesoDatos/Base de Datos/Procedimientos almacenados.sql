@@ -53,13 +53,14 @@ end
 
 
 create or alter procedure buscarCliente
-@dni varchar(8)
+@dni varchar(9)
 as
 begin
 	select Cl.idCliente, Cl.nombreRepresentante, Cl.dni, Cl.estado, Cl.correo, cl.telefono, cl.direccion, C.nombre as Ciudad
 	from Cliente Cl inner join Ciudad C on C.idCiudad = Cl.idCiudad where Cl.dni = @dni
 end;
 
+execute buscarCliente '123456789'
 
 create or alter procedure listarCiudades
 as
@@ -146,14 +147,14 @@ end
 create or alter procedure listarRecurso
 as
 begin
-	select * from Recurso where estado = 1
+	select * from Recurso where estado = 1 and idDisponibilidad = 1
 end
 
 create or alter Procedure listarRecursoTipo
 @idTipo int
 as
 begin
-	select * from Recurso where idTipoRecurso = @idTipo and estado = 1
+	select * from Recurso where idTipoRecurso = @idTipo and estado = 1 and idDisponibilidad = 1
 end
 
 
@@ -425,6 +426,7 @@ select * from Venta
 
 alter table venta add estado bit
 
+--venta
 create or alter procedure agregarVenta
 @idServicio int,
 @idCliente int,
@@ -439,28 +441,90 @@ begin
 end
 
 
-
-create or alter procedure listarVentaCliente
-@idCliente int
-as
-begin
-	Select * from Venta
-	where idCliente = @idCliente AND estado = 1;
-end;
-
-
-
-create or alter procedure listarMantenimientoPlanificacion
+create or alter procedure [dbo].[listarHorarioActivo]
 
 as
 begin
-	Select * from PlanificacionMantenimiento 
+	SELECT 
+		idHorario,
+		CONVERT(VARCHAR, horaInicio, 108) + ' - ' + CONVERT(VARCHAR, horaFin, 108) AS horario
+	FROM 
+		Horario
+	WHERE 
+		estado = 1;
 end;
 
 
-create or alter procedure listarPersonalTecnico
+create or alter procedure [dbo].[mantenimientoPlanificacion_buscarXId]
+    @IdPlanificacion INT
+AS
+BEGIN
+    SELECT 
+        idPlanificacion, 
+        idRecurso, 
+        idPersonal, 
+        idHorario, 
+        fecha_Mantenimineo AS FechaMantenimiento, 
+        prioridad
+    FROM dbo.PlanificacionMantenimiento
+    WHERE idPlanificacion = @IdPlanificacion
+END
 
+
+
+create or alter   procedure [dbo].[listarMantenimientoPlanificacion]
+    @IdPlanificacion INT = NULL,
+    @FechaMantenimiento DATETIME = NULL
 as
 begin
-	Select * from Personal Where idCargo='28' 
-end;
+    select
+        mp.idPlanificacion,
+        mp.prioridad,
+        r.nombre AS RecursoNombre,
+        r.precio AS RecursoPrecio,
+        p.nombre AS PersonalNombre,
+        p.apellido_parterno AS PersonalApellidoPaterno,
+        p.apellido_materno AS PersonalApellidoMaterno,
+        mp.fecha_Mantenimineo,
+        h.horaInicio,
+        h.horafin
+    from dbo.PlanificacionMantenimiento mp
+    inner join dbo.Recurso r on mp.idRecurso = r.idRecurso
+    inner join dbo.Personal p on mp.idPersonal = p.idPersonal
+    inner join dbo.Horario h on mp.idHorario = h.idHorario
+    where
+        (@IdPlanificacion IS NULL OR mp.idPlanificacion = @IdPlanificacion)
+        and (@FechaMantenimiento IS NULL OR cast(mp.fecha_Mantenimineo as date) = cast(@FechaMantenimiento as date))
+    order by mp.idPlanificacion;
+end
+CREATE OR ALTER   procedure [dbo].[actualizarMantenimientoPlanificacion]
+    @IdPlanificacion INT,
+    @FechaMantenimiento DATETIME = NULL,
+    @Prioridad VARCHAR(100) = NULL,
+    @IdRecurso INT = NULL,
+    @IdPersonal INT = NULL,
+    @IdHorario INT = NULL
+AS
+BEGIN
+    -- Actualizar la planificación de mantenimiento
+    UPDATE [dbo].[PlanificacionMantenimiento]
+    SET
+        [fecha_Mantenimineo] = COALESCE(@FechaMantenimiento, [fecha_Mantenimineo]),
+        [prioridad] = COALESCE(@Prioridad, [prioridad]),
+        [idRecurso] = COALESCE(@IdRecurso, [idRecurso]),
+        [idPersonal] = COALESCE(@IdPersonal, [idPersonal]),
+        [idHorario] = COALESCE(@IdHorario, [idHorario])
+    WHERE
+        [idPlanificacion] = @IdPlanificacion;
+END
+CREATE ALTER   procedure [dbo].[agregarMantenimientoPlanificacion]
+    @IdRecurso INT,
+    @IdPersonal INT,
+    @IdHorario INT,
+    @FechaMantenimiento DATETIME,
+    @Prioridad NVARCHAR(50)
+AS
+BEGIN
+    INSERT INTO PlanificacionMantenimiento (IdRecurso, IdPersonal, IdHorario, fecha_Mantenimineo, Prioridad)
+    VALUES (@IdRecurso, @IdPersonal, @IdHorario, @FechaMantenimiento, @Prioridad)
+END

@@ -2,7 +2,7 @@
 using CapaEntidad.Mantenimiento.PedidoManCor;
 using CapaEntidad.Mantenimiento.TipoMan;
 using CapaEntidad.Personal;
-using CapaEntidad.Proveedor;
+using CapaEntidad.Recurso.Proveedor;
 using CapaEntidad.Recurso;
 using CapaLogica.Mantenimiento.PedidoManCor;
 using CapaLogica.Mantenimiento.TipoMan;

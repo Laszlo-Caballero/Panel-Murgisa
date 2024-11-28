@@ -18,9 +18,9 @@ namespace CapaLogica.Mantenimiento.PedidoManCor
         }
 
 
-        public bool agregarDetOrdenCorr(entPedidoManCor pedido, List<entDetPedidoCorr> detalle)
+        public bool agregarDetOrdenCorr(int maq, entPedidoManCor pedido, List<entDetPedidoCorr> detalle)
         {
-            logPedidoManCor.Instancia.agregarPedidoManCor(pedido);
+            logPedidoManCor.Instancia.agregarPedidoManCor(pedido, maq);
             int id = logPedidoManCor.Instancia.ultimoPedido();
             return datDetPedidoCorr.Instancia.agregarDetOrdenCorr(detalle, id);
         }

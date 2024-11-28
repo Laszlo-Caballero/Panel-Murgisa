@@ -1,5 +1,6 @@
 using CapaAccesoDatos.Mantenimiento.PedidoManCor;
 using CapaEntidad.Mantenimiento.PedidoManCor;
+using CapaLogica.Recurso;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,9 @@ namespace CapaLogica.Mantenimiento.PedidoManCor
             return datPedidoManCor.Instancia.listarPedidoManCor();
         }
 
-        public bool agregarPedidoManCor(entPedidoManCor nuevo)
+        public bool agregarPedidoManCor(entPedidoManCor nuevo,int id)
         {
+            logRecurso.Instancia.actualizarDisponibilidad(id);
             return datPedidoManCor.Instancia.agregarPedidoManCor(nuevo);
         }
 

@@ -113,5 +113,37 @@ namespace CapaAccesoDatos.Recurso.Proveedor
             }
             return deshabilitar;
         }
+
+        public entProveedor buscar(int id)
+        {
+            SqlCommand cmd = null;
+            entProveedor proveedor = new entProveedor();
+
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+
+                cmd = new SqlCommand("buscarProveedor", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    proveedor.idProveedor = Convert.ToInt32(dr["idProveedor"]);
+                    proveedor.razsocial = dr["razSocial"].ToString();
+                    proveedor.ruc = dr["ruc"].ToString();
+                    proveedor.estado = Convert.ToBoolean(dr["estado"]);
+                }
+            }
+            catch (Exception ex) { return null; }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return proveedor;
+        }
     }
 }

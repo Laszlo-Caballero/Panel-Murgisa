@@ -35,5 +35,9 @@ namespace CapaLogica.Recurso.Proveedor
         {
             return datProveedor.Instancia.deshabilitarProveedor(id);
         }
+        public entProveedor buscarProveedor(int id)
+        {
+            return datProveedor.Instancia.buscar(id);
+        }
     }
 }

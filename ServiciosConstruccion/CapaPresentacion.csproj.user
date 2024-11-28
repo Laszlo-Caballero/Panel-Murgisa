@@ -22,9 +22,6 @@
     <Compile Update="Mantenimiento_Forms\MantenimientoPreventivo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Mantenimiento_Forms\Motivo.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Mantenimiento_Forms\PanelMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -47,9 +44,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Personal_Forms\Profesion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Servicios_Forms\RecursosFormServicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Servicios_Forms\PanelJefeServicio.cs">

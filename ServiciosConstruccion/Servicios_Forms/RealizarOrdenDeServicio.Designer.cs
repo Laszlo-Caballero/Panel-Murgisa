@@ -207,7 +207,7 @@
             groupBox2.Controls.Add(btnAnular);
             groupBox2.Location = new Point(861, 60);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(171, 140);
+            groupBox2.Size = new Size(178, 149);
             groupBox2.TabIndex = 46;
             groupBox2.TabStop = false;
             groupBox2.Text = "Servicios";
@@ -225,7 +225,7 @@
             // 
             // btnAnular
             // 
-            btnAnular.Location = new Point(18, 78);
+            btnAnular.Location = new Point(18, 96);
             btnAnular.Margin = new Padding(2);
             btnAnular.Name = "btnAnular";
             btnAnular.Size = new Size(133, 41);

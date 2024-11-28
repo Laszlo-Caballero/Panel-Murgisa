@@ -712,3 +712,101 @@ end
 
 ---
 
+
+
+CREATE OR ALTER PROCEDURE [dbo].[listarMantenimientoPreventivo]
+    @idOrdenMantenimiento INT = NULL,
+    @fecha DATETIME = NULL
+AS
+BEGIN
+    SELECT * 
+    FROM OrdenMantenimientoPreventivo 
+    WHERE estado = 1
+    AND (@idOrdenMantenimiento IS NULL OR idOrdenMantenimiento = @idOrdenMantenimiento)
+    AND (@fecha IS NULL OR CAST(fecha AS DATE) = CAST(@fecha AS DATE))
+END
+
+CREATE OR ALTER PROCEDURE [dbo].[agregarOrdenMantenimientoPreventivo]
+    @idPlanificacion INT,
+    @fecha DATETIME,
+    @resultadoEjecucion VARCHAR(255) = NULL,
+    @comentarios VARCHAR(255) = NULL,
+    @requerimientosEspeciales VARCHAR(255) = NULL,
+    @duracionEstimadaHoras FLOAT = NULL,
+    @estado BIT = 1 
+AS
+BEGIN
+    INSERT INTO OrdenMantenimientoPreventivo 
+    (
+        idPlanificacion, 
+        fecha, 
+        resultadoEjecucion, 
+        comentarios, 
+        requerimientosEspeciales, 
+        duracionEstimadaHoras, 
+        estado
+    )
+    VALUES 
+    (
+        @idPlanificacion, 
+        @fecha, 
+        @resultadoEjecucion, 
+        @comentarios, 
+        @requerimientosEspeciales, 
+        @duracionEstimadaHoras, 
+        @estado
+    );
+    SELECT SCOPE_IDENTITY() AS idOrdenMantenimiento;
+END
+
+CREATE PROCEDURE mantenimientoPreventivo_buscarXId
+    @IdOrden INT
+AS
+BEGIN
+    SELECT 
+        *
+    FROM 
+        OrdenMantenimientoPreventivo
+    WHERE
+        idOrdenMantenimiento = @IdOrden
+END
+
+
+
+CREATE OR ALTER PROCEDURE actualizarOrdenMantenimientoPreventivo
+    @idOrdenMantenimiento INT,
+    @idPlanificacion INT,
+    @fecha DATETIME,
+    @resultadoEjecucion VARCHAR(MAX),
+    @comentarios VARCHAR(MAX),
+    @requerimientosEspeciales VARCHAR(MAX),
+    @duracionEstimadaHoras FLOAT
+AS
+BEGIN
+    UPDATE OrdenMantenimientoPreventivo
+    SET
+        idPlanificacion = @idPlanificacion,
+        fecha = @fecha,
+        ResultadoEjecucion = @resultadoEjecucion,
+        Comentarios = @comentarios,
+        RequerimientosEspeciales = @requerimientosEspeciales,
+        DuracionEstimadaHoras = @duracionEstimadaHoras
+    WHERE idOrdenMantenimiento = @idOrdenMantenimiento;
+END;
+CREATE PROCEDURE deshabilitarOrdenMantenimientoPreventivo
+    @idOrdenMantenimiento INT
+AS
+BEGIN
+    UPDATE OrdenMantenimientoPreventivo
+    SET Estado = 0
+    WHERE idOrdenMantenimiento = @idOrdenMantenimiento;
+END;
+
+CREATE PROCEDURE logear
+	@usuario varchar(20),
+	@contrasena varchar(20)
+AS
+BEGIN
+    SELECT * FROM Usuario U
+	where Usuario=@usuario and Contrasena=@contrasena
+END;

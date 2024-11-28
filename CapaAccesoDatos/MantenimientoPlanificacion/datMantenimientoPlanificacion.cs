@@ -45,8 +45,38 @@ namespace CapaAccesoDatos.MantenimientoPlanificacion
             }
             return dt;
         }
+        public bool existeMantenimientoPorPersonalYHorario(int IdPersonal, int IdHorario)
+        {
+            SqlCommand cmd = null;
+            bool existe = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("mantenimientoPlanificacion_buscarPorPersonalYHorario", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdPersonal", IdPersonal);
+                cmd.Parameters.AddWithValue("@IdHorario", IdHorario);
+                object resultado = cmd.ExecuteScalar();
+                if (resultado != null && Convert.ToInt32(resultado) == 1)
+                {
+                    existe = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al verificar la existencia del mantenimiento por IdPersonal e IdHorario: " + ex.Message);
+            }
+            finally
+            {
+                if (cmd.Connection != null && cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+            }
 
-
+            return existe;
+        }
 
         public List<entMantenimientoPlanificacion> listarMantenimientoPlanificacion()
         {
@@ -92,6 +122,8 @@ namespace CapaAccesoDatos.MantenimientoPlanificacion
                         IdPlanificacion = Convert.ToInt32(dr["IdPlanificacion"]),
                         IdRecurso = dr["IdRecurso"] != DBNull.Value ? Convert.ToInt32(dr["IdRecurso"]) : (int?)null,
                         IdPersonal = dr["IdPersonal"] != DBNull.Value ? Convert.ToInt32(dr["IdPersonal"]) : (int?)null,
+                        IdTipoMantenimiento = dr["IdTipoMantenimiento"] != DBNull.Value ? Convert.ToInt32(dr["IdTipoMantenimiento"]) : (int?)null,
+                        Estado = dr["Estado"] != DBNull.Value ? Convert.ToBoolean(dr["Estado"]) : (bool?)null,
                         IdHorario = dr["IdHorario"] != DBNull.Value ? Convert.ToInt32(dr["IdHorario"]) : (int?)null,
                         FechaMantenimiento = dr["FechaMantenimiento"] != DBNull.Value ? Convert.ToDateTime(dr["FechaMantenimiento"]) : (DateTime?)null,
                         Prioridad = dr["Prioridad"] != DBNull.Value ? dr["Prioridad"].ToString() : string.Empty
@@ -111,6 +143,31 @@ namespace CapaAccesoDatos.MantenimientoPlanificacion
             }
             return entMantenimiento;
         }
+        public bool desabilitarMatenimientoPlanificacion(int id)
+        {
+            SqlCommand cmd = null;
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("mantenimientoPlanificacion_desactivar", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdPlanificacion", id);
+                int rowsAffected = cmd.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al deshabilitar la planificación de mantenimiento", ex);
+            }
+            finally
+            {
+                if (cmd?.Connection != null && cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+            }
+        }
 
         public bool agregarMantenimientoPlanificacion(entMantenimientoPlanificacion nuevo)
         {
@@ -124,10 +181,10 @@ namespace CapaAccesoDatos.MantenimientoPlanificacion
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@IdRecurso", nuevo.IdRecurso ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@IdPersonal", nuevo.IdPersonal ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@IdTipoMantenimiento", nuevo.IdTipoMantenimiento ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@IdHorario", nuevo.IdHorario ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@FechaMantenimiento", nuevo.FechaMantenimiento ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@Prioridad", nuevo.Prioridad ?? (object)DBNull.Value);
-
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -151,10 +208,11 @@ namespace CapaAccesoDatos.MantenimientoPlanificacion
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
                 cmd = new SqlCommand("actualizarMantenimientoPlanificacion", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@IdPlanificacion", nuevo.IdPlanificacion);
                 cmd.Parameters.AddWithValue("@FechaMantenimiento", nuevo.FechaMantenimiento ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@Prioridad", nuevo.Prioridad ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@IdTipoMantenimiento", nuevo.IdTipoMantenimiento ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@IdRecurso", nuevo.IdRecurso ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@IdPersonal", nuevo.IdPersonal ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@IdHorario", nuevo.IdHorario ?? (object)DBNull.Value);
@@ -186,7 +244,7 @@ namespace CapaAccesoDatos.MantenimientoPlanificacion
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
                 cmd = new SqlCommand("deshabilitarMantenimientoPlanificacion", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idMantenimientoPlanificacion", id);
                 int rows = cmd.ExecuteNonQuery();
                 deshabilitar = rows >= 1;

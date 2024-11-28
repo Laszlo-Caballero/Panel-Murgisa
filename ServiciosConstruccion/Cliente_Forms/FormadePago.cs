@@ -1,4 +1,4 @@
-﻿using CapaAccesoDatos;
+﻿using CapaAccesoDatos.PagoServicio;
 using CapaEntidad.PagoServicio;
 using CapaLogica.PagoServicio;
 using System;

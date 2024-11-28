@@ -73,12 +73,12 @@ namespace CapaPresentacion
 
         private void btnMaquinaria_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new MaquinariaFormServicio());
+            //AbrirFormHija(new MaquinariaFormServicio());
         }
 
         private void btnPersonal_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new MantenedorPersonal());
+            //AbrirFormHija(new MantenedorPersonal());
         }
 
         private void btnServicios_Click(object sender, EventArgs e)

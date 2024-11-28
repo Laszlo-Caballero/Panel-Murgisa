@@ -22,7 +22,7 @@ namespace CapaEntidad.Venta
 
         public DateTime fechaVenta { get; set; }
 
-        public bool estado {  get; set; }
+        public bool estado {  get; set; } = true;
 
         public List<entRecurso> recursos  { get; set; } = new List<entRecurso>();
 

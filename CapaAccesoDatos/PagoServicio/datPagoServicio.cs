@@ -32,11 +32,11 @@ namespace CapaAccesoDatos.PagoServicio
                     entPagoServicio nuevo = new entPagoServicio();
                     nuevo.id = Convert.ToInt32(dr["idPago_Servicio"]);
                     nuevo.idVenta = Convert.ToInt32(dr["idVenta"]);
-                    nuevo.nombre = dr["nombre"].ToString();
+                    nuevo.nombre = dr["nombreRepresentante"].ToString();
+                    nuevo.idFormaPago = Convert.ToInt32(dr["idFormaPago"]);
                     nuevo.dni = dr["dni"].ToString();
                     nuevo.correo = dr["correo"].ToString();
                     nuevo.tipo = dr["tipo"].ToString();
-                    nuevo.total = Convert.ToInt32(dr["total"]);
                     nuevo.fecha = Convert.ToDateTime(dr["fecha"]);
                     nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
@@ -100,6 +100,44 @@ namespace CapaAccesoDatos.PagoServicio
                 cmd.Connection.Close();
             }
             return deshabilitar;
+        }
+
+        public List<entPagoServicio> listarPagoServicioDni(string dni)
+        {
+            SqlCommand cmd = null;
+            List<entPagoServicio> lista = new List<entPagoServicio>();
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("buscarPagos", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@dni", dni);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    entPagoServicio nuevo = new entPagoServicio();
+                    nuevo.id = Convert.ToInt32(dr["idPago_Servicio"]);
+                    nuevo.idVenta = Convert.ToInt32(dr["idVenta"]);
+                    nuevo.nombre = dr["nombreRepresentante"].ToString();
+                    nuevo.idFormaPago = Convert.ToInt32(dr["idFormaPago"]);
+                    nuevo.dni = dr["dni"].ToString();
+                    nuevo.correo = dr["correo"].ToString();
+                    nuevo.tipo = dr["tipo"].ToString();
+                    nuevo.fecha = Convert.ToDateTime(dr["fecha"]);
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
+                    lista.Add(nuevo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return lista;
         }
     }
 }

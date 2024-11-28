@@ -22,6 +22,6 @@ namespace CapaEntidad.Venta
 
         public float costo { get; set; }
 
-        public bool estado {  get; set; }
+        public bool estado { get; set; } = true;
     }
 }

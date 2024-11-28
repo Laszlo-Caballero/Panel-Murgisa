@@ -373,14 +373,15 @@ alter table PagoServicio add estado bit
 create or alter procedure listarPagoServicio
 as
 begin
-	Select ps.idPago_Servicio, v.idVenta, c.nombreRepresentante, c.dni, c.correo, fp.tipo, SUM(dv.cantidad * dv.precio) AS total, ps.fecha, ps.estado  from PagoServicio ps
+	Select ps.idPago_Servicio,ps.idFormaPago, v.idVenta, c.nombreRepresentante, c.dni, c.correo, fp.tipo, ps.fecha, ps.estado    
+	from PagoServicio ps
 	inner join Venta v on v.idVenta = ps.idVenta
 	inner join Cliente c on c.idCliente = v.idCliente
 	inner join FormaPago fp on fp.idFormaPago = ps.idFormaPago
-	INNER JOIN DetalleVenta dv ON dv.idVenta = v.idVenta
 	where ps.estado = 1
-	GROUP BY ps.idPago_Servicio, c.nombreRepresentante, c.dni, c.correo, v.idVenta, fp.tipo, ps.fecha,  ps.estado
 end
+
+select * from PagoServicio
 
 -----
 
@@ -406,6 +407,20 @@ begin
 	where idPago_Servicio = @idPagoServicio
 end
 
+
+create or alter procedure buscarPagos
+@dni varchar(9)
+as
+begin
+	Select ps.idPago_Servicio,ps.idFormaPago, v.idVenta, c.nombreRepresentante, c.dni, c.correo, fp.tipo, ps.fecha, ps.estado    
+	from PagoServicio ps
+	inner join Venta v on v.idVenta = ps.idVenta
+	inner join Cliente c on c.idCliente = v.idCliente
+	inner join FormaPago fp on fp.idFormaPago = ps.idFormaPago
+	where ps.estado = 1 and C.dni = @dni
+end
+
+execute buscarPagos '654321987'
 ---
 
 create or alter procedure listarVentaCliente
@@ -437,64 +452,65 @@ create or alter procedure agregarVenta
 as
 begin
 	insert into venta (idServicio, idCliente, fechaInicioServicio, fechaFFinServicio, fechaVenta, estado)
-	values (@idServicio, @idCliente, @fechaInicio, @fechaFin, @fechaVenta, @estado)
+	values (
 end
 
-create or alter procedure buscarUltimaVenta
+
+create or alter procedure [dbo].[listarHorarioActivo]
+
 as
 begin
-	select top 1 idVenta from Venta order by idVenta desc
-end
+	SELECT 
+		idHorario,
+		CONVERT(VARCHAR, horaInicio, 108) + ' - ' + CONVERT(VARCHAR, horaFin, 108) AS horario
+	FROM 
+		Horario
+	WHERE 
+		estado = 1;
+end;
 
-select * from DetalleVenta
 
-create or alter procedure agergarDetalleRecurso
-@idVenta int,
-@idRecurso int,
-@cantidad int,
-@precio float
-as		
-begin
-	insert into DetalleVenta (idVenta, idRecurso, cantidad, precio)
-	values (@idVenta, @idRecurso, @cantidad, @precio)
-	update Recurso set idDisponibilidad = 3 where idRecurso = @idRecurso
-end
+create or alter procedure [dbo].[mantenimientoPlanificacion_buscarXId]
+    @IdPlanificacion INT
+AS
+BEGIN
+    SELECT 
+        idPlanificacion, 
+        idRecurso, 
+        idPersonal, 
+        idHorario, 
+        fecha_Mantenimineo AS FechaMantenimiento, 
+        prioridad
+    FROM dbo.PlanificacionMantenimiento
+    WHERE idPlanificacion = @IdPlanificacion
+END
 
-select * from Recurso
-select * from Disponibilidad
 
-select * from AsignacionPersonal
 
-create or alter procedure agregarAsignacionPersonal
-@idVenta int,
-@idPersonal int,
-@costo float
+create or alter   procedure [dbo].[listarMantenimientoPlanificacion]
+    @IdPlanificacion INT = NULL,
+    @FechaMantenimiento DATETIME = NULL
 as
 begin
-	insert into AsignacionPersonal (idVenta, idPersonal, costo)
-	values (@idVenta, @idPersonal, @costo)
-end
-
-create or alter procedure listarVentas
-as
-begin
-	select V.idVenta, V.fechaInicioServicio, S.nombre, C.nombreRepresentante, C.dni,
-	V.fechaFFinServicio, V.fechaVenta, V.estado
-	from Venta V 
-	inner join Servicio S on S.idServicio = V.idServicio
-	inner join Cliente C on C.idCliente = V.idCliente
-end
-
-create or alter procedure listarVentasDni
-@dni varchar(9)
-as
-begin
-	select V.idVenta, V.fechaInicioServicio, S.nombre, C.nombreRepresentante, C.dni,
-	V.fechaFFinServicio, V.fechaVenta, V.estado
-	from Venta V 
-	inner join Servicio S on S.idServicio = V.idServicio
-	inner join Cliente C on C.idCliente = V.idCliente
-	where C.dni = @dni
+    select
+        mp.idPlanificacion,
+        mp.prioridad,
+        r.nombre AS RecursoNombre,
+        r.precio AS RecursoPrecio,
+        p.nombre AS PersonalNombre,
+        p.apellido_parterno AS PersonalApellidoPaterno,
+        p.apellido_materno AS PersonalApellidoMaterno,
+        mp.fecha_Mantenimineo,
+        h.horaInicio,
+        h.horafin
+    from dbo.PlanificacionMantenimiento mp
+    inner join dbo.Recurso r on mp.idRecurso = r.idRecurso
+    inner join dbo.Personal p on mp.idPersonal = p.idPersonal
+    inner join dbo.Horario h on mp.idHorario = h.idHorario
+    where
+        (@IdPlanificacion IS NULL OR mp.idPlanificacion = @IdPlanificacion)
+        and (@FechaMantenimiento IS NULL OR cast(mp.fecha_Mantenimineo as date) = cast(@FechaMantenimiento as date))
+    order by mp.idPlanificacion;
 end
 
 create or alter procedure listarDetalleVenta
@@ -573,16 +589,25 @@ select * from Venta
 
 alter table DetalleVenta add estado bit
 
+select* from AsignacionPersonal
 
+select * from DetalleVenta
+
+
+
+update DetalleVenta set estado = 1
 
 select * from DetalleVenta
 
 -- LISTAR PEDIDOS MANTENIMIENTO
 
+alter table PedidoMantenimientoCorrectivo add estado bit
+
 create or alter procedure listarPedidoManCor
 as
 begin
-	Select PM.idPedidoMan, pm.idRecurso, R.nombre, PM.fecha, pm.estado from PedidoMantenimientoCorrectivo PM 
+	Select PM.idPedidoMan, pm.idRecurso, R.nombre, PM.fecha, pm.estado from 
+	PedidoMantenimientoCorrectivo PM 
 	inner join Recurso r on r.idRecurso = PM.idRecurso
 	where PM.estado = 1
 end
@@ -619,6 +644,8 @@ end
 
 -- AGREGAR DETALLE
 
+alter table DetallePedidoManCorrectivo add estado bit
+
 create or alter procedure agregarDetallePedido
 @pedido int,
 @tipo int,
@@ -640,10 +667,21 @@ end
 
 -- LISTARMANTENIMIENTO
 
+alter table TipoMantenimiento add estado bit
+
 create or alter procedure listarTipoMan
 as
 begin
 	Select * from TipoMantenimiento where estado = 1
 end
 
+
+
+--Realiza Pago
+
+
+	select * from PagoServicio
+
+
+--Realiza Pago
 

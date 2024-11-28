@@ -15,7 +15,6 @@ namespace CapaEntidad.PagoServicio
         public string dni {  get; set; }
         public string correo { get; set; }
         public string tipo { get; set; }
-        public int total { get; set; }  
         public DateTime fecha { get; set; }
         public bool estado { get; set; }
 

@@ -4,7 +4,6 @@ using CapaLogica.Horario;
 using CapaLogica.MantenimientoPlanificacion;
 using CapaLogica.Personal;
 using CapaLogica.Recurso;
-using CapaLogica.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

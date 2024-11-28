@@ -1,8 +1,7 @@
 ﻿using CapaEntidad.Cliente;
-using CapaEntidad.PagoServicio;
+using CapaEntidad.Servicio.PagoServicio;
 using CapaLogica.Cliente;
-using CapaLogica.PagoServicio;
-using CapaLogica.Venta;
+using CapaLogica.Servicio.PagoServicio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

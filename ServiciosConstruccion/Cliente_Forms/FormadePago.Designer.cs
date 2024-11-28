@@ -31,6 +31,7 @@
             label1 = new Label();
             dgForma = new DataGridView();
             groupBox1 = new GroupBox();
+            btnActualizar = new Button();
             txtFormaPago = new TextBox();
             label3 = new Label();
             txtId = new TextBox();
@@ -39,7 +40,6 @@
             cbkForma = new CheckBox();
             label7 = new Label();
             label2 = new Label();
-            btnActualizar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgForma).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -86,6 +86,17 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Forma de Pago";
             // 
+            // btnActualizar
+            // 
+            btnActualizar.Location = new Point(765, 137);
+            btnActualizar.Margin = new Padding(2);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(109, 44);
+            btnActualizar.TabIndex = 15;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
+            // 
             // txtFormaPago
             // 
             txtFormaPago.Location = new Point(217, 89);
@@ -118,7 +129,7 @@
             btnDeshabilitar.Location = new Point(765, 86);
             btnDeshabilitar.Margin = new Padding(2);
             btnDeshabilitar.Name = "btnDeshabilitar";
-            btnDeshabilitar.Size = new Size(97, 29);
+            btnDeshabilitar.Size = new Size(109, 38);
             btnDeshabilitar.TabIndex = 10;
             btnDeshabilitar.Text = "Deshabilitar";
             btnDeshabilitar.UseVisualStyleBackColor = true;
@@ -126,10 +137,10 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(765, 41);
+            btnAgregar.Location = new Point(765, 39);
             btnAgregar.Margin = new Padding(2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(97, 29);
+            btnAgregar.Size = new Size(109, 41);
             btnAgregar.TabIndex = 9;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -164,17 +175,6 @@
             label2.Size = new Size(112, 20);
             label2.TabIndex = 0;
             label2.Text = "Forma de Pago:";
-            // 
-            // btnActualizar
-            // 
-            btnActualizar.Location = new Point(765, 128);
-            btnActualizar.Margin = new Padding(2);
-            btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(97, 29);
-            btnActualizar.TabIndex = 15;
-            btnActualizar.Text = "Actualizar";
-            btnActualizar.UseVisualStyleBackColor = true;
-            btnActualizar.Click += btnActualizar_Click;
             // 
             // FormadePago
             // 

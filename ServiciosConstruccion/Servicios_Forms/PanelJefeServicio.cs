@@ -1,4 +1,5 @@
-﻿using CapaPresentacion.Servicios_Forms;
+﻿using CapaPresentacion.Mantenimiento_Forms;
+using CapaPresentacion.Servicios_Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -89,10 +90,9 @@ namespace CapaPresentacion
         {
             AbrirFormHija(new RecursosFormServicio());
         }
-
-        private void PanelContenedor_Paint(object sender, PaintEventArgs e)
+        private void btnPedidoMantenimientoCorrectivo_Click(object sender, EventArgs e)
         {
-
+            AbrirFormHija(new PedidoMantenimientoCorrectivo());
         }
     }
 }

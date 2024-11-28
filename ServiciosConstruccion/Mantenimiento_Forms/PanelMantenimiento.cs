@@ -90,9 +90,5 @@ namespace CapaPresentacion
             AbrirFormHija(new Motivo());
         }
 
-        private void btnPedidoMantenimiento_Click(object sender, EventArgs e)
-        {
-            AbrirFormHija(new PedidoMantenimientoCorrectivo());
-        }
     }
 }

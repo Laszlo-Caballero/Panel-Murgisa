@@ -685,3 +685,65 @@ end
 
 --Realiza Pago
 
+---- ORDEN DE MANTENIMIENTO CORRECTIVO
+
+Select * from OrdenManCorrectivo
+
+Select * from Proveedor
+
+create or alter procedure listarOrdenManCorr
+as
+begin
+	Select OM.idOrdenManCor, OM.idPedido, R.nombre, P.razSocial, P.ruc, OM.fecha, OM.estado from OrdenManCorrectivo OM
+	inner join PedidoMantenimientoCorrectivo PM on pm.idPedidoMan = OM.idPedido
+	inner join Recurso R ON R.idRecurso = PM.idRecurso
+	inner join Proveedor P ON P.idProveedor = R.idProveedor
+	where OM.estado = 1
+end
+
+--AGREGAR ORDEN MANTENIMIENTO
+
+create or alter procedure agregarOrdenManCorr
+   @idPedido int,
+   @estado bit,
+   @fecha datetime
+as
+begin
+	insert into OrdenManCorrectivo (idPedido, estado, fecha) 
+	values (@idPedido,@estado,@fecha)
+end
+
+-- DESHABILITAR ORDEN
+
+create or alter procedure deshabilitarOrdenManCorr
+@idOrdenManCorr int
+as
+begin
+	update OrdenManCorrectivo set estado = 0 where idOrdenManCor = @idOrdenManCorr 
+end
+
+-- BuscarMaquinaria 
+
+create or alter procedure buscarMaquinaria
+@id int
+as
+begin
+	select * from Recurso where idRecurso = @id
+end
+
+Select * from Recurso
+
+-- BUSCAR PROVEEDOR
+
+create or alter procedure buscarProveedor
+@id int
+as
+begin
+	select * from Proveedor where idProveedor = @id
+end
+
+exec buscarProveedor 1
+
+Select * from Pedido
+
+

@@ -50,68 +50,77 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(258, 243);
+            label1.Location = new Point(479, 518);
+            label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(70, 15);
+            label1.Size = new Size(139, 32);
             label1.TabIndex = 0;
             label1.Text = "Maquinaria:";
             // 
             // dgvpedido
             // 
             dgvpedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvpedido.Location = new Point(22, 12);
+            dgvpedido.Location = new Point(41, 26);
+            dgvpedido.Margin = new Padding(6, 6, 6, 6);
             dgvpedido.Name = "dgvpedido";
-            dgvpedido.Size = new Size(450, 187);
+            dgvpedido.RowHeadersWidth = 82;
+            dgvpedido.Size = new Size(836, 399);
             dgvpedido.TabIndex = 1;
             // 
             // txtRegistrar
             // 
-            txtRegistrar.Location = new Point(562, 277);
-            txtRegistrar.Name = "txtRegistrar";
-            txtRegistrar.Size = new Size(104, 37);
-            txtRegistrar.TabIndex = 2;
-            txtRegistrar.Text = "REGISTRAR";
-            txtRegistrar.UseVisualStyleBackColor = true;
+            button1.Location = new Point(1044, 591);
+            button1.Margin = new Padding(6, 6, 6, 6);
+            button1.Name = "button1";
+            button1.Size = new Size(193, 79);
+            button1.TabIndex = 2;
+            button1.Text = "REGISTRAR";
+            button1.UseVisualStyleBackColor = true;
             // 
             // txtDeshabilitar
             // 
-            txtDeshabilitar.Location = new Point(697, 277);
-            txtDeshabilitar.Name = "txtDeshabilitar";
-            txtDeshabilitar.Size = new Size(104, 37);
-            txtDeshabilitar.TabIndex = 3;
-            txtDeshabilitar.Text = "DESHABILITAR";
-            txtDeshabilitar.UseVisualStyleBackColor = true;
+            button2.Location = new Point(1294, 591);
+            button2.Margin = new Padding(6, 6, 6, 6);
+            button2.Name = "button2";
+            button2.Size = new Size(193, 79);
+            button2.TabIndex = 3;
+            button2.Text = "DESHABILITAR";
+            button2.UseVisualStyleBackColor = true;
             // 
             // cbMaquinaria
             // 
             cbMaquinaria.FormattingEnabled = true;
-            cbMaquinaria.Location = new Point(351, 240);
+            cbMaquinaria.Location = new Point(652, 512);
+            cbMaquinaria.Margin = new Padding(6, 6, 6, 6);
             cbMaquinaria.Name = "cbMaquinaria";
-            cbMaquinaria.Size = new Size(121, 23);
+            cbMaquinaria.Size = new Size(221, 40);
             cbMaquinaria.TabIndex = 4;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(32, 288);
+            label3.Location = new Point(59, 614);
+            label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
-            label3.Size = new Size(38, 15);
+            label3.Size = new Size(76, 32);
             label3.TabIndex = 7;
             label3.Text = "Fecha";
             // 
             // dtpFecha
             // 
-            dtpFecha.Location = new Point(94, 284);
+            dtpFecha.Location = new Point(175, 606);
+            dtpFecha.Margin = new Padding(6, 6, 6, 6);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(209, 23);
+            dtpFecha.Size = new Size(385, 39);
             dtpFecha.TabIndex = 8;
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(350, 286);
+            checkBox1.Location = new Point(650, 610);
+            checkBox1.Margin = new Padding(6, 6, 6, 6);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(61, 19);
+            checkBox1.Size = new Size(116, 36);
             checkBox1.TabIndex = 11;
             checkBox1.Text = "Estado";
             checkBox1.UseVisualStyleBackColor = true;
@@ -119,28 +128,31 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(25, 243);
+            label5.Location = new Point(46, 518);
+            label5.Margin = new Padding(6, 0, 6, 0);
             label5.Name = "label5";
-            label5.Size = new Size(57, 15);
+            label5.Size = new Size(114, 32);
             label5.TabIndex = 12;
             label5.Text = "Pedido Id";
             // 
             // txtPedido
             // 
-            txtPedido.Location = new Point(115, 240);
+            txtPedido.Location = new Point(214, 512);
+            txtPedido.Margin = new Padding(6, 6, 6, 6);
             txtPedido.Name = "txtPedido";
-            txtPedido.Size = new Size(121, 23);
+            txtPedido.Size = new Size(221, 39);
             txtPedido.TabIndex = 13;
             // 
             // listaDetalle
             // 
-            listaDetalle.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
-            listaDetalle.Location = new Point(515, 12);
-            listaDetalle.Name = "listaDetalle";
-            listaDetalle.Size = new Size(221, 187);
-            listaDetalle.TabIndex = 15;
-            listaDetalle.UseCompatibleStateImageBehavior = false;
-            listaDetalle.View = View.Details;
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            listView1.Location = new Point(956, 26);
+            listView1.Margin = new Padding(6, 6, 6, 6);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(407, 394);
+            listView1.TabIndex = 15;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
             // 
             // columnHeader1
             // 
@@ -153,36 +165,37 @@
             // 
             // btnAñadir
             // 
-            btnAñadir.Location = new Point(429, 277);
-            btnAñadir.Name = "btnAñadir";
-            btnAñadir.Size = new Size(101, 37);
-            btnAñadir.TabIndex = 16;
-            btnAñadir.Text = "AÑADIR";
-            btnAñadir.UseVisualStyleBackColor = true;
-            btnAñadir.Click += btnAñadir_Click;
+            button3.Location = new Point(429, 277);
+            button3.Name = "button3";
+            button3.Size = new Size(101, 37);
+            button3.TabIndex = 16;
+            button3.Text = "AÑADIR";
+            button3.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(525, 240);
+            label6.Location = new Point(975, 512);
+            label6.Margin = new Padding(6, 0, 6, 0);
             label6.Name = "label6";
-            label6.Size = new Size(89, 15);
+            label6.Size = new Size(179, 32);
             label6.TabIndex = 17;
             label6.Text = "Mantenimiento";
             // 
             // cbMantenimiento
             // 
             cbMantenimiento.FormattingEnabled = true;
-            cbMantenimiento.Location = new Point(633, 235);
+            cbMantenimiento.Location = new Point(1176, 501);
+            cbMantenimiento.Margin = new Padding(6, 6, 6, 6);
             cbMantenimiento.Name = "cbMantenimiento";
-            cbMantenimiento.Size = new Size(121, 23);
+            cbMantenimiento.Size = new Size(221, 40);
             cbMantenimiento.TabIndex = 18;
             // 
             // PedidoMantenimientoCorrectivo
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(813, 390);
+            ClientSize = new Size(1510, 832);
             Controls.Add(cbMantenimiento);
             Controls.Add(label6);
             Controls.Add(btnAñadir);
@@ -197,6 +210,8 @@
             Controls.Add(txtRegistrar);
             Controls.Add(dgvpedido);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(6, 6, 6, 6);
             Name = "PedidoMantenimientoCorrectivo";
             Text = "PedidoMantenimientoCorrectivo";
             ((System.ComponentModel.ISupportInitialize)dgvpedido).EndInit();

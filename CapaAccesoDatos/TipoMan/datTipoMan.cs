@@ -2,6 +2,7 @@ using CapaEntidad.TipoMan;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,33 @@ namespace CapaAccesoDatos.TipoMan
             get { return _instancia; }
         }
 
+        public DataTable listarTipoManDT()
+            {
+                SqlCommand cmd = null;
+                DataTable dt = new DataTable();
+                try
+                {
+                    SqlConnection cn = Conexion.Instacia.Conectar();
+                    cn.Open();
+                    cmd = new SqlCommand("listarTipoMan", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);  
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    if (cmd != null && cmd.Connection.State == ConnectionState.Open)
+                    {
+                        cmd.Connection.Close();
+                    }
+                }
+                return dt;
+         }
+    
         public List<entTipoMan> listarTipoMan()
         {
             SqlCommand cmd = null;

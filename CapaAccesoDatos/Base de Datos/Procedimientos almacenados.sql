@@ -485,11 +485,23 @@ begin
 	inner join Cliente C on C.idCliente = V.idCliente
 end
 
+create or alter procedure listarVentasDni
+@dni varchar(9)
+as
+begin
+	select V.idVenta, V.fechaInicioServicio, S.nombre, C.nombreRepresentante, C.dni,
+	V.fechaFFinServicio, V.fechaVenta, V.estado
+	from Venta V 
+	inner join Servicio S on S.idServicio = V.idServicio
+	inner join Cliente C on C.idCliente = V.idCliente
+	where C.dni = @dni
+end
+
 create or alter procedure listarDetalleVenta
 @idVenta int
 as
 begin
-	select V.idDetalleVenta, 
+	select V.idDetalleVenta, R.idRecurso,
 	T.tipo, D.disponibilidad, C.condicion, P.razSocial,
 	R.nombre, V.precio, V.estado
 	from DetalleVenta V
@@ -505,8 +517,8 @@ create or alter procedure listarAsignacionPersonal
 @idVenta int
 as
 begin
-	select A.idAsignacionPersonal, P.nombre, P.apellido_parterno,
-	P.apellido_materno, C.descripcion, A.costo, A.es
+	select A.idAsignacionPersonal,A.idPersonal, P.nombre, P.apellido_parterno,
+	P.apellido_materno, C.descripcion, A.costo, A.estado
 	from AsignacionPersonal A 
 	inner join Personal P on P.idPersonal = A.idPersonal
 	inner join Cargo C on P.idCargo = C.idCargo
@@ -514,8 +526,39 @@ begin
 end
 
 
+create or alter procedure deshabilitarVenta
+@idVenta int
+as
+begin
+	update Venta set estado = 0 where idVenta = @idVenta
+end
+
+create or alter procedure habilitarRecurso
+@idRecurso int,
+@idVenta int
+as
+begin
+	update Recurso set idDisponibilidad = 1 where idRecurso = @idRecurso
+	update DetalleVenta set estado = 0 where idVenta = @idVenta and idRecurso = @idRecurso
+end
+
+
+create or alter procedure deshabilitarPersonal
+@idVenta int,
+@idPersonal int
+as
+begin
+	update AsignacionPersonal set estado = 0 where idVenta = @idVenta and idPersonal = @idPersonal
+end
+
+
+select * from AsignacionPersonal
+
 
 ---venta
+
+select * from Disponibilidad
+
 select * from Personal
 
 

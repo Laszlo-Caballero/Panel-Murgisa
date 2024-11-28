@@ -10,6 +10,7 @@ namespace CapaEntidad.Venta
     {
         public int idVenta {  get; set; }
 
+
         public string servicio {  get; set; }
 
         public string nombre { get; set; }

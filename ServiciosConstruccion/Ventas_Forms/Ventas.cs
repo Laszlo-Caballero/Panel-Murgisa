@@ -1,4 +1,7 @@
-﻿using CapaLogica.Venta;
+﻿using CapaEntidad.Personal;
+using CapaEntidad.Recurso;
+using CapaEntidad.Venta;
+using CapaLogica.Venta;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +21,8 @@ namespace CapaPresentacion
             InitializeComponent();
             listarVentas();
         }
+        List<entAsignacionPersonal> personal;
+        List<entDetalleVenta> recursos;
 
         public void listarVentas()
         {
@@ -29,8 +34,12 @@ namespace CapaPresentacion
             DataGridViewRow row = dtVentas.Rows[e.RowIndex];
             int id = Convert.ToInt32(row.Cells[0].Value);
             txtIdVenta.Text = id.ToString();
-            dtMateriales.DataSource = logVenta.Instancia.listarDetalleVentas(id);
-            dtEmpleados.DataSource = logVenta.Instancia.listarPersonal(id);
+
+            personal = logVenta.Instancia.listarPersonal(id);
+            recursos = logVenta.Instancia.listarDetalleVentas(id);
+
+            dtMateriales.DataSource = recursos;
+            dtEmpleados.DataSource = personal;
         }
 
         private void btnsultar_Click(object sender, EventArgs e)
@@ -46,7 +55,34 @@ namespace CapaPresentacion
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
+            int id = int.Parse(txtIdVenta.Text);
+            bool anularV = logVenta.Instancia.deshablitarVenta(id);
+            bool anularR = false;
+            bool anularP = false;
+            foreach (entDetalleVenta v in recursos)
+            {
+                anularR = logVenta.Instancia.habilitarRecurso(id, v.idRecurso);
+            }
 
+            foreach (entAsignacionPersonal p in personal)
+            {
+                anularP = logVenta.Instancia.deshabilitarPersonal(id, p.idPersonal);
+            }
+
+            if(anularR && anularV && anularP)
+            {
+                listarVentas();
+
+                personal = logVenta.Instancia.listarPersonal(id);
+                recursos = logVenta.Instancia.listarDetalleVentas(id);
+
+                dtMateriales.DataSource = recursos;
+                dtEmpleados.DataSource = personal;
+            }
+            else
+            {
+                MessageBox.Show("algo paso");
+            }
         }
     }
 }

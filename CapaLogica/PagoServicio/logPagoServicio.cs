@@ -30,5 +30,9 @@ namespace CapaLogica.PagoServicio
         {
             return datPagoServicio.Instancia.deshabilitarPagoServicio(id);
         }
+        public List<entPagoServicio> listarPagoServicioDni(string dni)
+        {
+            return datPagoServicio.Instancia.listarPagoServicioDni(dni);
+        }
     }
 }

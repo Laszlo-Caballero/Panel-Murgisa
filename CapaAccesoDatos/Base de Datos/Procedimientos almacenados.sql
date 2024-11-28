@@ -373,14 +373,15 @@ alter table PagoServicio add estado bit
 create or alter procedure listarPagoServicio
 as
 begin
-	Select ps.idPago_Servicio, v.idVenta, c.nombreRepresentante, c.dni, c.correo, fp.tipo, SUM(dv.cantidad * dv.precio) AS total, ps.fecha, ps.estado  from PagoServicio ps
+	Select ps.idPago_Servicio,ps.idFormaPago, v.idVenta, c.nombreRepresentante, c.dni, c.correo, fp.tipo, ps.fecha, ps.estado    
+	from PagoServicio ps
 	inner join Venta v on v.idVenta = ps.idVenta
 	inner join Cliente c on c.idCliente = v.idCliente
 	inner join FormaPago fp on fp.idFormaPago = ps.idFormaPago
-	INNER JOIN DetalleVenta dv ON dv.idVenta = v.idVenta
 	where ps.estado = 1
-	GROUP BY ps.idPago_Servicio, c.nombreRepresentante, c.dni, c.correo, v.idVenta, fp.tipo, ps.fecha,  ps.estado
 end
+
+select * from PagoServicio
 
 -----
 
@@ -406,6 +407,20 @@ begin
 	where idPago_Servicio = @idPagoServicio
 end
 
+
+create or alter procedure buscarPagos
+@dni varchar(9)
+as
+begin
+	Select ps.idPago_Servicio,ps.idFormaPago, v.idVenta, c.nombreRepresentante, c.dni, c.correo, fp.tipo, ps.fecha, ps.estado    
+	from PagoServicio ps
+	inner join Venta v on v.idVenta = ps.idVenta
+	inner join Cliente c on c.idCliente = v.idCliente
+	inner join FormaPago fp on fp.idFormaPago = ps.idFormaPago
+	where ps.estado = 1 and C.dni = @dni
+end
+
+execute buscarPagos '654321987'
 ---
 
 create or alter procedure listarVentaCliente
@@ -573,16 +588,25 @@ select * from Venta
 
 alter table DetalleVenta add estado bit
 
+select* from AsignacionPersonal
 
+select * from DetalleVenta
+
+
+
+update DetalleVenta set estado = 1
 
 select * from DetalleVenta
 
 -- LISTAR PEDIDOS MANTENIMIENTO
 
+alter table PedidoMantenimientoCorrectivo add estado bit
+
 create or alter procedure listarPedidoManCor
 as
 begin
-	Select PM.idPedidoMan, pm.idRecurso, R.nombre, PM.fecha, pm.estado from PedidoMantenimientoCorrectivo PM 
+	Select PM.idPedidoMan, pm.idRecurso, R.nombre, PM.fecha, pm.estado from 
+	PedidoMantenimientoCorrectivo PM 
 	inner join Recurso r on r.idRecurso = PM.idRecurso
 	where PM.estado = 1
 end
@@ -619,6 +643,8 @@ end
 
 -- AGREGAR DETALLE
 
+alter table DetallePedidoManCorrectivo add estado bit
+
 create or alter procedure agregarDetallePedido
 @pedido int,
 @tipo int,
@@ -640,10 +666,21 @@ end
 
 -- LISTARMANTENIMIENTO
 
+alter table TipoMantenimiento add estado bit
+
 create or alter procedure listarTipoMan
 as
 begin
 	Select * from TipoMantenimiento where estado = 1
 end
 
+
+
+--Realiza Pago
+
+
+	select * from PagoServicio
+
+
+--Realiza Pago
 

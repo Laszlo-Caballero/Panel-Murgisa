@@ -36,7 +36,7 @@ namespace CapaPresentacion
         private void btnsultar_Click(object sender, EventArgs e)
         {
             string dni = txtRuc.Text;
-            dtVentas.DataSource = logVenta.Instancia.listarVentaCliente(dni);
+            dtVentas.DataSource = logVenta.Instancia.listarVentaClienteDni(dni);
         }
 
         private void btnTodos_Click(object sender, EventArgs e)

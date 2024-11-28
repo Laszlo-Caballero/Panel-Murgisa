@@ -20,7 +20,7 @@ namespace CapaLogica.Venta
         {
             return datVenta.Instancia.listarVenta();
         }
-        public List<entVentaVista> listarVentaCliente(string dni)
+        public List<entVentaVista> listarVentaClienteDni(string dni)
         {
             return datVenta.Instancia.listarVentaCliente(dni);
         }

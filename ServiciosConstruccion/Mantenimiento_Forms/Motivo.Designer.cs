@@ -163,27 +163,27 @@
             // 
             // btnSalirMotivo
             // 
-            btnSalirMotivo.Location = new Point(667, 474);
+            btnSalirMotivo.Location = new Point(667, 514);
             btnSalirMotivo.Name = "btnSalirMotivo";
-            btnSalirMotivo.Size = new Size(123, 38);
+            btnSalirMotivo.Size = new Size(143, 54);
             btnSalirMotivo.TabIndex = 30;
             btnSalirMotivo.Text = "Salir";
             btnSalirMotivo.UseVisualStyleBackColor = true;
             // 
             // btnDesahabilitarMotivo
             // 
-            btnDesahabilitarMotivo.Location = new Point(667, 408);
+            btnDesahabilitarMotivo.Location = new Point(667, 442);
             btnDesahabilitarMotivo.Name = "btnDesahabilitarMotivo";
-            btnDesahabilitarMotivo.Size = new Size(123, 38);
+            btnDesahabilitarMotivo.Size = new Size(143, 50);
             btnDesahabilitarMotivo.TabIndex = 29;
             btnDesahabilitarMotivo.Text = "Desahabilitar";
             btnDesahabilitarMotivo.UseVisualStyleBackColor = true;
             // 
             // btnNuevoMotivo
             // 
-            btnNuevoMotivo.Location = new Point(667, 347);
+            btnNuevoMotivo.Location = new Point(667, 368);
             btnNuevoMotivo.Name = "btnNuevoMotivo";
-            btnNuevoMotivo.Size = new Size(123, 38);
+            btnNuevoMotivo.Size = new Size(143, 47);
             btnNuevoMotivo.TabIndex = 28;
             btnNuevoMotivo.Text = "Nuevo";
             btnNuevoMotivo.UseVisualStyleBackColor = true;

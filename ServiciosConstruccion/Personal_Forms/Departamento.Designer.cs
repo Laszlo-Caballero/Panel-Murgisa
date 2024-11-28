@@ -48,84 +48,90 @@
             // txtDepartamento
             // 
             txtDepartamento.Enabled = false;
-            txtDepartamento.Location = new Point(138, 27);
+            txtDepartamento.Location = new Point(158, 36);
+            txtDepartamento.Margin = new Padding(3, 4, 3, 4);
             txtDepartamento.Name = "txtDepartamento";
-            txtDepartamento.Size = new Size(125, 23);
+            txtDepartamento.Size = new Size(142, 27);
             txtDepartamento.TabIndex = 5;
             txtDepartamento.TextChanged += txtDepartamento_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 30);
+            label1.Location = new Point(24, 40);
             label1.Name = "label1";
-            label1.Size = new Size(111, 15);
+            label1.Size = new Size(142, 20);
             label1.TabIndex = 4;
             label1.Text = "DEPARTAMENTO ID:";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(96, 74);
+            txtNombre.Location = new Point(110, 99);
+            txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(125, 23);
+            txtNombre.Size = new Size(142, 27);
             txtNombre.TabIndex = 7;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(21, 77);
+            label2.Location = new Point(24, 103);
             label2.Name = "label2";
-            label2.Size = new Size(56, 15);
+            label2.Size = new Size(70, 20);
             label2.TabIndex = 6;
             label2.Text = "NOMBRE";
             // 
             // txtDesc
             // 
-            txtDesc.Location = new Point(378, 30);
+            txtDesc.Location = new Point(432, 40);
+            txtDesc.Margin = new Padding(3, 4, 3, 4);
             txtDesc.Name = "txtDesc";
-            txtDesc.Size = new Size(356, 23);
+            txtDesc.Size = new Size(406, 27);
             txtDesc.TabIndex = 9;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(286, 33);
+            label3.Location = new Point(327, 44);
             label3.Name = "label3";
-            label3.Size = new Size(81, 15);
+            label3.Size = new Size(101, 20);
             label3.TabIndex = 8;
             label3.Text = "DESCRIPCION";
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(453, 74);
+            txtBuscar.Location = new Point(518, 99);
+            txtBuscar.Margin = new Padding(3, 4, 3, 4);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(125, 23);
+            txtBuscar.Size = new Size(142, 27);
             txtBuscar.TabIndex = 11;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(378, 79);
+            label4.Location = new Point(432, 105);
             label4.Name = "label4";
-            label4.Size = new Size(56, 15);
+            label4.Size = new Size(71, 20);
             label4.TabIndex = 10;
             label4.Text = "CRITERIO";
             // 
             // cbkEstado
             // 
             cbkEstado.AutoSize = true;
-            cbkEstado.Location = new Point(268, 78);
+            cbkEstado.Location = new Point(306, 104);
+            cbkEstado.Margin = new Padding(3, 4, 3, 4);
             cbkEstado.Name = "cbkEstado";
-            cbkEstado.Size = new Size(68, 19);
+            cbkEstado.Size = new Size(86, 24);
             cbkEstado.TabIndex = 12;
             cbkEstado.Text = "ESTADO";
             cbkEstado.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(606, 68);
+            btnBuscar.Location = new Point(693, 91);
+            btnBuscar.Margin = new Padding(3, 4, 3, 4);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(83, 36);
+            btnBuscar.Size = new Size(95, 48);
             btnBuscar.TabIndex = 13;
             btnBuscar.Text = "BUSCAR";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -133,18 +139,20 @@
             // dgvDepartamento
             // 
             dgvDepartamento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDepartamento.Location = new Point(32, 125);
+            dgvDepartamento.Location = new Point(37, 167);
+            dgvDepartamento.Margin = new Padding(3, 4, 3, 4);
             dgvDepartamento.Name = "dgvDepartamento";
             dgvDepartamento.RowHeadersWidth = 82;
-            dgvDepartamento.Size = new Size(456, 223);
+            dgvDepartamento.Size = new Size(521, 297);
             dgvDepartamento.TabIndex = 14;
             dgvDepartamento.CellDoubleClick += dgvDepartamento_CellDoubleClick;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(503, 142);
+            btnAgregar.Location = new Point(605, 184);
+            btnAgregar.Margin = new Padding(3, 4, 3, 4);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(107, 36);
+            btnAgregar.Size = new Size(122, 48);
             btnAgregar.TabIndex = 15;
             btnAgregar.Text = "AGREGAR";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -152,9 +160,10 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(503, 208);
+            btnEditar.Location = new Point(605, 271);
+            btnEditar.Margin = new Padding(3, 4, 3, 4);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(107, 36);
+            btnEditar.Size = new Size(122, 48);
             btnEditar.TabIndex = 16;
             btnEditar.Text = "EDITAR";
             btnEditar.UseVisualStyleBackColor = true;
@@ -162,9 +171,10 @@
             // 
             // btnDeshabilitar
             // 
-            btnDeshabilitar.Location = new Point(503, 276);
+            btnDeshabilitar.Location = new Point(605, 358);
+            btnDeshabilitar.Margin = new Padding(3, 4, 3, 4);
             btnDeshabilitar.Name = "btnDeshabilitar";
-            btnDeshabilitar.Size = new Size(107, 36);
+            btnDeshabilitar.Size = new Size(122, 48);
             btnDeshabilitar.TabIndex = 17;
             btnDeshabilitar.Text = "DESHABILITAR";
             btnDeshabilitar.UseVisualStyleBackColor = true;
@@ -172,9 +182,9 @@
             // 
             // Departamento
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(752, 373);
+            ClientSize = new Size(859, 497);
             Controls.Add(btnDeshabilitar);
             Controls.Add(btnEditar);
             Controls.Add(btnAgregar);
@@ -190,6 +200,7 @@
             Controls.Add(txtDepartamento);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Departamento";
             Text = "Departamento";
             ((System.ComponentModel.ISupportInitialize)dgvDepartamento).EndInit();

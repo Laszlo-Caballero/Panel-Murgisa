@@ -153,6 +153,7 @@ create table DetalleVenta(
 	idRecurso int,
 	cantidad int,
 	precio float,
+	estado bit,
 	primary key (idDetalleVenta),
 	foreign key (idVenta) references Venta(idVenta),
 	foreign key (idRecurso) references Recurso(idRecurso)
@@ -174,6 +175,7 @@ create table AsignacionPersonal(
 	idVenta int,
 	idPersonal int,
 	costo float,
+	estado bit,
 	primary key(idAsignacionPersonal),
 	foreign key (idVenta) references Venta(idVenta),
 	foreign key (idPersonal) references Personal(idPersonal)

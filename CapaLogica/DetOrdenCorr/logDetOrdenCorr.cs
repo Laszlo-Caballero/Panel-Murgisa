@@ -16,10 +16,7 @@ namespace CapaLogica.DetOrdenCorr
         {
             get { return _instancia; }
         }
-        public List<entDetOrdenCorr> listarDetOrdenCorr()
-        {
-            return datDetOrdenCorr.Instancia.listarDetOrdenCorr();
-        }
+ 
 
         public bool agregarDetOrdenCorr(entDetOrdenCorr nuevo)
         {

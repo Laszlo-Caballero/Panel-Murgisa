@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CapaAccesoDatos.Venta
 {
@@ -27,15 +28,136 @@ namespace CapaAccesoDatos.Venta
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("listarVenta", cn);
+                cmd = new SqlCommand("listarVentas", cn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     entVentaVista nuevo = new entVentaVista();
+                    nuevo.idVenta = Convert.ToInt32(dr["idVenta"]);
+                    nuevo.servicio = dr["nombre"].ToString();
+                    nuevo.nombre = dr["nombreRepresentante"].ToString();
+                    nuevo.dni = dr["dni"].ToString();
+                    nuevo.inicio = Convert.ToDateTime(dr["fechaInicioServicio"]);
+                    nuevo.fin = Convert.ToDateTime(dr["fechaFFinServicio"]);
+                    nuevo.venta = Convert.ToDateTime(dr["fechaVenta"]);
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
                 }
             }
             catch (Exception ex) {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return lista;
+        }
+
+        public List<entVentaVista> listarVentaCliente(string dni)
+        {
+            SqlCommand cmd = null;
+            List<entVentaVista> lista = new List<entVentaVista>();
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("listarVentasCliente", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@dni", dni);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    entVentaVista nuevo = new entVentaVista();
+                    nuevo.idVenta = Convert.ToInt32(dr["idVenta"]);
+                    nuevo.servicio = dr["nombre"].ToString();
+                    nuevo.nombre = dr["nombreRepresentante"].ToString();
+                    nuevo.dni = dr["dni"].ToString();
+                    nuevo.inicio = Convert.ToDateTime(dr["fechaInicioServicio"]);
+                    nuevo.fin = Convert.ToDateTime(dr["fechaFFinServicio"]);
+                    nuevo.venta = Convert.ToDateTime(dr["fechaVenta"]);
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
+                    lista.Add(nuevo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return lista;
+        }
+
+
+        public List<entDetalleVenta> listarDetalleVenta(int id)
+        {
+            SqlCommand cmd = null;
+            List<entDetalleVenta> lista = new List<entDetalleVenta>();
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("listarDetalleVenta", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idVenta", id);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    entDetalleVenta nuevo = new entDetalleVenta();
+
+                    nuevo.idDetalleVenta = Convert.ToInt32(dr["idDetalleVenta"]);
+                    nuevo.tipo = dr["tipo"].ToString();
+                    nuevo.disponibilidad = dr["disponibilidad"].ToString();
+                    nuevo.condicion = dr["condicion"].ToString();
+                    nuevo.razSocial = dr["razSocial"].ToString();
+                    nuevo.nombre = dr["nombre"].ToString();
+                    nuevo.precio = Convert.ToSingle(dr["precio"]);
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
+                    lista.Add(nuevo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return lista;
+        }
+
+
+        public List<entAsignacionPersonal> listarPersonal(int id)
+        {
+            SqlCommand cmd = null;
+            List<entAsignacionPersonal> lista = new List<entAsignacionPersonal>();
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("listarAsignacionPersonal", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idVenta", id);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    entAsignacionPersonal nuevo = new entAsignacionPersonal();
+                    nuevo.idAsignacionPersonal = Convert.ToInt32(dr["idAsignacionPersonal"]);
+                    nuevo.nombre = dr["nombre"].ToString();
+                    nuevo.paterno = dr["apellido_parterno"].ToString();
+                    nuevo.materno = dr["apellido_materno"].ToString();
+                    nuevo.cargo = dr["descripcion"].ToString();
+                    nuevo.costo = float.Parse(dr["costo"].ToString());
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
+                    lista.Add(nuevo);
+                }
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
             finally

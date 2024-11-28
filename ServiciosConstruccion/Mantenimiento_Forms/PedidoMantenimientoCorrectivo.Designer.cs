@@ -69,23 +69,23 @@
             // 
             // txtRegistrar
             // 
-            button1.Location = new Point(1044, 591);
-            button1.Margin = new Padding(6, 6, 6, 6);
-            button1.Name = "button1";
-            button1.Size = new Size(193, 79);
-            button1.TabIndex = 2;
-            button1.Text = "REGISTRAR";
-            button1.UseVisualStyleBackColor = true;
+            txtRegistrar.Location = new Point(1044, 591);
+            txtRegistrar.Margin = new Padding(6, 6, 6, 6);
+            txtRegistrar.Name = "button1";
+            txtRegistrar.Size = new Size(193, 79);
+            txtRegistrar.TabIndex = 2;
+            txtRegistrar.Text = "REGISTRAR";
+            txtRegistrar.UseVisualStyleBackColor = true;
             // 
             // txtDeshabilitar
             // 
-            button2.Location = new Point(1294, 591);
-            button2.Margin = new Padding(6, 6, 6, 6);
-            button2.Name = "button2";
-            button2.Size = new Size(193, 79);
-            button2.TabIndex = 3;
-            button2.Text = "DESHABILITAR";
-            button2.UseVisualStyleBackColor = true;
+            txtDeshabilitar.Location = new Point(1294, 591);
+            txtDeshabilitar.Margin = new Padding(6, 6, 6, 6);
+            txtDeshabilitar.Name = "button2";
+            txtDeshabilitar.Size = new Size(193, 79);
+            txtDeshabilitar.TabIndex = 3;
+            txtDeshabilitar.Text = "DESHABILITAR";
+            txtDeshabilitar.UseVisualStyleBackColor = true;
             // 
             // cbMaquinaria
             // 
@@ -145,14 +145,14 @@
             // 
             // listaDetalle
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
-            listView1.Location = new Point(956, 26);
-            listView1.Margin = new Padding(6, 6, 6, 6);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(407, 394);
-            listView1.TabIndex = 15;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listaDetalle.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            listaDetalle.Location = new Point(956, 26);
+            listaDetalle.Margin = new Padding(6, 6, 6, 6);
+            listaDetalle.Name = "listView1";
+            listaDetalle.Size = new Size(407, 394);
+            listaDetalle.TabIndex = 15;
+            listaDetalle.UseCompatibleStateImageBehavior = false;
+            listaDetalle.View = View.Details;
             // 
             // columnHeader1
             // 
@@ -165,12 +165,12 @@
             // 
             // btnAñadir
             // 
-            button3.Location = new Point(429, 277);
-            button3.Name = "button3";
-            button3.Size = new Size(101, 37);
-            button3.TabIndex = 16;
-            button3.Text = "AÑADIR";
-            button3.UseVisualStyleBackColor = true;
+            btnAñadir.Location = new Point(429, 277);
+            btnAñadir.Name = "button3";
+            btnAñadir.Size = new Size(101, 37);
+            btnAñadir.TabIndex = 16;
+            btnAñadir.Text = "AÑADIR";
+            btnAñadir.UseVisualStyleBackColor = true;
             // 
             // label6
             // 

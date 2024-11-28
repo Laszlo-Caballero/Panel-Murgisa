@@ -16,6 +16,7 @@ namespace CapaLogica.DetOrdenCorr
         {
             get { return _instancia; }
         }
+ 
 
         public bool agregarDetOrdenCorr(entDetPedidoCorr nuevo)
         {

@@ -475,11 +475,62 @@ begin
 	values (@idVenta, @idPersonal, @costo)
 end
 
+create or alter procedure listarVentas
+as
+begin
+	select V.idVenta, V.fechaInicioServicio, S.nombre, C.nombreRepresentante, C.dni,
+	V.fechaFFinServicio, V.fechaVenta, V.estado
+	from Venta V 
+	inner join Servicio S on S.idServicio = V.idServicio
+	inner join Cliente C on C.idCliente = V.idCliente
+end
+
+create or alter procedure listarDetalleVenta
+@idVenta int
+as
+begin
+	select V.idDetalleVenta, 
+	T.tipo, D.disponibilidad, C.condicion, P.razSocial,
+	R.nombre, V.precio, V.estado
+	from DetalleVenta V
+	inner join Recurso R on R.idRecurso = V.idRecurso
+	inner join TipoRecurso T on T.idTipoRecurso = R.idTipoRecurso
+	inner join Proveedor P on P.idProveedor = R.idProveedor
+	inner join Disponibilidad D on R.idDisponibilidad = D.idDisponibilidad
+	inner join Condicion C on R.idCondicion = C.idCondicion
+	where V.idVenta = @idVenta
+end
+
+create or alter procedure listarAsignacionPersonal
+@idVenta int
+as
+begin
+	select A.idAsignacionPersonal, P.nombre, P.apellido_parterno,
+	P.apellido_materno, C.descripcion, A.costo, A.es
+	from AsignacionPersonal A 
+	inner join Personal P on P.idPersonal = A.idPersonal
+	inner join Cargo C on P.idCargo = C.idCargo
+	where A.idVenta = @idVenta
+end
+
+
+
 ---venta
+select * from Personal
 
 
 select * from Cliente
 
+
+select * from Servicio
+select * from Cliente
+
 select * from Venta
+
+
+alter table DetalleVenta add estado bit
+
+
+
 select * from DetalleVenta
-select * from AsignacionPersonal
+

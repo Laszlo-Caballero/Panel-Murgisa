@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
             txtRuc = new TextBox();
-            dtFecha = new DateTimePicker();
             btnsultar = new Button();
             dtVentas = new DataGridView();
-            button2 = new Button();
+            btnAnular = new Button();
             dtMateriales = new DataGridView();
             dtEmpleados = new DataGridView();
             label4 = new Label();
             label5 = new Label();
+            btnTodos = new Button();
+            txtIdVenta = new TextBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dtVentas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtMateriales).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtEmpleados).BeginInit();
@@ -56,20 +57,10 @@
             label1.TabIndex = 1;
             label1.Text = " Ventas";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(18, 81);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Fecha:";
-            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(343, 81);
+            label3.Location = new Point(20, 86);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(58, 20);
@@ -78,29 +69,22 @@
             // 
             // txtRuc
             // 
-            txtRuc.Location = new Point(415, 77);
+            txtRuc.Location = new Point(92, 82);
             txtRuc.Margin = new Padding(2);
             txtRuc.Name = "txtRuc";
             txtRuc.Size = new Size(125, 27);
             txtRuc.TabIndex = 6;
             // 
-            // dtFecha
-            // 
-            dtFecha.Location = new Point(79, 81);
-            dtFecha.Margin = new Padding(2);
-            dtFecha.Name = "dtFecha";
-            dtFecha.Size = new Size(248, 27);
-            dtFecha.TabIndex = 8;
-            // 
             // btnsultar
             // 
-            btnsultar.Location = new Point(561, 77);
+            btnsultar.Location = new Point(241, 81);
             btnsultar.Margin = new Padding(2);
             btnsultar.Name = "btnsultar";
             btnsultar.Size = new Size(92, 29);
             btnsultar.TabIndex = 9;
             btnsultar.Text = "Consultar";
             btnsultar.UseVisualStyleBackColor = true;
+            btnsultar.Click += btnsultar_Click;
             // 
             // dtVentas
             // 
@@ -113,15 +97,16 @@
             dtVentas.TabIndex = 10;
             dtVentas.CellClick += dtVentas_CellClick;
             // 
-            // button2
+            // btnAnular
             // 
-            button2.Location = new Point(846, 721);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(128, 29);
-            button2.TabIndex = 11;
-            button2.Text = "Anular Venta";
-            button2.UseVisualStyleBackColor = true;
+            btnAnular.Location = new Point(846, 721);
+            btnAnular.Margin = new Padding(2);
+            btnAnular.Name = "btnAnular";
+            btnAnular.Size = new Size(128, 29);
+            btnAnular.TabIndex = 11;
+            btnAnular.Text = "Anular Venta";
+            btnAnular.UseVisualStyleBackColor = true;
+            btnAnular.Click += btnAnular_Click;
             // 
             // dtMateriales
             // 
@@ -165,22 +150,53 @@
             label5.TabIndex = 15;
             label5.Text = "Empleados";
             // 
+            // btnTodos
+            // 
+            btnTodos.Location = new Point(356, 82);
+            btnTodos.Margin = new Padding(2);
+            btnTodos.Name = "btnTodos";
+            btnTodos.Size = new Size(92, 29);
+            btnTodos.TabIndex = 16;
+            btnTodos.Text = "Ver todos";
+            btnTodos.UseVisualStyleBackColor = true;
+            btnTodos.Click += btnTodos_Click;
+            // 
+            // txtIdVenta
+            // 
+            txtIdVenta.Enabled = false;
+            txtIdVenta.Location = new Point(551, 83);
+            txtIdVenta.Margin = new Padding(2);
+            txtIdVenta.Name = "txtIdVenta";
+            txtIdVenta.Size = new Size(125, 27);
+            txtIdVenta.TabIndex = 18;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(479, 87);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(62, 20);
+            label2.TabIndex = 17;
+            label2.Text = "idVenta:";
+            // 
             // Ventas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1026, 774);
+            Controls.Add(txtIdVenta);
+            Controls.Add(label2);
+            Controls.Add(btnTodos);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(dtEmpleados);
             Controls.Add(dtMateriales);
-            Controls.Add(button2);
+            Controls.Add(btnAnular);
             Controls.Add(dtVentas);
             Controls.Add(btnsultar);
-            Controls.Add(dtFecha);
             Controls.Add(txtRuc);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
@@ -196,16 +212,17 @@
         #endregion
 
         private Label label1;
-        private Label label2;
         private Label label3;
         private TextBox txtRuc;
-        private DateTimePicker dtFecha;
         private Button btnsultar;
         private DataGridView dtVentas;
-        private Button button2;
+        private Button btnAnular;
         private DataGridView dtMateriales;
         private DataGridView dtEmpleados;
         private Label label4;
         private Label label5;
+        private Button btnTodos;
+        private TextBox txtIdVenta;
+        private Label label2;
     }
 }

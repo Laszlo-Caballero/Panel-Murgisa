@@ -56,9 +56,9 @@ namespace CapaAccesoDatos.PedidoManCor
             {
                 SqlConnection cn = Conexion.Instacia.Conectar();
                 cn.Open();
-                cmd = new SqlCommand("deshabilitarDetOrdenCorr", cn);
+                cmd = new SqlCommand("deshabilitarDetallePed", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idDetOrdenCorr", id);
+                cmd.Parameters.AddWithValue("@idPedido", id);
                 int rows = cmd.ExecuteNonQuery();
                 deshabilitar = rows >= 1;
             }

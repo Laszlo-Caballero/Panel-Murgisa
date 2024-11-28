@@ -46,9 +46,6 @@
     <Compile Update="Personal_Forms\Profesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Servicios_Forms\RecursosFormServicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Servicios_Forms\PanelJefeServicio.cs">
       <SubType>Form</SubType>
     </Compile>

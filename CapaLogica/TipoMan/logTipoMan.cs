@@ -2,6 +2,7 @@ using CapaAccesoDatos.TipoMan;
 using CapaEntidad.TipoMan;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,10 @@ namespace CapaLogica.TipoMan
         public static logTipoMan Instancia
         {
             get { return _instancia; }
+        }
+        public DataTable listarTipoManDT()
+        {
+            return datTipoMan.Instancia.listarTipoManDT();
         }
         public List<entTipoMan> listarTipoMan()
         {

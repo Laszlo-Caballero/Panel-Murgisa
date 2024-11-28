@@ -1,7 +1,10 @@
+using CapaAccesoDatos.MantenimientoPlanificacion;
 using CapaAccesoDatos.OrdenMantenimientoPreventivo;
+using CapaEntidad.MantenimientoPlanificacion;
 using CapaEntidad.OrdenMantenimientoPreventivo;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +23,14 @@ namespace CapaLogica.OrdenMantenimientoPreventivo
         {
             return datOrdenMantenimientoPreventivo.Instancia.listarOrdenMantenimientoPreventivo();
         }
-
+        public entOrdenMantenimientoPreventivo buscarPorId(int id)
+        {
+            return datOrdenMantenimientoPreventivo.Instancia.buscarPorId(id);
+        }
+        public DataTable listarMantenimientoPreventivoParaGrid(int? idPlanificacion = null, DateTime? fechaMantenimiento = null)
+        {
+            return datOrdenMantenimientoPreventivo.Instancia.listarMantenimientoPreventivoParaGrid(idPlanificacion, fechaMantenimiento);
+        }
         public bool agregarOrdenMantenimientoPreventivo(entOrdenMantenimientoPreventivo nuevo)
         {
             return datOrdenMantenimientoPreventivo.Instancia.agregarOrdenMantenimientoPreventivo(nuevo);

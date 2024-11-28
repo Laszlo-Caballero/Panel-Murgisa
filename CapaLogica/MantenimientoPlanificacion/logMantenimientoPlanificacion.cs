@@ -21,6 +21,10 @@ namespace CapaLogica.MantenimientoPlanificacion
         {
             return datMantenimientoPlanificacion.Instancia.listarMantenimientoPlanificacionParaGrid(idPlanificacion,fechaMantenimiento);
         }  
+        public bool existeMantenimientoPorPersonalYHorario(int IdPersonal, int IdHorario)
+        {
+            return datMantenimientoPlanificacion.Instancia.existeMantenimientoPorPersonalYHorario(IdPersonal, IdHorario);
+        }  
         public List<entMantenimientoPlanificacion> listarMantenimientoPlanificacion()
         {
             return datMantenimientoPlanificacion.Instancia.listarMantenimientoPlanificacion();
@@ -29,7 +33,10 @@ namespace CapaLogica.MantenimientoPlanificacion
         {
             return datMantenimientoPlanificacion.Instancia.buscarPorId(id);
         }
-
+        public bool desabilitarMatenimientoPlanificacion(int id)
+        {
+            return datMantenimientoPlanificacion.Instancia.desabilitarMatenimientoPlanificacion(id);
+        }
         public bool agregarMantenimientoPlanificacion(entMantenimientoPlanificacion nuevo)
         {
             return datMantenimientoPlanificacion.Instancia.agregarMantenimientoPlanificacion(nuevo);

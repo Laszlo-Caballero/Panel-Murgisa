@@ -193,10 +193,10 @@ create table NotaSalida(
 
 create table NotaIngreso(
     idNotaIngreso int identity(1,1),
-    idNotaSalida int,
+    idRecurso int,
     fecha datetime,
     primary key(idNotaIngreso),
-    foreign key(idNotaSalida) references NotaSalida(idNotaSalida)
+    foreign key(idRecurso) references Recurso(idRecurso)
 )
 -- SQLBook: Code
 create table PagoServicio(

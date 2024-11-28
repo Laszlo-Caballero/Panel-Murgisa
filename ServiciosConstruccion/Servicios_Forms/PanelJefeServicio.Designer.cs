@@ -43,10 +43,6 @@
             btnPedidoMantenimientoCorrectivo = new Button();
             panel2 = new Panel();
             btnServicios = new Button();
-            panel5 = new Panel();
-            btnPersonal = new Button();
-            panel4 = new Panel();
-            btnMaquinaria = new Button();
             panel3 = new Panel();
             btnRecursos = new Button();
             panel1 = new Panel();
@@ -72,10 +68,10 @@
             btnRestaurar2.BackgroundImageLayout = ImageLayout.Zoom;
             btnRestaurar2.Cursor = Cursors.Hand;
             btnRestaurar2.Image = (Image)resources.GetObject("btnRestaurar2.Image");
-            btnRestaurar2.Location = new Point(2128, 15);
-            btnRestaurar2.Margin = new Padding(6);
+            btnRestaurar2.Location = new Point(1310, 9);
+            btnRestaurar2.Margin = new Padding(4, 4, 4, 4);
             btnRestaurar2.Name = "btnRestaurar2";
-            btnRestaurar2.Size = new Size(46, 53);
+            btnRestaurar2.Size = new Size(28, 33);
             btnRestaurar2.SizeMode = PictureBoxSizeMode.StretchImage;
             btnRestaurar2.TabIndex = 4;
             btnRestaurar2.TabStop = false;
@@ -88,10 +84,10 @@
             btnMaximizar2.BackgroundImageLayout = ImageLayout.Zoom;
             btnMaximizar2.Cursor = Cursors.Hand;
             btnMaximizar2.Image = (Image)resources.GetObject("btnMaximizar2.Image");
-            btnMaximizar2.Location = new Point(2128, 15);
-            btnMaximizar2.Margin = new Padding(6);
+            btnMaximizar2.Location = new Point(1310, 9);
+            btnMaximizar2.Margin = new Padding(4, 4, 4, 4);
             btnMaximizar2.Name = "btnMaximizar2";
-            btnMaximizar2.Size = new Size(46, 53);
+            btnMaximizar2.Size = new Size(28, 33);
             btnMaximizar2.SizeMode = PictureBoxSizeMode.StretchImage;
             btnMaximizar2.TabIndex = 6;
             btnMaximizar2.TabStop = false;
@@ -103,10 +99,10 @@
             btnCerrar.BackgroundImageLayout = ImageLayout.Zoom;
             btnCerrar.Cursor = Cursors.Hand;
             btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
-            btnCerrar.Location = new Point(4394, 9);
-            btnCerrar.Margin = new Padding(6);
+            btnCerrar.Location = new Point(2704, 6);
+            btnCerrar.Margin = new Padding(4, 4, 4, 4);
             btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(46, 53);
+            btnCerrar.Size = new Size(28, 33);
             btnCerrar.SizeMode = PictureBoxSizeMode.StretchImage;
             btnCerrar.TabIndex = 0;
             btnCerrar.TabStop = false;
@@ -117,10 +113,10 @@
             btnMaximizar.BackgroundImageLayout = ImageLayout.Zoom;
             btnMaximizar.Cursor = Cursors.Hand;
             btnMaximizar.Image = (Image)resources.GetObject("btnMaximizar.Image");
-            btnMaximizar.Location = new Point(4335, 9);
-            btnMaximizar.Margin = new Padding(6);
+            btnMaximizar.Location = new Point(2668, 6);
+            btnMaximizar.Margin = new Padding(4, 4, 4, 4);
             btnMaximizar.Name = "btnMaximizar";
-            btnMaximizar.Size = new Size(46, 53);
+            btnMaximizar.Size = new Size(28, 33);
             btnMaximizar.SizeMode = PictureBoxSizeMode.StretchImage;
             btnMaximizar.TabIndex = 1;
             btnMaximizar.TabStop = false;
@@ -131,10 +127,10 @@
             btnMinimizar.BackgroundImageLayout = ImageLayout.Zoom;
             btnMinimizar.Cursor = Cursors.Hand;
             btnMinimizar.Image = (Image)resources.GetObject("btnMinimizar.Image");
-            btnMinimizar.Location = new Point(4277, 6);
-            btnMinimizar.Margin = new Padding(6);
+            btnMinimizar.Location = new Point(2632, 4);
+            btnMinimizar.Margin = new Padding(4, 4, 4, 4);
             btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.Size = new Size(46, 53);
+            btnMinimizar.Size = new Size(28, 33);
             btnMinimizar.SizeMode = PictureBoxSizeMode.StretchImage;
             btnMinimizar.TabIndex = 2;
             btnMinimizar.TabStop = false;
@@ -145,10 +141,10 @@
             btnResturar.BackgroundImageLayout = ImageLayout.Zoom;
             btnResturar.Cursor = Cursors.Hand;
             btnResturar.Image = (Image)resources.GetObject("btnResturar.Image");
-            btnResturar.Location = new Point(4335, 6);
-            btnResturar.Margin = new Padding(6);
+            btnResturar.Location = new Point(2668, 4);
+            btnResturar.Margin = new Padding(4, 4, 4, 4);
             btnResturar.Name = "btnResturar";
-            btnResturar.Size = new Size(46, 53);
+            btnResturar.Size = new Size(28, 33);
             btnResturar.SizeMode = PictureBoxSizeMode.StretchImage;
             btnResturar.TabIndex = 3;
             btnResturar.TabStop = false;
@@ -160,10 +156,10 @@
             btnCerrar2.BackgroundImageLayout = ImageLayout.Zoom;
             btnCerrar2.Cursor = Cursors.Hand;
             btnCerrar2.Image = (Image)resources.GetObject("btnCerrar2.Image");
-            btnCerrar2.Location = new Point(2186, 15);
-            btnCerrar2.Margin = new Padding(6);
+            btnCerrar2.Location = new Point(1345, 9);
+            btnCerrar2.Margin = new Padding(4, 4, 4, 4);
             btnCerrar2.Name = "btnCerrar2";
-            btnCerrar2.Size = new Size(46, 53);
+            btnCerrar2.Size = new Size(28, 33);
             btnCerrar2.SizeMode = PictureBoxSizeMode.StretchImage;
             btnCerrar2.TabIndex = 3;
             btnCerrar2.TabStop = false;
@@ -175,10 +171,10 @@
             btnMinimizar2.BackgroundImageLayout = ImageLayout.Zoom;
             btnMinimizar2.Cursor = Cursors.Hand;
             btnMinimizar2.Image = (Image)resources.GetObject("btnMinimizar2.Image");
-            btnMinimizar2.Location = new Point(2071, 15);
-            btnMinimizar2.Margin = new Padding(6);
+            btnMinimizar2.Location = new Point(1274, 9);
+            btnMinimizar2.Margin = new Padding(4, 4, 4, 4);
             btnMinimizar2.Name = "btnMinimizar2";
-            btnMinimizar2.Size = new Size(46, 53);
+            btnMinimizar2.Size = new Size(28, 33);
             btnMinimizar2.SizeMode = PictureBoxSizeMode.StretchImage;
             btnMinimizar2.TabIndex = 5;
             btnMinimizar2.TabStop = false;
@@ -197,9 +193,9 @@
             BarraTitulo2.Controls.Add(btnRestaurar2);
             BarraTitulo2.Dock = DockStyle.Top;
             BarraTitulo2.Location = new Point(0, 0);
-            BarraTitulo2.Margin = new Padding(6);
+            BarraTitulo2.Margin = new Padding(4, 4, 4, 4);
             BarraTitulo2.Name = "BarraTitulo2";
-            BarraTitulo2.Size = new Size(2247, 81);
+            BarraTitulo2.Size = new Size(1383, 51);
             BarraTitulo2.TabIndex = 1;
             BarraTitulo2.MouseDown += BarraTitulo2_MouseDown;
             // 
@@ -210,29 +206,25 @@
             MenuVertical.Controls.Add(btnPedidoMantenimientoCorrectivo);
             MenuVertical.Controls.Add(panel2);
             MenuVertical.Controls.Add(btnServicios);
-            MenuVertical.Controls.Add(panel5);
-            MenuVertical.Controls.Add(btnPersonal);
-            MenuVertical.Controls.Add(panel4);
-            MenuVertical.Controls.Add(btnMaquinaria);
             MenuVertical.Controls.Add(panel3);
             MenuVertical.Controls.Add(btnRecursos);
             MenuVertical.Controls.Add(panel1);
             MenuVertical.Controls.Add(btnROrdendeServicio);
             MenuVertical.Controls.Add(pictureBox1);
             MenuVertical.Dock = DockStyle.Left;
-            MenuVertical.Location = new Point(0, 81);
-            MenuVertical.Margin = new Padding(6);
+            MenuVertical.Location = new Point(0, 51);
+            MenuVertical.Margin = new Padding(4, 4, 4, 4);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(371, 1184);
+            MenuVertical.Size = new Size(228, 740);
             MenuVertical.TabIndex = 2;
             // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(0, 80, 200);
-            panel6.Location = new Point(2, 615);
-            panel6.Margin = new Padding(6);
+            panel6.Location = new Point(2, 275);
+            panel6.Margin = new Padding(4, 4, 4, 4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(10, 114);
+            panel6.Size = new Size(6, 71);
             panel6.TabIndex = 8;
             // 
             // btnPedidoMantenimientoCorrectivo
@@ -243,11 +235,11 @@
             btnPedidoMantenimientoCorrectivo.FlatStyle = FlatStyle.Flat;
             btnPedidoMantenimientoCorrectivo.ForeColor = SystemColors.ButtonFace;
             btnPedidoMantenimientoCorrectivo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPedidoMantenimientoCorrectivo.Location = new Point(0, 615);
-            btnPedidoMantenimientoCorrectivo.Margin = new Padding(6);
+            btnPedidoMantenimientoCorrectivo.Location = new Point(1, 275);
+            btnPedidoMantenimientoCorrectivo.Margin = new Padding(4, 4, 4, 4);
             btnPedidoMantenimientoCorrectivo.Name = "btnPedidoMantenimientoCorrectivo";
             btnPedidoMantenimientoCorrectivo.RightToLeft = RightToLeft.No;
-            btnPedidoMantenimientoCorrectivo.Size = new Size(366, 114);
+            btnPedidoMantenimientoCorrectivo.Size = new Size(225, 71);
             btnPedidoMantenimientoCorrectivo.TabIndex = 9;
             btnPedidoMantenimientoCorrectivo.Text = "Pedido Mantenimiento Correctivo";
             btnPedidoMantenimientoCorrectivo.UseVisualStyleBackColor = false;
@@ -256,10 +248,10 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 80, 200);
-            panel2.Location = new Point(2, 525);
-            panel2.Margin = new Padding(6);
+            panel2.Location = new Point(2, 219);
+            panel2.Margin = new Padding(4, 4, 4, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(9, 68);
+            panel2.Size = new Size(6, 42);
             panel2.TabIndex = 7;
             // 
             // btnServicios
@@ -270,77 +262,23 @@
             btnServicios.FlatStyle = FlatStyle.Flat;
             btnServicios.ForeColor = SystemColors.ButtonFace;
             btnServicios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnServicios.Location = new Point(-1, 525);
-            btnServicios.Margin = new Padding(6);
+            btnServicios.Location = new Point(0, 219);
+            btnServicios.Margin = new Padding(4, 4, 4, 4);
             btnServicios.Name = "btnServicios";
             btnServicios.RightToLeft = RightToLeft.No;
-            btnServicios.Size = new Size(366, 68);
+            btnServicios.Size = new Size(225, 42);
             btnServicios.TabIndex = 8;
             btnServicios.Text = "Servicios";
             btnServicios.UseVisualStyleBackColor = false;
             btnServicios.Click += btnServicios_Click;
             // 
-            // panel5
-            // 
-            panel5.BackColor = Color.FromArgb(0, 80, 200);
-            panel5.Location = new Point(0, 433);
-            panel5.Margin = new Padding(6);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(9, 68);
-            panel5.TabIndex = 6;
-            // 
-            // btnPersonal
-            // 
-            btnPersonal.BackColor = Color.FromArgb(26, 32, 40);
-            btnPersonal.FlatAppearance.BorderSize = 0;
-            btnPersonal.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            btnPersonal.FlatStyle = FlatStyle.Flat;
-            btnPersonal.ForeColor = SystemColors.ButtonFace;
-            btnPersonal.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPersonal.Location = new Point(2, 430);
-            btnPersonal.Margin = new Padding(6);
-            btnPersonal.Name = "btnPersonal";
-            btnPersonal.RightToLeft = RightToLeft.No;
-            btnPersonal.Size = new Size(366, 68);
-            btnPersonal.TabIndex = 7;
-            btnPersonal.Text = "Personal";
-            btnPersonal.UseVisualStyleBackColor = false;
-            btnPersonal.Click += btnPersonal_Click;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(0, 80, 200);
-            panel4.Location = new Point(2, 350);
-            panel4.Margin = new Padding(6);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(9, 68);
-            panel4.TabIndex = 4;
-            // 
-            // btnMaquinaria
-            // 
-            btnMaquinaria.BackColor = Color.FromArgb(26, 32, 40);
-            btnMaquinaria.FlatAppearance.BorderSize = 0;
-            btnMaquinaria.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            btnMaquinaria.FlatStyle = FlatStyle.Flat;
-            btnMaquinaria.ForeColor = SystemColors.ButtonFace;
-            btnMaquinaria.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMaquinaria.Location = new Point(-1, 353);
-            btnMaquinaria.Margin = new Padding(6);
-            btnMaquinaria.Name = "btnMaquinaria";
-            btnMaquinaria.RightToLeft = RightToLeft.No;
-            btnMaquinaria.Size = new Size(366, 68);
-            btnMaquinaria.TabIndex = 5;
-            btnMaquinaria.Text = "Maquinaria";
-            btnMaquinaria.UseVisualStyleBackColor = false;
-            btnMaquinaria.Click += btnMaquinaria_Click;
-            // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(0, 80, 200);
-            panel3.Location = new Point(2, 270);
-            panel3.Margin = new Padding(6);
+            panel3.Location = new Point(1, 169);
+            panel3.Margin = new Padding(4, 4, 4, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(9, 68);
+            panel3.Size = new Size(6, 42);
             panel3.TabIndex = 2;
             // 
             // btnRecursos
@@ -351,11 +289,11 @@
             btnRecursos.FlatStyle = FlatStyle.Flat;
             btnRecursos.ForeColor = SystemColors.ButtonFace;
             btnRecursos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRecursos.Location = new Point(0, 270);
-            btnRecursos.Margin = new Padding(6);
+            btnRecursos.Location = new Point(0, 169);
+            btnRecursos.Margin = new Padding(4, 4, 4, 4);
             btnRecursos.Name = "btnRecursos";
             btnRecursos.RightToLeft = RightToLeft.No;
-            btnRecursos.Size = new Size(366, 68);
+            btnRecursos.Size = new Size(225, 42);
             btnRecursos.TabIndex = 3;
             btnRecursos.Text = "Recursos";
             btnRecursos.UseVisualStyleBackColor = false;
@@ -364,10 +302,10 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 80, 200);
-            panel1.Location = new Point(0, 190);
-            panel1.Margin = new Padding(6);
+            panel1.Location = new Point(0, 119);
+            panel1.Margin = new Padding(4, 4, 4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(9, 68);
+            panel1.Size = new Size(6, 42);
             panel1.TabIndex = 0;
             // 
             // btnROrdendeServicio
@@ -379,11 +317,11 @@
             btnROrdendeServicio.FlatStyle = FlatStyle.Flat;
             btnROrdendeServicio.ForeColor = SystemColors.ButtonFace;
             btnROrdendeServicio.ImageAlign = ContentAlignment.MiddleLeft;
-            btnROrdendeServicio.Location = new Point(6, 190);
-            btnROrdendeServicio.Margin = new Padding(6);
+            btnROrdendeServicio.Location = new Point(4, 119);
+            btnROrdendeServicio.Margin = new Padding(4, 4, 4, 4);
             btnROrdendeServicio.Name = "btnROrdendeServicio";
             btnROrdendeServicio.RightToLeft = RightToLeft.No;
-            btnROrdendeServicio.Size = new Size(366, 68);
+            btnROrdendeServicio.Size = new Size(225, 42);
             btnROrdendeServicio.TabIndex = 0;
             btnROrdendeServicio.Text = "Realizar Orden de Servicio";
             btnROrdendeServicio.UseVisualStyleBackColor = false;
@@ -393,9 +331,9 @@
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(6);
+            pictureBox1.Margin = new Padding(4, 4, 4, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(371, 147);
+            pictureBox1.Size = new Size(228, 92);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -404,22 +342,22 @@
             // 
             PanelContenedor.BackColor = Color.FromArgb(49, 66, 82);
             PanelContenedor.Dock = DockStyle.Fill;
-            PanelContenedor.Location = new Point(371, 81);
-            PanelContenedor.Margin = new Padding(6);
+            PanelContenedor.Location = new Point(228, 51);
+            PanelContenedor.Margin = new Padding(4, 4, 4, 4);
             PanelContenedor.Name = "PanelContenedor";
-            PanelContenedor.Size = new Size(1876, 1184);
+            PanelContenedor.Size = new Size(1155, 740);
             PanelContenedor.TabIndex = 3;
             // 
             // PanelJefeServicio
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2247, 1265);
+            ClientSize = new Size(1383, 791);
             Controls.Add(PanelContenedor);
             Controls.Add(MenuVertical);
             Controls.Add(BarraTitulo2);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 2, 4, 2);
+            Margin = new Padding(2, 1, 2, 1);
             Name = "PanelJefeServicio";
             Text = "PanelJefeServicio";
             ((System.ComponentModel.ISupportInitialize)btnRestaurar2).EndInit();
@@ -447,10 +385,6 @@
         private PictureBox btnMinimizar2;
         private Panel BarraTitulo2;
         private Panel MenuVertical;
-        private Panel panel5;
-        private Button btnPersonal;
-        private Panel panel4;
-        private Button btnMaquinaria;
         private Panel panel3;
         private Button btnRecursos;
         private Panel panel1;

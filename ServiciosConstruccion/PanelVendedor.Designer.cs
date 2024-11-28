@@ -35,10 +35,6 @@
             btnMaximizar = new PictureBox();
             btnCerrar = new PictureBox();
             MenuVertical = new Panel();
-            panel8 = new Panel();
-            btnOSManPreventivo = new Button();
-            panel7 = new Panel();
-            btnOManCorrectivo = new Button();
             panel6 = new Panel();
             btnFormaDePago = new Button();
             panel5 = new Panel();
@@ -71,8 +67,9 @@
             BarraTitulo.Controls.Add(btnCerrar);
             BarraTitulo.Dock = DockStyle.Top;
             BarraTitulo.Location = new Point(0, 0);
+            BarraTitulo.Margin = new Padding(3, 4, 3, 4);
             BarraTitulo.Name = "BarraTitulo";
-            BarraTitulo.Size = new Size(1353, 38);
+            BarraTitulo.Size = new Size(1546, 51);
             BarraTitulo.TabIndex = 0;
             BarraTitulo.Paint += BarraTitulo_Paint;
             BarraTitulo.MouseDown += BarraTitulo_MouseDown;
@@ -82,9 +79,10 @@
             btnResturar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnResturar.BackgroundImageLayout = ImageLayout.Zoom;
             btnResturar.Cursor = Cursors.Hand;
-            btnResturar.Location = new Point(1285, 4);
+            btnResturar.Location = new Point(1469, 5);
+            btnResturar.Margin = new Padding(3, 4, 3, 4);
             btnResturar.Name = "btnResturar";
-            btnResturar.Size = new Size(25, 25);
+            btnResturar.Size = new Size(29, 33);
             btnResturar.SizeMode = PictureBoxSizeMode.StretchImage;
             btnResturar.TabIndex = 3;
             btnResturar.TabStop = false;
@@ -97,9 +95,10 @@
             btnMinimizar.BackgroundImageLayout = ImageLayout.Zoom;
             btnMinimizar.Cursor = Cursors.Hand;
             btnMinimizar.Image = (Image)resources.GetObject("btnMinimizar.Image");
-            btnMinimizar.Location = new Point(1254, 3);
+            btnMinimizar.Location = new Point(1433, 4);
+            btnMinimizar.Margin = new Padding(3, 4, 3, 4);
             btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.Size = new Size(25, 25);
+            btnMinimizar.Size = new Size(29, 33);
             btnMinimizar.SizeMode = PictureBoxSizeMode.StretchImage;
             btnMinimizar.TabIndex = 2;
             btnMinimizar.TabStop = false;
@@ -111,9 +110,10 @@
             btnMaximizar.BackgroundImageLayout = ImageLayout.Zoom;
             btnMaximizar.Cursor = Cursors.Hand;
             btnMaximizar.Image = (Image)resources.GetObject("btnMaximizar.Image");
-            btnMaximizar.Location = new Point(1285, 4);
+            btnMaximizar.Location = new Point(1469, 5);
+            btnMaximizar.Margin = new Padding(3, 4, 3, 4);
             btnMaximizar.Name = "btnMaximizar";
-            btnMaximizar.Size = new Size(25, 25);
+            btnMaximizar.Size = new Size(29, 33);
             btnMaximizar.SizeMode = PictureBoxSizeMode.StretchImage;
             btnMaximizar.TabIndex = 1;
             btnMaximizar.TabStop = false;
@@ -125,9 +125,10 @@
             btnCerrar.BackgroundImageLayout = ImageLayout.Zoom;
             btnCerrar.Cursor = Cursors.Hand;
             btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
-            btnCerrar.Location = new Point(1316, 4);
+            btnCerrar.Location = new Point(1504, 5);
+            btnCerrar.Margin = new Padding(3, 4, 3, 4);
             btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(25, 25);
+            btnCerrar.Size = new Size(29, 33);
             btnCerrar.SizeMode = PictureBoxSizeMode.StretchImage;
             btnCerrar.TabIndex = 0;
             btnCerrar.TabStop = false;
@@ -136,10 +137,6 @@
             // MenuVertical
             // 
             MenuVertical.BackColor = Color.FromArgb(26, 32, 40);
-            MenuVertical.Controls.Add(panel8);
-            MenuVertical.Controls.Add(btnOSManPreventivo);
-            MenuVertical.Controls.Add(panel7);
-            MenuVertical.Controls.Add(btnOManCorrectivo);
             MenuVertical.Controls.Add(panel6);
             MenuVertical.Controls.Add(btnFormaDePago);
             MenuVertical.Controls.Add(panel5);
@@ -154,67 +151,19 @@
             MenuVertical.Controls.Add(btnVenta);
             MenuVertical.Controls.Add(pictureBox1);
             MenuVertical.Dock = DockStyle.Left;
-            MenuVertical.Location = new Point(0, 38);
+            MenuVertical.Location = new Point(0, 51);
+            MenuVertical.Margin = new Padding(3, 4, 3, 4);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(200, 614);
+            MenuVertical.Size = new Size(229, 818);
             MenuVertical.TabIndex = 1;
-            // 
-            // panel8
-            // 
-            panel8.BackColor = Color.FromArgb(0, 80, 200);
-            panel8.Location = new Point(0, 354);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(5, 32);
-            panel8.TabIndex = 11;
-            // 
-            // btnOSManPreventivo
-            // 
-            btnOSManPreventivo.BackColor = Color.FromArgb(26, 32, 40);
-            btnOSManPreventivo.FlatAppearance.BorderSize = 0;
-            btnOSManPreventivo.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            btnOSManPreventivo.FlatStyle = FlatStyle.Flat;
-            btnOSManPreventivo.ForeColor = SystemColors.ButtonFace;
-            btnOSManPreventivo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOSManPreventivo.Location = new Point(1, 354);
-            btnOSManPreventivo.Name = "btnOSManPreventivo";
-            btnOSManPreventivo.RightToLeft = RightToLeft.No;
-            btnOSManPreventivo.Size = new Size(197, 32);
-            btnOSManPreventivo.TabIndex = 12;
-            btnOSManPreventivo.Text = "OS Mantenimiendo Preventivo";
-            btnOSManPreventivo.UseVisualStyleBackColor = false;
-            btnOSManPreventivo.Click += btnOManPreventivo_Click;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.FromArgb(0, 80, 200);
-            panel7.Location = new Point(0, 316);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(5, 32);
-            panel7.TabIndex = 9;
-            // 
-            // btnOManCorrectivo
-            // 
-            btnOManCorrectivo.BackColor = Color.FromArgb(26, 32, 40);
-            btnOManCorrectivo.FlatAppearance.BorderSize = 0;
-            btnOManCorrectivo.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            btnOManCorrectivo.FlatStyle = FlatStyle.Flat;
-            btnOManCorrectivo.ForeColor = SystemColors.ButtonFace;
-            btnOManCorrectivo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOManCorrectivo.Location = new Point(1, 316);
-            btnOManCorrectivo.Name = "btnOManCorrectivo";
-            btnOManCorrectivo.RightToLeft = RightToLeft.No;
-            btnOManCorrectivo.Size = new Size(197, 32);
-            btnOManCorrectivo.TabIndex = 10;
-            btnOManCorrectivo.Text = "OS Mantenimiendo Correctivo";
-            btnOManCorrectivo.UseVisualStyleBackColor = false;
-            btnOManCorrectivo.Click += btnOManCorrectivo_Click;
             // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(0, 80, 200);
-            panel6.Location = new Point(0, 278);
+            panel6.Location = new Point(0, 371);
+            panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(5, 32);
+            panel6.Size = new Size(6, 43);
             panel6.TabIndex = 7;
             // 
             // btnFormaDePago
@@ -225,10 +174,11 @@
             btnFormaDePago.FlatStyle = FlatStyle.Flat;
             btnFormaDePago.ForeColor = SystemColors.ButtonFace;
             btnFormaDePago.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFormaDePago.Location = new Point(1, 278);
+            btnFormaDePago.Location = new Point(1, 371);
+            btnFormaDePago.Margin = new Padding(3, 4, 3, 4);
             btnFormaDePago.Name = "btnFormaDePago";
             btnFormaDePago.RightToLeft = RightToLeft.No;
-            btnFormaDePago.Size = new Size(197, 32);
+            btnFormaDePago.Size = new Size(225, 43);
             btnFormaDePago.TabIndex = 8;
             btnFormaDePago.Text = "Forma de pago";
             btnFormaDePago.UseVisualStyleBackColor = false;
@@ -237,9 +187,10 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(0, 80, 200);
-            panel5.Location = new Point(0, 241);
+            panel5.Location = new Point(0, 321);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(5, 32);
+            panel5.Size = new Size(6, 43);
             panel5.TabIndex = 6;
             // 
             // btnPagos
@@ -250,10 +201,11 @@
             btnPagos.FlatStyle = FlatStyle.Flat;
             btnPagos.ForeColor = SystemColors.ButtonFace;
             btnPagos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPagos.Location = new Point(0, 241);
+            btnPagos.Location = new Point(0, 321);
+            btnPagos.Margin = new Padding(3, 4, 3, 4);
             btnPagos.Name = "btnPagos";
             btnPagos.RightToLeft = RightToLeft.No;
-            btnPagos.Size = new Size(197, 32);
+            btnPagos.Size = new Size(225, 43);
             btnPagos.TabIndex = 7;
             btnPagos.Text = "Pagos";
             btnPagos.UseVisualStyleBackColor = false;
@@ -262,9 +214,10 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(0, 80, 200);
-            panel4.Location = new Point(0, 203);
+            panel4.Location = new Point(0, 271);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(5, 32);
+            panel4.Size = new Size(6, 43);
             panel4.TabIndex = 4;
             // 
             // btnPago
@@ -275,10 +228,11 @@
             btnPago.FlatStyle = FlatStyle.Flat;
             btnPago.ForeColor = SystemColors.ButtonFace;
             btnPago.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPago.Location = new Point(1, 203);
+            btnPago.Location = new Point(1, 271);
+            btnPago.Margin = new Padding(3, 4, 3, 4);
             btnPago.Name = "btnPago";
             btnPago.RightToLeft = RightToLeft.No;
-            btnPago.Size = new Size(197, 32);
+            btnPago.Size = new Size(225, 43);
             btnPago.TabIndex = 5;
             btnPago.Text = "Servicios";
             btnPago.UseVisualStyleBackColor = false;
@@ -287,9 +241,10 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(0, 80, 200);
-            panel3.Location = new Point(0, 165);
+            panel3.Location = new Point(0, 220);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(5, 32);
+            panel3.Size = new Size(6, 43);
             panel3.TabIndex = 2;
             // 
             // btnServicio
@@ -300,10 +255,11 @@
             btnServicio.FlatStyle = FlatStyle.Flat;
             btnServicio.ForeColor = SystemColors.ButtonFace;
             btnServicio.ImageAlign = ContentAlignment.MiddleLeft;
-            btnServicio.Location = new Point(0, 165);
+            btnServicio.Location = new Point(0, 220);
+            btnServicio.Margin = new Padding(3, 4, 3, 4);
             btnServicio.Name = "btnServicio";
             btnServicio.RightToLeft = RightToLeft.No;
-            btnServicio.Size = new Size(197, 32);
+            btnServicio.Size = new Size(225, 43);
             btnServicio.TabIndex = 3;
             btnServicio.Text = "Ventas";
             btnServicio.UseVisualStyleBackColor = false;
@@ -312,9 +268,10 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 80, 200);
-            panel2.Location = new Point(0, 127);
+            panel2.Location = new Point(0, 169);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(5, 32);
+            panel2.Size = new Size(6, 43);
             panel2.TabIndex = 1;
             // 
             // btnCliente
@@ -325,10 +282,11 @@
             btnCliente.FlatStyle = FlatStyle.Flat;
             btnCliente.ForeColor = SystemColors.ButtonFace;
             btnCliente.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCliente.Location = new Point(0, 127);
+            btnCliente.Location = new Point(0, 169);
+            btnCliente.Margin = new Padding(3, 4, 3, 4);
             btnCliente.Name = "btnCliente";
             btnCliente.RightToLeft = RightToLeft.No;
-            btnCliente.Size = new Size(197, 32);
+            btnCliente.Size = new Size(225, 43);
             btnCliente.TabIndex = 1;
             btnCliente.Text = "Clientes";
             btnCliente.UseVisualStyleBackColor = false;
@@ -337,9 +295,10 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 80, 200);
-            panel1.Location = new Point(0, 89);
+            panel1.Location = new Point(0, 119);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(5, 32);
+            panel1.Size = new Size(6, 43);
             panel1.TabIndex = 0;
             // 
             // btnVenta
@@ -351,10 +310,11 @@
             btnVenta.FlatStyle = FlatStyle.Flat;
             btnVenta.ForeColor = SystemColors.ButtonFace;
             btnVenta.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVenta.Location = new Point(3, 89);
+            btnVenta.Location = new Point(3, 119);
+            btnVenta.Margin = new Padding(3, 4, 3, 4);
             btnVenta.Name = "btnVenta";
             btnVenta.RightToLeft = RightToLeft.No;
-            btnVenta.Size = new Size(197, 32);
+            btnVenta.Size = new Size(225, 43);
             btnVenta.TabIndex = 0;
             btnVenta.Text = "Realizar Venta";
             btnVenta.UseVisualStyleBackColor = false;
@@ -364,8 +324,9 @@
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 69);
+            pictureBox1.Size = new Size(229, 92);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -374,20 +335,22 @@
             // 
             PanelContenedor.BackColor = Color.FromArgb(49, 66, 82);
             PanelContenedor.Dock = DockStyle.Fill;
-            PanelContenedor.Location = new Point(200, 38);
+            PanelContenedor.Location = new Point(229, 51);
+            PanelContenedor.Margin = new Padding(3, 4, 3, 4);
             PanelContenedor.Name = "PanelContenedor";
-            PanelContenedor.Size = new Size(1153, 614);
+            PanelContenedor.Size = new Size(1317, 818);
             PanelContenedor.TabIndex = 2;
             // 
             // PanelVendedor
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1353, 652);
+            ClientSize = new Size(1546, 869);
             Controls.Add(PanelContenedor);
             Controls.Add(MenuVertical);
             Controls.Add(BarraTitulo);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "PanelVendedor";
             Text = "RealizarVenta";
             BarraTitulo.ResumeLayout(false);
@@ -422,9 +385,5 @@
         private Button btnPagos;
         private Panel panel6;
         private Button btnFormaDePago;
-        private Panel panel8;
-        private Button btnOSManPreventivo;
-        private Panel panel7;
-        private Button btnOManCorrectivo;
     }
 }

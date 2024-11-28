@@ -26,6 +26,8 @@ namespace CapaPresentacion
         {
             cbCliente.DataSource = logCliente.Instancia.listarClientes();
             cbCliente.DisplayMember = "nombreRepresentatne";
+            cbFormaPago.DataSource = logFormaPago.Instancia.listarPagos();
+            cbFormaPago.DisplayMember = "tipo";
         }
 
         public void listarPago()
@@ -38,7 +40,8 @@ namespace CapaPresentacion
             entCliente cliente = cbCliente.SelectedValue as entCliente;
             cbVenta.DataSource = logVenta.Instancia.listarVentaCliente(cliente.idCliente);
             cbVenta.DisplayMember = "id";
-            txtDni.Text = cliente.dni;
+            txtDni.Text = cliente.dni; 
+            txtCorreo.Text = cliente.correo;
         }
     }
 }

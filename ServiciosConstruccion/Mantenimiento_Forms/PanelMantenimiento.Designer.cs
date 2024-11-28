@@ -271,6 +271,32 @@
             btnTipo.UseVisualStyleBackColor = false;
             btnTipo.Click += btnTipo_Click;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(0, 80, 200);
+            panel3.Location = new Point(0, 322);
+            panel3.Margin = new Padding(6, 6, 6, 6);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(10, 67);
+            panel3.TabIndex = 13;
+            // 
+            // btnTecnico
+            // 
+            btnTecnico.BackColor = Color.FromArgb(26, 32, 40);
+            btnTecnico.FlatAppearance.BorderSize = 0;
+            btnTecnico.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnTecnico.FlatStyle = FlatStyle.Flat;
+            btnTecnico.ForeColor = SystemColors.ButtonFace;
+            btnTecnico.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTecnico.Location = new Point(0, 322);
+            btnTecnico.Margin = new Padding(6, 6, 6, 6);
+            btnTecnico.Name = "btnTecnico";
+            btnTecnico.RightToLeft = RightToLeft.No;
+            btnTecnico.Size = new Size(366, 67);
+            btnTecnico.TabIndex = 14;
+            btnTecnico.Text = "Tecnico";
+            btnTecnico.UseVisualStyleBackColor = false;
+            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 80, 200);

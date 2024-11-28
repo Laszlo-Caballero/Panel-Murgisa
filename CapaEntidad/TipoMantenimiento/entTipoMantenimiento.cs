@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad.TipoMantenimiento
 {
-    public class entTipoMantenimientoCorrectivo
+    public class entTipoMantenimiento
     {
+
     }
 }
         

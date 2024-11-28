@@ -16,17 +16,17 @@ namespace CapaLogica.TipoMantenimiento
         {
             get { return _instancia; }
         }
-        public List<entTipoMantenimientoCorrectivo> listarTipoMantenimientoCorrectivo()
+        public List<entTipoMantenimiento> listarTipoMantenimientoCorrectivo()
         {
             return datTipoMantenimientoCorrectivo.Instancia.listarTipoMantenimientoCorrectivo();
         }
 
-        public bool agregarTipoMantenimientoCorrectivo(entTipoMantenimientoCorrectivo nuevo)
+        public bool agregarTipoMantenimientoCorrectivo(entTipoMantenimiento nuevo)
         {
             return datTipoMantenimientoCorrectivo.Instancia.agregarTipoMantenimientoCorrectivo(nuevo);
         }
 
-        public bool actualizarTipoMantenimientoCorrectivo(entTipoMantenimientoCorrectivo nuevo)
+        public bool actualizarTipoMantenimientoCorrectivo(entTipoMantenimiento nuevo)
         {
             return datTipoMantenimientoCorrectivo.Instancia.actualizarTipoMantenimientoCorrectivo(nuevo);
         }

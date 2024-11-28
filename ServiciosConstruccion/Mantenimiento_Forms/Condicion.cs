@@ -1,7 +1,7 @@
 ﻿using CapaEntidad.Cliente;
-using CapaEntidad.Condicion;
+using CapaEntidad.Recurso.Condicion;
 using CapaLogica.Cliente;
-using CapaLogica.Condicion;
+using CapaLogica.Recurso.Condicion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

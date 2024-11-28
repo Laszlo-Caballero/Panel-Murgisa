@@ -1,10 +1,10 @@
 ﻿using CapaAccesoDatos.Cliente;
-using CapaAccesoDatos.Condicion;
+using CapaAccesoDatos.Recurso.Condicion;
 using CapaEntidad.Cliente;
-using CapaEntidad.Condicion;
+using CapaEntidad.Recurso.Condicion;
 using CapaEntidad.Personal;
 using CapaLogica.Cliente;
-using CapaLogica.Condicion;
+using CapaLogica.Recurso.Condicion;
 using CapaLogica.Personal;
 using System;
 using System.Collections.Generic;

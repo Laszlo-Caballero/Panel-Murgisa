@@ -1,7 +1,7 @@
 ﻿using CapaEntidad.Personal;
 using CapaEntidad.Recurso;
-using CapaEntidad.Venta;
-using CapaLogica.Venta;
+using CapaEntidad.Servicio.Venta;
+using CapaLogica.Servicio.Venta;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -1,5 +1,5 @@
-﻿using CapaEntidad.Servicios;
-using CapaLogica.Servicios;
+﻿using CapaEntidad.Servicio.Servicios;
+using CapaLogica.Servicio.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

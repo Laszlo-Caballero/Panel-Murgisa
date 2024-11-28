@@ -1,10 +1,14 @@
-﻿using CapaEntidad.PedidoManCor;
-using CapaEntidad.Proveedor;
+﻿using CapaAccesoDatos.Personal;
+using CapaEntidad.Mantenimiento.PedidoManCor;
+using CapaEntidad.Mantenimiento.TipoMan;
+using CapaEntidad.Personal;
+using CapaEntidad.Recurso.Proveedor;
 using CapaEntidad.Recurso;
-using CapaEntidad.TipoMan;
-using CapaLogica.PedidoManCor;
+using CapaLogica.Mantenimiento.PedidoManCor;
+using CapaLogica.Mantenimiento.TipoMan;
+using CapaLogica.Personal;
 using CapaLogica.Recurso;
-using CapaLogica.TipoMan;
+using CapaPresentacion.Personal_Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,7 +71,7 @@ namespace CapaPresentacion.Mantenimiento_Forms
             pedido.fecha = dtpFecha.Value;
             pedido.estado = cbEstado.Checked;
 
-            bool estado = logDetPedidoCor.Instancia.agregarDetOrdenCorr(pedido, detalle);
+            bool estado = logDetPedidoCor.Instancia.agregarDetOrdenCorr(pedido.recurso, pedido, detalle);
             if (!estado)
                 MessageBox.Show("Error al ingresar pedido");
             else
@@ -78,5 +82,32 @@ namespace CapaPresentacion.Mantenimiento_Forms
 
             }
         }
+
+        private void dgvpedido_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow filaActual = dgvpedido.Rows[e.RowIndex];
+            txtPedido.Text = filaActual.Cells[0].Value.ToString();
+            int selec = Convert.ToInt32(filaActual.Cells[1].Value);
+            cbMaquinaria.SelectedItem = cbMaquinaria.Items.Cast<entRecurso>().FirstOrDefault(item => item.idRecurso == selec);
+            dtpFecha.Value = Convert.ToDateTime(filaActual.Cells[3].Value);
+            cbEstado.Checked = Convert.ToBoolean(filaActual.Cells[4].Value);
+        }
+
+        private void txtDeshabilitar_Click(object sender, EventArgs e)
+        {
+            entPedidoManCor pedido = new entPedidoManCor();
+            pedido.id = Convert.ToInt32(txtPedido.Text);
+            bool deshabilitar = logPedidoManCor.Instancia.deshablitarPedidoManCor(pedido.id);
+
+            if (deshabilitar)
+            {
+                listarPedidos();
+                txtPedido.Text = "";
+            }
+            else
+                MessageBox.Show("error al deshabilitar cargo");
+        }
+
+        
     }
 }

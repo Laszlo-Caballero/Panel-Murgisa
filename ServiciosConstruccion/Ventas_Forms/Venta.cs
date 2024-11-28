@@ -1,11 +1,11 @@
 ﻿using CapaEntidad.Cliente;
 using CapaEntidad.Personal;
-using CapaEntidad.Servicios;
-using CapaEntidad.Venta;
+using CapaEntidad.Servicio.Servicios;
+using CapaEntidad.Servicio.Venta;
 using CapaLogica.Cliente;
 using CapaLogica.Personal;
-using CapaLogica.Servicios;
-using CapaLogica.Venta;
+using CapaLogica.Servicio.Servicios;
+using CapaLogica.Servicio.Venta;
 using CapaPresentacion.Ventas_Forms.Requerimientos;
 using System;
 using System.Collections.Generic;

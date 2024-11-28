@@ -452,65 +452,64 @@ create or alter procedure agregarVenta
 as
 begin
 	insert into venta (idServicio, idCliente, fechaInicioServicio, fechaFFinServicio, fechaVenta, estado)
-	values (
+	values (@idServicio, @idCliente, @fechaInicio, @fechaFin, @fechaVenta, @estado)
 end
 
-
-create or alter procedure [dbo].[listarHorarioActivo]
-
+create or alter procedure buscarUltimaVenta
 as
 begin
-	SELECT 
-		idHorario,
-		CONVERT(VARCHAR, horaInicio, 108) + ' - ' + CONVERT(VARCHAR, horaFin, 108) AS horario
-	FROM 
-		Horario
-	WHERE 
-		estado = 1;
-end;
+	select top 1 idVenta from Venta order by idVenta desc
+end
 
+select * from DetalleVenta
 
-create or alter procedure [dbo].[mantenimientoPlanificacion_buscarXId]
-    @IdPlanificacion INT
-AS
-BEGIN
-    SELECT 
-        idPlanificacion, 
-        idRecurso, 
-        idPersonal, 
-        idHorario, 
-        fecha_Mantenimineo AS FechaMantenimiento, 
-        prioridad
-    FROM dbo.PlanificacionMantenimiento
-    WHERE idPlanificacion = @IdPlanificacion
-END
+create or alter procedure agergarDetalleRecurso
+@idVenta int,
+@idRecurso int,
+@cantidad int,
+@precio float
+as		
+begin
+	insert into DetalleVenta (idVenta, idRecurso, cantidad, precio)
+	values (@idVenta, @idRecurso, @cantidad, @precio)
+	update Recurso set idDisponibilidad = 3 where idRecurso = @idRecurso
+end
 
+select * from Recurso
+select * from Disponibilidad
 
+select * from AsignacionPersonal
 
-create or alter   procedure [dbo].[listarMantenimientoPlanificacion]
-    @IdPlanificacion INT = NULL,
-    @FechaMantenimiento DATETIME = NULL
+create or alter procedure agregarAsignacionPersonal
+@idVenta int,
+@idPersonal int,
+@costo float
 as
 begin
-    select
-        mp.idPlanificacion,
-        mp.prioridad,
-        r.nombre AS RecursoNombre,
-        r.precio AS RecursoPrecio,
-        p.nombre AS PersonalNombre,
-        p.apellido_parterno AS PersonalApellidoPaterno,
-        p.apellido_materno AS PersonalApellidoMaterno,
-        mp.fecha_Mantenimineo,
-        h.horaInicio,
-        h.horafin
-    from dbo.PlanificacionMantenimiento mp
-    inner join dbo.Recurso r on mp.idRecurso = r.idRecurso
-    inner join dbo.Personal p on mp.idPersonal = p.idPersonal
-    inner join dbo.Horario h on mp.idHorario = h.idHorario
-    where
-        (@IdPlanificacion IS NULL OR mp.idPlanificacion = @IdPlanificacion)
-        and (@FechaMantenimiento IS NULL OR cast(mp.fecha_Mantenimineo as date) = cast(@FechaMantenimiento as date))
-    order by mp.idPlanificacion;
+	insert into AsignacionPersonal (idVenta, idPersonal, costo)
+	values (@idVenta, @idPersonal, @costo)
+end
+
+create or alter procedure listarVentas
+as
+begin
+	select V.idVenta, V.fechaInicioServicio, S.nombre, C.nombreRepresentante, C.dni,
+	V.fechaFFinServicio, V.fechaVenta, V.estado
+	from Venta V 
+	inner join Servicio S on S.idServicio = V.idServicio
+	inner join Cliente C on C.idCliente = V.idCliente
+end
+
+create or alter procedure listarVentasDni
+@dni varchar(9)
+as
+begin
+	select V.idVenta, V.fechaInicioServicio, S.nombre, C.nombreRepresentante, C.dni,
+	V.fechaFFinServicio, V.fechaVenta, V.estado
+	from Venta V 
+	inner join Servicio S on S.idServicio = V.idServicio
+	inner join Cliente C on C.idCliente = V.idCliente
+	where C.dni = @dni
 end
 
 create or alter procedure listarDetalleVenta
@@ -595,7 +594,6 @@ select * from DetalleVenta
 
 
 
-update DetalleVenta set estado = 1
 
 select * from DetalleVenta
 
@@ -677,13 +675,42 @@ end
 
 
 
---Realiza Pago
+--- Orden de servicio
+
+create or alter procedure listarOrdenServicio
+as
+begin
+	select O.idOrdenServicio, V.idVenta, C.nombreRepresentante,
+	C.dni, O.FechaRegistro, O.estado
+	from OrdenServicio O
+	inner join Venta V on V.idVenta = O.idVenta
+	inner join Cliente C on C.idCliente = V.idCliente
+	where O.estado = 1
+end
 
 
-	select * from PagoServicio
+create or alter procedure agregarOrdenServicio
+@idVenta int,
+@estado bit,
+@fecha date
+as
+begin
+	insert into OrdenServicio (idVenta, estado, FechaRegistro)
+	values (@idVenta, @estado, @fecha)
+end
 
+select * from OrdenServicio
 
---Realiza Pago
+create or alter procedure deshabilitarOrdenServicio
+@idOrden int
+as
+begin
+	update OrdenServicio set estado = 0 where idOrdenServicio = @idOrden
+end
+
+	select * from OrdenServicio
+
+---
 
 
 

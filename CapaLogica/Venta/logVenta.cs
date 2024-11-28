@@ -16,7 +16,7 @@ namespace CapaLogica.Venta
         {
             get { return _instancia; }
         }
-        public List<entVenta> listarVenta()
+        public List<entVentaVista> listarVenta()
         {
             return datVenta.Instancia.listarVenta();
         }

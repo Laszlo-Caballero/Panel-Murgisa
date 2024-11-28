@@ -162,27 +162,27 @@
             // 
             // btnSalirTm
             // 
-            btnSalirTm.Location = new Point(669, 486);
+            btnSalirTm.Location = new Point(669, 509);
             btnSalirTm.Name = "btnSalirTm";
-            btnSalirTm.Size = new Size(123, 38);
+            btnSalirTm.Size = new Size(143, 48);
             btnSalirTm.TabIndex = 24;
             btnSalirTm.Text = "Salir";
             btnSalirTm.UseVisualStyleBackColor = true;
             // 
             // btnDesahabilitarTm
             // 
-            btnDesahabilitarTm.Location = new Point(669, 420);
+            btnDesahabilitarTm.Location = new Point(669, 438);
             btnDesahabilitarTm.Name = "btnDesahabilitarTm";
-            btnDesahabilitarTm.Size = new Size(123, 38);
+            btnDesahabilitarTm.Size = new Size(143, 49);
             btnDesahabilitarTm.TabIndex = 23;
             btnDesahabilitarTm.Text = "Desahabilitar";
             btnDesahabilitarTm.UseVisualStyleBackColor = true;
             // 
             // btnNuevoTm
             // 
-            btnNuevoTm.Location = new Point(669, 359);
+            btnNuevoTm.Location = new Point(669, 363);
             btnNuevoTm.Name = "btnNuevoTm";
-            btnNuevoTm.Size = new Size(123, 38);
+            btnNuevoTm.Size = new Size(143, 52);
             btnNuevoTm.TabIndex = 22;
             btnNuevoTm.Text = "Nuevo";
             btnNuevoTm.UseVisualStyleBackColor = true;

@@ -16,5 +16,7 @@ namespace CapaEntidad.PedidoManCor
 
         public string nombre { get; set; }
 
+        public bool estado { get; set; }
+
     }
 }

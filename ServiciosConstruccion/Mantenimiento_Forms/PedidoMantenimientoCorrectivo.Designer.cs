@@ -30,18 +30,18 @@
         {
             label1 = new Label();
             dgvpedido = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
+            txtRegistrar = new Button();
+            txtDeshabilitar = new Button();
             cbMaquinaria = new ComboBox();
             label3 = new Label();
             dtpFecha = new DateTimePicker();
             checkBox1 = new CheckBox();
             label5 = new Label();
             txtPedido = new TextBox();
-            listView1 = new ListView();
+            listaDetalle = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
-            button3 = new Button();
+            btnAñadir = new Button();
             label6 = new Label();
             cbMantenimiento = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvpedido).BeginInit();
@@ -64,23 +64,23 @@
             dgvpedido.Size = new Size(450, 187);
             dgvpedido.TabIndex = 1;
             // 
-            // button1
+            // txtRegistrar
             // 
-            button1.Location = new Point(562, 277);
-            button1.Name = "button1";
-            button1.Size = new Size(104, 37);
-            button1.TabIndex = 2;
-            button1.Text = "REGISTRAR";
-            button1.UseVisualStyleBackColor = true;
+            txtRegistrar.Location = new Point(562, 277);
+            txtRegistrar.Name = "txtRegistrar";
+            txtRegistrar.Size = new Size(104, 37);
+            txtRegistrar.TabIndex = 2;
+            txtRegistrar.Text = "REGISTRAR";
+            txtRegistrar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // txtDeshabilitar
             // 
-            button2.Location = new Point(697, 277);
-            button2.Name = "button2";
-            button2.Size = new Size(104, 37);
-            button2.TabIndex = 3;
-            button2.Text = "DESHABILITAR";
-            button2.UseVisualStyleBackColor = true;
+            txtDeshabilitar.Location = new Point(697, 277);
+            txtDeshabilitar.Name = "txtDeshabilitar";
+            txtDeshabilitar.Size = new Size(104, 37);
+            txtDeshabilitar.TabIndex = 3;
+            txtDeshabilitar.Text = "DESHABILITAR";
+            txtDeshabilitar.UseVisualStyleBackColor = true;
             // 
             // cbMaquinaria
             // 
@@ -132,15 +132,15 @@
             txtPedido.Size = new Size(121, 23);
             txtPedido.TabIndex = 13;
             // 
-            // listView1
+            // listaDetalle
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
-            listView1.Location = new Point(515, 12);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(221, 187);
-            listView1.TabIndex = 15;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listaDetalle.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            listaDetalle.Location = new Point(515, 12);
+            listaDetalle.Name = "listaDetalle";
+            listaDetalle.Size = new Size(221, 187);
+            listaDetalle.TabIndex = 15;
+            listaDetalle.UseCompatibleStateImageBehavior = false;
+            listaDetalle.View = View.Details;
             // 
             // columnHeader1
             // 
@@ -151,14 +151,15 @@
             columnHeader2.Text = "Mantenimiento";
             columnHeader2.Width = 150;
             // 
-            // button3
+            // btnAñadir
             // 
-            button3.Location = new Point(429, 277);
-            button3.Name = "button3";
-            button3.Size = new Size(101, 37);
-            button3.TabIndex = 16;
-            button3.Text = "AÑADIR";
-            button3.UseVisualStyleBackColor = true;
+            btnAñadir.Location = new Point(429, 277);
+            btnAñadir.Name = "btnAñadir";
+            btnAñadir.Size = new Size(101, 37);
+            btnAñadir.TabIndex = 16;
+            btnAñadir.Text = "AÑADIR";
+            btnAñadir.UseVisualStyleBackColor = true;
+            btnAñadir.Click += btnAñadir_Click;
             // 
             // label6
             // 
@@ -184,16 +185,16 @@
             ClientSize = new Size(813, 390);
             Controls.Add(cbMantenimiento);
             Controls.Add(label6);
-            Controls.Add(button3);
-            Controls.Add(listView1);
+            Controls.Add(btnAñadir);
+            Controls.Add(listaDetalle);
             Controls.Add(txtPedido);
             Controls.Add(label5);
             Controls.Add(checkBox1);
             Controls.Add(dtpFecha);
             Controls.Add(label3);
             Controls.Add(cbMaquinaria);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(txtDeshabilitar);
+            Controls.Add(txtRegistrar);
             Controls.Add(dgvpedido);
             Controls.Add(label1);
             Name = "PedidoMantenimientoCorrectivo";
@@ -207,16 +208,16 @@
 
         private Label label1;
         private DataGridView dgvpedido;
-        private Button button1;
-        private Button button2;
+        private Button txtRegistrar;
+        private Button txtDeshabilitar;
         private ComboBox cbMaquinaria;
         private Label label3;
         private DateTimePicker dtpFecha;
         private CheckBox checkBox1;
         private Label label5;
         private TextBox txtPedido;
-        private ListView listView1;
-        private Button button3;
+        private ListView listaDetalle;
+        private Button btnAñadir;
         private Label label6;
         private ComboBox cbMantenimiento;
         private ColumnHeader columnHeader1;

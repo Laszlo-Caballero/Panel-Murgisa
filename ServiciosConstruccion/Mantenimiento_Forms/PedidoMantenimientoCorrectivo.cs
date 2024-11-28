@@ -1,5 +1,7 @@
 ﻿using CapaEntidad.Proveedor;
 using CapaEntidad.Recurso;
+using CapaEntidad.TipoMan;
+using CapaLogica.PedidoManCor;
 using CapaLogica.Recurso;
 using CapaLogica.TipoMan;
 using System;
@@ -20,6 +22,12 @@ namespace CapaPresentacion.Mantenimiento_Forms
         {
             InitializeComponent();
             listarDatos();
+            listarPedidos();
+        }
+
+        public void listarPedidos()
+        {
+            dgvpedido.DataSource = logPedidoManCor.Instancia.listarPedidoManCor();
         }
 
         public void listarDatos()
@@ -30,5 +38,15 @@ namespace CapaPresentacion.Mantenimiento_Forms
             cbMaquinaria.DisplayMember = "nombre";
         }
 
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+            entTipoMan mantenimiento = cbMantenimiento.SelectedItem as entTipoMan;
+            string id = mantenimiento.id.ToString();
+            string nombre = mantenimiento.tipo;
+
+            ListViewItem items = new ListViewItem(id);
+            items.SubItems.Add(nombre);
+            listaDetalle.Items.Add(items);
+        }
     }
 }

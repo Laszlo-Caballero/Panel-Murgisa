@@ -17,33 +17,6 @@ namespace CapaAccesoDatos.PedidoManCor
             get { return _instancia; }
         }
 
-        public List<entDetOrdenCorr> listarDetOrdenCorr()
-        {
-            SqlCommand cmd = null;
-            List<entDetOrdenCorr> lista = new List<entDetOrdenCorr>();
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("listarDetOrdenCorr", cn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    entDetOrdenCorr nuevo = new entDetOrdenCorr();
-                    lista.Add(nuevo);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return lista;
-        }
-
         public bool agregarDetOrdenCorr(entDetOrdenCorr nuevo)
         {
             SqlCommand cmd = null;

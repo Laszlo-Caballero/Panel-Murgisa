@@ -58,6 +58,9 @@ namespace CapaAccesoDatos.PedidoManCor
                 cn.Open();
                 cmd = new SqlCommand("agregarPedidoManCor", cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@recurso", nuevo.recurso);
+                cmd.Parameters.AddWithValue("@fecha", nuevo.fecha);
+                cmd.Parameters.AddWithValue("@estado", nuevo.estado);
                 int rows = cmd.ExecuteNonQuery();
                 agregar = rows >= 1;
             }
@@ -71,30 +74,6 @@ namespace CapaAccesoDatos.PedidoManCor
             }
             return agregar;
         }
-
-        public bool actualizarPedidoManCor(entPedidoManCor nuevo)
-        {
-            SqlCommand cmd = null;
-            bool actualizar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("actualizarPedidoManCor", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                actualizar = rows >= 1;
-            }
-            catch (Exception ex) { 
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return actualizar;
-        }
-
         public bool deshabilitarPedidoManCor(int id)
         {
             SqlCommand cmd = null;
@@ -115,6 +94,32 @@ namespace CapaAccesoDatos.PedidoManCor
                 cmd.Connection.Close();
             }
             return deshabilitar;
+        }
+
+        public int ultimoPedido()
+        {
+            SqlCommand cmd = null;
+            int id = -1;
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+                cmd = new SqlCommand("ultimoPedido", cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    id = Convert.ToInt32(dr["idPedidoMan"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return id;
         }
     }
 }

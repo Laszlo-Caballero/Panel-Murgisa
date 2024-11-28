@@ -26,14 +26,14 @@ namespace CapaLogica.PedidoManCor
             return datPedidoManCor.Instancia.agregarPedidoManCor(nuevo);
         }
 
-        public bool actualizarPedidoManCor(entPedidoManCor nuevo)
-        {
-            return datPedidoManCor.Instancia.actualizarPedidoManCor(nuevo);
-        }
-
         public bool deshablitarPedidoManCor(int id)
         {
             return datPedidoManCor.Instancia.deshabilitarPedidoManCor(id);
         }
+        public int ultimoPedido()
+        {
+            return datPedidoManCor.Instancia.ultimoPedido();
+        }
+
     }
 }

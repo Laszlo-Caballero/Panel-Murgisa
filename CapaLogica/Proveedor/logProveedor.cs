@@ -21,19 +21,14 @@ namespace CapaLogica.Proveedor
             return datProveedor.Instancia.listarProveedor();
         }
 
-        public bool agregarProveedor(entProveedor nuevo)
-        {
-            return datProveedor.Instancia.agregarProveedor(nuevo);
-        }
-
-        public bool actualizarProveedor(entProveedor nuevo)
-        {
-            return datProveedor.Instancia.actualizarProveedor(nuevo);
-        }
-
         public bool deshablitarProveedor(int id)
         {
             return datProveedor.Instancia.deshabilitarProveedor(id);
+        }
+
+        public entProveedor buscarProveedor(int id)
+        {
+            return datProveedor.Instancia.buscar(id);
         }
     }
 }

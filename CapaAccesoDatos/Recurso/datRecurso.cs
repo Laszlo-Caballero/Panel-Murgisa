@@ -124,5 +124,42 @@ namespace CapaAccesoDatos.Recurso
             return lista;
         }
 
+        public entRecurso buscar(int id)
+        {
+            SqlCommand cmd = null;
+            entRecurso recurso = new entRecurso();
+
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+
+                cmd = new SqlCommand("buscarMaquinaria", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    recurso.idRecurso = Convert.ToInt32(dr["idRecurso"]);
+                    recurso.idTipoRecurso = Convert.ToInt32(dr["idTipoRecurso"]);
+                    recurso.idDisponiblidad = Convert.ToInt32(dr["idDisponibilidad"]);
+                    recurso.idCondicion = Convert.ToInt32(dr["idCondicion"]);
+                    recurso.idProveedor = Convert.ToInt32(dr["idProveedor"]);
+                    recurso.nombre = dr["nombre"].ToString();
+                    recurso.estado = Convert.ToBoolean(dr["estado"]);
+                    recurso.precio = float.Parse(dr["precio"].ToString());
+                }
+            }
+            catch (Exception ex) { return null; }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return recurso;
+
+        }
+
     }
 }

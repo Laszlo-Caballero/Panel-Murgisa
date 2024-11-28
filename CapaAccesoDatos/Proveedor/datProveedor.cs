@@ -1,4 +1,5 @@
 using CapaEntidad.Proveedor;
+using CapaEntidad.Recurso;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,12 @@ namespace CapaAccesoDatos.Proveedor
                 while (dr.Read())
                 {
                     entProveedor nuevo = new entProveedor();
+                    nuevo.idProveedor = Convert.ToInt32(dr["idRecurso"]);
+                    nuevo.razsocial = dr["razSocial"].ToString();
+                    nuevo.ruc = dr["ruc"].ToString();
+                    nuevo.estado = Convert.ToBoolean(dr["estado"]);
                     lista.Add(nuevo);
+                   
                 }
             }
             catch (Exception ex) {
@@ -41,53 +47,6 @@ namespace CapaAccesoDatos.Proveedor
                 cmd.Connection.Close();
             }
             return lista;
-        }
-
-        public bool agregarProveedor(entProveedor nuevo)
-        {
-            SqlCommand cmd = null;
-            bool agregar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("agregarProveedor", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                agregar = rows >= 1;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return agregar;
-        }
-
-        public bool actualizarProveedor(entProveedor nuevo)
-        {
-            SqlCommand cmd = null;
-            bool actualizar = false;
-            try
-            {
-                SqlConnection cn = Conexion.Instacia.Conectar();
-                cn.Open();
-                cmd = new SqlCommand("actualizarProveedor", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                int rows = cmd.ExecuteNonQuery();
-                actualizar = rows >= 1;
-            }
-            catch (Exception ex) { 
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return actualizar;
         }
 
         public bool deshabilitarProveedor(int id)
@@ -110,6 +69,39 @@ namespace CapaAccesoDatos.Proveedor
                 cmd.Connection.Close();
             }
             return deshabilitar;
+        }
+
+        public entProveedor buscar(int id)
+        {
+            SqlCommand cmd = null;
+            entProveedor proveedor = new entProveedor();
+
+            try
+            {
+                SqlConnection cn = Conexion.Instacia.Conectar();
+                cn.Open();
+
+                cmd = new SqlCommand("buscarProveedor", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    proveedor.idProveedor = Convert.ToInt32(dr["idProveedor"]);
+                    proveedor.razsocial = dr["razSocial"].ToString();
+                    proveedor.ruc = dr["ruc"].ToString();
+                    proveedor.estado = Convert.ToBoolean(dr["estado"]);
+                }
+            }
+            catch (Exception ex) { return null; }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return proveedor;
+
         }
     }
 }

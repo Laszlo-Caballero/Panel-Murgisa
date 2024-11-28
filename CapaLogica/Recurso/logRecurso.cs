@@ -30,5 +30,10 @@ namespace CapaLogica.Recurso
         {
             return datRecurso.Instancia.listarMaquinaria();
         }
+
+        public entRecurso buscarMaquinaria(int id)
+        {
+            return datRecurso.Instancia.buscar(id);
+        }
     }
 }

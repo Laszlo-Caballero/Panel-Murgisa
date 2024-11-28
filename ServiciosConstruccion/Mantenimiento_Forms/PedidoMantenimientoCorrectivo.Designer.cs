@@ -33,21 +33,17 @@
             button1 = new Button();
             button2 = new Button();
             cbMaquinaria = new ComboBox();
-            label2 = new Label();
-            txtProveedor = new TextBox();
             label3 = new Label();
             dtpFecha = new DateTimePicker();
-            label4 = new Label();
             checkBox1 = new CheckBox();
             label5 = new Label();
             txtPedido = new TextBox();
-            comboBox1 = new ComboBox();
             listView1 = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
             button3 = new Button();
             label6 = new Label();
             cbMantenimiento = new ComboBox();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)dgvpedido).BeginInit();
             SuspendLayout();
             // 
@@ -70,7 +66,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(562, 326);
+            button1.Location = new Point(562, 277);
             button1.Name = "button1";
             button1.Size = new Size(104, 37);
             button1.TabIndex = 2;
@@ -79,7 +75,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(697, 326);
+            button2.Location = new Point(697, 277);
             button2.Name = "button2";
             button2.Size = new Size(104, 37);
             button2.TabIndex = 3;
@@ -94,26 +90,10 @@
             cbMaquinaria.Size = new Size(121, 23);
             cbMaquinaria.TabIndex = 4;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(25, 286);
-            label2.Name = "label2";
-            label2.Size = new Size(67, 15);
-            label2.TabIndex = 5;
-            label2.Text = "Proveedor: ";
-            // 
-            // txtProveedor
-            // 
-            txtProveedor.Location = new Point(115, 283);
-            txtProveedor.Name = "txtProveedor";
-            txtProveedor.Size = new Size(121, 23);
-            txtProveedor.TabIndex = 6;
-            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(530, 288);
+            label3.Location = new Point(32, 288);
             label3.Name = "label3";
             label3.Size = new Size(38, 15);
             label3.TabIndex = 7;
@@ -121,24 +101,15 @@
             // 
             // dtpFecha
             // 
-            dtpFecha.Location = new Point(592, 284);
+            dtpFecha.Location = new Point(94, 284);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(209, 23);
             dtpFecha.TabIndex = 8;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(264, 290);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 15);
-            label4.TabIndex = 9;
-            label4.Text = "Prioridad";
-            // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(31, 326);
+            checkBox1.Location = new Point(350, 286);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(61, 19);
             checkBox1.TabIndex = 11;
@@ -161,14 +132,6 @@
             txtPedido.Size = new Size(121, 23);
             txtPedido.TabIndex = 13;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(351, 286);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 14;
-            // 
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
@@ -179,9 +142,18 @@
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
             // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Mantenimiento";
+            columnHeader2.Width = 150;
+            // 
             // button3
             // 
-            button3.Location = new Point(429, 326);
+            button3.Location = new Point(429, 277);
             button3.Name = "button3";
             button3.Size = new Size(101, 37);
             button3.TabIndex = 16;
@@ -205,15 +177,6 @@
             cbMantenimiento.Size = new Size(121, 23);
             cbMantenimiento.TabIndex = 18;
             // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "ID";
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Mantenimiento";
-            columnHeader2.Width = 150;
-            // 
             // PedidoMantenimientoCorrectivo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -223,15 +186,11 @@
             Controls.Add(label6);
             Controls.Add(button3);
             Controls.Add(listView1);
-            Controls.Add(comboBox1);
             Controls.Add(txtPedido);
             Controls.Add(label5);
             Controls.Add(checkBox1);
-            Controls.Add(label4);
             Controls.Add(dtpFecha);
             Controls.Add(label3);
-            Controls.Add(txtProveedor);
-            Controls.Add(label2);
             Controls.Add(cbMaquinaria);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -251,15 +210,11 @@
         private Button button1;
         private Button button2;
         private ComboBox cbMaquinaria;
-        private Label label2;
-        private TextBox txtProveedor;
         private Label label3;
         private DateTimePicker dtpFecha;
-        private Label label4;
         private CheckBox checkBox1;
         private Label label5;
         private TextBox txtPedido;
-        private ComboBox comboBox1;
         private ListView listView1;
         private Button button3;
         private Label label6;

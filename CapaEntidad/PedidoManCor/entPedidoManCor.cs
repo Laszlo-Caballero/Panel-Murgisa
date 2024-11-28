@@ -14,11 +14,7 @@ namespace CapaEntidad.PedidoManCor
 
         public string nombre { get; set; }
 
-        public string proveedor { get; set; }
-
         public DateTime fecha { get; set; }
-
-        public string prioridad { get; set; }
 
         public bool estado { get; set; }
     }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using CapaEntidad.Proveedor;
+using CapaEntidad.Recurso;
+using CapaLogica.Recurso;
+using CapaLogica.TipoMan;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +19,16 @@ namespace CapaPresentacion.Mantenimiento_Forms
         public PedidoMantenimientoCorrectivo()
         {
             InitializeComponent();
+            listarDatos();
         }
+
+        public void listarDatos()
+        {
+            cbMantenimiento.DataSource = logTipoMan.Instancia.listarTipoMan();
+            cbMantenimiento.DisplayMember = "tipo";
+            cbMaquinaria.DataSource = logRecurso.Instancia.listarMaquinaria();
+            cbMaquinaria.DisplayMember = "nombre";
+        }
+
     }
 }

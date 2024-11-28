@@ -1,6 +1,6 @@
 ﻿using CapaEntidad.Cliente;
 using CapaLogica.Cliente;
-using CapaLogica.FormaPago;
+using CapaLogica.PagoServicio;
 using CapaLogica.Venta;
 using System;
 using System.Collections.Generic;

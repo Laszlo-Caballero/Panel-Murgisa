@@ -39,6 +39,8 @@
             btnEditarMP = new Button();
             dgvMP = new DataGridView();
             Planificacion = new GroupBox();
+            comboBox1 = new ComboBox();
+            label11 = new Label();
             cbHorario = new ComboBox();
             label10 = new Label();
             cbPrioridad = new ComboBox();
@@ -57,8 +59,6 @@
             label1 = new Label();
             label2 = new Label();
             btnNuevoMP = new Button();
-            label11 = new Label();
-            comboBox1 = new ComboBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMP).BeginInit();
             Planificacion.SuspendLayout();
@@ -195,6 +195,23 @@
             Planificacion.TabIndex = 40;
             Planificacion.TabStop = false;
             Planificacion.Text = "Planificación";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(9, 147);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(114, 23);
+            comboBox1.TabIndex = 20;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(9, 129);
+            label11.Name = "label11";
+            label11.Size = new Size(101, 15);
+            label11.TabIndex = 19;
+            label11.Text = "T. Mantenimiento";
             // 
             // cbHorario
             // 
@@ -346,7 +363,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(315, 0);
+            label2.Location = new Point(315, 9);
             label2.Name = "label2";
             label2.Size = new Size(75, 15);
             label2.TabIndex = 35;
@@ -362,23 +379,6 @@
             btnNuevoMP.Text = "Nuevo";
             btnNuevoMP.UseVisualStyleBackColor = true;
             btnNuevoMP.Click += btnNuevoMP_Click;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(9, 129);
-            label11.Name = "label11";
-            label11.Size = new Size(101, 15);
-            label11.TabIndex = 19;
-            label11.Text = "T. Mantenimiento";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(9, 147);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(114, 23);
-            comboBox1.TabIndex = 20;
             // 
             // MantenimientoPlanificacion
             // 

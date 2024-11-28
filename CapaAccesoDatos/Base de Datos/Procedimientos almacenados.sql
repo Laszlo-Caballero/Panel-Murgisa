@@ -497,34 +497,154 @@ begin
         and (@FechaMantenimiento IS NULL OR cast(mp.fecha_Mantenimineo as date) = cast(@FechaMantenimiento as date))
     order by mp.idPlanificacion;
 end
-CREATE OR ALTER   procedure [dbo].[actualizarMantenimientoPlanificacion]
-    @IdPlanificacion INT,
-    @FechaMantenimiento DATETIME = NULL,
-    @Prioridad VARCHAR(100) = NULL,
-    @IdRecurso INT = NULL,
-    @IdPersonal INT = NULL,
-    @IdHorario INT = NULL
-AS
-BEGIN
-    -- Actualizar la planificación de mantenimiento
-    UPDATE [dbo].[PlanificacionMantenimiento]
-    SET
-        [fecha_Mantenimineo] = COALESCE(@FechaMantenimiento, [fecha_Mantenimineo]),
-        [prioridad] = COALESCE(@Prioridad, [prioridad]),
-        [idRecurso] = COALESCE(@IdRecurso, [idRecurso]),
-        [idPersonal] = COALESCE(@IdPersonal, [idPersonal]),
-        [idHorario] = COALESCE(@IdHorario, [idHorario])
-    WHERE
-        [idPlanificacion] = @IdPlanificacion;
-END
-CREATE ALTER   procedure [dbo].[agregarMantenimientoPlanificacion]
-    @IdRecurso INT,
-    @IdPersonal INT,
-    @IdHorario INT,
-    @FechaMantenimiento DATETIME,
-    @Prioridad NVARCHAR(50)
-AS
-BEGIN
-    INSERT INTO PlanificacionMantenimiento (IdRecurso, IdPersonal, IdHorario, fecha_Mantenimineo, Prioridad)
-    VALUES (@IdRecurso, @IdPersonal, @IdHorario, @FechaMantenimiento, @Prioridad)
-END
+
+create or alter procedure listarDetalleVenta
+@idVenta int
+as
+begin
+	select V.idDetalleVenta, R.idRecurso,
+	T.tipo, D.disponibilidad, C.condicion, P.razSocial,
+	R.nombre, V.precio, V.estado
+	from DetalleVenta V
+	inner join Recurso R on R.idRecurso = V.idRecurso
+	inner join TipoRecurso T on T.idTipoRecurso = R.idTipoRecurso
+	inner join Proveedor P on P.idProveedor = R.idProveedor
+	inner join Disponibilidad D on R.idDisponibilidad = D.idDisponibilidad
+	inner join Condicion C on R.idCondicion = C.idCondicion
+	where V.idVenta = @idVenta
+end
+
+create or alter procedure listarAsignacionPersonal
+@idVenta int
+as
+begin
+	select A.idAsignacionPersonal,A.idPersonal, P.nombre, P.apellido_parterno,
+	P.apellido_materno, C.descripcion, A.costo, A.estado
+	from AsignacionPersonal A 
+	inner join Personal P on P.idPersonal = A.idPersonal
+	inner join Cargo C on P.idCargo = C.idCargo
+	where A.idVenta = @idVenta
+end
+
+
+create or alter procedure deshabilitarVenta
+@idVenta int
+as
+begin
+	update Venta set estado = 0 where idVenta = @idVenta
+end
+
+create or alter procedure habilitarRecurso
+@idRecurso int,
+@idVenta int
+as
+begin
+	update Recurso set idDisponibilidad = 1 where idRecurso = @idRecurso
+	update DetalleVenta set estado = 0 where idVenta = @idVenta and idRecurso = @idRecurso
+end
+
+
+create or alter procedure deshabilitarPersonal
+@idVenta int,
+@idPersonal int
+as
+begin
+	update AsignacionPersonal set estado = 0 where idVenta = @idVenta and idPersonal = @idPersonal
+end
+
+
+select * from AsignacionPersonal
+
+
+---venta
+
+select * from Disponibilidad
+
+select * from Personal
+
+
+select * from Cliente
+
+
+select * from Servicio
+select * from Cliente
+
+select * from Venta
+
+
+alter table DetalleVenta add estado bit
+
+
+
+select * from DetalleVenta
+
+-- LISTAR PEDIDOS MANTENIMIENTO
+
+create or alter procedure listarPedidoManCor
+as
+begin
+	Select PM.idPedidoMan, pm.idRecurso, R.nombre, PM.fecha, pm.estado from PedidoMantenimientoCorrectivo PM 
+	inner join Recurso r on r.idRecurso = PM.idRecurso
+	where PM.estado = 1
+end
+
+-- AGREGAR PEDIDOS MANTENIMIENTO
+Select * from PedidoMantenimientoCorrectivo
+
+create or alter procedure agregarPedidoManCor
+@recurso int,
+@fecha date,
+@estado bit
+as
+begin
+	insert into PedidoMantenimientoCorrectivo (idRecurso, fecha, estado) 
+	values (@recurso, @fecha, @estado)
+end
+
+-- DESHABILITAR PEDIDOS
+create or alter procedure deshabilitarPedidoManCor
+@idPedido int
+as
+begin
+	update PedidoMantenimientoCorrectivo set estado = 0 where idPedidoMan = @idPedido 
+end
+
+-- ULTIMO PEDIDO
+create or alter procedure ultimoPedido
+as
+begin
+	SELECT TOP 1 idPedidoMan
+	FROM PedidoMantenimientoCorrectivo
+	ORDER BY idPedidoMan DESC;
+end
+
+-- AGREGAR DETALLE
+
+create or alter procedure agregarDetallePedido
+@pedido int,
+@tipo int,
+@estado bit
+as
+begin
+	insert into DetallePedidoManCorrectivo (idPedido, idTipo, estado) 
+	values (@pedido, @tipo, @estado)
+end
+
+
+-- LISTAR RECURSO POR MAQUINARIA
+
+create or alter procedure listarMaquinaria
+as
+begin
+	select * from Recurso where idTipoRecurso = 1
+end
+
+-- LISTARMANTENIMIENTO
+
+create or alter procedure listarTipoMan
+as
+begin
+	Select * from TipoMantenimiento where estado = 1
+end
+
+

@@ -1,12 +1,12 @@
-using CapaAccesoDatos.FormaPago;
-using CapaEntidad.FormaPago;
+using CapaAccesoDatos.PagoServicio;
+using CapaEntidad.PagoServicio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaLogica.FormaPago
+namespace CapaLogica.PagoServicio
 {
     public class logFormaPago
     {

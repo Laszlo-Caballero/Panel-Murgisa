@@ -39,6 +39,8 @@
             btnMinimizar2 = new PictureBox();
             BarraTitulo2 = new Panel();
             MenuVertical = new Panel();
+            panel6 = new Panel();
+            btnPedidoMantenimientoCorrectivo = new Button();
             panel2 = new Panel();
             btnServicios = new Button();
             panel5 = new Panel();
@@ -204,6 +206,8 @@
             // MenuVertical
             // 
             MenuVertical.BackColor = Color.FromArgb(26, 32, 40);
+            MenuVertical.Controls.Add(panel6);
+            MenuVertical.Controls.Add(btnPedidoMantenimientoCorrectivo);
             MenuVertical.Controls.Add(panel2);
             MenuVertical.Controls.Add(btnServicios);
             MenuVertical.Controls.Add(panel5);
@@ -221,6 +225,33 @@
             MenuVertical.Name = "MenuVertical";
             MenuVertical.Size = new Size(371, 1184);
             MenuVertical.TabIndex = 2;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(0, 80, 200);
+            panel6.Location = new Point(2, 615);
+            panel6.Margin = new Padding(6);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(10, 114);
+            panel6.TabIndex = 8;
+            // 
+            // btnPedidoMantenimientoCorrectivo
+            // 
+            btnPedidoMantenimientoCorrectivo.BackColor = Color.FromArgb(26, 32, 40);
+            btnPedidoMantenimientoCorrectivo.FlatAppearance.BorderSize = 0;
+            btnPedidoMantenimientoCorrectivo.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            btnPedidoMantenimientoCorrectivo.FlatStyle = FlatStyle.Flat;
+            btnPedidoMantenimientoCorrectivo.ForeColor = SystemColors.ButtonFace;
+            btnPedidoMantenimientoCorrectivo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPedidoMantenimientoCorrectivo.Location = new Point(0, 615);
+            btnPedidoMantenimientoCorrectivo.Margin = new Padding(6);
+            btnPedidoMantenimientoCorrectivo.Name = "btnPedidoMantenimientoCorrectivo";
+            btnPedidoMantenimientoCorrectivo.RightToLeft = RightToLeft.No;
+            btnPedidoMantenimientoCorrectivo.Size = new Size(366, 114);
+            btnPedidoMantenimientoCorrectivo.TabIndex = 9;
+            btnPedidoMantenimientoCorrectivo.Text = "Pedido Mantenimiento Correctivo";
+            btnPedidoMantenimientoCorrectivo.UseVisualStyleBackColor = false;
+            btnPedidoMantenimientoCorrectivo.Click += btnPedidoMantenimientoCorrectivo_Click;
             // 
             // panel2
             // 
@@ -428,5 +459,7 @@
         private Panel PanelContenedor;
         private Panel panel2;
         private Button btnServicios;
+        private Panel panel6;
+        private Button btnPedidoMantenimientoCorrectivo;
     }
 }

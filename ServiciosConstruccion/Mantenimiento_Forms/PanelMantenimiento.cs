@@ -78,8 +78,6 @@ namespace CapaPresentacion
             AbrirFormHija(new MantenimientoCorrectivo());
         }
 
-
-
         private void btnTipo_Click(object sender, EventArgs e)
         {
             AbrirFormHija(new TipoMantenimiento());
@@ -97,5 +95,6 @@ namespace CapaPresentacion
         {
             AbrirFormHija(new MantenimientoPlanificacion());
         }
+
     }
 }

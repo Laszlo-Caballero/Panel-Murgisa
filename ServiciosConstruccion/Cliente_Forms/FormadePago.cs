@@ -1,6 +1,5 @@
-﻿using CapaAccesoDatos.FormaPago;
-using CapaEntidad.FormaPago;
-using CapaLogica.FormaPago;
+﻿using CapaEntidad.PagoServicio;
+using CapaLogica.PagoServicio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

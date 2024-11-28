@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad.PedidoManCor
 {
-    public class entDetOrdenCorr
+    public class entDetPedidoCorr
     {
         public int id {  get; set; }
 

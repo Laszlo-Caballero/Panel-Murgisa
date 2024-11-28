@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace CapaAccesoDatos.PedidoManCor
 {
-    public class datDetOrdenCorr
+    public class datDetPedidoCorr
     {
-        private static readonly datDetOrdenCorr _instancia = new datDetOrdenCorr();
+        private static readonly datDetPedidoCorr _instancia = new datDetPedidoCorr();
 
-        public static datDetOrdenCorr Instancia
+        public static datDetPedidoCorr Instancia
         {
             get { return _instancia; }
         }
 
-        public bool agregarDetOrdenCorr(entDetOrdenCorr nuevo)
+        public bool agregarDetOrdenCorr(List<entDetPedidoCorr> detalle)
         {
             SqlCommand cmd = null;
             bool agregar = false;
@@ -41,7 +41,7 @@ namespace CapaAccesoDatos.PedidoManCor
             return agregar;
         }
 
-        public bool actualizarDetOrdenCorr(entDetOrdenCorr nuevo)
+        public bool actualizarDetOrdenCorr(entDetPedidoCorr nuevo)
         {
             SqlCommand cmd = null;
             bool actualizar = false;

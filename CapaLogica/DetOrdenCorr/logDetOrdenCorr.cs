@@ -16,24 +16,20 @@ namespace CapaLogica.DetOrdenCorr
         {
             get { return _instancia; }
         }
-        public List<entDetOrdenCorr> listarDetOrdenCorr()
+
+        public bool agregarDetOrdenCorr(entDetPedidoCorr nuevo)
         {
-            return datDetOrdenCorr.Instancia.listarDetOrdenCorr();
+            return datDetPedidoCorr.Instancia.agregarDetOrdenCorr(nuevo);
         }
 
-        public bool agregarDetOrdenCorr(entDetOrdenCorr nuevo)
+        public bool actualizarDetOrdenCorr(entDetPedidoCorr nuevo)
         {
-            return datDetOrdenCorr.Instancia.agregarDetOrdenCorr(nuevo);
-        }
-
-        public bool actualizarDetOrdenCorr(entDetOrdenCorr nuevo)
-        {
-            return datDetOrdenCorr.Instancia.actualizarDetOrdenCorr(nuevo);
+            return datDetPedidoCorr.Instancia.actualizarDetOrdenCorr(nuevo);
         }
 
         public bool deshablitarDetOrdenCorr(int id)
         {
-            return datDetOrdenCorr.Instancia.deshabilitarDetOrdenCorr(id);
+            return datDetPedidoCorr.Instancia.deshabilitarDetOrdenCorr(id);
         }
     }
 }

@@ -1,13 +1,13 @@
 ﻿using CapaAccesoDatos.Personal;
-using CapaEntidad.PedidoManCor;
+using CapaEntidad.Mantenimiento.PedidoManCor;
+using CapaEntidad.Mantenimiento.TipoMan;
 using CapaEntidad.Personal;
 using CapaEntidad.Proveedor;
 using CapaEntidad.Recurso;
-using CapaEntidad.TipoMan;
-using CapaLogica.PedidoManCor;
+using CapaLogica.Mantenimiento.PedidoManCor;
+using CapaLogica.Mantenimiento.TipoMan;
 using CapaLogica.Personal;
 using CapaLogica.Recurso;
-using CapaLogica.TipoMan;
 using CapaPresentacion.Personal_Forms;
 using System;
 using System.Collections.Generic;
